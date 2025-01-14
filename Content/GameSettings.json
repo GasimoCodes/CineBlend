@@ -1,0 +1,11 @@
+﻿{
+	"ID": "b977939b436cc20f2cc674aaf1c1cd78",
+	"TypeName": "FlaxEditor.Content.Settings.GameSettings",
+	"EngineBuild": 6167,
+	"Data": {
+	"ProductName": "Cineblend",
+	"CompanyName": "Gasimo",
+	"Version": "",
+	"FirstScene": "00000000000000000000000000000000"
+}
+}

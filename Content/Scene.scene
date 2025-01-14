@@ -1,0 +1,225 @@
+{
+	"ID": "6692e1f14f9eccf0f437568e18948b81",
+	"TypeName": "FlaxEngine.SceneAsset",
+	"EngineBuild": 6606,
+	"Data": [
+		{
+			"ID": "6692e1f14f9eccf0f437568e18948b81",
+			"TypeName": "FlaxEngine.Scene",
+			"LightmapSettings": {
+				"IndirectLightingIntensity": 1.0,
+				"GlobalObjectsScale": 1.0,
+				"ChartsPadding": 3,
+				"AtlasSize": 1024,
+				"BounceCount": 1,
+				"CompressLightmaps": true,
+				"UseGeometryWithNoMaterials": true,
+				"Quality": 10
+			}
+		},
+		{
+			"ID": "d3998c8e4a0da4d860d2b09a2cbd6390",
+			"TypeName": "FlaxEngine.DirectionalLight",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Sun",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 160.0,
+					"Z": 0.0
+				},
+				"Orientation": {
+					"X": 0.3826834559440613,
+					"Y": 0.0,
+					"Z": 0.0,
+					"W": 0.9238795042037964
+				}
+			}
+		},
+		{
+			"ID": "5175a6f44595f5c9399f7c97218bccd7",
+			"TypeName": "FlaxEngine.Sky",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Sky",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 150.0,
+					"Z": 0.0
+				}
+			},
+			"Sun": "d3998c8e4a0da4d860d2b09a2cbd6390"
+		},
+		{
+			"ID": "d5d1f2f944987633bdb0ca9b34f5461b",
+			"TypeName": "FlaxEngine.SkyLight",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "SkyLight",
+			"Brightness": 2.5,
+			"CustomTexture": "c54410104ff39427bc11e5bc761d66b0"
+		},
+		{
+			"ID": "bd5faa2c45ea8805fb8140aa00519451",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Floor",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": -149.46487426757813,
+					"Z": 0.0
+				},
+				"Scale": {
+					"X": 4.0,
+					"Y": 0.5,
+					"Z": 4.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "590366dc49ec2b3756d2679669b21adb",
+			"TypeName": "FlaxEngine.Camera",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Camera",
+			"Transform": {
+				"Translation": {
+					"X": 338.7712707519531,
+					"Y": -33.00001525878906,
+					"Z": -530.03515625
+				}
+			},
+			"Far": 1000.0
+		},
+		{
+			"ID": "de296f34445ca06dd6ad6192695bf99c",
+			"TypeName": "Game.CineblendMaster",
+			"ParentID": "590366dc49ec2b3756d2679669b21adb",
+			"V": {}
+		},
+		{
+			"ID": "402777d541e09880c158c89523d7957a",
+			"TypeName": "FlaxEngine.AudioListener",
+			"ParentID": "590366dc49ec2b3756d2679669b21adb",
+			"Name": "Audio Listener"
+		},
+		{
+			"ID": "7c65bf4040366c8ac3a0f884fffb9dd5",
+			"TypeName": "Game.VirtualCamera",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"V": {
+	"Properties": {
+		"Position": {
+			"CurrentValue": {
+				"X": 20.0,
+				"Y": 72.93733,
+				"Z": 0.0
+			}
+		},
+		"Rotation": {
+			"CurrentValue": {
+				"X": 0.104528464,
+				"Y": 0.0,
+				"Z": 0.0,
+				"W": 0.9945219
+			}
+		},
+		"FieldOfView": {
+			"CurrentValue": 110.0
+		},
+		"NearPlane": {
+			"CurrentValue": 10.0
+		},
+		"FarPlane": {
+			"CurrentValue": 1000.0
+		}
+	},
+	"FieldOfView": 110.0
+},
+			"Name": "VirtualCamera ONE",
+			"Transform": {
+				"Translation": {
+					"X": 20.0,
+					"Y": 72.93733215332031,
+					"Z": 0.0
+				},
+				"Orientation": {
+					"X": 0.10452846437692642,
+					"Y": 0.0,
+					"Z": 0.0,
+					"W": 0.9945219159126282
+				}
+			}
+		},
+		{
+			"ID": "7ce091cd426defa89c242883bc4da4e8",
+			"TypeName": "Game.VirtualCamera",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"V": {
+	"Properties": {
+		"Position": {
+			"CurrentValue": {
+				"X": 338.77127,
+				"Y": -33.0,
+				"Z": -530.0351
+			}
+		},
+		"Rotation": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0,
+				"W": 1.0
+			}
+		},
+		"FieldOfView": {
+			"CurrentValue": 60.0
+		},
+		"NearPlane": {
+			"CurrentValue": 10.0
+		},
+		"FarPlane": {
+			"CurrentValue": 1000.0
+		}
+	},
+	"Priority": 4
+},
+			"Name": "VirtualCamera TWO",
+			"Transform": {
+				"Translation": {
+					"X": 338.7712707519531,
+					"Y": -33.0,
+					"Z": -530.0350952148438
+				}
+			},
+			"StaticFlags": 0
+		},
+		{
+			"ID": "86cd02114ee72bd8b9bfb4bb01b80ea0",
+			"TypeName": "Game.CineShakeModule",
+			"ParentID": "7ce091cd426defa89c242883bc4da4e8",
+			"V": {
+	"PositionAmplitude": {
+		"X": 10.0,
+		"Y": 10.0,
+		"Z": 10.0
+	},
+	"RotationAmplitude": {
+		"X": 10.0,
+		"Y": 10.0,
+		"Z": 10.0
+	}
+}
+		}
+	]
+}
