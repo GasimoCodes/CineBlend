@@ -7,7 +7,7 @@ namespace Game
     /// <summary>
     /// Virtual Camera Actor that can be blended between different states
     /// </summary>
-    [ActorContextMenu("New/Camera/Virtual Camera")]
+    [ActorContextMenu("New/CineBlend/Virtual Camera")]
     public class VirtualCamera : Actor, ICineCamera
     {
         private int priority;
