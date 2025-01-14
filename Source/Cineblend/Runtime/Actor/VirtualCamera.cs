@@ -8,6 +8,7 @@ namespace Game
     /// Virtual Camera Actor that can be blended between different states
     /// </summary>
     [ActorContextMenu("New/CineBlend/Virtual Camera")]
+    [ActorToolbox("Visuals")]
     public class VirtualCamera : Actor, ICineCamera
     {
         private int priority;
@@ -100,18 +101,7 @@ namespace Game
         public override void OnBeginPlay()
         {
             base.OnBeginPlay();
-
-            // Search for modules on this object
-            foreach (var module in GetScripts<ICameraModule>())
-            {
-                Modules[ module.GetType()] = module;
-            }
-
-            // Initialize modules
-            foreach (var module in Modules)
-            {
-                module.Value.Initialize(this);
-            }
+            RefreshModules();
         }
 
         /// <summary>
@@ -120,6 +110,7 @@ namespace Game
         public override void OnEnable()
         {
             base.OnEnable();
+            RefreshModules();
             CineblendMaster.Instance?.RegisterVirtualCamera(this);
         }
 
@@ -175,6 +166,21 @@ namespace Game
         public void ClearSolo()
         {
             CineblendMaster.Instance?.ClearSolo();
+        }
+
+        private void RefreshModules()
+        {
+            // Search for modules on this object
+            foreach (var module in GetScripts<ICameraModule>())
+            {
+                Modules[module.GetType()] = module;
+            }
+
+            // Initialize modules
+            foreach (var module in Modules)
+            {
+                module.Value.Initialize(this);
+            }
         }
 
         public override void OnDebugDraw()
