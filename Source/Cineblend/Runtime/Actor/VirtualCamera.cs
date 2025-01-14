@@ -179,18 +179,14 @@ namespace Game
 
         public override void OnDebugDraw()
         {
-            base.OnDebugDraw();
+            // Draw frustrum the same way Camera does
 
-            // Draw frustrum same way as camera does. Ignore modules when inactive.
-            var state = properties;
+            var color = isActive ? Color.Green : Color.Orange;
 
-            Matrix matrix = Matrix.Scaling(state.FieldOfView.CurrentValue, state.FieldOfView.CurrentValue, state.FarPlane.CurrentValue) *
-                           Matrix.Translation(this.Position) *
-                           Matrix.RotationQuaternion(this.Orientation);
+            BoundingFrustum frustrum = new BoundingFrustum(Matrix.Invert(FinalProperties.GetViewMatrix()) * FinalProperties.GetProjectionMatrix());
 
-            BoundingFrustum frustum = new BoundingFrustum(matrix);
+            DebugDraw.DrawWireFrustum(frustrum, color);
 
-            DebugDraw.DrawWireFrustum (frustum, Color.Red, 0.0f, false);
 
         }
 

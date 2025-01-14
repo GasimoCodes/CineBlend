@@ -38,6 +38,17 @@ public struct CameraProperties
         camera.NearPlane = NearPlane.CurrentValue;
         camera.FarPlane = FarPlane.CurrentValue;
     }
+
+    public Matrix GetViewMatrix()
+    {
+        return Matrix.LookAt(Position.CurrentValue, Position.CurrentValue + Vector3.Transform(Vector3.Forward, Rotation.CurrentValue), Vector3.Transform(Vector3.Up, Rotation.CurrentValue));
+    }
+
+    public Matrix GetProjectionMatrix()
+    {
+        return Matrix.PerspectiveFov(FieldOfView.CurrentValue, 16.0f / 9.0f, NearPlane.CurrentValue, FarPlane.CurrentValue);
+    }
+
 }
 
 
