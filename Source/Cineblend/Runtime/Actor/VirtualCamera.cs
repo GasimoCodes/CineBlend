@@ -8,6 +8,7 @@ namespace Game
     /// Virtual Camera Actor that can be blended between different states
     /// </summary>
     [ActorContextMenu("New/CineBlend/Virtual Camera")]
+    [ActorToolbox("Visuals")]
     public class VirtualCamera : Actor, ICineCamera
     {
         private int priority;
@@ -100,18 +101,7 @@ namespace Game
         public override void OnBeginPlay()
         {
             base.OnBeginPlay();
-
-            // Search for modules on this object
-            foreach (var module in GetScripts<ICameraModule>())
-            {
-                Modules[ module.GetType()] = module;
-            }
-
-            // Initialize modules
-            foreach (var module in Modules)
-            {
-                module.Value.Initialize(this);
-            }
+            RefreshModules();
         }
 
         /// <summary>
@@ -120,6 +110,7 @@ namespace Game
         public override void OnEnable()
         {
             base.OnEnable();
+            RefreshModules();
             CineblendMaster.Instance?.RegisterVirtualCamera(this);
         }
 
@@ -177,20 +168,31 @@ namespace Game
             CineblendMaster.Instance?.ClearSolo();
         }
 
+        private void RefreshModules()
+        {
+            // Search for modules on this object
+            foreach (var module in GetScripts<ICameraModule>())
+            {
+                Modules[module.GetType()] = module;
+            }
+
+            // Initialize modules
+            foreach (var module in Modules)
+            {
+                module.Value.Initialize(this);
+            }
+        }
+
         public override void OnDebugDraw()
         {
-            base.OnDebugDraw();
+            // Draw frustrum the same way Camera does
 
-            // Draw frustrum same way as camera does. Ignore modules when inactive.
-            var state = properties;
+            var color = isActive ? Color.Green : Color.Orange;
 
-            Matrix matrix = Matrix.Scaling(state.FieldOfView.CurrentValue, state.FieldOfView.CurrentValue, state.FarPlane.CurrentValue) *
-                           Matrix.Translation(this.Position) *
-                           Matrix.RotationQuaternion(this.Orientation);
+            BoundingFrustum frustrum = new BoundingFrustum(Matrix.Invert(FinalProperties.GetViewMatrix()) * FinalProperties.GetProjectionMatrix());
 
-            BoundingFrustum frustum = new BoundingFrustum(matrix);
+            DebugDraw.DrawWireFrustum(frustrum, color);
 
-            DebugDraw.DrawWireFrustum (frustum, Color.Red, 0.0f, false);
 
         }
 

@@ -83,6 +83,8 @@ namespace Game
             Properties.Rotation.CurrentValue = camera.Transform.Orientation;
 
             currentVirtualCamera = this;
+
+            RegisterVirtualCamera(this);
         }
 
 
@@ -132,7 +134,7 @@ namespace Game
         }
 
 
-        public void RegisterVirtualCamera(VirtualCamera virtualCamera)
+        public void RegisterVirtualCamera(ICineCamera virtualCamera)
         {
             if (!virtualCamerasByPriority.ContainsKey(virtualCamera.Priority))
             {
@@ -144,7 +146,7 @@ namespace Game
         }
 
 
-        public void UnregisterVirtualCamera(VirtualCamera virtualCamera)
+        public void UnregisterVirtualCamera(ICineCamera virtualCamera)
         {
             if (virtualCamerasByPriority.TryGetValue(virtualCamera.Priority, out var cameras))
             {
@@ -158,6 +160,12 @@ namespace Game
             if (soloCamera == virtualCamera)
             {
                 soloCamera = null;
+            }
+
+            // If this was the last camera, take values from the MainCam. This way we prevent a null reference when a camera gets destroyed.
+            if (currentVirtualCamera == (ICineCamera)virtualCamera)
+            {
+                lastVirtualCamera = this;
             }
 
         }
@@ -199,6 +207,8 @@ namespace Game
                     return kvp.Value[0];
                 }
             }
+
+            Debug.LogWarning("No cameras found");
 
             return null;
         }
