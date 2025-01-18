@@ -170,15 +170,18 @@ namespace Game
 
         private void RefreshModules()
         {
+            // Debug.Log("Refreshing modules for " + this.Name);
+
             // Search for modules on this object
             foreach (var module in GetScripts<ICameraModule>())
             {
                 Modules[module.GetType()] = module;
             }
-
+             
             // Initialize modules
             foreach (var module in Modules)
             {
+                // Debug.Log("-- Initiate module for " + this.Name + "/" + module.GetType());
                 module.Value.Initialize(this);
             }
         }
