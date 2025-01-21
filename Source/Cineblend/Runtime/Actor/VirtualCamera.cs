@@ -44,7 +44,7 @@ namespace Game
         {
             get
             {
-                CameraProperties state = properties;
+                CameraProperties state = (CameraProperties)properties.Clone();
 
                 foreach (var module in Modules)
                 {
@@ -200,8 +200,11 @@ namespace Game
 #if FLAX_EDITOR
         public override void OnDebugDraw()
         {
-            // Draw icon
+            base.OnDebugDraw();
 
+            // var prop = properties;
+
+            // DebugDraw.DrawWireArrow(Position, prop.Rotation.CurrentValue, 0.5f, 1, FlaxEngine.Color.Red);
         }
 
         public override void OnDebugDrawSelected()

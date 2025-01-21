@@ -47,7 +47,7 @@ public class CineLookAtModule : Script, ICameraModule
         else
         {
             // Calculate smooth rotation using Slerp
-            
+
             float deltaTime = Time.UnscaledDeltaTime;
 
 
@@ -58,4 +58,18 @@ public class CineLookAtModule : Script, ICameraModule
         // Apply the rotation
         state.Rotation.CurrentValue = _currentRotation;
     }
+
+#if FLAX_EDITOR
+
+    public override void OnDebugDrawSelected()
+    {
+        if (Target != null)
+        {
+            // Draw Bounding Box
+            DebugDraw.DrawWireBox(Target.Box, Color.Blue);
+        }
+    }
+
+#endif
+
 }

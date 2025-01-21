@@ -8,7 +8,7 @@ namespace Game;
 /// <summary>
 /// Collection of camera properties that can be blended
 /// </summary>
-public struct CameraProperties
+public struct CameraProperties : ICloneable
 {
     public BlendableVector3 Position = new();
     public BlendableQuaternion Rotation = new();
@@ -49,6 +49,18 @@ public struct CameraProperties
     {
         return Matrix.PerspectiveFov(FieldOfView.CurrentValue * Mathf.DegreesToRadians, (16.0f / 9.0f), NearPlane.CurrentValue, FarPlane.CurrentValue);
 
+    }
+
+    public object Clone()
+    {
+        return new CameraProperties
+        {
+            Position = new BlendableVector3(Position.CurrentValue),
+            Rotation = new BlendableQuaternion(Rotation.CurrentValue),
+            FieldOfView = new BlendableFloat(FieldOfView.CurrentValue),
+            NearPlane = new BlendableFloat(NearPlane.CurrentValue),
+            FarPlane = new BlendableFloat(FarPlane.CurrentValue)
+        };
     }
 }
 
