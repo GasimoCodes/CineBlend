@@ -13,6 +13,13 @@ Brings high-level virtual cameras workflow to the FlaxEngine.
 - Camera Shake
 - Recompose (additive Reframe)
 - Look At (Camera faces a world transform, with smoothing options)
+- Auto-Framing (Zooms and Rotates the camera to ensure a list of Actors remains on-screen)
+
+
+https://github.com/user-attachments/assets/61903566-d839-407a-bcb0-9a8586d19f8e
+https://github.com/user-attachments/assets/0bdb62a8-e1b0-4d9b-8f91-e05fa6ec7278
+
+
 
 #### To-Do
 - PostProcessing Volume blending
