@@ -186,6 +186,8 @@ namespace Game
             }
         }
 
+
+#if FLAX_EDITOR
         public override void OnDebugDraw()
         {
             // Draw frustrum the same way Camera does
@@ -195,9 +197,8 @@ namespace Game
             BoundingFrustum frustrum = new BoundingFrustum(Matrix.Invert(FinalProperties.GetViewMatrix()) * FinalProperties.GetProjectionMatrix());
 
             DebugDraw.DrawWireFrustum(frustrum, color);
-
-
         }
+#endif
 
 
     }
