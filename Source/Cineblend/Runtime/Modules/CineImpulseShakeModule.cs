@@ -8,6 +8,8 @@ namespace Cineblend;
 /// <summary>
 /// CineImpulseShakeModule Script.
 /// </summary>
+[RequireActor(typeof(VirtualCamera))]
+[Category("Cineblend")]
 public class CineImpulseShakeModule : Script, ICameraModule
 {
 
@@ -30,6 +32,9 @@ public class CineImpulseShakeModule : Script, ICameraModule
 
     public void PostProcessProperties(ref CameraProperties state)
     {
+        if (!this.Enabled)
+            return;
+
         currentTime += Time.DeltaTime;
 
         // Calculate current frame and lerp with perlin and add to current camera motion/rotation

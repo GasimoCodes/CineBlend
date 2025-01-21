@@ -8,6 +8,7 @@ namespace Game
     /// Adds realistic multi-frequency camera noise effects to the game.
     /// </summary>
     [RequireActor(typeof(VirtualCamera))]
+    [Category("Cineblend")]
     public class CineShakeModule : Script, ICameraModule
     {
         // Customizable noise properties
@@ -32,7 +33,10 @@ namespace Game
 
         public void PostProcessProperties(ref CameraProperties state)
         {
-            float time = Time.GameTime;
+            if (!this.Enabled)
+                return;
+
+            float time = Time.UnscaledGameTime;
 
             // Generate Perlin noise for position
             Vector3 positionNoise = CalculatePerlinNoise(PositionFrequency, PositionAmplitude, time);

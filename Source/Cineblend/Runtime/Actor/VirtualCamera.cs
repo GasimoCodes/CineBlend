@@ -11,17 +11,20 @@ namespace Game
     [ActorToolbox("Visuals")]
     public class VirtualCamera : Actor, ICineCamera
     {
+
         private int priority;
         private CameraProperties properties = new();
 
         [ShowInEditor, ReadOnly]
+        [EditorDisplay("Virtual Camera Status")]
+        [EditorOrder(0)]
         private bool isActive => (CineblendMaster.Instance?.currentVirtualCamera == (ICineCamera)this);
 
         /// <summary>
         /// Modules on the camera. Init with CineTransform module.
         /// </summary>
-        public Dictionary<Type, ICameraModule> Modules { get; private set; } = new() { 
-            { typeof(CineTransformModule), new CineTransformModule() } 
+        public Dictionary<Type, ICameraModule> Modules { get; private set; } = new() {
+ { typeof(CineTransformModule), new CineTransformModule() }
         };
 
         /// <summary>
@@ -33,7 +36,7 @@ namespace Game
             get => properties;
             set => properties = value;
         }
-        
+
         /// <summary>
         /// Gets postprocessed properties
         /// </summary>
@@ -42,13 +45,13 @@ namespace Game
             get
             {
                 CameraProperties state = properties;
-                
+
                 foreach (var module in Modules)
                 {
                     module.Value.PostProcessProperties(ref state);
                 }
 
-                // Debug.Log(state.Position.CurrentValue);
+                // Debug.Log(state.Rotation.CurrentValue);
 
                 return state;
             }
@@ -57,6 +60,8 @@ namespace Game
         /// <summary>
         /// Camera priority. Higher priority cameras will override lower priority cameras.
         /// </summary>
+        [EditorDisplay("Virtual Camera Status")]
+        [EditorOrder(1)]
         public int Priority
         {
             get => priority;
@@ -73,19 +78,22 @@ namespace Game
 
 
         // Expose properties via the blendable system
-        [Header("Camera")]
+
+        [EditorDisplay("Virtual Camera Properties")]
         public float FieldOfView
         {
             get => properties.FieldOfView.CurrentValue;
             set => properties.FieldOfView.CurrentValue = value;
         }
 
+        [EditorDisplay("Virtual Camera Properties")]
         public float NearPlane
         {
             get => properties.NearPlane.CurrentValue;
             set => properties.NearPlane.CurrentValue = value;
         }
 
+        [EditorDisplay("Virtual Camera Properties")]
         public float FarPlane
         {
             get => properties.FarPlane.CurrentValue;
@@ -170,14 +178,16 @@ namespace Game
 
         private void RefreshModules()
         {
-            // Debug.Log("Refreshing modules for " + this.Name);
+            // Clear modules to ensure the order of effects is cleared
+            Modules.Clear();
+            Modules.Add(typeof(CineTransformModule), new CineTransformModule());
 
             // Search for modules on this object
             foreach (var module in GetScripts<ICameraModule>())
             {
                 Modules[module.GetType()] = module;
             }
-             
+
             // Initialize modules
             foreach (var module in Modules)
             {
@@ -190,13 +200,19 @@ namespace Game
 #if FLAX_EDITOR
         public override void OnDebugDraw()
         {
+            // Draw icon
+
+        }
+
+        public override void OnDebugDrawSelected()
+        {
+            base.OnDebugDrawSelected();
+
+            var color = isActive ? FlaxEngine.Color.Green : FlaxEngine.Color.Orange;
             // Draw frustrum the same way Camera does
-
-            var color = isActive ? Color.Green : Color.Orange;
-
-            BoundingFrustum frustrum = new BoundingFrustum(Matrix.Invert(FinalProperties.GetViewMatrix()) * FinalProperties.GetProjectionMatrix());
-
+            BoundingFrustum frustrum = new BoundingFrustum((FinalProperties.GetViewMatrix()) * FinalProperties.GetProjectionMatrix());
             DebugDraw.DrawWireFrustum(frustrum, color);
+
         }
 #endif
 

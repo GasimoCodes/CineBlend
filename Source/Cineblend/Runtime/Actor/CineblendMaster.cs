@@ -8,6 +8,7 @@ namespace Game
 {
     [RequireActor(typeof(Camera))]
     [ExecuteInEditMode]
+    [Category("Cineblend")]
     public class CineblendMaster : Script, ICineCamera
     {
         private static CineblendMaster instance;
@@ -107,7 +108,8 @@ namespace Game
             if (activeBlend == null)
             {
                 // Copy values from camera
-                currentVirtualCamera.FinalProperties.Apply(camera);
+                CameraProperties finalProp = currentVirtualCamera.FinalProperties;
+                finalProp.Apply(camera);
                 return;
             }
 

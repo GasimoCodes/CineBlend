@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Transactions;
 using FlaxEngine;
 
 namespace Game;
@@ -46,9 +47,9 @@ public struct CameraProperties
 
     public Matrix GetProjectionMatrix()
     {
-        return Matrix.PerspectiveFov(FieldOfView.CurrentValue, 16.0f / 9.0f, NearPlane.CurrentValue, FarPlane.CurrentValue);
-    }
+        return Matrix.PerspectiveFov(FieldOfView.CurrentValue * Mathf.DegreesToRadians, (16.0f / 9.0f), NearPlane.CurrentValue, FarPlane.CurrentValue);
 
+    }
 }
 
 

@@ -94,12 +94,20 @@
 			"Name": "Camera",
 			"Transform": {
 				"Translation": {
-					"X": 338.7712707519531,
-					"Y": -33.00001525878906,
-					"Z": -530.03515625
+					"X": 430.7500915527344,
+					"Y": -38.0,
+					"Z": -643.5824584960938
+				},
+				"Orientation": {
+					"X": -0.027502547949552537,
+					"Y": 0.22457948327064515,
+					"Z": -0.027084190398454667,
+					"W": 0.9736910462379456
 				}
 			},
-			"Far": 1000.0
+			"FOV": 55.0,
+			"Near": 5.000000476837158,
+			"Far": 5000.0
 		},
 		{
 			"ID": "de296f34445ca06dd6ad6192695bf99c",
@@ -122,8 +130,8 @@
 		"Position": {
 			"CurrentValue": {
 				"X": 20.0,
-				"Y": 72.93733,
-				"Z": 0.0
+				"Y": 89.00442,
+				"Z": -75.589714
 			}
 		},
 		"Rotation": {
@@ -135,23 +143,24 @@
 			}
 		},
 		"FieldOfView": {
-			"CurrentValue": 110.0
+			"CurrentValue": 50.0
 		},
 		"NearPlane": {
 			"CurrentValue": 10.0
 		},
 		"FarPlane": {
-			"CurrentValue": 1000.0
+			"CurrentValue": 5000.0
 		}
 	},
-	"FieldOfView": 110.0
+	"FieldOfView": 50.0,
+	"FarPlane": 5000.0
 },
 			"Name": "VirtualCamera ONE",
 			"Transform": {
 				"Translation": {
 					"X": 20.0,
-					"Y": 72.93733215332031,
-					"Z": 0.0
+					"Y": 89.0044174194336,
+					"Z": -75.58971405029297
 				},
 				"Orientation": {
 					"X": 0.10452846437692642,
@@ -169,40 +178,65 @@
 	"Properties": {
 		"Position": {
 			"CurrentValue": {
-				"X": 338.77127,
-				"Y": -33.0,
-				"Z": -530.0351
+				"X": 430.7501,
+				"Y": -38.0,
+				"Z": -643.58246
 			}
 		},
 		"Rotation": {
 			"CurrentValue": {
-				"X": 0.0,
-				"Y": 0.0,
-				"Z": 0.0,
-				"W": 1.0
+				"X": -0.027502539,
+				"Y": 0.22457941,
+				"Z": -0.027084181,
+				"W": 0.9736907
 			}
 		},
 		"FieldOfView": {
-			"CurrentValue": 60.0
+			"CurrentValue": 55.0
 		},
 		"NearPlane": {
-			"CurrentValue": 10.0
+			"CurrentValue": 5.0
 		},
 		"FarPlane": {
-			"CurrentValue": 1000.0
+			"CurrentValue": 5000.0
 		}
 	},
-	"Priority": 4
+	"Priority": 4,
+	"FieldOfView": 55.0,
+	"NearPlane": 5.0,
+	"FarPlane": 5000.0
 },
 			"Name": "VirtualCamera TWO",
 			"Transform": {
 				"Translation": {
-					"X": 338.7712707519531,
+					"X": 435.7500915527344,
 					"Y": -33.0,
-					"Z": -530.0350952148438
+					"Z": -638.5824584960938
 				}
 			},
 			"StaticFlags": 0
+		},
+		{
+			"ID": "6b011d5c48ab17405328b5aa0df82028",
+			"TypeName": "Cineblend.CineLookAtModule",
+			"ParentID": "7ce091cd426defa89c242883bc4da4e8",
+			"V": {
+	"Target": "3a2e6e7e4bf4f24b8e27aebcdb459f3d",
+	"Smoothing": 1.0
+}
+		},
+		{
+			"ID": "57d6735549edd17b0373698c5845987d",
+			"TypeName": "Cineblend.CineRecomposeModule",
+			"ParentID": "7ce091cd426defa89c242883bc4da4e8",
+			"V": {
+	"RotationOffset": {
+		"X": -0.008551347,
+		"Y": 0.19936033,
+		"Z": 0.0017397912,
+		"W": 0.97988737
+	}
+}
 		},
 		{
 			"ID": "86cd02114ee72bd8b9bfb4bb01b80ea0",
@@ -220,6 +254,31 @@
 		"Z": 10.0
 	}
 }
+		},
+		{
+			"ID": "3a2e6e7e4bf4f24b8e27aebcdb459f3d",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Floor 0",
+			"Transform": {
+				"Translation": {
+					"X": 535.6328735351563,
+					"Y": -79.89239501953125,
+					"Z": 59.601898193359378
+				}
+			},
+			"StaticFlags": 0,
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
 		}
 	]
 }
