@@ -47,7 +47,7 @@ public struct CameraProperties : ICloneable
 
     public Matrix GetProjectionMatrix()
     {
-        return Matrix.PerspectiveFov(FieldOfView.CurrentValue * Mathf.DegreesToRadians, (16.0f / 9.0f), NearPlane.CurrentValue, FarPlane.CurrentValue);
+        return Matrix.PerspectiveFov(FieldOfView.CurrentValue * Mathf.DegreesToRadians, (Screen.Size.X / Screen.Size.Y), NearPlane.CurrentValue, FarPlane.CurrentValue);
 
     }
 
