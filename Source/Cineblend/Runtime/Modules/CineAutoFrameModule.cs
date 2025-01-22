@@ -117,12 +117,18 @@ public class CineAutoFrameModule : Script, ICameraModule
         };
     }
 
+    /// <summary>
+    /// Returns approximate point which camera needs to face to have all Actors visually centered in screen-space.
+    /// </summary>
+    /// <param name="actors"></param>
+    /// <param name="state"></param>
+    /// <returns></returns>
     private Vector3 GetApproxCenterFromActors(Actor[] actors, CameraProperties state)
     {
         if (actors == null || actors.Length == 0)
             return Vector3.Zero;
 
-        // Get centers of all actors
+        // Get centers actors
         List<Vector3> centers = new List<Vector3>();
         foreach (var actor in actors)
         {
@@ -130,7 +136,7 @@ public class CineAutoFrameModule : Script, ICameraModule
             centers.Add((actor.Box.Minimum + actor.Box.Maximum) / 2);
         }
 
-        // Get the direction from camera to average point (this will be our plane normal)
+        // Get the direction from camera to average point (Normal vector)
         Vector3 averagePos = Vector3.Zero;
         foreach (var pos in centers)
             averagePos += pos;
