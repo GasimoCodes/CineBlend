@@ -49,8 +49,6 @@ public class CineLookAtModule : Script, ICameraModule
             // Calculate smooth rotation using Slerp
 
             float deltaTime = Time.UnscaledDeltaTime;
-
-
             float t = deltaTime / Mathf.Max(Smoothing, 0.0001f);
             _currentRotation = Quaternion.Slerp(_currentRotation, targetRotation, t);
         }

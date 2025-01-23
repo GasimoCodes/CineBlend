@@ -94,19 +94,21 @@
 			"Name": "Camera",
 			"Transform": {
 				"Translation": {
-					"X": -784.6144409179688,
-					"Y": 322.43701171875,
-					"Z": 1682.836669921875
+					"X": -1227.6121826171876,
+					"Y": 143.59762573242188,
+					"Z": 975.951904296875
 				},
 				"Orientation": {
-					"X": 0.015308011323213578,
-					"Y": -0.9693574905395508,
-					"Z": 0.06259803473949433,
-					"W": 0.23705114424228669
+					"X": 0.010836559347808361,
+					"Y": -0.9778330326080322,
+					"Z": 0.052340682595968249,
+					"W": 0.2024495154619217
 				}
 			},
-			"FOV": 10.0,
-			"Far": 10000.0
+			"UsePerspective": false,
+			"FOV": 13.75749397277832,
+			"Far": 10000.0,
+			"OrthoScale": 2.3701000213623049
 		},
 		{
 			"ID": "de296f34445ca06dd6ad6192695bf99c",
@@ -191,7 +193,7 @@
 			}
 		},
 		"FieldOfView": {
-			"CurrentValue": 13.0
+			"CurrentValue": 4.0
 		},
 		"NearPlane": {
 			"CurrentValue": 5.0
@@ -201,16 +203,16 @@
 		}
 	},
 	"Priority": 4,
-	"FieldOfView": 13.0,
+	"FieldOfView": 4.0,
 	"NearPlane": 5.0,
 	"FarPlane": 5000.0
 },
 			"Name": "VirtualCamera TWO",
 			"Transform": {
 				"Translation": {
-					"X": 727.3943481445313,
+					"X": 255.62152099609376,
 					"Y": 370.36279296875,
-					"Z": 784.4642333984375
+					"Z": 814.8804931640625
 				}
 			},
 			"StaticFlags": 0
@@ -253,7 +255,14 @@
 		"Y": 10.0,
 		"Z": 10.0
 	}
-}
+},
+			"Enabled": false
+		},
+		{
+			"ID": "cd5bb8094720eeb2b736a596745c12aa",
+			"TypeName": "Cineblend.CineImpulseShakeModule",
+			"ParentID": "7ce091cd426defa89c242883bc4da4e8",
+			"V": {}
 		},
 		{
 			"ID": "3a2e6e7e4bf4f24b8e27aebcdb459f3d",
@@ -311,16 +320,16 @@
 			"CurrentValue": 10000.0
 		}
 	},
-	"Priority": 126,
+	"Priority": 4,
 	"FieldOfView": 10.0,
 	"FarPlane": 10000.0
 },
 			"Name": "VirtualCamera THREE",
 			"Transform": {
 				"Translation": {
-					"X": -784.6144409179688,
-					"Y": 322.43701171875,
-					"Z": 1682.836669921875
+					"X": -1227.6121826171876,
+					"Y": 143.59762573242188,
+					"Z": 975.951904296875
 				}
 			},
 			"StaticFlags": 0
@@ -336,8 +345,8 @@
 		"976b81ea48ea99d563accb8e40c7a6c6"
 	],
 	"FOVRange": {
-		"X": 10.0,
-		"Y": 170.0
+		"X": 25.0,
+		"Y": 179.0
 	}
 }
 		},
@@ -415,6 +424,20 @@
 					}
 				]
 			}
+		},
+		{
+			"ID": "b2b4bb3d46554e9a99b3e9b91ffaa1f5",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Shaker"
+		},
+		{
+			"ID": "dabf7a124307a5c53c780fbec73d0908",
+			"TypeName": "Cineblend.Shaker",
+			"ParentID": "b2b4bb3d46554e9a99b3e9b91ffaa1f5",
+			"V": {
+	"ShakeModule": "cd5bb8094720eeb2b736a596745c12aa"
+}
 		}
 	]
 }

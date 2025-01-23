@@ -11,6 +11,11 @@ public class CineAutoFrameModule : Script, ICameraModule
 {
     public Actor[] Target;
 
+    public float Smoothing = 0;
+    private Quaternion _currentRotation = Quaternion.Identity;
+    private float _currentFOV = 60;
+
+
     [Range(0, 179)]
     public Vector2 FOVRange = new(60, 170);
 
@@ -22,6 +27,8 @@ public class CineAutoFrameModule : Script, ICameraModule
 
     public void Initialize(VirtualCamera camera)
     {
+        _currentRotation = camera.Transform.Orientation;
+        _currentFOV = camera.Properties.FieldOfView.CurrentValue;
     }
 
     public void PostProcessProperties(ref CameraProperties state)
@@ -29,6 +36,13 @@ public class CineAutoFrameModule : Script, ICameraModule
         if (Target == null || Target.Length == 0 || Target[0] == null)
             return;
 
+        
+        // Smoothing
+        float deltaTime = Time.UnscaledDeltaTime;
+        float t = deltaTime / Mathf.Max(Smoothing, 0.0001f);
+
+
+        // Calculations
         Vector3 cameraPos = state.Position.CurrentValue;
         float nearDistance = float.MaxValue;
         float farDistance = float.MinValue;
@@ -54,13 +68,22 @@ public class CineAutoFrameModule : Script, ICameraModule
         if (pointCount == 0) return;
         center = GetApproxCenterFromActors(Target, state);
 
-        DebugDraw.DrawLine(center, cameraPos, Color.Green);
-
         // Calculate look direction and rotation
         Vector3 dirToCenter = (center - cameraPos);
         var targetRotation = Quaternion.LookAt(Vector3.Forward, dirToCenter, Vector3.Up);
         Quaternion.Invert(ref targetRotation, out var finalRot);
-        state.Rotation.CurrentValue = finalRot;
+
+        // Apply
+        if (Smoothing <= 0)
+        {
+            _currentRotation = finalRot;
+        }
+        else
+        {
+            _currentRotation = Quaternion.Slerp(_currentRotation, finalRot, t);
+        }
+        state.Rotation.CurrentValue = _currentRotation;
+
 
         // Find maximum angles relative to view direction
         Vector3 cameraRight = Vector3.Cross(dirToCenter, Vector3.Up).Normalized;
@@ -89,7 +112,20 @@ public class CineAutoFrameModule : Script, ICameraModule
         float requiredHorizontalFOV = Mathf.RadiansToDegrees * maxHorizontalAngle * 2.1f / aspectRatio;
         float requiredVerticalFOV = Mathf.RadiansToDegrees * maxVerticalAngle * 2.1f;
         float requiredFOV = Math.Max(requiredHorizontalFOV, requiredVerticalFOV);
-        state.FieldOfView.CurrentValue = Mathf.Clamp(requiredFOV, state.FieldOfView.CurrentValue, 179);
+        
+        float clampedFov = Mathf.Clamp(requiredFOV, state.FieldOfView.CurrentValue, FOVRange.Y);
+
+        if (Smoothing <= 0)
+        {
+            _currentFOV = clampedFov;
+        } 
+        else
+        {
+            _currentFOV = Mathf.Lerp(_currentFOV, clampedFov, t);
+        }
+
+        state.FieldOfView.CurrentValue = _currentFOV;
+
 
         // Create debug frustum
         targetFrustum = new BoundingFrustum(
