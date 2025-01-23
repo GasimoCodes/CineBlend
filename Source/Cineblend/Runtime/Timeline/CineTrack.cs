@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if FLAX_EDITOR
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -204,3 +205,4 @@ public class CineTrack : ActorTrack
         base.OnDestroy();
     }
 }
+#endif
