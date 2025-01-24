@@ -55,6 +55,9 @@ public class CineAutoFrameModule : Script, ICameraModule
             if (target == null) continue;
 
             Vector3[] corners = GetBoxCorners(target.Box);
+
+            // DebugDraw.DrawWireBox(target.Box, Color.Red, 0, false);
+
             foreach (var corner in corners)
             {
                 float dist = Vector3.Distance(corner, cameraPos);
@@ -172,11 +175,28 @@ public class CineAutoFrameModule : Script, ICameraModule
             centers.Add((actor.Box.Minimum + actor.Box.Maximum) / 2);
         }
 
-        // Get the direction from camera to average point (Normal vector)
+        // Get the direction from camera to center point (Normal vector)
         Vector3 averagePos = Vector3.Zero;
-        foreach (var pos in centers)
-            averagePos += pos;
-        averagePos /= centers.Count;
+
+        Vector3 min = Vector3.Maximum;
+        Vector3 max = Vector3.Minimum;
+        foreach (var actor in actors)
+        {
+            if (actor == null) continue;
+            foreach (Vector3 point in GetBoxCorners(actor.Box))
+            {
+                min = new Vector3(Math.Min(min.X, point.X), Math.Min(min.Y, point.Y), Math.Min(min.Z, point.Z));
+                max = new Vector3(Math.Max(max.X, point.X), Math.Max(max.Y, point.Y), Math.Max(max.Z, point.Z));
+
+                //DebugDraw.DrawWireSphere(new BoundingSphere(point, 10), Color.Blue);
+            }
+        }
+
+        //DebugDraw.DrawWireBox(new BoundingBox(min, max), Color.Blue);
+
+        averagePos = (min + max) / 2;
+
+        //DebugDraw.DrawWireSphere(new BoundingSphere(averagePos, 10), Color.Yellow);
 
         Vector3 viewDir = Vector3.Normalize(averagePos - state.Position.CurrentValue);
         float averageDistance = Vector3.Distance(state.Position.CurrentValue, averagePos);
@@ -207,14 +227,22 @@ public class CineAutoFrameModule : Script, ICameraModule
             maxX = Math.Max(maxX, x);
             minY = Math.Min(minY, y);
             maxY = Math.Max(maxY, y);
+
+            
         }
 
         // Get center point using min/max bounds
         float centerX = (minX + maxX) / 2;
         float centerY = (minY + maxY) / 2;
 
+        Vector3 worldSpaceCenterPoint = planePoint + right * centerX + up * centerY;
+
+        // Draw basis vector
+        DebugDraw.DrawLine(worldSpaceCenterPoint, worldSpaceCenterPoint + right * 100, Color.Red);
+        DebugDraw.DrawLine(worldSpaceCenterPoint, worldSpaceCenterPoint + up * 100, Color.Green);
+
         // Convert back to world space
-        return planePoint + right * centerX + up * centerY;
+        return worldSpaceCenterPoint;
     }
 
 
