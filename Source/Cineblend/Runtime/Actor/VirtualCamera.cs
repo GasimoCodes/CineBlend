@@ -9,7 +9,7 @@ namespace Game
     /// </summary>
     [ActorContextMenu("New/CineBlend/Virtual Camera")]
     [ActorToolbox("Visuals")]
-    public class VirtualCamera : Actor, ICineCamera
+    public class VirtualCamera : EmptyActor, ICineCamera
     {
 
         private int priority;
