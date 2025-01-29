@@ -1,0 +1,354 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.ICineCamera
+  commentId: T:Gasimo.CineBlend.ICineCamera
+  id: ICineCamera
+  parent: Gasimo.CineBlend
+  children:
+  - Gasimo.CineBlend.ICineCamera.FinalProperties
+  - Gasimo.CineBlend.ICineCamera.Modules
+  - Gasimo.CineBlend.ICineCamera.Name
+  - Gasimo.CineBlend.ICineCamera.Priority
+  - Gasimo.CineBlend.ICineCamera.Properties
+  langs:
+  - csharp
+  - vb
+  name: ICineCamera
+  nameWithType: ICineCamera
+  fullName: Gasimo.CineBlend.ICineCamera
+  type: Interface
+  source:
+    id: ICineCamera
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\ICineCamera.cs
+    startLine: 8
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: ICineCamera interface. Implement this to create new Virtual Cameras from scratch. Otherwise inherit the VirtualCamera class.
+  example: []
+  syntax:
+    content: public interface ICineCamera
+    content.vb: Public Interface ICineCamera
+- uid: Gasimo.CineBlend.ICineCamera.Properties
+  commentId: P:Gasimo.CineBlend.ICineCamera.Properties
+  id: Properties
+  parent: Gasimo.CineBlend.ICineCamera
+  langs:
+  - csharp
+  - vb
+  name: Properties
+  nameWithType: ICineCamera.Properties
+  fullName: Gasimo.CineBlend.ICineCamera.Properties
+  type: Property
+  source:
+    id: Properties
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\ICineCamera.cs
+    startLine: 13
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: This Cameras non-processed initial properties.
+  example: []
+  syntax:
+    content: CameraProperties Properties { get; }
+    parameters: []
+    return:
+      type: Gasimo.CineBlend.CameraProperties
+    content.vb: ReadOnly Property Properties As CameraProperties
+  overload: Gasimo.CineBlend.ICineCamera.Properties*
+- uid: Gasimo.CineBlend.ICineCamera.FinalProperties
+  commentId: P:Gasimo.CineBlend.ICineCamera.FinalProperties
+  id: FinalProperties
+  parent: Gasimo.CineBlend.ICineCamera
+  langs:
+  - csharp
+  - vb
+  name: FinalProperties
+  nameWithType: ICineCamera.FinalProperties
+  fullName: Gasimo.CineBlend.ICineCamera.FinalProperties
+  type: Property
+  source:
+    id: FinalProperties
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\ICineCamera.cs
+    startLine: 18
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: This Cameras processed final properties.
+  example: []
+  syntax:
+    content: CameraProperties FinalProperties { get; }
+    parameters: []
+    return:
+      type: Gasimo.CineBlend.CameraProperties
+    content.vb: ReadOnly Property FinalProperties As CameraProperties
+  overload: Gasimo.CineBlend.ICineCamera.FinalProperties*
+- uid: Gasimo.CineBlend.ICineCamera.Modules
+  commentId: P:Gasimo.CineBlend.ICineCamera.Modules
+  id: Modules
+  parent: Gasimo.CineBlend.ICineCamera
+  langs:
+  - csharp
+  - vb
+  name: Modules
+  nameWithType: ICineCamera.Modules
+  fullName: Gasimo.CineBlend.ICineCamera.Modules
+  type: Property
+  source:
+    id: Modules
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\ICineCamera.cs
+    startLine: 22
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: CineModules which can be added to the camera. They are initialized by the virtual camera and then applied sequentially to the properties.
+  example: []
+  syntax:
+    content: Dictionary<Type, ICameraModule> Modules { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.Type,Gasimo.CineBlend.ICameraModule}
+    content.vb: ReadOnly Property Modules As Dictionary(Of Type, ICameraModule)
+  overload: Gasimo.CineBlend.ICineCamera.Modules*
+- uid: Gasimo.CineBlend.ICineCamera.Priority
+  commentId: P:Gasimo.CineBlend.ICineCamera.Priority
+  id: Priority
+  parent: Gasimo.CineBlend.ICineCamera
+  langs:
+  - csharp
+  - vb
+  name: Priority
+  nameWithType: ICineCamera.Priority
+  fullName: Gasimo.CineBlend.ICineCamera.Priority
+  type: Property
+  source:
+    id: Priority
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\ICineCamera.cs
+    startLine: 27
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: The priority of the camera. The camera with the highest priority will be the active camera unless overriden by solo.
+  example: []
+  syntax:
+    content: int Priority { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property Priority As Integer
+  overload: Gasimo.CineBlend.ICineCamera.Priority*
+- uid: Gasimo.CineBlend.ICineCamera.Name
+  commentId: P:Gasimo.CineBlend.ICineCamera.Name
+  id: Name
+  parent: Gasimo.CineBlend.ICineCamera
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ICineCamera.Name
+  fullName: Gasimo.CineBlend.ICineCamera.Name
+  type: Property
+  source:
+    id: Name
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\ICineCamera.cs
+    startLine: 32
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Name of the camera. Used to improve readability in the editor.
+  example: []
+  syntax:
+    content: string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Name As String
+  overload: Gasimo.CineBlend.ICineCamera.Name*
+references:
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: Gasimo.CineBlend.ICineCamera.Properties*
+  commentId: Overload:Gasimo.CineBlend.ICineCamera.Properties
+  href: Gasimo.CineBlend.ICineCamera.html#Gasimo_CineBlend_ICineCamera_Properties
+  name: Properties
+  nameWithType: ICineCamera.Properties
+  fullName: Gasimo.CineBlend.ICineCamera.Properties
+- uid: Gasimo.CineBlend.CameraProperties
+  commentId: T:Gasimo.CineBlend.CameraProperties
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.CameraProperties.html
+  name: CameraProperties
+  nameWithType: CameraProperties
+  fullName: Gasimo.CineBlend.CameraProperties
+- uid: Gasimo.CineBlend.ICineCamera.FinalProperties*
+  commentId: Overload:Gasimo.CineBlend.ICineCamera.FinalProperties
+  href: Gasimo.CineBlend.ICineCamera.html#Gasimo_CineBlend_ICineCamera_FinalProperties
+  name: FinalProperties
+  nameWithType: ICineCamera.FinalProperties
+  fullName: Gasimo.CineBlend.ICineCamera.FinalProperties
+- uid: Gasimo.CineBlend.ICineCamera.Modules*
+  commentId: Overload:Gasimo.CineBlend.ICineCamera.Modules
+  href: Gasimo.CineBlend.ICineCamera.html#Gasimo_CineBlend_ICineCamera_Modules
+  name: Modules
+  nameWithType: ICineCamera.Modules
+  fullName: Gasimo.CineBlend.ICineCamera.Modules
+- uid: System.Collections.Generic.Dictionary{System.Type,Gasimo.CineBlend.ICameraModule}
+  commentId: T:System.Collections.Generic.Dictionary{System.Type,Gasimo.CineBlend.ICameraModule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: Gasimo.CineBlend.ICameraModule.html
+  name: Dictionary<Type, ICameraModule>
+  nameWithType: Dictionary<Type, ICameraModule>
+  fullName: System.Collections.Generic.Dictionary<System.Type, Gasimo.CineBlend.ICameraModule>
+  nameWithType.vb: Dictionary(Of Type, ICameraModule)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, Gasimo.CineBlend.ICameraModule)
+  name.vb: Dictionary(Of Type, ICameraModule)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Gasimo.CineBlend.ICameraModule
+    name: ICameraModule
+    href: Gasimo.CineBlend.ICameraModule.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Gasimo.CineBlend.ICameraModule
+    name: ICameraModule
+    href: Gasimo.CineBlend.ICameraModule.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+- uid: Gasimo.CineBlend.ICineCamera.Priority*
+  commentId: Overload:Gasimo.CineBlend.ICineCamera.Priority
+  href: Gasimo.CineBlend.ICineCamera.html#Gasimo_CineBlend_ICineCamera_Priority
+  name: Priority
+  nameWithType: ICineCamera.Priority
+  fullName: Gasimo.CineBlend.ICineCamera.Priority
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Gasimo.CineBlend.ICineCamera.Name*
+  commentId: Overload:Gasimo.CineBlend.ICineCamera.Name
+  href: Gasimo.CineBlend.ICineCamera.html#Gasimo_CineBlend_ICineCamera_Name
+  name: Name
+  nameWithType: ICineCamera.Name
+  fullName: Gasimo.CineBlend.ICineCamera.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

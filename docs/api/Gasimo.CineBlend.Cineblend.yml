@@ -1,0 +1,239 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.Cineblend
+  commentId: T:Gasimo.CineBlend.Cineblend
+  id: Cineblend
+  parent: Gasimo.CineBlend
+  children:
+  - Gasimo.CineBlend.Cineblend.#ctor
+  - Gasimo.CineBlend.Cineblend.Deinitialize
+  - Gasimo.CineBlend.Cineblend.Initialize
+  langs:
+  - csharp
+  - vb
+  name: Cineblend
+  nameWithType: Cineblend
+  fullName: Gasimo.CineBlend.Cineblend
+  type: Class
+  source:
+    id: Cineblend
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\CineblendPlugin.cs
+    startLine: 9
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: CineFlax Plugin
+  example: []
+  syntax:
+    content: 'public class Cineblend : GamePlugin'
+    content.vb: Public Class Cineblend Inherits GamePlugin
+  seealso:
+  - linkId: FlaxEngine.GamePlugin
+    commentId: T:FlaxEngine.GamePlugin
+  inheritance:
+  - System.Object
+  - FlaxEngine.Object
+  - FlaxEngine.Plugin
+  - FlaxEngine.GamePlugin
+- uid: Gasimo.CineBlend.Cineblend.#ctor
+  commentId: M:Gasimo.CineBlend.Cineblend.#ctor
+  id: '#ctor'
+  parent: Gasimo.CineBlend.Cineblend
+  langs:
+  - csharp
+  - vb
+  name: Cineblend()
+  nameWithType: Cineblend.Cineblend()
+  fullName: Gasimo.CineBlend.Cineblend.Cineblend()
+  type: Constructor
+  source:
+    id: .ctor
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\CineblendPlugin.cs
+    startLine: 12
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Initializes a new instance of the <xref href="FlaxEngine.GamePlugin" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Cineblend()
+    content.vb: Public Sub New()
+  overload: Gasimo.CineBlend.Cineblend.#ctor*
+  nameWithType.vb: Cineblend.New()
+  fullName.vb: Gasimo.CineBlend.Cineblend.New()
+  name.vb: New()
+- uid: Gasimo.CineBlend.Cineblend.Initialize
+  commentId: M:Gasimo.CineBlend.Cineblend.Initialize
+  id: Initialize
+  parent: Gasimo.CineBlend.Cineblend
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: Cineblend.Initialize()
+  fullName: Gasimo.CineBlend.Cineblend.Initialize()
+  type: Method
+  source:
+    id: Initialize
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\CineblendPlugin.cs
+    startLine: 30
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Initialization method called when this plugin is loaded to the memory and can be used.
+  example: []
+  syntax:
+    content: public override void Initialize()
+    content.vb: Public Overrides Sub Initialize()
+  overridden: FlaxEngine.Plugin.Initialize
+  overload: Gasimo.CineBlend.Cineblend.Initialize*
+- uid: Gasimo.CineBlend.Cineblend.Deinitialize
+  commentId: M:Gasimo.CineBlend.Cineblend.Deinitialize
+  id: Deinitialize
+  parent: Gasimo.CineBlend.Cineblend
+  langs:
+  - csharp
+  - vb
+  name: Deinitialize()
+  nameWithType: Cineblend.Deinitialize()
+  fullName: Gasimo.CineBlend.Cineblend.Deinitialize()
+  type: Method
+  source:
+    id: Deinitialize
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\CineblendPlugin.cs
+    startLine: 36
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Cleanup method called when this plugin is being unloaded or reloaded or engine is closing.
+  example: []
+  syntax:
+    content: public override void Deinitialize()
+    content.vb: Public Overrides Sub Deinitialize()
+  overridden: FlaxEngine.Plugin.Deinitialize
+  overload: Gasimo.CineBlend.Cineblend.Deinitialize*
+references:
+- uid: FlaxEngine.GamePlugin
+  commentId: T:FlaxEngine.GamePlugin
+  parent: FlaxEngine
+  isExternal: true
+  name: GamePlugin
+  nameWithType: GamePlugin
+  fullName: FlaxEngine.GamePlugin
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: FlaxEngine.Object
+  commentId: T:FlaxEngine.Object
+  parent: FlaxEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: FlaxEngine.Object
+- uid: FlaxEngine.Plugin
+  commentId: T:FlaxEngine.Plugin
+  parent: FlaxEngine
+  isExternal: true
+  name: Plugin
+  nameWithType: Plugin
+  fullName: FlaxEngine.Plugin
+- uid: FlaxEngine
+  commentId: N:FlaxEngine
+  isExternal: true
+  name: FlaxEngine
+  nameWithType: FlaxEngine
+  fullName: FlaxEngine
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Gasimo.CineBlend.Cineblend.#ctor*
+  commentId: Overload:Gasimo.CineBlend.Cineblend.#ctor
+  href: Gasimo.CineBlend.Cineblend.html#Gasimo_CineBlend_Cineblend__ctor
+  name: Cineblend
+  nameWithType: Cineblend.Cineblend
+  fullName: Gasimo.CineBlend.Cineblend.Cineblend
+  nameWithType.vb: Cineblend.New
+  fullName.vb: Gasimo.CineBlend.Cineblend.New
+  name.vb: New
+- uid: FlaxEngine.Plugin.Initialize
+  commentId: M:FlaxEngine.Plugin.Initialize
+  parent: FlaxEngine.Plugin
+  isExternal: true
+  name: Initialize()
+  nameWithType: Plugin.Initialize()
+  fullName: FlaxEngine.Plugin.Initialize()
+  spec.csharp:
+  - uid: FlaxEngine.Plugin.Initialize
+    name: Initialize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FlaxEngine.Plugin.Initialize
+    name: Initialize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Gasimo.CineBlend.Cineblend.Initialize*
+  commentId: Overload:Gasimo.CineBlend.Cineblend.Initialize
+  href: Gasimo.CineBlend.Cineblend.html#Gasimo_CineBlend_Cineblend_Initialize
+  name: Initialize
+  nameWithType: Cineblend.Initialize
+  fullName: Gasimo.CineBlend.Cineblend.Initialize
+- uid: FlaxEngine.Plugin.Deinitialize
+  commentId: M:FlaxEngine.Plugin.Deinitialize
+  parent: FlaxEngine.Plugin
+  isExternal: true
+  name: Deinitialize()
+  nameWithType: Plugin.Deinitialize()
+  fullName: FlaxEngine.Plugin.Deinitialize()
+  spec.csharp:
+  - uid: FlaxEngine.Plugin.Deinitialize
+    name: Deinitialize
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FlaxEngine.Plugin.Deinitialize
+    name: Deinitialize
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Gasimo.CineBlend.Cineblend.Deinitialize*
+  commentId: Overload:Gasimo.CineBlend.Cineblend.Deinitialize
+  href: Gasimo.CineBlend.Cineblend.html#Gasimo_CineBlend_Cineblend_Deinitialize
+  name: Deinitialize
+  nameWithType: Cineblend.Deinitialize
+  fullName: Gasimo.CineBlend.Cineblend.Deinitialize

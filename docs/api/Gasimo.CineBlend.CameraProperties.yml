@@ -1,0 +1,469 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.CameraProperties
+  commentId: T:Gasimo.CineBlend.CameraProperties
+  id: CameraProperties
+  parent: Gasimo.CineBlend
+  children:
+  - Gasimo.CineBlend.CameraProperties.#ctor
+  - Gasimo.CineBlend.CameraProperties.ApplyToCamera(FlaxEngine.Camera)
+  - Gasimo.CineBlend.CameraProperties.Clone
+  - Gasimo.CineBlend.CameraProperties.FarPlane
+  - Gasimo.CineBlend.CameraProperties.FieldOfView
+  - Gasimo.CineBlend.CameraProperties.GetProjectionMatrix
+  - Gasimo.CineBlend.CameraProperties.GetViewMatrix
+  - Gasimo.CineBlend.CameraProperties.LerpAndSet(Gasimo.CineBlend.CameraProperties,Gasimo.CineBlend.CameraProperties,System.Single)
+  - Gasimo.CineBlend.CameraProperties.NearPlane
+  - Gasimo.CineBlend.CameraProperties.Position
+  - Gasimo.CineBlend.CameraProperties.Rotation
+  langs:
+  - csharp
+  - vb
+  name: CameraProperties
+  nameWithType: CameraProperties
+  fullName: Gasimo.CineBlend.CameraProperties
+  type: Struct
+  source:
+    id: CameraProperties
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 8
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Collection of camera properties that can be blended
+  example: []
+  syntax:
+    content: public struct CameraProperties
+    content.vb: Public Structure CameraProperties
+- uid: Gasimo.CineBlend.CameraProperties.Position
+  commentId: F:Gasimo.CineBlend.CameraProperties.Position
+  id: Position
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: CameraProperties.Position
+  fullName: Gasimo.CineBlend.CameraProperties.Position
+  type: Field
+  source:
+    id: Position
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 13
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Position of the camera
+  example: []
+  syntax:
+    content: public BlendableVector3 Position
+    return:
+      type: Gasimo.CineBlend.BlendableVector3
+    content.vb: Public Position As BlendableVector3
+- uid: Gasimo.CineBlend.CameraProperties.Rotation
+  commentId: F:Gasimo.CineBlend.CameraProperties.Rotation
+  id: Rotation
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: Rotation
+  nameWithType: CameraProperties.Rotation
+  fullName: Gasimo.CineBlend.CameraProperties.Rotation
+  type: Field
+  source:
+    id: Rotation
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 18
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Orientation of the Camera
+  example: []
+  syntax:
+    content: public BlendableQuaternion Rotation
+    return:
+      type: Gasimo.CineBlend.BlendableQuaternion
+    content.vb: Public Rotation As BlendableQuaternion
+- uid: Gasimo.CineBlend.CameraProperties.FieldOfView
+  commentId: F:Gasimo.CineBlend.CameraProperties.FieldOfView
+  id: FieldOfView
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: FieldOfView
+  nameWithType: CameraProperties.FieldOfView
+  fullName: Gasimo.CineBlend.CameraProperties.FieldOfView
+  type: Field
+  source:
+    id: FieldOfView
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 23
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: FOV Of the Camera
+  example: []
+  syntax:
+    content: public BlendableFloat FieldOfView
+    return:
+      type: Gasimo.CineBlend.BlendableFloat
+    content.vb: Public FieldOfView As BlendableFloat
+- uid: Gasimo.CineBlend.CameraProperties.NearPlane
+  commentId: F:Gasimo.CineBlend.CameraProperties.NearPlane
+  id: NearPlane
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: NearPlane
+  nameWithType: CameraProperties.NearPlane
+  fullName: Gasimo.CineBlend.CameraProperties.NearPlane
+  type: Field
+  source:
+    id: NearPlane
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 28
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Near Plane of the Camera
+  example: []
+  syntax:
+    content: public BlendableFloat NearPlane
+    return:
+      type: Gasimo.CineBlend.BlendableFloat
+    content.vb: Public NearPlane As BlendableFloat
+- uid: Gasimo.CineBlend.CameraProperties.FarPlane
+  commentId: F:Gasimo.CineBlend.CameraProperties.FarPlane
+  id: FarPlane
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: FarPlane
+  nameWithType: CameraProperties.FarPlane
+  fullName: Gasimo.CineBlend.CameraProperties.FarPlane
+  type: Field
+  source:
+    id: FarPlane
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 33
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Far Plane of the Camera
+  example: []
+  syntax:
+    content: public BlendableFloat FarPlane
+    return:
+      type: Gasimo.CineBlend.BlendableFloat
+    content.vb: Public FarPlane As BlendableFloat
+- uid: Gasimo.CineBlend.CameraProperties.#ctor
+  commentId: M:Gasimo.CineBlend.CameraProperties.#ctor
+  id: '#ctor'
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: CameraProperties()
+  nameWithType: CameraProperties.CameraProperties()
+  fullName: Gasimo.CineBlend.CameraProperties.CameraProperties()
+  type: Constructor
+  source:
+    id: .ctor
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 35
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: public CameraProperties()
+    content.vb: Public Sub New()
+  overload: Gasimo.CineBlend.CameraProperties.#ctor*
+  nameWithType.vb: CameraProperties.New()
+  fullName.vb: Gasimo.CineBlend.CameraProperties.New()
+  name.vb: New()
+- uid: Gasimo.CineBlend.CameraProperties.LerpAndSet(Gasimo.CineBlend.CameraProperties,Gasimo.CineBlend.CameraProperties,System.Single)
+  commentId: M:Gasimo.CineBlend.CameraProperties.LerpAndSet(Gasimo.CineBlend.CameraProperties,Gasimo.CineBlend.CameraProperties,System.Single)
+  id: LerpAndSet(Gasimo.CineBlend.CameraProperties,Gasimo.CineBlend.CameraProperties,System.Single)
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: LerpAndSet(CameraProperties, CameraProperties, float)
+  nameWithType: CameraProperties.LerpAndSet(CameraProperties, CameraProperties, float)
+  fullName: Gasimo.CineBlend.CameraProperties.LerpAndSet(Gasimo.CineBlend.CameraProperties, Gasimo.CineBlend.CameraProperties, float)
+  type: Method
+  source:
+    id: LerpAndSet
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 45
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Utility class to blend between 2 camera properties and apply them to this property.
+  example: []
+  syntax:
+    content: public void LerpAndSet(CameraProperties start, CameraProperties end, float t)
+    parameters:
+    - id: start
+      type: Gasimo.CineBlend.CameraProperties
+      description: Starting properties
+    - id: end
+      type: Gasimo.CineBlend.CameraProperties
+      description: Ending Properties
+    - id: t
+      type: System.Single
+      description: Lerp value
+    content.vb: Public Sub LerpAndSet(start As CameraProperties, [end] As CameraProperties, t As Single)
+  overload: Gasimo.CineBlend.CameraProperties.LerpAndSet*
+  nameWithType.vb: CameraProperties.LerpAndSet(CameraProperties, CameraProperties, Single)
+  fullName.vb: Gasimo.CineBlend.CameraProperties.LerpAndSet(Gasimo.CineBlend.CameraProperties, Gasimo.CineBlend.CameraProperties, Single)
+  name.vb: LerpAndSet(CameraProperties, CameraProperties, Single)
+- uid: Gasimo.CineBlend.CameraProperties.ApplyToCamera(FlaxEngine.Camera)
+  commentId: M:Gasimo.CineBlend.CameraProperties.ApplyToCamera(FlaxEngine.Camera)
+  id: ApplyToCamera(FlaxEngine.Camera)
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: ApplyToCamera(Camera)
+  nameWithType: CameraProperties.ApplyToCamera(Camera)
+  fullName: Gasimo.CineBlend.CameraProperties.ApplyToCamera(FlaxEngine.Camera)
+  type: Method
+  source:
+    id: ApplyToCamera
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 59
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Applies the camera properties to a real camera
+  example: []
+  syntax:
+    content: public void ApplyToCamera(Camera camera)
+    parameters:
+    - id: camera
+      type: FlaxEngine.Camera
+      description: ''
+    content.vb: Public Sub ApplyToCamera(camera As Camera)
+  overload: Gasimo.CineBlend.CameraProperties.ApplyToCamera*
+- uid: Gasimo.CineBlend.CameraProperties.GetViewMatrix
+  commentId: M:Gasimo.CineBlend.CameraProperties.GetViewMatrix
+  id: GetViewMatrix
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: GetViewMatrix()
+  nameWithType: CameraProperties.GetViewMatrix()
+  fullName: Gasimo.CineBlend.CameraProperties.GetViewMatrix()
+  type: Method
+  source:
+    id: GetViewMatrix
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 73
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Returns the ViewMatrix constructed from the camera properties
+  example: []
+  syntax:
+    content: public Matrix GetViewMatrix()
+    return:
+      type: FlaxEngine.Matrix
+      description: ''
+    content.vb: Public Function GetViewMatrix() As Matrix
+  overload: Gasimo.CineBlend.CameraProperties.GetViewMatrix*
+- uid: Gasimo.CineBlend.CameraProperties.GetProjectionMatrix
+  commentId: M:Gasimo.CineBlend.CameraProperties.GetProjectionMatrix
+  id: GetProjectionMatrix
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: GetProjectionMatrix()
+  nameWithType: CameraProperties.GetProjectionMatrix()
+  fullName: Gasimo.CineBlend.CameraProperties.GetProjectionMatrix()
+  type: Method
+  source:
+    id: GetProjectionMatrix
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 82
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Returns the ProjectionMatrix constructed from the camera properties
+  example: []
+  syntax:
+    content: public Matrix GetProjectionMatrix()
+    return:
+      type: FlaxEngine.Matrix
+      description: ''
+    content.vb: Public Function GetProjectionMatrix() As Matrix
+  overload: Gasimo.CineBlend.CameraProperties.GetProjectionMatrix*
+- uid: Gasimo.CineBlend.CameraProperties.Clone
+  commentId: M:Gasimo.CineBlend.CameraProperties.Clone
+  id: Clone
+  parent: Gasimo.CineBlend.CameraProperties
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: CameraProperties.Clone()
+  fullName: Gasimo.CineBlend.CameraProperties.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 88
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Creates a new object that is a copy of the current instance.
+  example: []
+  syntax:
+    content: public object Clone()
+    return:
+      type: System.Object
+      description: A new object that is a copy of this instance.
+    content.vb: Public Function Clone() As Object
+  overload: Gasimo.CineBlend.CameraProperties.Clone*
+references:
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: Gasimo.CineBlend.BlendableVector3
+  commentId: T:Gasimo.CineBlend.BlendableVector3
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.BlendableVector3.html
+  name: BlendableVector3
+  nameWithType: BlendableVector3
+  fullName: Gasimo.CineBlend.BlendableVector3
+- uid: Gasimo.CineBlend.BlendableQuaternion
+  commentId: T:Gasimo.CineBlend.BlendableQuaternion
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.BlendableQuaternion.html
+  name: BlendableQuaternion
+  nameWithType: BlendableQuaternion
+  fullName: Gasimo.CineBlend.BlendableQuaternion
+- uid: Gasimo.CineBlend.BlendableFloat
+  commentId: T:Gasimo.CineBlend.BlendableFloat
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.BlendableFloat.html
+  name: BlendableFloat
+  nameWithType: BlendableFloat
+  fullName: Gasimo.CineBlend.BlendableFloat
+- uid: Gasimo.CineBlend.CameraProperties.#ctor*
+  commentId: Overload:Gasimo.CineBlend.CameraProperties.#ctor
+  href: Gasimo.CineBlend.CameraProperties.html#Gasimo_CineBlend_CameraProperties__ctor
+  name: CameraProperties
+  nameWithType: CameraProperties.CameraProperties
+  fullName: Gasimo.CineBlend.CameraProperties.CameraProperties
+  nameWithType.vb: CameraProperties.New
+  fullName.vb: Gasimo.CineBlend.CameraProperties.New
+  name.vb: New
+- uid: Gasimo.CineBlend.CameraProperties.LerpAndSet*
+  commentId: Overload:Gasimo.CineBlend.CameraProperties.LerpAndSet
+  href: Gasimo.CineBlend.CameraProperties.html#Gasimo_CineBlend_CameraProperties_LerpAndSet_Gasimo_CineBlend_CameraProperties_Gasimo_CineBlend_CameraProperties_System_Single_
+  name: LerpAndSet
+  nameWithType: CameraProperties.LerpAndSet
+  fullName: Gasimo.CineBlend.CameraProperties.LerpAndSet
+- uid: Gasimo.CineBlend.CameraProperties
+  commentId: T:Gasimo.CineBlend.CameraProperties
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.CameraProperties.html
+  name: CameraProperties
+  nameWithType: CameraProperties
+  fullName: Gasimo.CineBlend.CameraProperties
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Gasimo.CineBlend.CameraProperties.ApplyToCamera*
+  commentId: Overload:Gasimo.CineBlend.CameraProperties.ApplyToCamera
+  href: Gasimo.CineBlend.CameraProperties.html#Gasimo_CineBlend_CameraProperties_ApplyToCamera_FlaxEngine_Camera_
+  name: ApplyToCamera
+  nameWithType: CameraProperties.ApplyToCamera
+  fullName: Gasimo.CineBlend.CameraProperties.ApplyToCamera
+- uid: FlaxEngine.Camera
+  commentId: T:FlaxEngine.Camera
+  parent: FlaxEngine
+  isExternal: true
+  name: Camera
+  nameWithType: Camera
+  fullName: FlaxEngine.Camera
+- uid: FlaxEngine
+  commentId: N:FlaxEngine
+  isExternal: true
+  name: FlaxEngine
+  nameWithType: FlaxEngine
+  fullName: FlaxEngine
+- uid: Gasimo.CineBlend.CameraProperties.GetViewMatrix*
+  commentId: Overload:Gasimo.CineBlend.CameraProperties.GetViewMatrix
+  href: Gasimo.CineBlend.CameraProperties.html#Gasimo_CineBlend_CameraProperties_GetViewMatrix
+  name: GetViewMatrix
+  nameWithType: CameraProperties.GetViewMatrix
+  fullName: Gasimo.CineBlend.CameraProperties.GetViewMatrix
+- uid: FlaxEngine.Matrix
+  commentId: T:FlaxEngine.Matrix
+  parent: FlaxEngine
+  isExternal: true
+  name: Matrix
+  nameWithType: Matrix
+  fullName: FlaxEngine.Matrix
+- uid: Gasimo.CineBlend.CameraProperties.GetProjectionMatrix*
+  commentId: Overload:Gasimo.CineBlend.CameraProperties.GetProjectionMatrix
+  href: Gasimo.CineBlend.CameraProperties.html#Gasimo_CineBlend_CameraProperties_GetProjectionMatrix
+  name: GetProjectionMatrix
+  nameWithType: CameraProperties.GetProjectionMatrix
+  fullName: Gasimo.CineBlend.CameraProperties.GetProjectionMatrix
+- uid: Gasimo.CineBlend.CameraProperties.Clone*
+  commentId: Overload:Gasimo.CineBlend.CameraProperties.Clone
+  href: Gasimo.CineBlend.CameraProperties.html#Gasimo_CineBlend_CameraProperties_Clone
+  name: Clone
+  nameWithType: CameraProperties.Clone
+  fullName: Gasimo.CineBlend.CameraProperties.Clone
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object

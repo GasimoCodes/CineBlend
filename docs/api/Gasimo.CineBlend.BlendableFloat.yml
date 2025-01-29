@@ -1,0 +1,391 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.BlendableFloat
+  commentId: T:Gasimo.CineBlend.BlendableFloat
+  id: BlendableFloat
+  parent: Gasimo.CineBlend
+  children:
+  - Gasimo.CineBlend.BlendableFloat.#ctor
+  - Gasimo.CineBlend.BlendableFloat.#ctor(System.Single)
+  - Gasimo.CineBlend.BlendableFloat.CurrentValue
+  - Gasimo.CineBlend.BlendableFloat.Lerp(System.Single,System.Single,System.Single)
+  langs:
+  - csharp
+  - vb
+  name: BlendableFloat
+  nameWithType: BlendableFloat
+  fullName: Gasimo.CineBlend.BlendableFloat
+  type: Class
+  source:
+    id: BlendableFloat
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 104
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Float Lerp utility class
+  example: []
+  syntax:
+    content: 'public class BlendableFloat : IBlendableProperty<float>'
+    content.vb: Public Class BlendableFloat Implements IBlendableProperty(Of Single)
+  inheritance:
+  - System.Object
+  implements:
+  - Gasimo.CineBlend.IBlendableProperty{System.Single}
+- uid: Gasimo.CineBlend.BlendableFloat.CurrentValue
+  commentId: P:Gasimo.CineBlend.BlendableFloat.CurrentValue
+  id: CurrentValue
+  parent: Gasimo.CineBlend.BlendableFloat
+  langs:
+  - csharp
+  - vb
+  name: CurrentValue
+  nameWithType: BlendableFloat.CurrentValue
+  fullName: Gasimo.CineBlend.BlendableFloat.CurrentValue
+  type: Property
+  source:
+    id: CurrentValue
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 106
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Current value of the property
+  example: []
+  syntax:
+    content: public float CurrentValue { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property CurrentValue As Single
+  overload: Gasimo.CineBlend.BlendableFloat.CurrentValue*
+  implements:
+  - Gasimo.CineBlend.IBlendableProperty{System.Single}.CurrentValue
+- uid: Gasimo.CineBlend.BlendableFloat.Lerp(System.Single,System.Single,System.Single)
+  commentId: M:Gasimo.CineBlend.BlendableFloat.Lerp(System.Single,System.Single,System.Single)
+  id: Lerp(System.Single,System.Single,System.Single)
+  parent: Gasimo.CineBlend.BlendableFloat
+  langs:
+  - csharp
+  - vb
+  name: Lerp(float, float, float)
+  nameWithType: BlendableFloat.Lerp(float, float, float)
+  fullName: Gasimo.CineBlend.BlendableFloat.Lerp(float, float, float)
+  type: Method
+  source:
+    id: Lerp
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 107
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Linearly interpolates between two values
+  example: []
+  syntax:
+    content: public static float Lerp(float start, float end, float t)
+    parameters:
+    - id: start
+      type: System.Single
+      description: ''
+    - id: end
+      type: System.Single
+      description: ''
+    - id: t
+      type: System.Single
+      description: ''
+    return:
+      type: System.Single
+      description: Interpolated value
+    content.vb: Public Shared Function Lerp(start As Single, [end] As Single, t As Single) As Single
+  overload: Gasimo.CineBlend.BlendableFloat.Lerp*
+  implements:
+  - Gasimo.CineBlend.IBlendableProperty{System.Single}.Lerp(System.Single,System.Single,System.Single)
+  nameWithType.vb: BlendableFloat.Lerp(Single, Single, Single)
+  fullName.vb: Gasimo.CineBlend.BlendableFloat.Lerp(Single, Single, Single)
+  name.vb: Lerp(Single, Single, Single)
+- uid: Gasimo.CineBlend.BlendableFloat.#ctor
+  commentId: M:Gasimo.CineBlend.BlendableFloat.#ctor
+  id: '#ctor'
+  parent: Gasimo.CineBlend.BlendableFloat
+  langs:
+  - csharp
+  - vb
+  name: BlendableFloat()
+  nameWithType: BlendableFloat.BlendableFloat()
+  fullName: Gasimo.CineBlend.BlendableFloat.BlendableFloat()
+  type: Constructor
+  source:
+    id: .ctor
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 110
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: public BlendableFloat()
+    content.vb: Public Sub New()
+  overload: Gasimo.CineBlend.BlendableFloat.#ctor*
+  nameWithType.vb: BlendableFloat.New()
+  fullName.vb: Gasimo.CineBlend.BlendableFloat.New()
+  name.vb: New()
+- uid: Gasimo.CineBlend.BlendableFloat.#ctor(System.Single)
+  commentId: M:Gasimo.CineBlend.BlendableFloat.#ctor(System.Single)
+  id: '#ctor(System.Single)'
+  parent: Gasimo.CineBlend.BlendableFloat
+  langs:
+  - csharp
+  - vb
+  name: BlendableFloat(float)
+  nameWithType: BlendableFloat.BlendableFloat(float)
+  fullName: Gasimo.CineBlend.BlendableFloat.BlendableFloat(float)
+  type: Constructor
+  source:
+    id: .ctor
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 114
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: public BlendableFloat(float value)
+    parameters:
+    - id: value
+      type: System.Single
+    content.vb: Public Sub New(value As Single)
+  overload: Gasimo.CineBlend.BlendableFloat.#ctor*
+  nameWithType.vb: BlendableFloat.New(Single)
+  fullName.vb: Gasimo.CineBlend.BlendableFloat.New(Single)
+  name.vb: New(Single)
+references:
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Gasimo.CineBlend.IBlendableProperty{System.Single}
+  commentId: T:Gasimo.CineBlend.IBlendableProperty{System.Single}
+  parent: Gasimo.CineBlend
+  definition: Gasimo.CineBlend.IBlendableProperty`1
+  href: Gasimo.CineBlend.IBlendableProperty-1.html
+  name: IBlendableProperty<float>
+  nameWithType: IBlendableProperty<float>
+  fullName: Gasimo.CineBlend.IBlendableProperty<float>
+  nameWithType.vb: IBlendableProperty(Of Single)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of Single)
+  name.vb: IBlendableProperty(Of Single)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Gasimo.CineBlend.IBlendableProperty`1
+  commentId: T:Gasimo.CineBlend.IBlendableProperty`1
+  href: Gasimo.CineBlend.IBlendableProperty-1.html
+  name: IBlendableProperty<T>
+  nameWithType: IBlendableProperty<T>
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>
+  nameWithType.vb: IBlendableProperty(Of T)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T)
+  name.vb: IBlendableProperty(Of T)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Gasimo.CineBlend.BlendableFloat.CurrentValue*
+  commentId: Overload:Gasimo.CineBlend.BlendableFloat.CurrentValue
+  href: Gasimo.CineBlend.BlendableFloat.html#Gasimo_CineBlend_BlendableFloat_CurrentValue
+  name: CurrentValue
+  nameWithType: BlendableFloat.CurrentValue
+  fullName: Gasimo.CineBlend.BlendableFloat.CurrentValue
+- uid: Gasimo.CineBlend.IBlendableProperty{System.Single}.CurrentValue
+  commentId: P:Gasimo.CineBlend.IBlendableProperty{System.Single}.CurrentValue
+  parent: Gasimo.CineBlend.IBlendableProperty{System.Single}
+  definition: Gasimo.CineBlend.IBlendableProperty`1.CurrentValue
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_CurrentValue
+  name: CurrentValue
+  nameWithType: IBlendableProperty<float>.CurrentValue
+  fullName: Gasimo.CineBlend.IBlendableProperty<float>.CurrentValue
+  nameWithType.vb: IBlendableProperty(Of Single).CurrentValue
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of Single).CurrentValue
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Gasimo.CineBlend.IBlendableProperty`1.CurrentValue
+  commentId: P:Gasimo.CineBlend.IBlendableProperty`1.CurrentValue
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_CurrentValue
+  name: CurrentValue
+  nameWithType: IBlendableProperty<T>.CurrentValue
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>.CurrentValue
+  nameWithType.vb: IBlendableProperty(Of T).CurrentValue
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T).CurrentValue
+- uid: Gasimo.CineBlend.BlendableFloat.Lerp*
+  commentId: Overload:Gasimo.CineBlend.BlendableFloat.Lerp
+  href: Gasimo.CineBlend.BlendableFloat.html#Gasimo_CineBlend_BlendableFloat_Lerp_System_Single_System_Single_System_Single_
+  name: Lerp
+  nameWithType: BlendableFloat.Lerp
+  fullName: Gasimo.CineBlend.BlendableFloat.Lerp
+- uid: Gasimo.CineBlend.IBlendableProperty{System.Single}.Lerp(System.Single,System.Single,System.Single)
+  commentId: M:Gasimo.CineBlend.IBlendableProperty{System.Single}.Lerp(System.Single,System.Single,System.Single)
+  parent: Gasimo.CineBlend.IBlendableProperty{System.Single}
+  definition: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  name: Lerp(float, float, float)
+  nameWithType: IBlendableProperty<float>.Lerp(float, float, float)
+  fullName: Gasimo.CineBlend.IBlendableProperty<float>.Lerp(float, float, float)
+  nameWithType.vb: IBlendableProperty(Of Single).Lerp(Single, Single, Single)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of Single).Lerp(Single, Single, Single)
+  name.vb: Lerp(Single, Single, Single)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty{System.Single}.Lerp(System.Single,System.Single,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty{System.Single}.Lerp(System.Single,System.Single,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: )
+- uid: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+  commentId: M:Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+  isExternal: true
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  name: Lerp(T, T, float)
+  nameWithType: IBlendableProperty<T>.Lerp(T, T, float)
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>.Lerp(T, T, float)
+  nameWithType.vb: IBlendableProperty(Of T).Lerp(T, T, Single)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T).Lerp(T, T, Single)
+  name.vb: Lerp(T, T, Single)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: )
+- uid: Gasimo.CineBlend.BlendableFloat.#ctor*
+  commentId: Overload:Gasimo.CineBlend.BlendableFloat.#ctor
+  href: Gasimo.CineBlend.BlendableFloat.html#Gasimo_CineBlend_BlendableFloat__ctor
+  name: BlendableFloat
+  nameWithType: BlendableFloat.BlendableFloat
+  fullName: Gasimo.CineBlend.BlendableFloat.BlendableFloat
+  nameWithType.vb: BlendableFloat.New
+  fullName.vb: Gasimo.CineBlend.BlendableFloat.New
+  name.vb: New

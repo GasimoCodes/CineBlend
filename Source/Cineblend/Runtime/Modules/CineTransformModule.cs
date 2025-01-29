@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using FlaxEngine;
+﻿using FlaxEngine;
 
-namespace Game;
+namespace Gasimo.CineBlend.Modules;
 
 /// <summary>
-/// CineTransformModule class holds camera transforms and can apply them
+/// CineTransformModule class holds camera transforms and can apply them.
+/// This is a default module which is auto-included on built-in VirtualCameras.
 /// </summary>
 public class CineTransformModule : ICameraModule
 {

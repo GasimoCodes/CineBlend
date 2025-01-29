@@ -1,0 +1,404 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.BlendableQuaternion
+  commentId: T:Gasimo.CineBlend.BlendableQuaternion
+  id: BlendableQuaternion
+  parent: Gasimo.CineBlend
+  children:
+  - Gasimo.CineBlend.BlendableQuaternion.#ctor
+  - Gasimo.CineBlend.BlendableQuaternion.#ctor(FlaxEngine.Quaternion)
+  - Gasimo.CineBlend.BlendableQuaternion.CurrentValue
+  - Gasimo.CineBlend.BlendableQuaternion.Lerp(FlaxEngine.Quaternion,FlaxEngine.Quaternion,System.Single)
+  langs:
+  - csharp
+  - vb
+  name: BlendableQuaternion
+  nameWithType: BlendableQuaternion
+  fullName: Gasimo.CineBlend.BlendableQuaternion
+  type: Class
+  source:
+    id: BlendableQuaternion
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 145
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Quaternion Lerp utility class
+  example: []
+  syntax:
+    content: 'public class BlendableQuaternion : IBlendableProperty<Quaternion>'
+    content.vb: Public Class BlendableQuaternion Implements IBlendableProperty(Of Quaternion)
+  inheritance:
+  - System.Object
+  implements:
+  - Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}
+- uid: Gasimo.CineBlend.BlendableQuaternion.CurrentValue
+  commentId: P:Gasimo.CineBlend.BlendableQuaternion.CurrentValue
+  id: CurrentValue
+  parent: Gasimo.CineBlend.BlendableQuaternion
+  langs:
+  - csharp
+  - vb
+  name: CurrentValue
+  nameWithType: BlendableQuaternion.CurrentValue
+  fullName: Gasimo.CineBlend.BlendableQuaternion.CurrentValue
+  type: Property
+  source:
+    id: CurrentValue
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 147
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Current value of the property
+  example: []
+  syntax:
+    content: public Quaternion CurrentValue { get; set; }
+    parameters: []
+    return:
+      type: FlaxEngine.Quaternion
+    content.vb: Public Property CurrentValue As Quaternion
+  overload: Gasimo.CineBlend.BlendableQuaternion.CurrentValue*
+  implements:
+  - Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}.CurrentValue
+- uid: Gasimo.CineBlend.BlendableQuaternion.Lerp(FlaxEngine.Quaternion,FlaxEngine.Quaternion,System.Single)
+  commentId: M:Gasimo.CineBlend.BlendableQuaternion.Lerp(FlaxEngine.Quaternion,FlaxEngine.Quaternion,System.Single)
+  id: Lerp(FlaxEngine.Quaternion,FlaxEngine.Quaternion,System.Single)
+  parent: Gasimo.CineBlend.BlendableQuaternion
+  langs:
+  - csharp
+  - vb
+  name: Lerp(Quaternion, Quaternion, float)
+  nameWithType: BlendableQuaternion.Lerp(Quaternion, Quaternion, float)
+  fullName: Gasimo.CineBlend.BlendableQuaternion.Lerp(FlaxEngine.Quaternion, FlaxEngine.Quaternion, float)
+  type: Method
+  source:
+    id: Lerp
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 148
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Linearly interpolates between two values
+  example: []
+  syntax:
+    content: public static Quaternion Lerp(Quaternion start, Quaternion end, float t)
+    parameters:
+    - id: start
+      type: FlaxEngine.Quaternion
+      description: ''
+    - id: end
+      type: FlaxEngine.Quaternion
+      description: ''
+    - id: t
+      type: System.Single
+      description: ''
+    return:
+      type: FlaxEngine.Quaternion
+      description: Interpolated value
+    content.vb: Public Shared Function Lerp(start As Quaternion, [end] As Quaternion, t As Single) As Quaternion
+  overload: Gasimo.CineBlend.BlendableQuaternion.Lerp*
+  implements:
+  - Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}.Lerp(FlaxEngine.Quaternion,FlaxEngine.Quaternion,System.Single)
+  nameWithType.vb: BlendableQuaternion.Lerp(Quaternion, Quaternion, Single)
+  fullName.vb: Gasimo.CineBlend.BlendableQuaternion.Lerp(FlaxEngine.Quaternion, FlaxEngine.Quaternion, Single)
+  name.vb: Lerp(Quaternion, Quaternion, Single)
+- uid: Gasimo.CineBlend.BlendableQuaternion.#ctor
+  commentId: M:Gasimo.CineBlend.BlendableQuaternion.#ctor
+  id: '#ctor'
+  parent: Gasimo.CineBlend.BlendableQuaternion
+  langs:
+  - csharp
+  - vb
+  name: BlendableQuaternion()
+  nameWithType: BlendableQuaternion.BlendableQuaternion()
+  fullName: Gasimo.CineBlend.BlendableQuaternion.BlendableQuaternion()
+  type: Constructor
+  source:
+    id: .ctor
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 150
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: public BlendableQuaternion()
+    content.vb: Public Sub New()
+  overload: Gasimo.CineBlend.BlendableQuaternion.#ctor*
+  nameWithType.vb: BlendableQuaternion.New()
+  fullName.vb: Gasimo.CineBlend.BlendableQuaternion.New()
+  name.vb: New()
+- uid: Gasimo.CineBlend.BlendableQuaternion.#ctor(FlaxEngine.Quaternion)
+  commentId: M:Gasimo.CineBlend.BlendableQuaternion.#ctor(FlaxEngine.Quaternion)
+  id: '#ctor(FlaxEngine.Quaternion)'
+  parent: Gasimo.CineBlend.BlendableQuaternion
+  langs:
+  - csharp
+  - vb
+  name: BlendableQuaternion(Quaternion)
+  nameWithType: BlendableQuaternion.BlendableQuaternion(Quaternion)
+  fullName: Gasimo.CineBlend.BlendableQuaternion.BlendableQuaternion(FlaxEngine.Quaternion)
+  type: Constructor
+  source:
+    id: .ctor
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 154
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: public BlendableQuaternion(Quaternion value)
+    parameters:
+    - id: value
+      type: FlaxEngine.Quaternion
+    content.vb: Public Sub New(value As Quaternion)
+  overload: Gasimo.CineBlend.BlendableQuaternion.#ctor*
+  nameWithType.vb: BlendableQuaternion.New(Quaternion)
+  fullName.vb: Gasimo.CineBlend.BlendableQuaternion.New(FlaxEngine.Quaternion)
+  name.vb: New(Quaternion)
+references:
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}
+  commentId: T:Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}
+  parent: Gasimo.CineBlend
+  definition: Gasimo.CineBlend.IBlendableProperty`1
+  href: Gasimo.CineBlend.IBlendableProperty-1.html
+  name: IBlendableProperty<Quaternion>
+  nameWithType: IBlendableProperty<Quaternion>
+  fullName: Gasimo.CineBlend.IBlendableProperty<FlaxEngine.Quaternion>
+  nameWithType.vb: IBlendableProperty(Of Quaternion)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of FlaxEngine.Quaternion)
+  name.vb: IBlendableProperty(Of Quaternion)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: <
+  - uid: FlaxEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: FlaxEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Gasimo.CineBlend.IBlendableProperty`1
+  commentId: T:Gasimo.CineBlend.IBlendableProperty`1
+  href: Gasimo.CineBlend.IBlendableProperty-1.html
+  name: IBlendableProperty<T>
+  nameWithType: IBlendableProperty<T>
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>
+  nameWithType.vb: IBlendableProperty(Of T)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T)
+  name.vb: IBlendableProperty(Of T)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Gasimo.CineBlend.BlendableQuaternion.CurrentValue*
+  commentId: Overload:Gasimo.CineBlend.BlendableQuaternion.CurrentValue
+  href: Gasimo.CineBlend.BlendableQuaternion.html#Gasimo_CineBlend_BlendableQuaternion_CurrentValue
+  name: CurrentValue
+  nameWithType: BlendableQuaternion.CurrentValue
+  fullName: Gasimo.CineBlend.BlendableQuaternion.CurrentValue
+- uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}.CurrentValue
+  commentId: P:Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}.CurrentValue
+  parent: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}
+  definition: Gasimo.CineBlend.IBlendableProperty`1.CurrentValue
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_CurrentValue
+  name: CurrentValue
+  nameWithType: IBlendableProperty<Quaternion>.CurrentValue
+  fullName: Gasimo.CineBlend.IBlendableProperty<FlaxEngine.Quaternion>.CurrentValue
+  nameWithType.vb: IBlendableProperty(Of Quaternion).CurrentValue
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of FlaxEngine.Quaternion).CurrentValue
+- uid: FlaxEngine.Quaternion
+  commentId: T:FlaxEngine.Quaternion
+  parent: FlaxEngine
+  isExternal: true
+  name: Quaternion
+  nameWithType: Quaternion
+  fullName: FlaxEngine.Quaternion
+- uid: Gasimo.CineBlend.IBlendableProperty`1.CurrentValue
+  commentId: P:Gasimo.CineBlend.IBlendableProperty`1.CurrentValue
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_CurrentValue
+  name: CurrentValue
+  nameWithType: IBlendableProperty<T>.CurrentValue
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>.CurrentValue
+  nameWithType.vb: IBlendableProperty(Of T).CurrentValue
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T).CurrentValue
+- uid: FlaxEngine
+  commentId: N:FlaxEngine
+  isExternal: true
+  name: FlaxEngine
+  nameWithType: FlaxEngine
+  fullName: FlaxEngine
+- uid: Gasimo.CineBlend.BlendableQuaternion.Lerp*
+  commentId: Overload:Gasimo.CineBlend.BlendableQuaternion.Lerp
+  href: Gasimo.CineBlend.BlendableQuaternion.html#Gasimo_CineBlend_BlendableQuaternion_Lerp_FlaxEngine_Quaternion_FlaxEngine_Quaternion_System_Single_
+  name: Lerp
+  nameWithType: BlendableQuaternion.Lerp
+  fullName: Gasimo.CineBlend.BlendableQuaternion.Lerp
+- uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}.Lerp(FlaxEngine.Quaternion,FlaxEngine.Quaternion,System.Single)
+  commentId: M:Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}.Lerp(FlaxEngine.Quaternion,FlaxEngine.Quaternion,System.Single)
+  parent: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}
+  definition: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  name: Lerp(Quaternion, Quaternion, float)
+  nameWithType: IBlendableProperty<Quaternion>.Lerp(Quaternion, Quaternion, float)
+  fullName: Gasimo.CineBlend.IBlendableProperty<FlaxEngine.Quaternion>.Lerp(FlaxEngine.Quaternion, FlaxEngine.Quaternion, float)
+  nameWithType.vb: IBlendableProperty(Of Quaternion).Lerp(Quaternion, Quaternion, Single)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of FlaxEngine.Quaternion).Lerp(FlaxEngine.Quaternion, FlaxEngine.Quaternion, Single)
+  name.vb: Lerp(Quaternion, Quaternion, Single)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}.Lerp(FlaxEngine.Quaternion,FlaxEngine.Quaternion,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - uid: FlaxEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: FlaxEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Quaternion}.Lerp(FlaxEngine.Quaternion,FlaxEngine.Quaternion,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - uid: FlaxEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: FlaxEngine.Quaternion
+    name: Quaternion
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+  commentId: M:Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+  isExternal: true
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  name: Lerp(T, T, float)
+  nameWithType: IBlendableProperty<T>.Lerp(T, T, float)
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>.Lerp(T, T, float)
+  nameWithType.vb: IBlendableProperty(Of T).Lerp(T, T, Single)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T).Lerp(T, T, Single)
+  name.vb: Lerp(T, T, Single)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: )
+- uid: Gasimo.CineBlend.BlendableQuaternion.#ctor*
+  commentId: Overload:Gasimo.CineBlend.BlendableQuaternion.#ctor
+  href: Gasimo.CineBlend.BlendableQuaternion.html#Gasimo_CineBlend_BlendableQuaternion__ctor
+  name: BlendableQuaternion
+  nameWithType: BlendableQuaternion.BlendableQuaternion
+  fullName: Gasimo.CineBlend.BlendableQuaternion.BlendableQuaternion
+  nameWithType.vb: BlendableQuaternion.New
+  fullName.vb: Gasimo.CineBlend.BlendableQuaternion.New
+  name.vb: New

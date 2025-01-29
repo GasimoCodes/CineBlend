@@ -1,0 +1,965 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.VirtualCamera
+  commentId: T:Gasimo.CineBlend.VirtualCamera
+  id: VirtualCamera
+  parent: Gasimo.CineBlend
+  children:
+  - Gasimo.CineBlend.VirtualCamera.AddModule``1(``0)
+  - Gasimo.CineBlend.VirtualCamera.ClearSolo
+  - Gasimo.CineBlend.VirtualCamera.FarPlane
+  - Gasimo.CineBlend.VirtualCamera.FieldOfView
+  - Gasimo.CineBlend.VirtualCamera.FinalProperties
+  - Gasimo.CineBlend.VirtualCamera.GetModule``1
+  - Gasimo.CineBlend.VirtualCamera.Modules
+  - Gasimo.CineBlend.VirtualCamera.NearPlane
+  - Gasimo.CineBlend.VirtualCamera.OnBeginPlay
+  - Gasimo.CineBlend.VirtualCamera.OnDisable
+  - Gasimo.CineBlend.VirtualCamera.OnEnable
+  - Gasimo.CineBlend.VirtualCamera.Priority
+  - Gasimo.CineBlend.VirtualCamera.Properties
+  - Gasimo.CineBlend.VirtualCamera.RemoveModule``1
+  - Gasimo.CineBlend.VirtualCamera.Solo
+  langs:
+  - csharp
+  - vb
+  name: VirtualCamera
+  nameWithType: VirtualCamera
+  fullName: Gasimo.CineBlend.VirtualCamera
+  type: Class
+  source:
+    id: VirtualCamera
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 10
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Virtual Camera Actor that can be blended between different states
+  example: []
+  syntax:
+    content: >-
+      [ActorContextMenu("New/CineBlend/Virtual Camera")]
+
+      [ActorToolbox("Visuals")]
+
+      public class VirtualCamera : EmptyActor, ICineCamera
+    content.vb: >-
+      <ActorContextMenu("New/CineBlend/Virtual Camera")>
+
+      <ActorToolbox("Visuals")>
+
+      Public Class VirtualCamera Inherits EmptyActor Implements ICineCamera
+  inheritance:
+  - System.Object
+  - FlaxEngine.Object
+  - FlaxEngine.SceneObject
+  - FlaxEngine.Actor
+  - FlaxEngine.EmptyActor
+  implements:
+  - Gasimo.CineBlend.ICineCamera
+  attributes:
+  - type: FlaxEngine.ActorContextMenuAttribute
+    ctor: FlaxEngine.ActorContextMenuAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: New/CineBlend/Virtual Camera
+  - type: FlaxEngine.ActorToolboxAttribute
+    ctor: FlaxEngine.ActorToolboxAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Visuals
+- uid: Gasimo.CineBlend.VirtualCamera.Modules
+  commentId: P:Gasimo.CineBlend.VirtualCamera.Modules
+  id: Modules
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: Modules
+  nameWithType: VirtualCamera.Modules
+  fullName: Gasimo.CineBlend.VirtualCamera.Modules
+  type: Property
+  source:
+    id: Modules
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 26
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Modules on the camera. Init with CineTransform module.
+  example: []
+  syntax:
+    content: public Dictionary<Type, ICameraModule> Modules { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.Type,Gasimo.CineBlend.ICameraModule}
+    content.vb: Public Property Modules As Dictionary(Of Type, ICameraModule)
+  overload: Gasimo.CineBlend.VirtualCamera.Modules*
+  implements:
+  - Gasimo.CineBlend.ICineCamera.Modules
+- uid: Gasimo.CineBlend.VirtualCamera.Properties
+  commentId: P:Gasimo.CineBlend.VirtualCamera.Properties
+  id: Properties
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: Properties
+  nameWithType: VirtualCamera.Properties
+  fullName: Gasimo.CineBlend.VirtualCamera.Properties
+  type: Property
+  source:
+    id: Properties
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 33
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Gets the camera's current properties
+  example: []
+  syntax:
+    content: >-
+      [HideInEditor]
+
+      public CameraProperties Properties { get; set; }
+    parameters: []
+    return:
+      type: Gasimo.CineBlend.CameraProperties
+    content.vb: >-
+      <HideInEditor>
+
+      Public Property Properties As CameraProperties
+  overload: Gasimo.CineBlend.VirtualCamera.Properties*
+  implements:
+  - Gasimo.CineBlend.ICineCamera.Properties
+  attributes:
+  - type: FlaxEngine.HideInEditorAttribute
+    ctor: FlaxEngine.HideInEditorAttribute.#ctor
+    arguments: []
+- uid: Gasimo.CineBlend.VirtualCamera.FinalProperties
+  commentId: P:Gasimo.CineBlend.VirtualCamera.FinalProperties
+  id: FinalProperties
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: FinalProperties
+  nameWithType: VirtualCamera.FinalProperties
+  fullName: Gasimo.CineBlend.VirtualCamera.FinalProperties
+  type: Property
+  source:
+    id: FinalProperties
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 43
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Gets postprocessed properties
+  example: []
+  syntax:
+    content: public CameraProperties FinalProperties { get; }
+    parameters: []
+    return:
+      type: Gasimo.CineBlend.CameraProperties
+    content.vb: Public ReadOnly Property FinalProperties As CameraProperties
+  overload: Gasimo.CineBlend.VirtualCamera.FinalProperties*
+  implements:
+  - Gasimo.CineBlend.ICineCamera.FinalProperties
+- uid: Gasimo.CineBlend.VirtualCamera.Priority
+  commentId: P:Gasimo.CineBlend.VirtualCamera.Priority
+  id: Priority
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: Priority
+  nameWithType: VirtualCamera.Priority
+  fullName: Gasimo.CineBlend.VirtualCamera.Priority
+  type: Property
+  source:
+    id: Priority
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 63
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Camera priority. Higher priority cameras will override lower priority cameras.
+  example: []
+  syntax:
+    content: >-
+      [EditorDisplay("Virtual Camera Status", null)]
+
+      [EditorOrder(1)]
+
+      public int Priority { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <EditorDisplay("Virtual Camera Status", Nothing)>
+
+      <EditorOrder(1)>
+
+      Public Property Priority As Integer
+  overload: Gasimo.CineBlend.VirtualCamera.Priority*
+  implements:
+  - Gasimo.CineBlend.ICineCamera.Priority
+  attributes:
+  - type: FlaxEngine.EditorDisplayAttribute
+    ctor: FlaxEngine.EditorDisplayAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Virtual Camera Status
+    - type: System.String
+  - type: FlaxEngine.EditorOrderAttribute
+    ctor: FlaxEngine.EditorOrderAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+- uid: Gasimo.CineBlend.VirtualCamera.FieldOfView
+  commentId: P:Gasimo.CineBlend.VirtualCamera.FieldOfView
+  id: FieldOfView
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: FieldOfView
+  nameWithType: VirtualCamera.FieldOfView
+  fullName: Gasimo.CineBlend.VirtualCamera.FieldOfView
+  type: Property
+  source:
+    id: FieldOfView
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 82
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: >-
+      [EditorDisplay("Virtual Camera Properties", null)]
+
+      public float FieldOfView { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <EditorDisplay("Virtual Camera Properties", Nothing)>
+
+      Public Property FieldOfView As Single
+  overload: Gasimo.CineBlend.VirtualCamera.FieldOfView*
+  attributes:
+  - type: FlaxEngine.EditorDisplayAttribute
+    ctor: FlaxEngine.EditorDisplayAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Virtual Camera Properties
+    - type: System.String
+- uid: Gasimo.CineBlend.VirtualCamera.NearPlane
+  commentId: P:Gasimo.CineBlend.VirtualCamera.NearPlane
+  id: NearPlane
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: NearPlane
+  nameWithType: VirtualCamera.NearPlane
+  fullName: Gasimo.CineBlend.VirtualCamera.NearPlane
+  type: Property
+  source:
+    id: NearPlane
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 89
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: >-
+      [EditorDisplay("Virtual Camera Properties", null)]
+
+      public float NearPlane { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <EditorDisplay("Virtual Camera Properties", Nothing)>
+
+      Public Property NearPlane As Single
+  overload: Gasimo.CineBlend.VirtualCamera.NearPlane*
+  attributes:
+  - type: FlaxEngine.EditorDisplayAttribute
+    ctor: FlaxEngine.EditorDisplayAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Virtual Camera Properties
+    - type: System.String
+- uid: Gasimo.CineBlend.VirtualCamera.FarPlane
+  commentId: P:Gasimo.CineBlend.VirtualCamera.FarPlane
+  id: FarPlane
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: FarPlane
+  nameWithType: VirtualCamera.FarPlane
+  fullName: Gasimo.CineBlend.VirtualCamera.FarPlane
+  type: Property
+  source:
+    id: FarPlane
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 96
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: >-
+      [EditorDisplay("Virtual Camera Properties", null)]
+
+      public float FarPlane { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <EditorDisplay("Virtual Camera Properties", Nothing)>
+
+      Public Property FarPlane As Single
+  overload: Gasimo.CineBlend.VirtualCamera.FarPlane*
+  attributes:
+  - type: FlaxEngine.EditorDisplayAttribute
+    ctor: FlaxEngine.EditorDisplayAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Virtual Camera Properties
+    - type: System.String
+- uid: Gasimo.CineBlend.VirtualCamera.OnBeginPlay
+  commentId: M:Gasimo.CineBlend.VirtualCamera.OnBeginPlay
+  id: OnBeginPlay
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: OnBeginPlay()
+  nameWithType: VirtualCamera.OnBeginPlay()
+  fullName: Gasimo.CineBlend.VirtualCamera.OnBeginPlay()
+  type: Method
+  source:
+    id: OnBeginPlay
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 109
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Initialize the virtual camera
+  example: []
+  syntax:
+    content: public override void OnBeginPlay()
+    content.vb: Public Overrides Sub OnBeginPlay()
+  overridden: FlaxEngine.Actor.OnBeginPlay
+  overload: Gasimo.CineBlend.VirtualCamera.OnBeginPlay*
+- uid: Gasimo.CineBlend.VirtualCamera.OnEnable
+  commentId: M:Gasimo.CineBlend.VirtualCamera.OnEnable
+  id: OnEnable
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: OnEnable()
+  nameWithType: VirtualCamera.OnEnable()
+  fullName: Gasimo.CineBlend.VirtualCamera.OnEnable()
+  type: Method
+  source:
+    id: OnEnable
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 118
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Register with CineblendMaster when enabled
+  example: []
+  syntax:
+    content: public override void OnEnable()
+    content.vb: Public Overrides Sub OnEnable()
+  overridden: FlaxEngine.Actor.OnEnable
+  overload: Gasimo.CineBlend.VirtualCamera.OnEnable*
+- uid: Gasimo.CineBlend.VirtualCamera.OnDisable
+  commentId: M:Gasimo.CineBlend.VirtualCamera.OnDisable
+  id: OnDisable
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: OnDisable()
+  nameWithType: VirtualCamera.OnDisable()
+  fullName: Gasimo.CineBlend.VirtualCamera.OnDisable()
+  type: Method
+  source:
+    id: OnDisable
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 128
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Unregister from CineblendMaster when disabled
+  example: []
+  syntax:
+    content: public override void OnDisable()
+    content.vb: Public Overrides Sub OnDisable()
+  overridden: FlaxEngine.Actor.OnDisable
+  overload: Gasimo.CineBlend.VirtualCamera.OnDisable*
+- uid: Gasimo.CineBlend.VirtualCamera.AddModule``1(``0)
+  commentId: M:Gasimo.CineBlend.VirtualCamera.AddModule``1(``0)
+  id: AddModule``1(``0)
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: AddModule<T>(T)
+  nameWithType: VirtualCamera.AddModule<T>(T)
+  fullName: Gasimo.CineBlend.VirtualCamera.AddModule<T>(T)
+  type: Method
+  source:
+    id: AddModule
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 143
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Adds a new module to the camera
+  example: []
+  syntax:
+    content: 'public T AddModule<T>(T module) where T : ICameraModule'
+    parameters:
+    - id: module
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Function AddModule(Of T As ICameraModule)([module] As T) As T
+  overload: Gasimo.CineBlend.VirtualCamera.AddModule*
+  nameWithType.vb: VirtualCamera.AddModule(Of T)(T)
+  fullName.vb: Gasimo.CineBlend.VirtualCamera.AddModule(Of T)(T)
+  name.vb: AddModule(Of T)(T)
+- uid: Gasimo.CineBlend.VirtualCamera.GetModule``1
+  commentId: M:Gasimo.CineBlend.VirtualCamera.GetModule``1
+  id: GetModule``1
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: GetModule<T>()
+  nameWithType: VirtualCamera.GetModule<T>()
+  fullName: Gasimo.CineBlend.VirtualCamera.GetModule<T>()
+  type: Method
+  source:
+    id: GetModule
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 153
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Gets a module of the specified type
+  example: []
+  syntax:
+    content: 'public T GetModule<T>() where T : class, ICameraModule'
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Function GetModule(Of T As {Class, ICameraModule})() As T
+  overload: Gasimo.CineBlend.VirtualCamera.GetModule*
+  nameWithType.vb: VirtualCamera.GetModule(Of T)()
+  fullName.vb: Gasimo.CineBlend.VirtualCamera.GetModule(Of T)()
+  name.vb: GetModule(Of T)()
+- uid: Gasimo.CineBlend.VirtualCamera.RemoveModule``1
+  commentId: M:Gasimo.CineBlend.VirtualCamera.RemoveModule``1
+  id: RemoveModule``1
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: RemoveModule<T>()
+  nameWithType: VirtualCamera.RemoveModule<T>()
+  fullName: Gasimo.CineBlend.VirtualCamera.RemoveModule<T>()
+  type: Method
+  source:
+    id: RemoveModule
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 162
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Removes a module of the specified type
+  example: []
+  syntax:
+    content: 'public void RemoveModule<T>() where T : ICameraModule'
+    typeParameters:
+    - id: T
+    content.vb: Public Sub RemoveModule(Of T As ICameraModule)()
+  overload: Gasimo.CineBlend.VirtualCamera.RemoveModule*
+  nameWithType.vb: VirtualCamera.RemoveModule(Of T)()
+  fullName.vb: Gasimo.CineBlend.VirtualCamera.RemoveModule(Of T)()
+  name.vb: RemoveModule(Of T)()
+- uid: Gasimo.CineBlend.VirtualCamera.Solo
+  commentId: M:Gasimo.CineBlend.VirtualCamera.Solo
+  id: Solo
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: Solo()
+  nameWithType: VirtualCamera.Solo()
+  fullName: Gasimo.CineBlend.VirtualCamera.Solo()
+  type: Method
+  source:
+    id: Solo
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 167
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: >-
+      [Button("Solo This", null)]
+
+      public void Solo()
+    content.vb: >-
+      <Button("Solo This", Nothing)>
+
+      Public Sub Solo()
+  overload: Gasimo.CineBlend.VirtualCamera.Solo*
+  attributes:
+  - type: FlaxEngine.ButtonAttribute
+    ctor: FlaxEngine.ButtonAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Solo This
+    - type: System.String
+- uid: Gasimo.CineBlend.VirtualCamera.ClearSolo
+  commentId: M:Gasimo.CineBlend.VirtualCamera.ClearSolo
+  id: ClearSolo
+  parent: Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: ClearSolo()
+  nameWithType: VirtualCamera.ClearSolo()
+  fullName: Gasimo.CineBlend.VirtualCamera.ClearSolo()
+  type: Method
+  source:
+    id: ClearSolo
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Actor\VirtualCamera.cs
+    startLine: 173
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: >-
+      [Button("Clear Solo", null)]
+
+      public void ClearSolo()
+    content.vb: >-
+      <Button("Clear Solo", Nothing)>
+
+      Public Sub ClearSolo()
+  overload: Gasimo.CineBlend.VirtualCamera.ClearSolo*
+  attributes:
+  - type: FlaxEngine.ButtonAttribute
+    ctor: FlaxEngine.ButtonAttribute.#ctor(System.String,System.String)
+    arguments:
+    - type: System.String
+      value: Clear Solo
+    - type: System.String
+references:
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: FlaxEngine.Object
+  commentId: T:FlaxEngine.Object
+  parent: FlaxEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: FlaxEngine.Object
+- uid: FlaxEngine.SceneObject
+  commentId: T:FlaxEngine.SceneObject
+  parent: FlaxEngine
+  isExternal: true
+  name: SceneObject
+  nameWithType: SceneObject
+  fullName: FlaxEngine.SceneObject
+- uid: FlaxEngine.Actor
+  commentId: T:FlaxEngine.Actor
+  parent: FlaxEngine
+  isExternal: true
+  name: Actor
+  nameWithType: Actor
+  fullName: FlaxEngine.Actor
+- uid: FlaxEngine.EmptyActor
+  commentId: T:FlaxEngine.EmptyActor
+  parent: FlaxEngine
+  isExternal: true
+  name: EmptyActor
+  nameWithType: EmptyActor
+  fullName: FlaxEngine.EmptyActor
+- uid: Gasimo.CineBlend.ICineCamera
+  commentId: T:Gasimo.CineBlend.ICineCamera
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.ICineCamera.html
+  name: ICineCamera
+  nameWithType: ICineCamera
+  fullName: Gasimo.CineBlend.ICineCamera
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: FlaxEngine
+  commentId: N:FlaxEngine
+  isExternal: true
+  name: FlaxEngine
+  nameWithType: FlaxEngine
+  fullName: FlaxEngine
+- uid: Gasimo.CineBlend.VirtualCamera.Modules*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.Modules
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_Modules
+  name: Modules
+  nameWithType: VirtualCamera.Modules
+  fullName: Gasimo.CineBlend.VirtualCamera.Modules
+- uid: Gasimo.CineBlend.ICineCamera.Modules
+  commentId: P:Gasimo.CineBlend.ICineCamera.Modules
+  parent: Gasimo.CineBlend.ICineCamera
+  href: Gasimo.CineBlend.ICineCamera.html#Gasimo_CineBlend_ICineCamera_Modules
+  name: Modules
+  nameWithType: ICineCamera.Modules
+  fullName: Gasimo.CineBlend.ICineCamera.Modules
+- uid: System.Collections.Generic.Dictionary{System.Type,Gasimo.CineBlend.ICameraModule}
+  commentId: T:System.Collections.Generic.Dictionary{System.Type,Gasimo.CineBlend.ICameraModule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: Gasimo.CineBlend.ICameraModule.html
+  name: Dictionary<Type, ICameraModule>
+  nameWithType: Dictionary<Type, ICameraModule>
+  fullName: System.Collections.Generic.Dictionary<System.Type, Gasimo.CineBlend.ICameraModule>
+  nameWithType.vb: Dictionary(Of Type, ICameraModule)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, Gasimo.CineBlend.ICameraModule)
+  name.vb: Dictionary(Of Type, ICameraModule)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Gasimo.CineBlend.ICameraModule
+    name: ICameraModule
+    href: Gasimo.CineBlend.ICameraModule.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: Gasimo.CineBlend.ICameraModule
+    name: ICameraModule
+    href: Gasimo.CineBlend.ICameraModule.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+- uid: Gasimo.CineBlend.VirtualCamera.Properties*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.Properties
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_Properties
+  name: Properties
+  nameWithType: VirtualCamera.Properties
+  fullName: Gasimo.CineBlend.VirtualCamera.Properties
+- uid: Gasimo.CineBlend.ICineCamera.Properties
+  commentId: P:Gasimo.CineBlend.ICineCamera.Properties
+  parent: Gasimo.CineBlend.ICineCamera
+  href: Gasimo.CineBlend.ICineCamera.html#Gasimo_CineBlend_ICineCamera_Properties
+  name: Properties
+  nameWithType: ICineCamera.Properties
+  fullName: Gasimo.CineBlend.ICineCamera.Properties
+- uid: Gasimo.CineBlend.CameraProperties
+  commentId: T:Gasimo.CineBlend.CameraProperties
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.CameraProperties.html
+  name: CameraProperties
+  nameWithType: CameraProperties
+  fullName: Gasimo.CineBlend.CameraProperties
+- uid: Gasimo.CineBlend.VirtualCamera.FinalProperties*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.FinalProperties
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_FinalProperties
+  name: FinalProperties
+  nameWithType: VirtualCamera.FinalProperties
+  fullName: Gasimo.CineBlend.VirtualCamera.FinalProperties
+- uid: Gasimo.CineBlend.ICineCamera.FinalProperties
+  commentId: P:Gasimo.CineBlend.ICineCamera.FinalProperties
+  parent: Gasimo.CineBlend.ICineCamera
+  href: Gasimo.CineBlend.ICineCamera.html#Gasimo_CineBlend_ICineCamera_FinalProperties
+  name: FinalProperties
+  nameWithType: ICineCamera.FinalProperties
+  fullName: Gasimo.CineBlend.ICineCamera.FinalProperties
+- uid: Gasimo.CineBlend.VirtualCamera.Priority*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.Priority
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_Priority
+  name: Priority
+  nameWithType: VirtualCamera.Priority
+  fullName: Gasimo.CineBlend.VirtualCamera.Priority
+- uid: Gasimo.CineBlend.ICineCamera.Priority
+  commentId: P:Gasimo.CineBlend.ICineCamera.Priority
+  parent: Gasimo.CineBlend.ICineCamera
+  href: Gasimo.CineBlend.ICineCamera.html#Gasimo_CineBlend_ICineCamera_Priority
+  name: Priority
+  nameWithType: ICineCamera.Priority
+  fullName: Gasimo.CineBlend.ICineCamera.Priority
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Gasimo.CineBlend.VirtualCamera.FieldOfView*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.FieldOfView
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_FieldOfView
+  name: FieldOfView
+  nameWithType: VirtualCamera.FieldOfView
+  fullName: Gasimo.CineBlend.VirtualCamera.FieldOfView
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Gasimo.CineBlend.VirtualCamera.NearPlane*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.NearPlane
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_NearPlane
+  name: NearPlane
+  nameWithType: VirtualCamera.NearPlane
+  fullName: Gasimo.CineBlend.VirtualCamera.NearPlane
+- uid: Gasimo.CineBlend.VirtualCamera.FarPlane*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.FarPlane
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_FarPlane
+  name: FarPlane
+  nameWithType: VirtualCamera.FarPlane
+  fullName: Gasimo.CineBlend.VirtualCamera.FarPlane
+- uid: FlaxEngine.Actor.OnBeginPlay
+  commentId: M:FlaxEngine.Actor.OnBeginPlay
+  parent: FlaxEngine.Actor
+  isExternal: true
+  name: OnBeginPlay()
+  nameWithType: Actor.OnBeginPlay()
+  fullName: FlaxEngine.Actor.OnBeginPlay()
+  spec.csharp:
+  - uid: FlaxEngine.Actor.OnBeginPlay
+    name: OnBeginPlay
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FlaxEngine.Actor.OnBeginPlay
+    name: OnBeginPlay
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Gasimo.CineBlend.VirtualCamera.OnBeginPlay*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.OnBeginPlay
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_OnBeginPlay
+  name: OnBeginPlay
+  nameWithType: VirtualCamera.OnBeginPlay
+  fullName: Gasimo.CineBlend.VirtualCamera.OnBeginPlay
+- uid: FlaxEngine.Actor.OnEnable
+  commentId: M:FlaxEngine.Actor.OnEnable
+  parent: FlaxEngine.Actor
+  isExternal: true
+  name: OnEnable()
+  nameWithType: Actor.OnEnable()
+  fullName: FlaxEngine.Actor.OnEnable()
+  spec.csharp:
+  - uid: FlaxEngine.Actor.OnEnable
+    name: OnEnable
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FlaxEngine.Actor.OnEnable
+    name: OnEnable
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Gasimo.CineBlend.VirtualCamera.OnEnable*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.OnEnable
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_OnEnable
+  name: OnEnable
+  nameWithType: VirtualCamera.OnEnable
+  fullName: Gasimo.CineBlend.VirtualCamera.OnEnable
+- uid: FlaxEngine.Actor.OnDisable
+  commentId: M:FlaxEngine.Actor.OnDisable
+  parent: FlaxEngine.Actor
+  isExternal: true
+  name: OnDisable()
+  nameWithType: Actor.OnDisable()
+  fullName: FlaxEngine.Actor.OnDisable()
+  spec.csharp:
+  - uid: FlaxEngine.Actor.OnDisable
+    name: OnDisable
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FlaxEngine.Actor.OnDisable
+    name: OnDisable
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Gasimo.CineBlend.VirtualCamera.OnDisable*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.OnDisable
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_OnDisable
+  name: OnDisable
+  nameWithType: VirtualCamera.OnDisable
+  fullName: Gasimo.CineBlend.VirtualCamera.OnDisable
+- uid: Gasimo.CineBlend.VirtualCamera.AddModule*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.AddModule
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_AddModule__1___0_
+  name: AddModule
+  nameWithType: VirtualCamera.AddModule
+  fullName: Gasimo.CineBlend.VirtualCamera.AddModule
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Gasimo.CineBlend.VirtualCamera.GetModule*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.GetModule
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_GetModule__1
+  name: GetModule
+  nameWithType: VirtualCamera.GetModule
+  fullName: Gasimo.CineBlend.VirtualCamera.GetModule
+- uid: Gasimo.CineBlend.VirtualCamera.RemoveModule*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.RemoveModule
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_RemoveModule__1
+  name: RemoveModule
+  nameWithType: VirtualCamera.RemoveModule
+  fullName: Gasimo.CineBlend.VirtualCamera.RemoveModule
+- uid: Gasimo.CineBlend.VirtualCamera.Solo*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.Solo
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_Solo
+  name: Solo
+  nameWithType: VirtualCamera.Solo
+  fullName: Gasimo.CineBlend.VirtualCamera.Solo
+- uid: Gasimo.CineBlend.VirtualCamera.ClearSolo*
+  commentId: Overload:Gasimo.CineBlend.VirtualCamera.ClearSolo
+  href: Gasimo.CineBlend.VirtualCamera.html#Gasimo_CineBlend_VirtualCamera_ClearSolo
+  name: ClearSolo
+  nameWithType: VirtualCamera.ClearSolo
+  fullName: Gasimo.CineBlend.VirtualCamera.ClearSolo

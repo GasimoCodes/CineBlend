@@ -1,0 +1,145 @@
+/* Global container settings */
+.container-xxl {
+  max-width: 1400px !important;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+}
+
+/* TOC sidebar styling */
+.toc-offcanvas {
+  background-color: #8f8f8f0d;
+  max-height: calc(100vh) !important;
+  top: 3.75rem !important;
+  padding: 1.6rem 1rem 1rem 1rem;
+}
+
+/* Main content area */
+.content {
+  padding-top: 1.6rem !important;
+}
+
+main {
+  padding-top: 0 !important;
+}
+
+/* Right sidebar (if present) */
+.affix {
+  top: 5.0rem !important;
+  max-height: calc(100vh) !important;
+  margin-top: 1.0rem !important;
+  height: calc(100vh);
+  overflow-y: auto;
+}
+
+/* Headings */
+h1 {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.8;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+h5 {
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+p, ul, ol, dl, table, td {
+  font-family: 'Segoe UI', Tahoma, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+
+/* Navigation */
+.navbar-brand {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search {
+  border: none;
+}
+
+/* Target the top-level list items directly under the main navigation */
+.toc > div > ul > li > a {
+  font-weight: 600;  /* Make top level items semi-bold */
+}
+
+/* Keep nested items at normal weight */
+.toc > div > ul > li > ul a {
+  font-weight: normal;
+}
+
+
+/* TOC styling */
+
+.sidenav,
+.toc-toggle {
+  padding: 0;
+}
+
+.sidetoggle {
+  padding-bottom: 15px;
+}
+
+/* Content styling */
+.collapse.in,
+.collapsing {
+  text-align: unset;
+}
+
+article h4 {
+  border-bottom: none;
+}
+
+article img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .sidetoc,
+  .sidefilter {
+    margin-left: -15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  article h1:first-of-type:before {
+    height: 0;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    text-align: center !important;
+  }
+  
+  .navbar-collapse li .active {
+    border-radius: 20px;
+  }
+}

@@ -1,0 +1,9 @@
+### YamlMime:ManagedReference
+
+apiRules:
+- include:
+    uidRegex: ^Gasimo.*
+    type: Namespace
+- exclude:
+    uidRegex: .*
+    type: Namespace

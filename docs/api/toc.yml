@@ -1,0 +1,69 @@
+### YamlMime:TableOfContent
+items:
+- uid: Gasimo.CineBlend
+  name: Gasimo.CineBlend
+  type: Namespace
+  items:
+  - uid: Gasimo.CineBlend.BlendableFloat
+    name: BlendableFloat
+    type: Class
+  - uid: Gasimo.CineBlend.BlendableQuaternion
+    name: BlendableQuaternion
+    type: Class
+  - uid: Gasimo.CineBlend.BlendableVector3
+    name: BlendableVector3
+    type: Class
+  - uid: Gasimo.CineBlend.CameraBlendState
+    name: CameraBlendState
+    type: Class
+  - uid: Gasimo.CineBlend.CameraProperties
+    name: CameraProperties
+    type: Struct
+  - uid: Gasimo.CineBlend.Cineblend
+    name: Cineblend
+    type: Class
+  - uid: Gasimo.CineBlend.CineblendMaster
+    name: CineblendMaster
+    type: Class
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty<T>
+    type: Interface
+  - uid: Gasimo.CineBlend.ICameraModule
+    name: ICameraModule
+    type: Interface
+  - uid: Gasimo.CineBlend.ICineCamera
+    name: ICineCamera
+    type: Interface
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    type: Class
+- uid: Gasimo.CineBlend.Modules
+  name: Gasimo.CineBlend.Modules
+  type: Namespace
+  items:
+  - uid: Gasimo.CineBlend.Modules.CineAutoFrameModule
+    name: CineAutoFrameModule
+    type: Class
+  - uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+    name: CineImpulseShakeModule
+    type: Class
+  - uid: Gasimo.CineBlend.Modules.CineLookAtModule
+    name: CineLookAtModule
+    type: Class
+  - uid: Gasimo.CineBlend.Modules.CineRecomposeModule
+    name: CineRecomposeModule
+    type: Class
+  - uid: Gasimo.CineBlend.Modules.CineShakeModule
+    name: CineShakeModule
+    type: Class
+  - uid: Gasimo.CineBlend.Modules.CineTransformModule
+    name: CineTransformModule
+    type: Class
+- uid: Gasimo.CineBlend.Samples
+  name: Gasimo.CineBlend.Samples
+  type: Namespace
+  items:
+  - uid: Gasimo.CineBlend.Samples.Shaker
+    name: Shaker
+    type: Class
+memberLayout: SamePage

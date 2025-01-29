@@ -1,0 +1,53 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../Source/",
+          "files": [
+            "Gasimo.*.csproj",
+            "Cineblend.csproj"
+          ]
+        }
+      ],
+      "filter": "filterConfig.yml",
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern",
+      "templates/gasimo"
+      
+  ],
+  "postProcessors": [ "ExtractSearchIndex" ],
+    "globalMetadata": {
+      "_appName": "",
+      "_appTitle": "Cineblend",
+      "_appLogoPath": "images/logo.png",
+      "_enableSearch": true,
+      "_disableContribution": true,
+      "_disableNextArticle": true,
+      "pdf": false
+    }
+  }
+}

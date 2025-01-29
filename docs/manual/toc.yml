@@ -1,0 +1,42 @@
+# This is an automatically generated file
+items:
+- name: Getting Started
+  href: Getting Started/index.md
+  items:
+  - name: Getting Started
+    href: Getting Started/index.md
+  - name: Principles and Overview
+    href: Getting Started/concepts.md
+  - name: Setting up
+    href: Getting Started/Cineblend Master.md
+- name: Modules
+  href: Modules/index.md
+  items:
+  - name: Modules
+    href: Modules/index.md
+  - name: Auto Frame Module
+    href: Modules/Auto Frame.md
+  - name: Auto Frame Module
+    href: Modules/Shake.md
+  - name: Impulse Shake Module
+    href: Modules/Impulse Shake.md
+  - name: Look At Module
+    href: Modules/Look At.md
+  - name: Recompose
+    href: Modules/Recompose.md
+- name: Virtual Cameras
+  href: Virtual Cameras/index.md
+  items:
+  - name: Virtual Cameras
+    href: Virtual Cameras/index.md
+  - name: Clear Shot Camera
+    href: Virtual Cameras/Clear Shot Camera.md
+  - name: Virtual Camera
+    href: Virtual Cameras/Virtual Camera.md
+- name: Timeline
+  href: Timeline/index.md
+  items:
+  - name: Timeline
+    href: Timeline/index.md
+- name: Troubleshooting
+  href: troubleshoot.md

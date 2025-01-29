@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
+using Gasimo.CineBlend.Modules;
 
-namespace Game
+namespace Gasimo.CineBlend
 {
     /// <summary>
     /// Virtual Camera Actor that can be blended between different states

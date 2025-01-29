@@ -1,0 +1,142 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  id: Gasimo.CineBlend
+  children:
+  - Gasimo.CineBlend.BlendableFloat
+  - Gasimo.CineBlend.BlendableQuaternion
+  - Gasimo.CineBlend.BlendableVector3
+  - Gasimo.CineBlend.CameraBlendState
+  - Gasimo.CineBlend.CameraProperties
+  - Gasimo.CineBlend.Cineblend
+  - Gasimo.CineBlend.CineblendMaster
+  - Gasimo.CineBlend.IBlendableProperty`1
+  - Gasimo.CineBlend.ICameraModule
+  - Gasimo.CineBlend.ICineCamera
+  - Gasimo.CineBlend.VirtualCamera
+  langs:
+  - csharp
+  - vb
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  type: Namespace
+  assemblies:
+  - Cineblend.CSharp
+references:
+- uid: Gasimo.CineBlend.Cineblend
+  commentId: T:Gasimo.CineBlend.Cineblend
+  href: Gasimo.CineBlend.Cineblend.html
+  name: Cineblend
+  nameWithType: Cineblend
+  fullName: Gasimo.CineBlend.Cineblend
+- uid: Gasimo.CineBlend.CineblendMaster
+  commentId: T:Gasimo.CineBlend.CineblendMaster
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.CineblendMaster.html
+  name: CineblendMaster
+  nameWithType: CineblendMaster
+  fullName: Gasimo.CineBlend.CineblendMaster
+- uid: Gasimo.CineBlend.VirtualCamera
+  commentId: T:Gasimo.CineBlend.VirtualCamera
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.VirtualCamera.html
+  name: VirtualCamera
+  nameWithType: VirtualCamera
+  fullName: Gasimo.CineBlend.VirtualCamera
+- uid: Gasimo.CineBlend.CameraBlendState
+  commentId: T:Gasimo.CineBlend.CameraBlendState
+  href: Gasimo.CineBlend.CameraBlendState.html
+  name: CameraBlendState
+  nameWithType: CameraBlendState
+  fullName: Gasimo.CineBlend.CameraBlendState
+- uid: Gasimo.CineBlend.CameraProperties
+  commentId: T:Gasimo.CineBlend.CameraProperties
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.CameraProperties.html
+  name: CameraProperties
+  nameWithType: CameraProperties
+  fullName: Gasimo.CineBlend.CameraProperties
+- uid: Gasimo.CineBlend.BlendableFloat
+  commentId: T:Gasimo.CineBlend.BlendableFloat
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.BlendableFloat.html
+  name: BlendableFloat
+  nameWithType: BlendableFloat
+  fullName: Gasimo.CineBlend.BlendableFloat
+- uid: Gasimo.CineBlend.BlendableVector3
+  commentId: T:Gasimo.CineBlend.BlendableVector3
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.BlendableVector3.html
+  name: BlendableVector3
+  nameWithType: BlendableVector3
+  fullName: Gasimo.CineBlend.BlendableVector3
+- uid: Gasimo.CineBlend.BlendableQuaternion
+  commentId: T:Gasimo.CineBlend.BlendableQuaternion
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.BlendableQuaternion.html
+  name: BlendableQuaternion
+  nameWithType: BlendableQuaternion
+  fullName: Gasimo.CineBlend.BlendableQuaternion
+- uid: Gasimo.CineBlend.IBlendableProperty`1
+  commentId: T:Gasimo.CineBlend.IBlendableProperty`1
+  href: Gasimo.CineBlend.IBlendableProperty-1.html
+  name: IBlendableProperty<T>
+  nameWithType: IBlendableProperty<T>
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>
+  nameWithType.vb: IBlendableProperty(Of T)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T)
+  name.vb: IBlendableProperty(Of T)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Gasimo.CineBlend.ICameraModule
+  commentId: T:Gasimo.CineBlend.ICameraModule
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.ICameraModule.html
+  name: ICameraModule
+  nameWithType: ICameraModule
+  fullName: Gasimo.CineBlend.ICameraModule
+- uid: Gasimo.CineBlend.ICineCamera
+  commentId: T:Gasimo.CineBlend.ICineCamera
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.ICineCamera.html
+  name: ICineCamera
+  nameWithType: ICineCamera
+  fullName: Gasimo.CineBlend.ICineCamera
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html

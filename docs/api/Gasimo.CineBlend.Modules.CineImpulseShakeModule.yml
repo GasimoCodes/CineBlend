@@ -1,0 +1,494 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  commentId: T:Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  id: CineImpulseShakeModule
+  parent: Gasimo.CineBlend.Modules
+  children:
+  - Gasimo.CineBlend.Modules.CineImpulseShakeModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  - Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(System.Single,System.Single)
+  - Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(System.Single,System.Single,System.Single,FlaxEngine.Vector3,System.Single)
+  - Gasimo.CineBlend.Modules.CineImpulseShakeModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  - Gasimo.CineBlend.Modules.CineImpulseShakeModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  langs:
+  - csharp
+  - vb
+  name: CineImpulseShakeModule
+  nameWithType: CineImpulseShakeModule
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  type: Class
+  source:
+    id: CineImpulseShakeModule
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineImpulseShakeModule.cs
+    startLine: 9
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: Shakes this camera when an impulse is received.
+  example: []
+  syntax:
+    content: >-
+      [RequireActor(typeof(VirtualCamera))]
+
+      [Category("Cineblend")]
+
+      public class CineImpulseShakeModule : Script, ICameraModule
+    content.vb: >-
+      <RequireActor(GetType(VirtualCamera))>
+
+      <Category("Cineblend")>
+
+      Public Class CineImpulseShakeModule Inherits Script Implements ICameraModule
+  inheritance:
+  - System.Object
+  - FlaxEngine.Object
+  - FlaxEngine.SceneObject
+  - FlaxEngine.Script
+  implements:
+  - Gasimo.CineBlend.ICameraModule
+  attributes:
+  - type: FlaxEngine.RequireActorAttribute
+    ctor: FlaxEngine.RequireActorAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: Gasimo.CineBlend.VirtualCamera
+  - type: FlaxEngine.CategoryAttribute
+    ctor: FlaxEngine.CategoryAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Cineblend
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  commentId: M:Gasimo.CineBlend.Modules.CineImpulseShakeModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  id: Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  parent: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  langs:
+  - csharp
+  - vb
+  name: Blend(VirtualCamera, VirtualCamera, float)
+  nameWithType: CineImpulseShakeModule.Blend(VirtualCamera, VirtualCamera, float)
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Blend(Gasimo.CineBlend.VirtualCamera, Gasimo.CineBlend.VirtualCamera, float)
+  type: Method
+  source:
+    id: Blend
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineImpulseShakeModule.cs
+    startLine: 22
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: Blends between two module states
+  example: []
+  syntax:
+    content: public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    parameters:
+    - id: fromSnapshot
+      type: Gasimo.CineBlend.VirtualCamera
+    - id: toSnapshot
+      type: Gasimo.CineBlend.VirtualCamera
+    - id: t
+      type: System.Single
+    content.vb: Public Sub Blend(fromSnapshot As VirtualCamera, toSnapshot As VirtualCamera, t As Single)
+  overload: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Blend*
+  implements:
+  - Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  nameWithType.vb: CineImpulseShakeModule.Blend(VirtualCamera, VirtualCamera, Single)
+  fullName.vb: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Blend(Gasimo.CineBlend.VirtualCamera, Gasimo.CineBlend.VirtualCamera, Single)
+  name.vb: Blend(VirtualCamera, VirtualCamera, Single)
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  commentId: M:Gasimo.CineBlend.Modules.CineImpulseShakeModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  id: Initialize(Gasimo.CineBlend.VirtualCamera)
+  parent: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  langs:
+  - csharp
+  - vb
+  name: Initialize(VirtualCamera)
+  nameWithType: CineImpulseShakeModule.Initialize(VirtualCamera)
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  type: Method
+  source:
+    id: Initialize
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineImpulseShakeModule.cs
+    startLine: 26
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: Called when the module is initialized
+  example: []
+  syntax:
+    content: public void Initialize(VirtualCamera camera)
+    parameters:
+    - id: camera
+      type: Gasimo.CineBlend.VirtualCamera
+    content.vb: Public Sub Initialize(camera As VirtualCamera)
+  overload: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Initialize*
+  implements:
+  - Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  commentId: M:Gasimo.CineBlend.Modules.CineImpulseShakeModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  id: PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  parent: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  langs:
+  - csharp
+  - vb
+  name: PostProcessProperties(ref CameraProperties)
+  nameWithType: CineImpulseShakeModule.PostProcessProperties(ref CameraProperties)
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule.PostProcessProperties(ref Gasimo.CineBlend.CameraProperties)
+  type: Method
+  source:
+    id: PostProcessProperties
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineImpulseShakeModule.cs
+    startLine: 30
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: Modifies the final camera properties before they are applied
+  example: []
+  syntax:
+    content: public void PostProcessProperties(ref CameraProperties state)
+    parameters:
+    - id: state
+      type: Gasimo.CineBlend.CameraProperties
+    content.vb: Public Sub PostProcessProperties(state As CameraProperties)
+  overload: Gasimo.CineBlend.Modules.CineImpulseShakeModule.PostProcessProperties*
+  implements:
+  - Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  nameWithType.vb: CineImpulseShakeModule.PostProcessProperties(CameraProperties)
+  fullName.vb: Gasimo.CineBlend.Modules.CineImpulseShakeModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties)
+  name.vb: PostProcessProperties(CameraProperties)
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(System.Single,System.Single)
+  commentId: M:Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(System.Single,System.Single)
+  id: DoShake(System.Single,System.Single)
+  parent: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  langs:
+  - csharp
+  - vb
+  name: DoShake(float, float)
+  nameWithType: CineImpulseShakeModule.DoShake(float, float)
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(float, float)
+  type: Method
+  source:
+    id: DoShake
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineImpulseShakeModule.cs
+    startLine: 67
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: Does a camera shake for this camera.
+  example: []
+  syntax:
+    content: public void DoShake(float magnitude = 1, float duration = 3)
+    parameters:
+    - id: magnitude
+      type: System.Single
+      description: The intensity of the shake
+    - id: duration
+      type: System.Single
+      description: For how long the shake should play
+    content.vb: Public Sub DoShake(magnitude As Single = 1, duration As Single = 3)
+  overload: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake*
+  nameWithType.vb: CineImpulseShakeModule.DoShake(Single, Single)
+  fullName.vb: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(Single, Single)
+  name.vb: DoShake(Single, Single)
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(System.Single,System.Single,System.Single,FlaxEngine.Vector3,System.Single)
+  commentId: M:Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(System.Single,System.Single,System.Single,FlaxEngine.Vector3,System.Single)
+  id: DoShake(System.Single,System.Single,System.Single,FlaxEngine.Vector3,System.Single)
+  parent: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  langs:
+  - csharp
+  - vb
+  name: DoShake(float, float, float, Vector3, float)
+  nameWithType: CineImpulseShakeModule.DoShake(float, float, float, Vector3, float)
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(float, float, float, FlaxEngine.Vector3, float)
+  type: Method
+  source:
+    id: DoShake
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineImpulseShakeModule.cs
+    startLine: 79
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: Does a camera shake for this camera.
+  example: []
+  syntax:
+    content: public void DoShake(float magnitude, float duration, float deviation, Vector3 direction, float frequency = 2)
+    parameters:
+    - id: magnitude
+      type: System.Single
+      description: The intensity of the shake
+    - id: duration
+      type: System.Single
+      description: For how long the shake should play
+    - id: deviation
+      type: System.Single
+      description: Deviation from the direction vector. If the vector is up, this will ensure the camera can also deviate in other random directions.
+    - id: direction
+      type: FlaxEngine.Vector3
+      description: Direction in which the camera should shake. For instance the direction away from explosion and towards the camera.
+    - id: frequency
+      type: System.Single
+    content.vb: Public Sub DoShake(magnitude As Single, duration As Single, deviation As Single, direction As Vector3, frequency As Single = 2)
+  overload: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake*
+  nameWithType.vb: CineImpulseShakeModule.DoShake(Single, Single, Single, Vector3, Single)
+  fullName.vb: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake(Single, Single, Single, FlaxEngine.Vector3, Single)
+  name.vb: DoShake(Single, Single, Single, Vector3, Single)
+references:
+- uid: Gasimo.CineBlend.Modules
+  commentId: N:Gasimo.CineBlend.Modules
+  href: Gasimo.html
+  name: Gasimo.CineBlend.Modules
+  nameWithType: Gasimo.CineBlend.Modules
+  fullName: Gasimo.CineBlend.Modules
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Modules
+    name: Modules
+    href: Gasimo.CineBlend.Modules.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Modules
+    name: Modules
+    href: Gasimo.CineBlend.Modules.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: FlaxEngine.Object
+  commentId: T:FlaxEngine.Object
+  parent: FlaxEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: FlaxEngine.Object
+- uid: FlaxEngine.SceneObject
+  commentId: T:FlaxEngine.SceneObject
+  parent: FlaxEngine
+  isExternal: true
+  name: SceneObject
+  nameWithType: SceneObject
+  fullName: FlaxEngine.SceneObject
+- uid: FlaxEngine.Script
+  commentId: T:FlaxEngine.Script
+  parent: FlaxEngine
+  isExternal: true
+  name: Script
+  nameWithType: Script
+  fullName: FlaxEngine.Script
+- uid: Gasimo.CineBlend.ICameraModule
+  commentId: T:Gasimo.CineBlend.ICameraModule
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.ICameraModule.html
+  name: ICameraModule
+  nameWithType: ICameraModule
+  fullName: Gasimo.CineBlend.ICameraModule
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: FlaxEngine
+  commentId: N:FlaxEngine
+  isExternal: true
+  name: FlaxEngine
+  nameWithType: FlaxEngine
+  fullName: FlaxEngine
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Blend*
+  commentId: Overload:Gasimo.CineBlend.Modules.CineImpulseShakeModule.Blend
+  href: Gasimo.CineBlend.Modules.CineImpulseShakeModule.html#Gasimo_CineBlend_Modules_CineImpulseShakeModule_Blend_Gasimo_CineBlend_VirtualCamera_Gasimo_CineBlend_VirtualCamera_System_Single_
+  name: Blend
+  nameWithType: CineImpulseShakeModule.Blend
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Blend
+- uid: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  commentId: M:Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  parent: Gasimo.CineBlend.ICameraModule
+  isExternal: true
+  href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Blend_Gasimo_CineBlend_VirtualCamera_Gasimo_CineBlend_VirtualCamera_System_Single_
+  name: Blend(VirtualCamera, VirtualCamera, float)
+  nameWithType: ICameraModule.Blend(VirtualCamera, VirtualCamera, float)
+  fullName: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera, Gasimo.CineBlend.VirtualCamera, float)
+  nameWithType.vb: ICameraModule.Blend(VirtualCamera, VirtualCamera, Single)
+  fullName.vb: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera, Gasimo.CineBlend.VirtualCamera, Single)
+  name.vb: Blend(VirtualCamera, VirtualCamera, Single)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+    name: Blend
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Blend_Gasimo_CineBlend_VirtualCamera_Gasimo_CineBlend_VirtualCamera_System_Single_
+  - name: (
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: ','
+  - name: " "
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+    name: Blend
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Blend_Gasimo_CineBlend_VirtualCamera_Gasimo_CineBlend_VirtualCamera_System_Single_
+  - name: (
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: ','
+  - name: " "
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: )
+- uid: Gasimo.CineBlend.VirtualCamera
+  commentId: T:Gasimo.CineBlend.VirtualCamera
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.VirtualCamera.html
+  name: VirtualCamera
+  nameWithType: VirtualCamera
+  fullName: Gasimo.CineBlend.VirtualCamera
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Initialize*
+  commentId: Overload:Gasimo.CineBlend.Modules.CineImpulseShakeModule.Initialize
+  href: Gasimo.CineBlend.Modules.CineImpulseShakeModule.html#Gasimo_CineBlend_Modules_CineImpulseShakeModule_Initialize_Gasimo_CineBlend_VirtualCamera_
+  name: Initialize
+  nameWithType: CineImpulseShakeModule.Initialize
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule.Initialize
+- uid: Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  commentId: M:Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  parent: Gasimo.CineBlend.ICameraModule
+  href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Initialize_Gasimo_CineBlend_VirtualCamera_
+  name: Initialize(VirtualCamera)
+  nameWithType: ICameraModule.Initialize(VirtualCamera)
+  fullName: Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+    name: Initialize
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Initialize_Gasimo_CineBlend_VirtualCamera_
+  - name: (
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+    name: Initialize
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Initialize_Gasimo_CineBlend_VirtualCamera_
+  - name: (
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: )
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule.PostProcessProperties*
+  commentId: Overload:Gasimo.CineBlend.Modules.CineImpulseShakeModule.PostProcessProperties
+  href: Gasimo.CineBlend.Modules.CineImpulseShakeModule.html#Gasimo_CineBlend_Modules_CineImpulseShakeModule_PostProcessProperties_Gasimo_CineBlend_CameraProperties__
+  name: PostProcessProperties
+  nameWithType: CineImpulseShakeModule.PostProcessProperties
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule.PostProcessProperties
+- uid: Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  commentId: M:Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  parent: Gasimo.CineBlend.ICameraModule
+  href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_PostProcessProperties_Gasimo_CineBlend_CameraProperties__
+  name: PostProcessProperties(ref CameraProperties)
+  nameWithType: ICameraModule.PostProcessProperties(ref CameraProperties)
+  fullName: Gasimo.CineBlend.ICameraModule.PostProcessProperties(ref Gasimo.CineBlend.CameraProperties)
+  nameWithType.vb: ICameraModule.PostProcessProperties(CameraProperties)
+  fullName.vb: Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties)
+  name.vb: PostProcessProperties(CameraProperties)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+    name: PostProcessProperties
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_PostProcessProperties_Gasimo_CineBlend_CameraProperties__
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: Gasimo.CineBlend.CameraProperties
+    name: CameraProperties
+    href: Gasimo.CineBlend.CameraProperties.html
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+    name: PostProcessProperties
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_PostProcessProperties_Gasimo_CineBlend_CameraProperties__
+  - name: (
+  - uid: Gasimo.CineBlend.CameraProperties
+    name: CameraProperties
+    href: Gasimo.CineBlend.CameraProperties.html
+  - name: )
+- uid: Gasimo.CineBlend.CameraProperties
+  commentId: T:Gasimo.CineBlend.CameraProperties
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.CameraProperties.html
+  name: CameraProperties
+  nameWithType: CameraProperties
+  fullName: Gasimo.CineBlend.CameraProperties
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake*
+  commentId: Overload:Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake
+  href: Gasimo.CineBlend.Modules.CineImpulseShakeModule.html#Gasimo_CineBlend_Modules_CineImpulseShakeModule_DoShake_System_Single_System_Single_
+  name: DoShake
+  nameWithType: CineImpulseShakeModule.DoShake
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule.DoShake
+- uid: FlaxEngine.Vector3
+  commentId: T:FlaxEngine.Vector3
+  parent: FlaxEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: FlaxEngine.Vector3

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using FlaxEngine;
 
-namespace Game;
+namespace Gasimo.CineBlend;
 
 /// <summary>
 /// ICineModule interface. It defines a single module which contains a collection of properties that can be blended.

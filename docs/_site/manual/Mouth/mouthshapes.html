@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Understanding Mouth Shapes | Cineblend </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Understanding Mouth Shapes | Cineblend ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="understanding-mouth-shapes">Understanding Mouth Shapes</h1>
+
+<p>FaceToons supports a standardized set of 6 basic mouth shapes, along with 3 extended shapes, following the standard developed by Hanna-Barbera studios in the 1960s. This set has since become the industry standard for TV animation. These shapes are mapped to indices 0-8 in any MouthCollection intended for LipSync or MouthShape clips.</p>
+<p>Additional shapes can be used for more expressive animation, but these will need to be indexed by number rather than shape and are not supported by default lip-sync tools. It is recommended to either use indexes outside of the MouthShape range for additional poses or package more textures into a single Mouth Frame.</p>
+<h2 id="mouth-reference">Mouth Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Mouth Shape</th>
+<th>Image</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ⓐ</strong></td>
+<td><img src="img/lisa-A.png" alt="A"></td>
+<td>Closed mouth for the &quot;<code>P</code>&quot;, &quot;<code>B</code>&quot;, and &quot;<code>M</code>&quot; sounds. This is nearly identical to the Ⓧ shape but with slight pressure between the lips.</td>
+</tr>
+<tr>
+<td><strong>Ⓑ</strong></td>
+<td><img src="img/lisa-B.png" alt="B"></td>
+<td>Slightly open mouth with clenched teeth, used for most consonants (&quot;<code>K</code>&quot;, &quot;<code>S</code>&quot;, &quot;<code>T</code>&quot;, etc.) and some vowels like &quot;<code>EE</code>&quot; as in b<strong>ee</strong>.</td>
+</tr>
+<tr>
+<td><strong>Ⓒ</strong></td>
+<td><img src="img/lisa-C.png" alt="C"></td>
+<td>Open mouth, used for vowels like &quot;<code>EH</code>&quot; in m<strong>e</strong>n and &quot;<code>AE</code>&quot; in b<strong>a</strong>t. Also serves as an in-between shape when transitioning from Ⓐ or Ⓑ to Ⓓ.</td>
+</tr>
+<tr>
+<td><strong>Ⓓ</strong></td>
+<td><img src="img/lisa-D.png" alt="D"></td>
+<td>Wide open mouth, used for &quot;<code>AA</code>&quot; as in f<strong>a</strong>ther.</td>
+</tr>
+<tr>
+<td><strong>Ⓔ</strong></td>
+<td><img src="img/lisa-E.png" alt="E"></td>
+<td>Slightly rounded mouth, used for &quot;<code>AO</code>&quot; in <strong>o</strong>ff and &quot;<code>ER</code>&quot; in b<strong>ir</strong>d. Also an in-between when moving from Ⓒ or Ⓓ to Ⓕ. Ensure ⒸⒺⒻ and ⒹⒺⒻ transitions are smooth, with Ⓔ not opening wider than Ⓒ.</td>
+</tr>
+<tr>
+<td><strong>Ⓕ</strong></td>
+<td><img src="img/lisa-F.png" alt="F"></td>
+<td>Puckered lips, used for &quot;<code>UW</code>&quot; as in y<strong>ou</strong>, &quot;<code>OW</code>&quot; in sh<strong>ow</strong>, and &quot;<code>W</code>&quot; in <strong>w</strong>ay.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extended-shapes">Extended Shapes</h3>
+<table>
+<thead>
+<tr>
+<th>Mouth Shape</th>
+<th>Image</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ⓖ</strong></td>
+<td><img src="img/lisa-G.png" alt="G"></td>
+<td>Upper teeth touching the lower lip, used for &quot;<code>F</code>&quot; in <strong>f</strong>or and &quot;<code>V</code>&quot; in <strong>v</strong>ery. Optional but recommended for added realism if the style allows.</td>
+</tr>
+<tr>
+<td><strong>Ⓗ</strong></td>
+<td><img src="img/lisa-H.png" alt="H"></td>
+<td>Long &quot;<code>L</code>&quot; sounds, with the tongue raised behind the upper teeth. The mouth should be at least as open as Ⓒ but not as wide as Ⓓ. Optional based on art style; if the tongue is not visible, this shape may be unnecessary.</td>
+</tr>
+<tr>
+<td><strong>Ⓧ</strong></td>
+<td><img src="img/lisa-X.png" alt="X"></td>
+<td>Idle position for pauses in speech. Nearly identical to Ⓐ but with relaxed, lightly closed lips. Optional; whether Ⓧ differs from Ⓐ depends on your style and taste.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

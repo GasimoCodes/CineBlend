@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Procedural Animation using States | Cineblend </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Procedural Animation using States | Cineblend ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="procedural-animation-using-states">Procedural Animation using States</h1>
+
+<p>FaceToons enables procedural animations through state assets, which can be used both within Timeline and during gameplay to drive real-time procedural animation.</p>
+<h2 id="using-eye-states">Using Eye States</h2>
+<p>To create a procedural animation, you first need an asset containing the animation parameters. You can create this asset through:<br>
+<strong>Create &gt; Gasimo &gt; FaceToons &gt; States &gt; Eyes &gt; [StateTypeName]</strong>.<br>
+Each state type exposes different settings for fine-tuning the procedural animation.</p>
+<h2 id="using-procedural-animation-in-gameplay">Using Procedural Animation in Gameplay</h2>
+<p>The <strong>EyeStateMachineDriver</strong> script enables state-driven procedural eye animations during gameplay. It uses <strong>EyeAnimatorState</strong> assets (normally used in Timeline tracks) to run procedural animations dynamically in real-time gameplay.</p>
+<p><video width="500" height="281" controls=""><source type="video/mp4" src="../../images/EyeStateMachine.mp4"></video></p>
+<h2 id="advanced-creating-custom-c-eye-states">Advanced: Creating Custom C# Eye States</h2>
+<p>To create custom procedural animations, any script inheriting from <code>EyeAnimatorStateBase</code> can define unique behaviors. States proceed through three main phases:</p>
+<ol>
+<li><p><code>OnStateEnter(IEyeController eyeAnimator)</code><br>
+This method triggers upon entering the state. Here, set any static or expensive material properties that don’t change during the state's lifetime (e.g., selecting a different Eye Set).</p>
+</li>
+<li><p><code>OnStateUpdate(IEyeController eyeAnimator, Vector3 lookAtPosition)</code><br>
+Called each frame while the state is active, providing live updates to <code>lookAtPosition</code>. Avoid texture-swapping here to reduce overhead.</p>
+</li>
+<li><p><code>OnStateExit(IEyeController eyeAnimator)</code><br>
+Called when exiting the state or replacing it with a new one.</p>
+</li>
+</ol>
+<h3 id="example-implementing-a-custom-eye-state">Example: Implementing a Custom Eye State</h3>
+<p>The following example shows a sample implementation responsible for random blinking and slight eye movements to simulate the character examining something.</p>
+<pre><code class="lang-csharp">[Serializable]
+[CreateAssetMenu(fileName = &quot;EyeAnimatorStateRandom&quot;, menuName = &quot;Gasimo/Face Toons/States/Eyes/Random&quot;)]
+public class EyeAnimatorStateRandom : EyeAnimatorStateBase
+{
+    // Variable definitions omitted...
+
+    public override void OnStateEnter(IEyeController eyeAnimator)
+    {
+        blinkTime = Random.Range(minMaxBlinkTime.x, minMaxBlinkTime.y);
+        lookTime = 0;
+        eyeAnimator.EyeSet = eyeSet;
+    }
+
+    public override void OnStateUpdate(IEyeController eyeAnimator, Vector3 lookAtPosition)
+    {
+        float d = Time.deltaTime;
+
+        if (blinkTime &lt;= 0)
+        {
+            _ = DoBlink(eyeAnimator);
+            blinkTime = UnityEngine.Random.Range(minMaxBlinkTime.x, minMaxBlinkTime.y);
+        }
+
+        if (lookTime &lt;= 0)
+        {
+            DoMoveIris(eyeAnimator, lookAtPosition);
+            lookTime = Random.Range(minMaxLookTime.x, minMaxLookTime.y);
+        }
+
+        blinkTime -= d;
+        lookTime -= d;
+    }
+
+    public override void OnStateExit(IEyeController eyeAnimator)
+    {
+    }
+
+    // Rest of code...
+}
+</code></pre>
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

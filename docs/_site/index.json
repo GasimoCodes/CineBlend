@@ -1,0 +1,187 @@
+{
+  "CHANGELOG.html": {
+    "href": "CHANGELOG.html",
+    "title": "Changelog | Cineblend",
+    "keywords": "Changelog All notable changes to this package will be documented in this file. [0.0.2] - 29/01/2025 Changelog Init"
+  },
+  "api/Gasimo.CineBlend.BlendableFloat.html": {
+    "href": "api/Gasimo.CineBlend.BlendableFloat.html",
+    "title": "Class BlendableFloat | Cineblend",
+    "keywords": "Class BlendableFloat Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll Float Lerp utility class public class BlendableFloat : IBlendableProperty<float> Inheritance object BlendableFloat Implements IBlendableProperty<float> Constructors BlendableFloat() public BlendableFloat() BlendableFloat(float) public BlendableFloat(float value) Parameters value float Properties CurrentValue Current value of the property public float CurrentValue { get; set; } Property Value float Methods Lerp(float, float, float) Linearly interpolates between two values public static float Lerp(float start, float end, float t) Parameters start float end float t float Returns float Interpolated value"
+  },
+  "api/Gasimo.CineBlend.BlendableQuaternion.html": {
+    "href": "api/Gasimo.CineBlend.BlendableQuaternion.html",
+    "title": "Class BlendableQuaternion | Cineblend",
+    "keywords": "Class BlendableQuaternion Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll Quaternion Lerp utility class public class BlendableQuaternion : IBlendableProperty<Quaternion> Inheritance object BlendableQuaternion Implements IBlendableProperty<Quaternion> Constructors BlendableQuaternion() public BlendableQuaternion() BlendableQuaternion(Quaternion) public BlendableQuaternion(Quaternion value) Parameters value Quaternion Properties CurrentValue Current value of the property public Quaternion CurrentValue { get; set; } Property Value Quaternion Methods Lerp(Quaternion, Quaternion, float) Linearly interpolates between two values public static Quaternion Lerp(Quaternion start, Quaternion end, float t) Parameters start Quaternion end Quaternion t float Returns Quaternion Interpolated value"
+  },
+  "api/Gasimo.CineBlend.BlendableVector3.html": {
+    "href": "api/Gasimo.CineBlend.BlendableVector3.html",
+    "title": "Class BlendableVector3 | Cineblend",
+    "keywords": "Class BlendableVector3 Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll Vector3 Lerp utility class public class BlendableVector3 : IBlendableProperty<Vector3> Inheritance object BlendableVector3 Implements IBlendableProperty<Vector3> Constructors BlendableVector3() public BlendableVector3() BlendableVector3(Vector3) public BlendableVector3(Vector3 value) Parameters value Vector3 Properties CurrentValue Current value of the property public Vector3 CurrentValue { get; set; } Property Value Vector3 Methods Lerp(Vector3, Vector3, float) Linearly interpolates between two values public static Vector3 Lerp(Vector3 start, Vector3 end, float t) Parameters start Vector3 end Vector3 t float Returns Vector3 Interpolated value"
+  },
+  "api/Gasimo.CineBlend.CameraBlendState.html": {
+    "href": "api/Gasimo.CineBlend.CameraBlendState.html",
+    "title": "Class CameraBlendState | Cineblend",
+    "keywords": "Class CameraBlendState Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll Represents the blend state between two cameras public class CameraBlendState Inheritance object CameraBlendState Properties BlendTime Time which it takes to blend between the two cameras public float BlendTime { get; set; } Property Value float CurrentTime Elapsed time since the blend started public float CurrentTime { get; set; } Property Value float FromCamera Camera to blend from public ICameraModule FromCamera { get; set; } Property Value ICameraModule IsBlending Returns true if the blend is still active public bool IsBlending { get; } Property Value bool ToCamera Camera to blend to public ICameraModule ToCamera { get; set; } Property Value ICameraModule"
+  },
+  "api/Gasimo.CineBlend.CameraProperties.html": {
+    "href": "api/Gasimo.CineBlend.CameraProperties.html",
+    "title": "Struct CameraProperties | Cineblend",
+    "keywords": "Struct CameraProperties Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll Collection of camera properties that can be blended public struct CameraProperties Constructors CameraProperties() public CameraProperties() Fields FarPlane Far Plane of the Camera public BlendableFloat FarPlane Field Value BlendableFloat FieldOfView FOV Of the Camera public BlendableFloat FieldOfView Field Value BlendableFloat NearPlane Near Plane of the Camera public BlendableFloat NearPlane Field Value BlendableFloat Position Position of the camera public BlendableVector3 Position Field Value BlendableVector3 Rotation Orientation of the Camera public BlendableQuaternion Rotation Field Value BlendableQuaternion Methods ApplyToCamera(Camera) Applies the camera properties to a real camera public void ApplyToCamera(Camera camera) Parameters camera Camera Clone() Creates a new object that is a copy of the current instance. public object Clone() Returns object A new object that is a copy of this instance. GetProjectionMatrix() Returns the ProjectionMatrix constructed from the camera properties public Matrix GetProjectionMatrix() Returns Matrix GetViewMatrix() Returns the ViewMatrix constructed from the camera properties public Matrix GetViewMatrix() Returns Matrix LerpAndSet(CameraProperties, CameraProperties, float) Utility class to blend between 2 camera properties and apply them to this property. public void LerpAndSet(CameraProperties start, CameraProperties end, float t) Parameters start CameraProperties Starting properties end CameraProperties Ending Properties t float Lerp value"
+  },
+  "api/Gasimo.CineBlend.Cineblend.html": {
+    "href": "api/Gasimo.CineBlend.Cineblend.html",
+    "title": "Class Cineblend | Cineblend",
+    "keywords": "Class Cineblend Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll CineFlax Plugin public class Cineblend : GamePlugin Inheritance object Object Plugin GamePlugin Cineblend Constructors Cineblend() Initializes a new instance of the FlaxEngine.GamePlugin. public Cineblend() Methods Deinitialize() Cleanup method called when this plugin is being unloaded or reloaded or engine is closing. public override void Deinitialize() Initialize() Initialization method called when this plugin is loaded to the memory and can be used. public override void Initialize() See Also GamePlugin"
+  },
+  "api/Gasimo.CineBlend.CineblendMaster.html": {
+    "href": "api/Gasimo.CineBlend.CineblendMaster.html",
+    "title": "Class CineblendMaster | Cineblend",
+    "keywords": "Class CineblendMaster Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll Camera Controller. Manages camera transitions and blending and applies them to the Main Camera this script is attached to. [RequireActor(typeof(Camera))] [ExecuteInEditMode] [Category(\"Cineblend\")] public class CineblendMaster : Script, ICineCamera Inheritance object Object SceneObject Script CineblendMaster Implements ICineCamera Properties DefaultBlendTime Default blend time for camera transitions [Tooltip(\"Default blend time for camera transitions\")] public float DefaultBlendTime { get; set; } Property Value float FinalProperties This Cameras processed final properties. public CameraProperties FinalProperties { get; } Property Value CameraProperties Instance public static CineblendMaster Instance { get; } Property Value CineblendMaster Modules This Camera's active modules. public Dictionary<Type, ICameraModule> Modules { get; } Property Value Dictionary<Type, ICameraModule> Name Name of the camera. Used to improve readability in the editor. public string Name { get; } Property Value string Priority The priority of the camera. The camera with the highest priority will be the active camera unless overriden by solo. public int Priority { get; } Property Value int Properties This Camera's Properties. public CameraProperties Properties { get; } Property Value CameraProperties currentVirtualCamera Current active Virtual Camera public ICineCamera currentVirtualCamera { get; } Property Value ICineCamera Methods ClearSolo() public void ClearSolo() OnStart() Called when a script is enabled just before any of the Update methods is called for the first time. public override void OnStart() OnUpdate() Called every frame if object is enabled. public override void OnUpdate() RegisterVirtualCamera(ICineCamera) public void RegisterVirtualCamera(ICineCamera virtualCamera) Parameters virtualCamera ICineCamera SetSolo(ICineCamera) public void SetSolo(ICineCamera camera) Parameters camera ICineCamera Transition(ICineCamera, ICineCamera, float) Transitions from one camera to another public void Transition(ICineCamera fromCamera, ICineCamera toCamera, float blendTime = 1) Parameters fromCamera ICineCamera toCamera ICineCamera blendTime float Transition(ICineCamera, float) Transitions to the selected camera public void Transition(ICineCamera toCamera, float blendTime = 1) Parameters toCamera ICineCamera blendTime float UnregisterVirtualCamera(ICineCamera) public void UnregisterVirtualCamera(ICineCamera virtualCamera) Parameters virtualCamera ICineCamera UpdateVirtualCameraPriority(VirtualCamera, int, int) public void UpdateVirtualCameraPriority(VirtualCamera virtualCamera, int oldPriority, int newPriority) Parameters virtualCamera VirtualCamera oldPriority int newPriority int"
+  },
+  "api/Gasimo.CineBlend.IBlendableProperty-1.html": {
+    "href": "api/Gasimo.CineBlend.IBlendableProperty-1.html",
+    "title": "Interface IBlendableProperty<T> | Cineblend",
+    "keywords": "Interface IBlendableProperty<T> Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll Interface for properties that can be blended public interface IBlendableProperty<T> Type Parameters T Properties CurrentValue Current value of the property T CurrentValue { get; set; } Property Value T Methods Lerp(T, T, float) Linearly interpolates between two values public static abstract T Lerp(T start, T end, float t) Parameters start T end T t float Returns T Interpolated value"
+  },
+  "api/Gasimo.CineBlend.ICameraModule.html": {
+    "href": "api/Gasimo.CineBlend.ICameraModule.html",
+    "title": "Interface ICameraModule | Cineblend",
+    "keywords": "Interface ICameraModule Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll ICineModule interface. It defines a single module which contains a collection of properties that can be blended. public interface ICameraModule Methods Blend(VirtualCamera, VirtualCamera, float) Blends between two module states void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t) Parameters fromSnapshot VirtualCamera toSnapshot VirtualCamera t float Initialize(VirtualCamera) Called when the module is initialized void Initialize(VirtualCamera camera) Parameters camera VirtualCamera PostProcessProperties(ref CameraProperties) Modifies the final camera properties before they are applied void PostProcessProperties(ref CameraProperties state) Parameters state CameraProperties"
+  },
+  "api/Gasimo.CineBlend.ICineCamera.html": {
+    "href": "api/Gasimo.CineBlend.ICineCamera.html",
+    "title": "Interface ICineCamera | Cineblend",
+    "keywords": "Interface ICineCamera Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll ICineCamera interface. Implement this to create new Virtual Cameras from scratch. Otherwise inherit the VirtualCamera class. public interface ICineCamera Properties FinalProperties This Cameras processed final properties. CameraProperties FinalProperties { get; } Property Value CameraProperties Modules CineModules which can be added to the camera. They are initialized by the virtual camera and then applied sequentially to the properties. Dictionary<Type, ICameraModule> Modules { get; } Property Value Dictionary<Type, ICameraModule> Name Name of the camera. Used to improve readability in the editor. string Name { get; } Property Value string Priority The priority of the camera. The camera with the highest priority will be the active camera unless overriden by solo. int Priority { get; } Property Value int Properties This Cameras non-processed initial properties. CameraProperties Properties { get; } Property Value CameraProperties"
+  },
+  "api/Gasimo.CineBlend.Modules.CineAutoFrameModule.html": {
+    "href": "api/Gasimo.CineBlend.Modules.CineAutoFrameModule.html",
+    "title": "Class CineAutoFrameModule | Cineblend",
+    "keywords": "Class CineAutoFrameModule Namespace Gasimo.CineBlend.Modules Assembly Cineblend.CSharp.dll CineAutoFrameModule Script that automatically frames target actors. public class CineAutoFrameModule : Script, ICameraModule Inheritance object Object SceneObject Script CineAutoFrameModule Implements ICameraModule Fields FOVRange [Range(0, 179)] public Vector2 FOVRange Field Value Vector2 Smoothing public float Smoothing Field Value float Target public Actor[] Target Field Value Actor[] Methods Blend(VirtualCamera, VirtualCamera, float) Blends between two module states public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t) Parameters fromSnapshot VirtualCamera toSnapshot VirtualCamera t float Initialize(VirtualCamera) Called when the module is initialized public void Initialize(VirtualCamera camera) Parameters camera VirtualCamera PostProcessProperties(ref CameraProperties) Modifies the final camera properties before they are applied public void PostProcessProperties(ref CameraProperties state) Parameters state CameraProperties"
+  },
+  "api/Gasimo.CineBlend.Modules.CineImpulseShakeModule.html": {
+    "href": "api/Gasimo.CineBlend.Modules.CineImpulseShakeModule.html",
+    "title": "Class CineImpulseShakeModule | Cineblend",
+    "keywords": "Class CineImpulseShakeModule Namespace Gasimo.CineBlend.Modules Assembly Cineblend.CSharp.dll Shakes this camera when an impulse is received. [RequireActor(typeof(VirtualCamera))] [Category(\"Cineblend\")] public class CineImpulseShakeModule : Script, ICameraModule Inheritance object Object SceneObject Script CineImpulseShakeModule Implements ICameraModule Methods Blend(VirtualCamera, VirtualCamera, float) Blends between two module states public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t) Parameters fromSnapshot VirtualCamera toSnapshot VirtualCamera t float DoShake(float, float) Does a camera shake for this camera. public void DoShake(float magnitude = 1, float duration = 3) Parameters magnitude float The intensity of the shake duration float For how long the shake should play DoShake(float, float, float, Vector3, float) Does a camera shake for this camera. public void DoShake(float magnitude, float duration, float deviation, Vector3 direction, float frequency = 2) Parameters magnitude float The intensity of the shake duration float For how long the shake should play deviation float Deviation from the direction vector. If the vector is up, this will ensure the camera can also deviate in other random directions. direction Vector3 Direction in which the camera should shake. For instance the direction away from explosion and towards the camera. frequency float Initialize(VirtualCamera) Called when the module is initialized public void Initialize(VirtualCamera camera) Parameters camera VirtualCamera PostProcessProperties(ref CameraProperties) Modifies the final camera properties before they are applied public void PostProcessProperties(ref CameraProperties state) Parameters state CameraProperties"
+  },
+  "api/Gasimo.CineBlend.Modules.CineLookAtModule.html": {
+    "href": "api/Gasimo.CineBlend.Modules.CineLookAtModule.html",
+    "title": "Class CineLookAtModule | Cineblend",
+    "keywords": "Class CineLookAtModule Namespace Gasimo.CineBlend.Modules Assembly Cineblend.CSharp.dll CineLookAtModule Script with smooth follow functionality. [RequireActor(typeof(VirtualCamera))] [Category(\"Cineblend\")] public class CineLookAtModule : Script, ICameraModule Inheritance object Object SceneObject Script CineLookAtModule Implements ICameraModule Fields Smoothing public float Smoothing Field Value float Target public Actor Target Field Value Actor Methods Blend(VirtualCamera, VirtualCamera, float) Blends between two module states public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t) Parameters fromSnapshot VirtualCamera toSnapshot VirtualCamera t float Initialize(VirtualCamera) Called when the module is initialized public void Initialize(VirtualCamera camera) Parameters camera VirtualCamera PostProcessProperties(ref CameraProperties) Modifies the final camera properties before they are applied public void PostProcessProperties(ref CameraProperties state) Parameters state CameraProperties"
+  },
+  "api/Gasimo.CineBlend.Modules.CineRecomposeModule.html": {
+    "href": "api/Gasimo.CineBlend.Modules.CineRecomposeModule.html",
+    "title": "Class CineRecomposeModule | Cineblend",
+    "keywords": "Class CineRecomposeModule Namespace Gasimo.CineBlend.Modules Assembly Cineblend.CSharp.dll Allows you to offset the position and rotation of the camera. [RequireActor(typeof(VirtualCamera))] [Category(\"Cineblend\")] public class CineRecomposeModule : Script, ICameraModule Inheritance object Object SceneObject Script CineRecomposeModule Implements ICameraModule Fields PositionOffset public Vector3 PositionOffset Field Value Vector3 RotationOffset public Quaternion RotationOffset Field Value Quaternion Methods Blend(VirtualCamera, VirtualCamera, float) Blends between two module states public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t) Parameters fromSnapshot VirtualCamera toSnapshot VirtualCamera t float Initialize(VirtualCamera) Called when the module is initialized public void Initialize(VirtualCamera camera) Parameters camera VirtualCamera PostProcessProperties(ref CameraProperties) Modifies the final camera properties before they are applied public void PostProcessProperties(ref CameraProperties state) Parameters state CameraProperties"
+  },
+  "api/Gasimo.CineBlend.Modules.CineShakeModule.html": {
+    "href": "api/Gasimo.CineBlend.Modules.CineShakeModule.html",
+    "title": "Class CineShakeModule | Cineblend",
+    "keywords": "Class CineShakeModule Namespace Gasimo.CineBlend.Modules Assembly Cineblend.CSharp.dll Adds realistic multi-frequency camera noise effects to the game. [RequireActor(typeof(VirtualCamera))] [Category(\"Cineblend\")] public class CineShakeModule : Script, ICameraModule Inheritance object Object SceneObject Script CineShakeModule Implements ICameraModule Fields PositionAmplitude public Vector3 PositionAmplitude Field Value Vector3 PositionFrequency public Vector3 PositionFrequency Field Value Vector3 RotationAmplitude public Vector3 RotationAmplitude Field Value Vector3 RotationFrequency public Vector3 RotationFrequency Field Value Vector3 Methods Blend(VirtualCamera, VirtualCamera, float) Blends between two module states public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t) Parameters fromSnapshot VirtualCamera toSnapshot VirtualCamera t float Initialize(VirtualCamera) Called when the module is initialized public void Initialize(VirtualCamera camera) Parameters camera VirtualCamera PostProcessProperties(ref CameraProperties) Modifies the final camera properties before they are applied public void PostProcessProperties(ref CameraProperties state) Parameters state CameraProperties"
+  },
+  "api/Gasimo.CineBlend.Modules.CineTransformModule.html": {
+    "href": "api/Gasimo.CineBlend.Modules.CineTransformModule.html",
+    "title": "Class CineTransformModule | Cineblend",
+    "keywords": "Class CineTransformModule Namespace Gasimo.CineBlend.Modules Assembly Cineblend.CSharp.dll CineTransformModule class holds camera transforms and can apply them. This is a default module which is auto-included on built-in VirtualCameras. public class CineTransformModule : ICameraModule Inheritance object CineTransformModule Implements ICameraModule Methods Blend(VirtualCamera, VirtualCamera, float) Blends between two module states public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t) Parameters fromSnapshot VirtualCamera toSnapshot VirtualCamera t float Initialize(VirtualCamera) Called when the module is initialized public void Initialize(VirtualCamera camera) Parameters camera VirtualCamera PostProcessProperties(ref CameraProperties) Modifies the final camera properties before they are applied public void PostProcessProperties(ref CameraProperties state) Parameters state CameraProperties"
+  },
+  "api/Gasimo.CineBlend.Modules.html": {
+    "href": "api/Gasimo.CineBlend.Modules.html",
+    "title": "Namespace Gasimo.CineBlend.Modules | Cineblend",
+    "keywords": "Namespace Gasimo.CineBlend.Modules Classes CineAutoFrameModule CineAutoFrameModule Script that automatically frames target actors. CineImpulseShakeModule Shakes this camera when an impulse is received. CineLookAtModule CineLookAtModule Script with smooth follow functionality. CineRecomposeModule Allows you to offset the position and rotation of the camera. CineShakeModule Adds realistic multi-frequency camera noise effects to the game. CineTransformModule CineTransformModule class holds camera transforms and can apply them. This is a default module which is auto-included on built-in VirtualCameras."
+  },
+  "api/Gasimo.CineBlend.Samples.Shaker.html": {
+    "href": "api/Gasimo.CineBlend.Samples.Shaker.html",
+    "title": "Class Shaker | Cineblend",
+    "keywords": "Class Shaker Namespace Gasimo.CineBlend.Samples Assembly Cineblend.CSharp.dll Shaker Script. public class Shaker : Script Inheritance object Object SceneObject Script Shaker Fields ShakeModule public CineImpulseShakeModule ShakeModule Field Value CineImpulseShakeModule Methods OnDisable() Called when object becomes disabled and inactive. public override void OnDisable() OnEnable() Called when object becomes enabled and active. public override void OnEnable() OnStart() Called when a script is enabled just before any of the Update methods is called for the first time. public override void OnStart() OnUpdate() Called every frame if object is enabled. public override void OnUpdate()"
+  },
+  "api/Gasimo.CineBlend.Samples.html": {
+    "href": "api/Gasimo.CineBlend.Samples.html",
+    "title": "Namespace Gasimo.CineBlend.Samples | Cineblend",
+    "keywords": "Namespace Gasimo.CineBlend.Samples Classes Shaker Shaker Script."
+  },
+  "api/Gasimo.CineBlend.VirtualCamera.html": {
+    "href": "api/Gasimo.CineBlend.VirtualCamera.html",
+    "title": "Class VirtualCamera | Cineblend",
+    "keywords": "Class VirtualCamera Namespace Gasimo.CineBlend Assembly Cineblend.CSharp.dll Virtual Camera Actor that can be blended between different states [ActorContextMenu(\"New/CineBlend/Virtual Camera\")] [ActorToolbox(\"Visuals\")] public class VirtualCamera : EmptyActor, ICineCamera Inheritance object Object SceneObject Actor EmptyActor VirtualCamera Implements ICineCamera Properties FarPlane [EditorDisplay(\"Virtual Camera Properties\", null)] public float FarPlane { get; set; } Property Value float FieldOfView [EditorDisplay(\"Virtual Camera Properties\", null)] public float FieldOfView { get; set; } Property Value float FinalProperties Gets postprocessed properties public CameraProperties FinalProperties { get; } Property Value CameraProperties Modules Modules on the camera. Init with CineTransform module. public Dictionary<Type, ICameraModule> Modules { get; } Property Value Dictionary<Type, ICameraModule> NearPlane [EditorDisplay(\"Virtual Camera Properties\", null)] public float NearPlane { get; set; } Property Value float Priority Camera priority. Higher priority cameras will override lower priority cameras. [EditorDisplay(\"Virtual Camera Status\", null)] [EditorOrder(1)] public int Priority { get; set; } Property Value int Properties Gets the camera's current properties [HideInEditor] public CameraProperties Properties { get; set; } Property Value CameraProperties Methods AddModule<T>(T) Adds a new module to the camera public T AddModule<T>(T module) where T : ICameraModule Parameters module T Returns T Type Parameters T ClearSolo() [Button(\"Clear Solo\", null)] public void ClearSolo() GetModule<T>() Gets a module of the specified type public T GetModule<T>() where T : class, ICameraModule Returns T Type Parameters T OnBeginPlay() Initialize the virtual camera public override void OnBeginPlay() OnDisable() Unregister from CineblendMaster when disabled public override void OnDisable() OnEnable() Register with CineblendMaster when enabled public override void OnEnable() RemoveModule<T>() Removes a module of the specified type public void RemoveModule<T>() where T : ICameraModule Type Parameters T Solo() [Button(\"Solo This\", null)] public void Solo()"
+  },
+  "api/Gasimo.CineBlend.html": {
+    "href": "api/Gasimo.CineBlend.html",
+    "title": "Namespace Gasimo.CineBlend | Cineblend",
+    "keywords": "Namespace Gasimo.CineBlend Classes BlendableFloat Float Lerp utility class BlendableQuaternion Quaternion Lerp utility class BlendableVector3 Vector3 Lerp utility class CameraBlendState Represents the blend state between two cameras Cineblend CineFlax Plugin CineblendMaster Camera Controller. Manages camera transitions and blending and applies them to the Main Camera this script is attached to. VirtualCamera Virtual Camera Actor that can be blended between different states Structs CameraProperties Collection of camera properties that can be blended Interfaces IBlendableProperty<T> Interface for properties that can be blended ICameraModule ICineModule interface. It defines a single module which contains a collection of properties that can be blended. ICineCamera ICineCamera interface. Implement this to create new Virtual Cameras from scratch. Otherwise inherit the VirtualCamera class."
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Welcome to Cineblend docs! | Cineblend",
+    "keywords": "Welcome to Cineblend docs! Description Manual | API Key Features Virtual Camera"
+  },
+  "manual/Getting Started/Cineblend Master.html": {
+    "href": "manual/Getting Started/Cineblend Master.html",
+    "title": "Setting up | Cineblend",
+    "keywords": "Setting up Place CineblendMaster Script onto your Main Camera in Scene. Create Virtual Camera(s) through New > CineBlend > Virtual Camera Setup camera properties, modules and priority to your liking. Solo-ing, priority changes and module changes reflect in real-time for active virtual cameras."
+  },
+  "manual/Getting Started/concepts.html": {
+    "href": "manual/Getting Started/concepts.html",
+    "title": "Principles and Overview | Cineblend",
+    "keywords": "Principles and Overview Introduction Modular Virtual Camera systems, such as Cineblend or Unity's Cinemachine, provide an easy and flexible way to control cameras in games, movies, and interactive applications. Instead of manually animating cameras, switching between them, or writing complex logic, these systems let you define multiple Virtual Cameras with modular behaviours (like auto-framing, look-at, camera shake, offsets...) and smoothly transition between them. Core Principles 1. Virtual Cameras Virtual Cameras exist in the scene but act as proxies for the physical camera. Each Virtual Camera stores its own settings, including position, rotation, field of view, and modular behaviors. However, they do not directly render the scene. Instead, they pass their settings to the active physical camera, which then applies them. Virtual Cameras are switched based on priority or controlled via API commands. 2. Camera Blending Instead of abruptly switching between cameras, modular systems allow smooth transitions using blending. This enables seamless transitions between different views, such as third-person, first-person, top-down, or multiple cinematic shots, without needing to create or reposition cameras manually. 3. Behaviours (Modules) Cineblend and similar systems let you stack modular behaviors onto Virtual Cameras to create complex effects. These for instance include: Look-At Tracking: Automatically rotates the camera to keep a target in focus. Camera Shake: Adds subtle movement to the camera, simulating being handheld or moved. Auto-Framing: Ensures multiple objects stay within the camera view by automatically rotating/zooming the camera. These behaviors are applied sequentially and additively, allowing fine-tuned control over camera movement and composition."
+  },
+  "manual/Getting Started/index.html": {
+    "href": "manual/Getting Started/index.html",
+    "title": "Getting Started | Cineblend",
+    "keywords": "Getting Started Installing CineBlend as Game Plugin using Git Open FlaxEngine Plugin Manager (Tools/Plugins) and select \"Clone Project\" Enter https://github.com/GasimoCodes/CineBlend into git path and Cineblend as Plugin Name. Press Clone. Checking out the sample: Open Flax Content Tab Navigate to Cineblend > Content > Scene Open the scene"
+  },
+  "manual/Modules/Auto Frame.html": {
+    "href": "manual/Modules/Auto Frame.html",
+    "title": "Auto Frame Module | Cineblend",
+    "keywords": "Auto Frame Module The CineAutoFrameModule automatically adjusts the camera to ensure that all target actor(s) remain within the frame. It dynamically calculates the optimal camera orientation and field of view (FOV) to keep selected objects visible while maintaining a smooth and cinematic look. This module overrides the Rotation and FOV of the camera set by any previous modules. Use Cases Cutscenes & Cinematics: Keep multiple characters in view during conversations or dramatic sequences. Gameplay Cameras: Automatically adjust to player and NPC positions without manual camera control. For best results keep the camera at a reasonable distance from the Actors being tracked."
+  },
+  "manual/Modules/Impulse Shake.html": {
+    "href": "manual/Modules/Impulse Shake.html",
+    "title": "Impulse Shake Module | Cineblend",
+    "keywords": "Impulse Shake Module CineImpulseShakeModule allows you to send directional impulses to the camera to shake it. This module is additive and does not override any values. Use Cases Environmental Effects such as Explosions, Stomps or Fall Impacts Enhance gameplay feel: Add subtle shakes to actions (shooting, hitting, being found etc.) For long-term ambient effects, use the Shake Module instead."
+  },
+  "manual/Modules/Look At.html": {
+    "href": "manual/Modules/Look At.html",
+    "title": "Look-At Module | Cineblend",
+    "keywords": "Look-At Module The CineLookAtModule enables a camera to smoothly track a designated target. It ensures that the camera is always oriented towards the target while allowing for configurable smoothing to create natural motion. This module overrides Rotation of the camera set by any previous modules."
+  },
+  "manual/Modules/Recompose.html": {
+    "href": "manual/Modules/Recompose.html",
+    "title": "Recompose | Cineblend",
+    "keywords": "Recompose Recompose modules allows you to add an offset to the Camera's Position & Rotation. This is useful when paired with modules such as LookAt to reframe the subject instead of keeping it centered. This module is additive and does not override any values. Use Cases Pairing with look-at to keep target at the edge of the screen instead of centered. Offset Auto-Framing Offset camera on a spline path or following an object. Easy Camera-relative roll regardless of in-world camera rotation."
+  },
+  "manual/Modules/Shake.html": {
+    "href": "manual/Modules/Shake.html",
+    "title": "Auto Frame Module | Cineblend",
+    "keywords": "Auto Frame Module CineShakeModule introduces procedural multi-frequency camera shake effects. It enhances realism by applying Perlin noise-based motion to both the camera’s position and rotation, simulating a handheld camera type. This module is additive and does not override any values. Use Cases Handheld Camera Simulation: Creates a natural, slightly unstable look for a first-person or cinematic camera. Apply this to moving cameras to make it appear like the operator is walking. Ambient Effects: Enhance gameplay by simulating turbulence/wind while driving fast or falling, earthquakes, or rough terrain movement. For temporary effects such as explosions, use the ImpulseShake module."
+  },
+  "manual/Modules/index.html": {
+    "href": "manual/Modules/index.html",
+    "title": "Modules | Cineblend",
+    "keywords": "Modules Cineblend and lets you stack modular behaviors onto Virtual Cameras to create complex effects. This chapter describes the modules available and their behaviours."
+  },
+  "manual/Timeline/index.html": {
+    "href": "manual/Timeline/index.html",
+    "title": "Timeline Workflow | Cineblend",
+    "keywords": "Timeline Workflow Not implemented yet in Flax."
+  },
+  "manual/Virtual Cameras/Clear Shot Camera.html": {
+    "href": "manual/Virtual Cameras/Clear Shot Camera.html",
+    "title": "Clear Shot Camera | Cineblend",
+    "keywords": "Clear Shot Camera Overview Clear Shot camera is a special type of Virtual Camera. It contains a list of VirtualCameras, ranks them and selects the one which can see a specific Actor(s) the most. This camera type is not yet available in CineBlend. Use-Case Grand Theft Auto-like cinematic driving camera Dynamic cutscenes/dialogues which ensure only cameras which can see the player or are not inside walls are selected Sports match-like spectator camera."
+  },
+  "manual/Virtual Cameras/Virtual Camera.html": {
+    "href": "manual/Virtual Cameras/Virtual Camera.html",
+    "title": "Virtual Camera | Cineblend",
+    "keywords": "Virtual Camera Overview A simple camera proxy with no additional logic. You can tweak its values as you would with any physical camera. You can stack additional modules onto this Camera to override or modify its properties. Modules are applied sequentially. Depending on module type, it can either (override) a certain property or (additive) modify a property."
+  },
+  "manual/Virtual Cameras/index.html": {
+    "href": "manual/Virtual Cameras/index.html",
+    "title": "Virtual Cameras | Cineblend",
+    "keywords": "Virtual Cameras Virtual Cameras exist in the scene but act as proxies for the physical camera. Each Virtual Camera stores its own settings, including position, rotation, field of view, and modular behaviors. However, they do not directly render the scene. Instead, they pass their settings to the active physical camera, which then applies them. Virtual Cameras are switched based on priority or controlled via API commands."
+  },
+  "manual/troubleshoot.html": {
+    "href": "manual/troubleshoot.html",
+    "title": "Troubleshooting | Cineblend",
+    "keywords": "Troubleshooting List of common issues and solutions with CineBlend. If any error persists, feel free to contact me. This list will be populated as common issues are found"
+  }
+}

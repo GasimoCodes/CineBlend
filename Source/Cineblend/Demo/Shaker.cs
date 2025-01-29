@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
+using Gasimo.CineBlend.Modules;
 
-namespace Cineblend;
+namespace Gasimo.CineBlend.Samples;
 
 /// <summary>
 /// Shaker Script.

@@ -1,0 +1,404 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.BlendableVector3
+  commentId: T:Gasimo.CineBlend.BlendableVector3
+  id: BlendableVector3
+  parent: Gasimo.CineBlend
+  children:
+  - Gasimo.CineBlend.BlendableVector3.#ctor
+  - Gasimo.CineBlend.BlendableVector3.#ctor(FlaxEngine.Vector3)
+  - Gasimo.CineBlend.BlendableVector3.CurrentValue
+  - Gasimo.CineBlend.BlendableVector3.Lerp(FlaxEngine.Vector3,FlaxEngine.Vector3,System.Single)
+  langs:
+  - csharp
+  - vb
+  name: BlendableVector3
+  nameWithType: BlendableVector3
+  fullName: Gasimo.CineBlend.BlendableVector3
+  type: Class
+  source:
+    id: BlendableVector3
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 125
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Vector3 Lerp utility class
+  example: []
+  syntax:
+    content: 'public class BlendableVector3 : IBlendableProperty<Vector3>'
+    content.vb: Public Class BlendableVector3 Implements IBlendableProperty(Of Vector3)
+  inheritance:
+  - System.Object
+  implements:
+  - Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}
+- uid: Gasimo.CineBlend.BlendableVector3.CurrentValue
+  commentId: P:Gasimo.CineBlend.BlendableVector3.CurrentValue
+  id: CurrentValue
+  parent: Gasimo.CineBlend.BlendableVector3
+  langs:
+  - csharp
+  - vb
+  name: CurrentValue
+  nameWithType: BlendableVector3.CurrentValue
+  fullName: Gasimo.CineBlend.BlendableVector3.CurrentValue
+  type: Property
+  source:
+    id: CurrentValue
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 127
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Current value of the property
+  example: []
+  syntax:
+    content: public Vector3 CurrentValue { get; set; }
+    parameters: []
+    return:
+      type: FlaxEngine.Vector3
+    content.vb: Public Property CurrentValue As Vector3
+  overload: Gasimo.CineBlend.BlendableVector3.CurrentValue*
+  implements:
+  - Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}.CurrentValue
+- uid: Gasimo.CineBlend.BlendableVector3.Lerp(FlaxEngine.Vector3,FlaxEngine.Vector3,System.Single)
+  commentId: M:Gasimo.CineBlend.BlendableVector3.Lerp(FlaxEngine.Vector3,FlaxEngine.Vector3,System.Single)
+  id: Lerp(FlaxEngine.Vector3,FlaxEngine.Vector3,System.Single)
+  parent: Gasimo.CineBlend.BlendableVector3
+  langs:
+  - csharp
+  - vb
+  name: Lerp(Vector3, Vector3, float)
+  nameWithType: BlendableVector3.Lerp(Vector3, Vector3, float)
+  fullName: Gasimo.CineBlend.BlendableVector3.Lerp(FlaxEngine.Vector3, FlaxEngine.Vector3, float)
+  type: Method
+  source:
+    id: Lerp
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 128
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Linearly interpolates between two values
+  example: []
+  syntax:
+    content: public static Vector3 Lerp(Vector3 start, Vector3 end, float t)
+    parameters:
+    - id: start
+      type: FlaxEngine.Vector3
+      description: ''
+    - id: end
+      type: FlaxEngine.Vector3
+      description: ''
+    - id: t
+      type: System.Single
+      description: ''
+    return:
+      type: FlaxEngine.Vector3
+      description: Interpolated value
+    content.vb: Public Shared Function Lerp(start As Vector3, [end] As Vector3, t As Single) As Vector3
+  overload: Gasimo.CineBlend.BlendableVector3.Lerp*
+  implements:
+  - Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}.Lerp(FlaxEngine.Vector3,FlaxEngine.Vector3,System.Single)
+  nameWithType.vb: BlendableVector3.Lerp(Vector3, Vector3, Single)
+  fullName.vb: Gasimo.CineBlend.BlendableVector3.Lerp(FlaxEngine.Vector3, FlaxEngine.Vector3, Single)
+  name.vb: Lerp(Vector3, Vector3, Single)
+- uid: Gasimo.CineBlend.BlendableVector3.#ctor
+  commentId: M:Gasimo.CineBlend.BlendableVector3.#ctor
+  id: '#ctor'
+  parent: Gasimo.CineBlend.BlendableVector3
+  langs:
+  - csharp
+  - vb
+  name: BlendableVector3()
+  nameWithType: BlendableVector3.BlendableVector3()
+  fullName: Gasimo.CineBlend.BlendableVector3.BlendableVector3()
+  type: Constructor
+  source:
+    id: .ctor
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 130
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: public BlendableVector3()
+    content.vb: Public Sub New()
+  overload: Gasimo.CineBlend.BlendableVector3.#ctor*
+  nameWithType.vb: BlendableVector3.New()
+  fullName.vb: Gasimo.CineBlend.BlendableVector3.New()
+  name.vb: New()
+- uid: Gasimo.CineBlend.BlendableVector3.#ctor(FlaxEngine.Vector3)
+  commentId: M:Gasimo.CineBlend.BlendableVector3.#ctor(FlaxEngine.Vector3)
+  id: '#ctor(FlaxEngine.Vector3)'
+  parent: Gasimo.CineBlend.BlendableVector3
+  langs:
+  - csharp
+  - vb
+  name: BlendableVector3(Vector3)
+  nameWithType: BlendableVector3.BlendableVector3(Vector3)
+  fullName: Gasimo.CineBlend.BlendableVector3.BlendableVector3(FlaxEngine.Vector3)
+  type: Constructor
+  source:
+    id: .ctor
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraProperties.cs
+    startLine: 134
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  syntax:
+    content: public BlendableVector3(Vector3 value)
+    parameters:
+    - id: value
+      type: FlaxEngine.Vector3
+    content.vb: Public Sub New(value As Vector3)
+  overload: Gasimo.CineBlend.BlendableVector3.#ctor*
+  nameWithType.vb: BlendableVector3.New(Vector3)
+  fullName.vb: Gasimo.CineBlend.BlendableVector3.New(FlaxEngine.Vector3)
+  name.vb: New(Vector3)
+references:
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}
+  commentId: T:Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}
+  parent: Gasimo.CineBlend
+  definition: Gasimo.CineBlend.IBlendableProperty`1
+  href: Gasimo.CineBlend.IBlendableProperty-1.html
+  name: IBlendableProperty<Vector3>
+  nameWithType: IBlendableProperty<Vector3>
+  fullName: Gasimo.CineBlend.IBlendableProperty<FlaxEngine.Vector3>
+  nameWithType.vb: IBlendableProperty(Of Vector3)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of FlaxEngine.Vector3)
+  name.vb: IBlendableProperty(Of Vector3)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: <
+  - uid: FlaxEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: FlaxEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Gasimo.CineBlend.IBlendableProperty`1
+  commentId: T:Gasimo.CineBlend.IBlendableProperty`1
+  href: Gasimo.CineBlend.IBlendableProperty-1.html
+  name: IBlendableProperty<T>
+  nameWithType: IBlendableProperty<T>
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>
+  nameWithType.vb: IBlendableProperty(Of T)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T)
+  name.vb: IBlendableProperty(Of T)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1
+    name: IBlendableProperty
+    href: Gasimo.CineBlend.IBlendableProperty-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Gasimo.CineBlend.BlendableVector3.CurrentValue*
+  commentId: Overload:Gasimo.CineBlend.BlendableVector3.CurrentValue
+  href: Gasimo.CineBlend.BlendableVector3.html#Gasimo_CineBlend_BlendableVector3_CurrentValue
+  name: CurrentValue
+  nameWithType: BlendableVector3.CurrentValue
+  fullName: Gasimo.CineBlend.BlendableVector3.CurrentValue
+- uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}.CurrentValue
+  commentId: P:Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}.CurrentValue
+  parent: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}
+  definition: Gasimo.CineBlend.IBlendableProperty`1.CurrentValue
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_CurrentValue
+  name: CurrentValue
+  nameWithType: IBlendableProperty<Vector3>.CurrentValue
+  fullName: Gasimo.CineBlend.IBlendableProperty<FlaxEngine.Vector3>.CurrentValue
+  nameWithType.vb: IBlendableProperty(Of Vector3).CurrentValue
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of FlaxEngine.Vector3).CurrentValue
+- uid: FlaxEngine.Vector3
+  commentId: T:FlaxEngine.Vector3
+  parent: FlaxEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: FlaxEngine.Vector3
+- uid: Gasimo.CineBlend.IBlendableProperty`1.CurrentValue
+  commentId: P:Gasimo.CineBlend.IBlendableProperty`1.CurrentValue
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_CurrentValue
+  name: CurrentValue
+  nameWithType: IBlendableProperty<T>.CurrentValue
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>.CurrentValue
+  nameWithType.vb: IBlendableProperty(Of T).CurrentValue
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T).CurrentValue
+- uid: FlaxEngine
+  commentId: N:FlaxEngine
+  isExternal: true
+  name: FlaxEngine
+  nameWithType: FlaxEngine
+  fullName: FlaxEngine
+- uid: Gasimo.CineBlend.BlendableVector3.Lerp*
+  commentId: Overload:Gasimo.CineBlend.BlendableVector3.Lerp
+  href: Gasimo.CineBlend.BlendableVector3.html#Gasimo_CineBlend_BlendableVector3_Lerp_FlaxEngine_Vector3_FlaxEngine_Vector3_System_Single_
+  name: Lerp
+  nameWithType: BlendableVector3.Lerp
+  fullName: Gasimo.CineBlend.BlendableVector3.Lerp
+- uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}.Lerp(FlaxEngine.Vector3,FlaxEngine.Vector3,System.Single)
+  commentId: M:Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}.Lerp(FlaxEngine.Vector3,FlaxEngine.Vector3,System.Single)
+  parent: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}
+  definition: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  name: Lerp(Vector3, Vector3, float)
+  nameWithType: IBlendableProperty<Vector3>.Lerp(Vector3, Vector3, float)
+  fullName: Gasimo.CineBlend.IBlendableProperty<FlaxEngine.Vector3>.Lerp(FlaxEngine.Vector3, FlaxEngine.Vector3, float)
+  nameWithType.vb: IBlendableProperty(Of Vector3).Lerp(Vector3, Vector3, Single)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of FlaxEngine.Vector3).Lerp(FlaxEngine.Vector3, FlaxEngine.Vector3, Single)
+  name.vb: Lerp(Vector3, Vector3, Single)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}.Lerp(FlaxEngine.Vector3,FlaxEngine.Vector3,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - uid: FlaxEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: FlaxEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty{FlaxEngine.Vector3}.Lerp(FlaxEngine.Vector3,FlaxEngine.Vector3,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - uid: FlaxEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: FlaxEngine.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+  commentId: M:Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+  isExternal: true
+  href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  name: Lerp(T, T, float)
+  nameWithType: IBlendableProperty<T>.Lerp(T, T, float)
+  fullName: Gasimo.CineBlend.IBlendableProperty<T>.Lerp(T, T, float)
+  nameWithType.vb: IBlendableProperty(Of T).Lerp(T, T, Single)
+  fullName.vb: Gasimo.CineBlend.IBlendableProperty(Of T).Lerp(T, T, Single)
+  name.vb: Lerp(T, T, Single)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.IBlendableProperty`1.Lerp(`0,`0,System.Single)
+    name: Lerp
+    href: Gasimo.CineBlend.IBlendableProperty-1.html#Gasimo_CineBlend_IBlendableProperty_1_Lerp__0__0_System_Single_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: )
+- uid: Gasimo.CineBlend.BlendableVector3.#ctor*
+  commentId: Overload:Gasimo.CineBlend.BlendableVector3.#ctor
+  href: Gasimo.CineBlend.BlendableVector3.html#Gasimo_CineBlend_BlendableVector3__ctor
+  name: BlendableVector3
+  nameWithType: BlendableVector3.BlendableVector3
+  fullName: Gasimo.CineBlend.BlendableVector3.BlendableVector3
+  nameWithType.vb: BlendableVector3.New
+  fullName.vb: Gasimo.CineBlend.BlendableVector3.New
+  name.vb: New

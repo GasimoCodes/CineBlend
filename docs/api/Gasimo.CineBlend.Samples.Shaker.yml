@@ -1,0 +1,370 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.Samples.Shaker
+  commentId: T:Gasimo.CineBlend.Samples.Shaker
+  id: Shaker
+  parent: Gasimo.CineBlend.Samples
+  children:
+  - Gasimo.CineBlend.Samples.Shaker.OnDisable
+  - Gasimo.CineBlend.Samples.Shaker.OnEnable
+  - Gasimo.CineBlend.Samples.Shaker.OnStart
+  - Gasimo.CineBlend.Samples.Shaker.OnUpdate
+  - Gasimo.CineBlend.Samples.Shaker.ShakeModule
+  langs:
+  - csharp
+  - vb
+  name: Shaker
+  nameWithType: Shaker
+  fullName: Gasimo.CineBlend.Samples.Shaker
+  type: Class
+  source:
+    id: Shaker
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Demo\Shaker.cs
+    startLine: 10
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Samples
+  summary: Shaker Script.
+  example: []
+  syntax:
+    content: 'public class Shaker : Script'
+    content.vb: Public Class Shaker Inherits Script
+  inheritance:
+  - System.Object
+  - FlaxEngine.Object
+  - FlaxEngine.SceneObject
+  - FlaxEngine.Script
+- uid: Gasimo.CineBlend.Samples.Shaker.ShakeModule
+  commentId: F:Gasimo.CineBlend.Samples.Shaker.ShakeModule
+  id: ShakeModule
+  parent: Gasimo.CineBlend.Samples.Shaker
+  langs:
+  - csharp
+  - vb
+  name: ShakeModule
+  nameWithType: Shaker.ShakeModule
+  fullName: Gasimo.CineBlend.Samples.Shaker.ShakeModule
+  type: Field
+  source:
+    id: ShakeModule
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Demo\Shaker.cs
+    startLine: 13
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Samples
+  syntax:
+    content: public CineImpulseShakeModule ShakeModule
+    return:
+      type: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+    content.vb: Public ShakeModule As CineImpulseShakeModule
+- uid: Gasimo.CineBlend.Samples.Shaker.OnStart
+  commentId: M:Gasimo.CineBlend.Samples.Shaker.OnStart
+  id: OnStart
+  parent: Gasimo.CineBlend.Samples.Shaker
+  langs:
+  - csharp
+  - vb
+  name: OnStart()
+  nameWithType: Shaker.OnStart()
+  fullName: Gasimo.CineBlend.Samples.Shaker.OnStart()
+  type: Method
+  source:
+    id: OnStart
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Demo\Shaker.cs
+    startLine: 16
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Samples
+  summary: Called when a script is enabled just before any of the Update methods is called for the first time.
+  example: []
+  syntax:
+    content: public override void OnStart()
+    content.vb: Public Overrides Sub OnStart()
+  overridden: FlaxEngine.Script.OnStart
+  overload: Gasimo.CineBlend.Samples.Shaker.OnStart*
+- uid: Gasimo.CineBlend.Samples.Shaker.OnEnable
+  commentId: M:Gasimo.CineBlend.Samples.Shaker.OnEnable
+  id: OnEnable
+  parent: Gasimo.CineBlend.Samples.Shaker
+  langs:
+  - csharp
+  - vb
+  name: OnEnable()
+  nameWithType: Shaker.OnEnable()
+  fullName: Gasimo.CineBlend.Samples.Shaker.OnEnable()
+  type: Method
+  source:
+    id: OnEnable
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Demo\Shaker.cs
+    startLine: 22
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Samples
+  summary: Called when object becomes enabled and active.
+  example: []
+  syntax:
+    content: public override void OnEnable()
+    content.vb: Public Overrides Sub OnEnable()
+  overridden: FlaxEngine.Script.OnEnable
+  overload: Gasimo.CineBlend.Samples.Shaker.OnEnable*
+- uid: Gasimo.CineBlend.Samples.Shaker.OnDisable
+  commentId: M:Gasimo.CineBlend.Samples.Shaker.OnDisable
+  id: OnDisable
+  parent: Gasimo.CineBlend.Samples.Shaker
+  langs:
+  - csharp
+  - vb
+  name: OnDisable()
+  nameWithType: Shaker.OnDisable()
+  fullName: Gasimo.CineBlend.Samples.Shaker.OnDisable()
+  type: Method
+  source:
+    id: OnDisable
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Demo\Shaker.cs
+    startLine: 28
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Samples
+  summary: Called when object becomes disabled and inactive.
+  example: []
+  syntax:
+    content: public override void OnDisable()
+    content.vb: Public Overrides Sub OnDisable()
+  overridden: FlaxEngine.Script.OnDisable
+  overload: Gasimo.CineBlend.Samples.Shaker.OnDisable*
+- uid: Gasimo.CineBlend.Samples.Shaker.OnUpdate
+  commentId: M:Gasimo.CineBlend.Samples.Shaker.OnUpdate
+  id: OnUpdate
+  parent: Gasimo.CineBlend.Samples.Shaker
+  langs:
+  - csharp
+  - vb
+  name: OnUpdate()
+  nameWithType: Shaker.OnUpdate()
+  fullName: Gasimo.CineBlend.Samples.Shaker.OnUpdate()
+  type: Method
+  source:
+    id: OnUpdate
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Demo\Shaker.cs
+    startLine: 34
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Samples
+  summary: Called every frame if object is enabled.
+  example: []
+  syntax:
+    content: public override void OnUpdate()
+    content.vb: Public Overrides Sub OnUpdate()
+  overridden: FlaxEngine.Script.OnUpdate
+  overload: Gasimo.CineBlend.Samples.Shaker.OnUpdate*
+references:
+- uid: Gasimo.CineBlend.Samples
+  commentId: N:Gasimo.CineBlend.Samples
+  href: Gasimo.html
+  name: Gasimo.CineBlend.Samples
+  nameWithType: Gasimo.CineBlend.Samples
+  fullName: Gasimo.CineBlend.Samples
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Samples
+    name: Samples
+    href: Gasimo.CineBlend.Samples.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Samples
+    name: Samples
+    href: Gasimo.CineBlend.Samples.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: FlaxEngine.Object
+  commentId: T:FlaxEngine.Object
+  parent: FlaxEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: FlaxEngine.Object
+- uid: FlaxEngine.SceneObject
+  commentId: T:FlaxEngine.SceneObject
+  parent: FlaxEngine
+  isExternal: true
+  name: SceneObject
+  nameWithType: SceneObject
+  fullName: FlaxEngine.SceneObject
+- uid: FlaxEngine.Script
+  commentId: T:FlaxEngine.Script
+  parent: FlaxEngine
+  isExternal: true
+  name: Script
+  nameWithType: Script
+  fullName: FlaxEngine.Script
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: FlaxEngine
+  commentId: N:FlaxEngine
+  isExternal: true
+  name: FlaxEngine
+  nameWithType: FlaxEngine
+  fullName: FlaxEngine
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  commentId: T:Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  parent: Gasimo.CineBlend.Modules
+  href: Gasimo.CineBlend.Modules.CineImpulseShakeModule.html
+  name: CineImpulseShakeModule
+  nameWithType: CineImpulseShakeModule
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+- uid: Gasimo.CineBlend.Modules
+  commentId: N:Gasimo.CineBlend.Modules
+  href: Gasimo.html
+  name: Gasimo.CineBlend.Modules
+  nameWithType: Gasimo.CineBlend.Modules
+  fullName: Gasimo.CineBlend.Modules
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Modules
+    name: Modules
+    href: Gasimo.CineBlend.Modules.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Modules
+    name: Modules
+    href: Gasimo.CineBlend.Modules.html
+- uid: FlaxEngine.Script.OnStart
+  commentId: M:FlaxEngine.Script.OnStart
+  parent: FlaxEngine.Script
+  isExternal: true
+  name: OnStart()
+  nameWithType: Script.OnStart()
+  fullName: FlaxEngine.Script.OnStart()
+  spec.csharp:
+  - uid: FlaxEngine.Script.OnStart
+    name: OnStart
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FlaxEngine.Script.OnStart
+    name: OnStart
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Gasimo.CineBlend.Samples.Shaker.OnStart*
+  commentId: Overload:Gasimo.CineBlend.Samples.Shaker.OnStart
+  href: Gasimo.CineBlend.Samples.Shaker.html#Gasimo_CineBlend_Samples_Shaker_OnStart
+  name: OnStart
+  nameWithType: Shaker.OnStart
+  fullName: Gasimo.CineBlend.Samples.Shaker.OnStart
+- uid: FlaxEngine.Script.OnEnable
+  commentId: M:FlaxEngine.Script.OnEnable
+  parent: FlaxEngine.Script
+  isExternal: true
+  name: OnEnable()
+  nameWithType: Script.OnEnable()
+  fullName: FlaxEngine.Script.OnEnable()
+  spec.csharp:
+  - uid: FlaxEngine.Script.OnEnable
+    name: OnEnable
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FlaxEngine.Script.OnEnable
+    name: OnEnable
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Gasimo.CineBlend.Samples.Shaker.OnEnable*
+  commentId: Overload:Gasimo.CineBlend.Samples.Shaker.OnEnable
+  href: Gasimo.CineBlend.Samples.Shaker.html#Gasimo_CineBlend_Samples_Shaker_OnEnable
+  name: OnEnable
+  nameWithType: Shaker.OnEnable
+  fullName: Gasimo.CineBlend.Samples.Shaker.OnEnable
+- uid: FlaxEngine.Script.OnDisable
+  commentId: M:FlaxEngine.Script.OnDisable
+  parent: FlaxEngine.Script
+  isExternal: true
+  name: OnDisable()
+  nameWithType: Script.OnDisable()
+  fullName: FlaxEngine.Script.OnDisable()
+  spec.csharp:
+  - uid: FlaxEngine.Script.OnDisable
+    name: OnDisable
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FlaxEngine.Script.OnDisable
+    name: OnDisable
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Gasimo.CineBlend.Samples.Shaker.OnDisable*
+  commentId: Overload:Gasimo.CineBlend.Samples.Shaker.OnDisable
+  href: Gasimo.CineBlend.Samples.Shaker.html#Gasimo_CineBlend_Samples_Shaker_OnDisable
+  name: OnDisable
+  nameWithType: Shaker.OnDisable
+  fullName: Gasimo.CineBlend.Samples.Shaker.OnDisable
+- uid: FlaxEngine.Script.OnUpdate
+  commentId: M:FlaxEngine.Script.OnUpdate
+  parent: FlaxEngine.Script
+  isExternal: true
+  name: OnUpdate()
+  nameWithType: Script.OnUpdate()
+  fullName: FlaxEngine.Script.OnUpdate()
+  spec.csharp:
+  - uid: FlaxEngine.Script.OnUpdate
+    name: OnUpdate
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: FlaxEngine.Script.OnUpdate
+    name: OnUpdate
+    isExternal: true
+  - name: (
+  - name: )
+- uid: Gasimo.CineBlend.Samples.Shaker.OnUpdate*
+  commentId: Overload:Gasimo.CineBlend.Samples.Shaker.OnUpdate
+  href: Gasimo.CineBlend.Samples.Shaker.html#Gasimo_CineBlend_Samples_Shaker_OnUpdate
+  name: OnUpdate
+  nameWithType: Shaker.OnUpdate
+  fullName: Gasimo.CineBlend.Samples.Shaker.OnUpdate

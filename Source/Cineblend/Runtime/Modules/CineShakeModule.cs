@@ -2,7 +2,7 @@
 using FlaxEngine;
 using FlaxEngine.Utilities;
 
-namespace Game
+namespace Gasimo.CineBlend.Modules
 {
     /// <summary>
     /// Adds realistic multi-frequency camera noise effects to the game.

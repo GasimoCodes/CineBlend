@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
-using Game;
-namespace Cineblend;
+namespace Gasimo.CineBlend.Modules;
 
 /// <summary>
 /// CineLookAtModule Script with smooth follow functionality.

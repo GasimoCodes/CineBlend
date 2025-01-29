@@ -1,0 +1,458 @@
+{
+  "source_base_path": "E:/Projects/antartica-project/Plugins/CineBlend/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.BlendableFloat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.BlendableFloat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.BlendableQuaternion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.BlendableQuaternion.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.BlendableVector3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.BlendableVector3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.CameraBlendState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.CameraBlendState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.CameraProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.CameraProperties.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Cineblend.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Cineblend.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.CineblendMaster.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.CineblendMaster.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.IBlendableProperty-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.IBlendableProperty-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.ICameraModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.ICameraModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.ICineCamera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.ICineCamera.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Modules.CineAutoFrameModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Modules.CineAutoFrameModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Modules.CineImpulseShakeModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Modules.CineImpulseShakeModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Modules.CineLookAtModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Modules.CineLookAtModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Modules.CineRecomposeModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Modules.CineRecomposeModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Modules.CineShakeModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Modules.CineShakeModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Modules.CineTransformModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Modules.CineTransformModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Modules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Modules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Samples.Shaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Samples.Shaker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.Samples.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.Samples.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.VirtualCamera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.VirtualCamera.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Gasimo.CineBlend.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Gasimo.CineBlend.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/FaceToons.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/FaceToons.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.png~",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.png~"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Getting Started/Cineblend Master.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Getting Started/Cineblend Master.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Getting Started/concepts.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Getting Started/concepts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Getting Started/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Getting Started/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Modules/Auto Frame.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Modules/Auto Frame.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Modules/Impulse Shake.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Modules/Impulse Shake.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Modules/Look At.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Modules/Look At.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Modules/Recompose.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Modules/Recompose.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Modules/Shake.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Modules/Shake.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Modules/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Modules/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Timeline/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Timeline/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Virtual Cameras/Clear Shot Camera.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Virtual Cameras/Clear Shot Camera.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Virtual Cameras/Virtual Camera.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Virtual Cameras/Virtual Camera.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Virtual Cameras/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Virtual Cameras/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html"
+        },
+        ".json": {
+          "relative_path": "manual/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/troubleshoot.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/troubleshoot.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

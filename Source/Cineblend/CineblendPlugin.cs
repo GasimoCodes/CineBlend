@@ -1,10 +1,10 @@
 using System;
 using FlaxEngine;
 
-namespace Cineblend
+namespace Gasimo.CineBlend
 {
     /// <summary>
-    /// The sample game plugin.
+    /// CineFlax Plugin
     /// </summary>
     /// <seealso cref="FlaxEngine.GamePlugin" />
     public class Cineblend : GamePlugin

@@ -1,0 +1,264 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.CameraBlendState
+  commentId: T:Gasimo.CineBlend.CameraBlendState
+  id: CameraBlendState
+  parent: Gasimo.CineBlend
+  children:
+  - Gasimo.CineBlend.CameraBlendState.BlendTime
+  - Gasimo.CineBlend.CameraBlendState.CurrentTime
+  - Gasimo.CineBlend.CameraBlendState.FromCamera
+  - Gasimo.CineBlend.CameraBlendState.IsBlending
+  - Gasimo.CineBlend.CameraBlendState.ToCamera
+  langs:
+  - csharp
+  - vb
+  name: CameraBlendState
+  nameWithType: CameraBlendState
+  fullName: Gasimo.CineBlend.CameraBlendState
+  type: Class
+  source:
+    id: CameraBlendState
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraBlendState.cs
+    startLine: 9
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Represents the blend state between two cameras
+  example: []
+  syntax:
+    content: public class CameraBlendState
+    content.vb: Public Class CameraBlendState
+  inheritance:
+  - System.Object
+- uid: Gasimo.CineBlend.CameraBlendState.FromCamera
+  commentId: P:Gasimo.CineBlend.CameraBlendState.FromCamera
+  id: FromCamera
+  parent: Gasimo.CineBlend.CameraBlendState
+  langs:
+  - csharp
+  - vb
+  name: FromCamera
+  nameWithType: CameraBlendState.FromCamera
+  fullName: Gasimo.CineBlend.CameraBlendState.FromCamera
+  type: Property
+  source:
+    id: FromCamera
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraBlendState.cs
+    startLine: 15
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Camera to blend from
+  example: []
+  syntax:
+    content: public ICameraModule FromCamera { get; set; }
+    parameters: []
+    return:
+      type: Gasimo.CineBlend.ICameraModule
+    content.vb: Public Property FromCamera As ICameraModule
+  overload: Gasimo.CineBlend.CameraBlendState.FromCamera*
+- uid: Gasimo.CineBlend.CameraBlendState.ToCamera
+  commentId: P:Gasimo.CineBlend.CameraBlendState.ToCamera
+  id: ToCamera
+  parent: Gasimo.CineBlend.CameraBlendState
+  langs:
+  - csharp
+  - vb
+  name: ToCamera
+  nameWithType: CameraBlendState.ToCamera
+  fullName: Gasimo.CineBlend.CameraBlendState.ToCamera
+  type: Property
+  source:
+    id: ToCamera
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraBlendState.cs
+    startLine: 20
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Camera to blend to
+  example: []
+  syntax:
+    content: public ICameraModule ToCamera { get; set; }
+    parameters: []
+    return:
+      type: Gasimo.CineBlend.ICameraModule
+    content.vb: Public Property ToCamera As ICameraModule
+  overload: Gasimo.CineBlend.CameraBlendState.ToCamera*
+- uid: Gasimo.CineBlend.CameraBlendState.BlendTime
+  commentId: P:Gasimo.CineBlend.CameraBlendState.BlendTime
+  id: BlendTime
+  parent: Gasimo.CineBlend.CameraBlendState
+  langs:
+  - csharp
+  - vb
+  name: BlendTime
+  nameWithType: CameraBlendState.BlendTime
+  fullName: Gasimo.CineBlend.CameraBlendState.BlendTime
+  type: Property
+  source:
+    id: BlendTime
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraBlendState.cs
+    startLine: 25
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Time which it takes to blend between the two cameras
+  example: []
+  syntax:
+    content: public float BlendTime { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property BlendTime As Single
+  overload: Gasimo.CineBlend.CameraBlendState.BlendTime*
+- uid: Gasimo.CineBlend.CameraBlendState.CurrentTime
+  commentId: P:Gasimo.CineBlend.CameraBlendState.CurrentTime
+  id: CurrentTime
+  parent: Gasimo.CineBlend.CameraBlendState
+  langs:
+  - csharp
+  - vb
+  name: CurrentTime
+  nameWithType: CameraBlendState.CurrentTime
+  fullName: Gasimo.CineBlend.CameraBlendState.CurrentTime
+  type: Property
+  source:
+    id: CurrentTime
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraBlendState.cs
+    startLine: 30
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Elapsed time since the blend started
+  example: []
+  syntax:
+    content: public float CurrentTime { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property CurrentTime As Single
+  overload: Gasimo.CineBlend.CameraBlendState.CurrentTime*
+- uid: Gasimo.CineBlend.CameraBlendState.IsBlending
+  commentId: P:Gasimo.CineBlend.CameraBlendState.IsBlending
+  id: IsBlending
+  parent: Gasimo.CineBlend.CameraBlendState
+  langs:
+  - csharp
+  - vb
+  name: IsBlending
+  nameWithType: CameraBlendState.IsBlending
+  fullName: Gasimo.CineBlend.CameraBlendState.IsBlending
+  type: Property
+  source:
+    id: IsBlending
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Data\CameraBlendState.cs
+    startLine: 35
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend
+  summary: Returns true if the blend is still active
+  example: []
+  syntax:
+    content: public bool IsBlending { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsBlending As Boolean
+  overload: Gasimo.CineBlend.CameraBlendState.IsBlending*
+references:
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Gasimo.CineBlend.CameraBlendState.FromCamera*
+  commentId: Overload:Gasimo.CineBlend.CameraBlendState.FromCamera
+  href: Gasimo.CineBlend.CameraBlendState.html#Gasimo_CineBlend_CameraBlendState_FromCamera
+  name: FromCamera
+  nameWithType: CameraBlendState.FromCamera
+  fullName: Gasimo.CineBlend.CameraBlendState.FromCamera
+- uid: Gasimo.CineBlend.ICameraModule
+  commentId: T:Gasimo.CineBlend.ICameraModule
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.ICameraModule.html
+  name: ICameraModule
+  nameWithType: ICameraModule
+  fullName: Gasimo.CineBlend.ICameraModule
+- uid: Gasimo.CineBlend.CameraBlendState.ToCamera*
+  commentId: Overload:Gasimo.CineBlend.CameraBlendState.ToCamera
+  href: Gasimo.CineBlend.CameraBlendState.html#Gasimo_CineBlend_CameraBlendState_ToCamera
+  name: ToCamera
+  nameWithType: CameraBlendState.ToCamera
+  fullName: Gasimo.CineBlend.CameraBlendState.ToCamera
+- uid: Gasimo.CineBlend.CameraBlendState.BlendTime*
+  commentId: Overload:Gasimo.CineBlend.CameraBlendState.BlendTime
+  href: Gasimo.CineBlend.CameraBlendState.html#Gasimo_CineBlend_CameraBlendState_BlendTime
+  name: BlendTime
+  nameWithType: CameraBlendState.BlendTime
+  fullName: Gasimo.CineBlend.CameraBlendState.BlendTime
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Gasimo.CineBlend.CameraBlendState.CurrentTime*
+  commentId: Overload:Gasimo.CineBlend.CameraBlendState.CurrentTime
+  href: Gasimo.CineBlend.CameraBlendState.html#Gasimo_CineBlend_CameraBlendState_CurrentTime
+  name: CurrentTime
+  nameWithType: CameraBlendState.CurrentTime
+  fullName: Gasimo.CineBlend.CameraBlendState.CurrentTime
+- uid: Gasimo.CineBlend.CameraBlendState.IsBlending*
+  commentId: Overload:Gasimo.CineBlend.CameraBlendState.IsBlending
+  href: Gasimo.CineBlend.CameraBlendState.html#Gasimo_CineBlend_CameraBlendState_IsBlending
+  name: IsBlending
+  nameWithType: CameraBlendState.IsBlending
+  fullName: Gasimo.CineBlend.CameraBlendState.IsBlending
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

@@ -1,0 +1,495 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule
+  commentId: T:Gasimo.CineBlend.Modules.CineAutoFrameModule
+  id: CineAutoFrameModule
+  parent: Gasimo.CineBlend.Modules
+  children:
+  - Gasimo.CineBlend.Modules.CineAutoFrameModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  - Gasimo.CineBlend.Modules.CineAutoFrameModule.FOVRange
+  - Gasimo.CineBlend.Modules.CineAutoFrameModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  - Gasimo.CineBlend.Modules.CineAutoFrameModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  - Gasimo.CineBlend.Modules.CineAutoFrameModule.Smoothing
+  - Gasimo.CineBlend.Modules.CineAutoFrameModule.Target
+  langs:
+  - csharp
+  - vb
+  name: CineAutoFrameModule
+  nameWithType: CineAutoFrameModule
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule
+  type: Class
+  source:
+    id: CineAutoFrameModule
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineAutoFrameModule.cs
+    startLine: 9
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: CineAutoFrameModule Script that automatically frames target actors.
+  example: []
+  syntax:
+    content: 'public class CineAutoFrameModule : Script, ICameraModule'
+    content.vb: Public Class CineAutoFrameModule Inherits Script Implements ICameraModule
+  inheritance:
+  - System.Object
+  - FlaxEngine.Object
+  - FlaxEngine.SceneObject
+  - FlaxEngine.Script
+  implements:
+  - Gasimo.CineBlend.ICameraModule
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule.Target
+  commentId: F:Gasimo.CineBlend.Modules.CineAutoFrameModule.Target
+  id: Target
+  parent: Gasimo.CineBlend.Modules.CineAutoFrameModule
+  langs:
+  - csharp
+  - vb
+  name: Target
+  nameWithType: CineAutoFrameModule.Target
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule.Target
+  type: Field
+  source:
+    id: Target
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineAutoFrameModule.cs
+    startLine: 11
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  syntax:
+    content: public Actor[] Target
+    return:
+      type: FlaxEngine.Actor[]
+    content.vb: Public Target As Actor()
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule.Smoothing
+  commentId: F:Gasimo.CineBlend.Modules.CineAutoFrameModule.Smoothing
+  id: Smoothing
+  parent: Gasimo.CineBlend.Modules.CineAutoFrameModule
+  langs:
+  - csharp
+  - vb
+  name: Smoothing
+  nameWithType: CineAutoFrameModule.Smoothing
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule.Smoothing
+  type: Field
+  source:
+    id: Smoothing
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineAutoFrameModule.cs
+    startLine: 13
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  syntax:
+    content: public float Smoothing
+    return:
+      type: System.Single
+    content.vb: Public Smoothing As Single
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule.FOVRange
+  commentId: F:Gasimo.CineBlend.Modules.CineAutoFrameModule.FOVRange
+  id: FOVRange
+  parent: Gasimo.CineBlend.Modules.CineAutoFrameModule
+  langs:
+  - csharp
+  - vb
+  name: FOVRange
+  nameWithType: CineAutoFrameModule.FOVRange
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule.FOVRange
+  type: Field
+  source:
+    id: FOVRange
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineAutoFrameModule.cs
+    startLine: 19
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  syntax:
+    content: >-
+      [Range(0, 179)]
+
+      public Vector2 FOVRange
+    return:
+      type: FlaxEngine.Vector2
+    content.vb: >-
+      <Range(0, 179)>
+
+      Public FOVRange As Vector2
+  attributes:
+  - type: FlaxEngine.RangeAttribute
+    ctor: FlaxEngine.RangeAttribute.#ctor(System.Single,System.Single)
+    arguments:
+    - type: System.Single
+      value: 0
+    - type: System.Single
+      value: 179
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  commentId: M:Gasimo.CineBlend.Modules.CineAutoFrameModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  id: Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  parent: Gasimo.CineBlend.Modules.CineAutoFrameModule
+  langs:
+  - csharp
+  - vb
+  name: Blend(VirtualCamera, VirtualCamera, float)
+  nameWithType: CineAutoFrameModule.Blend(VirtualCamera, VirtualCamera, float)
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule.Blend(Gasimo.CineBlend.VirtualCamera, Gasimo.CineBlend.VirtualCamera, float)
+  type: Method
+  source:
+    id: Blend
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineAutoFrameModule.cs
+    startLine: 23
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: Blends between two module states
+  example: []
+  syntax:
+    content: public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    parameters:
+    - id: fromSnapshot
+      type: Gasimo.CineBlend.VirtualCamera
+    - id: toSnapshot
+      type: Gasimo.CineBlend.VirtualCamera
+    - id: t
+      type: System.Single
+    content.vb: Public Sub Blend(fromSnapshot As VirtualCamera, toSnapshot As VirtualCamera, t As Single)
+  overload: Gasimo.CineBlend.Modules.CineAutoFrameModule.Blend*
+  implements:
+  - Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  nameWithType.vb: CineAutoFrameModule.Blend(VirtualCamera, VirtualCamera, Single)
+  fullName.vb: Gasimo.CineBlend.Modules.CineAutoFrameModule.Blend(Gasimo.CineBlend.VirtualCamera, Gasimo.CineBlend.VirtualCamera, Single)
+  name.vb: Blend(VirtualCamera, VirtualCamera, Single)
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  commentId: M:Gasimo.CineBlend.Modules.CineAutoFrameModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  id: Initialize(Gasimo.CineBlend.VirtualCamera)
+  parent: Gasimo.CineBlend.Modules.CineAutoFrameModule
+  langs:
+  - csharp
+  - vb
+  name: Initialize(VirtualCamera)
+  nameWithType: CineAutoFrameModule.Initialize(VirtualCamera)
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  type: Method
+  source:
+    id: Initialize
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineAutoFrameModule.cs
+    startLine: 27
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: Called when the module is initialized
+  example: []
+  syntax:
+    content: public void Initialize(VirtualCamera camera)
+    parameters:
+    - id: camera
+      type: Gasimo.CineBlend.VirtualCamera
+    content.vb: Public Sub Initialize(camera As VirtualCamera)
+  overload: Gasimo.CineBlend.Modules.CineAutoFrameModule.Initialize*
+  implements:
+  - Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  commentId: M:Gasimo.CineBlend.Modules.CineAutoFrameModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  id: PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  parent: Gasimo.CineBlend.Modules.CineAutoFrameModule
+  langs:
+  - csharp
+  - vb
+  name: PostProcessProperties(ref CameraProperties)
+  nameWithType: CineAutoFrameModule.PostProcessProperties(ref CameraProperties)
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule.PostProcessProperties(ref Gasimo.CineBlend.CameraProperties)
+  type: Method
+  source:
+    id: PostProcessProperties
+    path: E:\Projects\antartica-project\Plugins\CineBlend\Source\Cineblend\Runtime\Modules\CineAutoFrameModule.cs
+    startLine: 33
+  assemblies:
+  - Cineblend.CSharp
+  namespace: Gasimo.CineBlend.Modules
+  summary: Modifies the final camera properties before they are applied
+  example: []
+  syntax:
+    content: public void PostProcessProperties(ref CameraProperties state)
+    parameters:
+    - id: state
+      type: Gasimo.CineBlend.CameraProperties
+    content.vb: Public Sub PostProcessProperties(state As CameraProperties)
+  overload: Gasimo.CineBlend.Modules.CineAutoFrameModule.PostProcessProperties*
+  implements:
+  - Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  nameWithType.vb: CineAutoFrameModule.PostProcessProperties(CameraProperties)
+  fullName.vb: Gasimo.CineBlend.Modules.CineAutoFrameModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties)
+  name.vb: PostProcessProperties(CameraProperties)
+references:
+- uid: Gasimo.CineBlend.Modules
+  commentId: N:Gasimo.CineBlend.Modules
+  href: Gasimo.html
+  name: Gasimo.CineBlend.Modules
+  nameWithType: Gasimo.CineBlend.Modules
+  fullName: Gasimo.CineBlend.Modules
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Modules
+    name: Modules
+    href: Gasimo.CineBlend.Modules.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Modules
+    name: Modules
+    href: Gasimo.CineBlend.Modules.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: FlaxEngine.Object
+  commentId: T:FlaxEngine.Object
+  parent: FlaxEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: FlaxEngine.Object
+- uid: FlaxEngine.SceneObject
+  commentId: T:FlaxEngine.SceneObject
+  parent: FlaxEngine
+  isExternal: true
+  name: SceneObject
+  nameWithType: SceneObject
+  fullName: FlaxEngine.SceneObject
+- uid: FlaxEngine.Script
+  commentId: T:FlaxEngine.Script
+  parent: FlaxEngine
+  isExternal: true
+  name: Script
+  nameWithType: Script
+  fullName: FlaxEngine.Script
+- uid: Gasimo.CineBlend.ICameraModule
+  commentId: T:Gasimo.CineBlend.ICameraModule
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.ICameraModule.html
+  name: ICameraModule
+  nameWithType: ICameraModule
+  fullName: Gasimo.CineBlend.ICameraModule
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: FlaxEngine
+  commentId: N:FlaxEngine
+  isExternal: true
+  name: FlaxEngine
+  nameWithType: FlaxEngine
+  fullName: FlaxEngine
+- uid: Gasimo.CineBlend
+  commentId: N:Gasimo.CineBlend
+  href: Gasimo.html
+  name: Gasimo.CineBlend
+  nameWithType: Gasimo.CineBlend
+  fullName: Gasimo.CineBlend
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+- uid: FlaxEngine.Actor[]
+  isExternal: true
+  name: Actor[]
+  nameWithType: Actor[]
+  fullName: FlaxEngine.Actor[]
+  nameWithType.vb: Actor()
+  fullName.vb: FlaxEngine.Actor()
+  name.vb: Actor()
+  spec.csharp:
+  - uid: FlaxEngine.Actor
+    name: Actor
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: FlaxEngine.Actor
+    name: Actor
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: FlaxEngine.Vector2
+  commentId: T:FlaxEngine.Vector2
+  parent: FlaxEngine
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: FlaxEngine.Vector2
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule.Blend*
+  commentId: Overload:Gasimo.CineBlend.Modules.CineAutoFrameModule.Blend
+  href: Gasimo.CineBlend.Modules.CineAutoFrameModule.html#Gasimo_CineBlend_Modules_CineAutoFrameModule_Blend_Gasimo_CineBlend_VirtualCamera_Gasimo_CineBlend_VirtualCamera_System_Single_
+  name: Blend
+  nameWithType: CineAutoFrameModule.Blend
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule.Blend
+- uid: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  commentId: M:Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+  parent: Gasimo.CineBlend.ICameraModule
+  isExternal: true
+  href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Blend_Gasimo_CineBlend_VirtualCamera_Gasimo_CineBlend_VirtualCamera_System_Single_
+  name: Blend(VirtualCamera, VirtualCamera, float)
+  nameWithType: ICameraModule.Blend(VirtualCamera, VirtualCamera, float)
+  fullName: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera, Gasimo.CineBlend.VirtualCamera, float)
+  nameWithType.vb: ICameraModule.Blend(VirtualCamera, VirtualCamera, Single)
+  fullName.vb: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera, Gasimo.CineBlend.VirtualCamera, Single)
+  name.vb: Blend(VirtualCamera, VirtualCamera, Single)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+    name: Blend
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Blend_Gasimo_CineBlend_VirtualCamera_Gasimo_CineBlend_VirtualCamera_System_Single_
+  - name: (
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: ','
+  - name: " "
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.ICameraModule.Blend(Gasimo.CineBlend.VirtualCamera,Gasimo.CineBlend.VirtualCamera,System.Single)
+    name: Blend
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Blend_Gasimo_CineBlend_VirtualCamera_Gasimo_CineBlend_VirtualCamera_System_Single_
+  - name: (
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: ','
+  - name: " "
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+  - name: )
+- uid: Gasimo.CineBlend.VirtualCamera
+  commentId: T:Gasimo.CineBlend.VirtualCamera
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.VirtualCamera.html
+  name: VirtualCamera
+  nameWithType: VirtualCamera
+  fullName: Gasimo.CineBlend.VirtualCamera
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule.Initialize*
+  commentId: Overload:Gasimo.CineBlend.Modules.CineAutoFrameModule.Initialize
+  href: Gasimo.CineBlend.Modules.CineAutoFrameModule.html#Gasimo_CineBlend_Modules_CineAutoFrameModule_Initialize_Gasimo_CineBlend_VirtualCamera_
+  name: Initialize
+  nameWithType: CineAutoFrameModule.Initialize
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule.Initialize
+- uid: Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  commentId: M:Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  parent: Gasimo.CineBlend.ICameraModule
+  href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Initialize_Gasimo_CineBlend_VirtualCamera_
+  name: Initialize(VirtualCamera)
+  nameWithType: ICameraModule.Initialize(VirtualCamera)
+  fullName: Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+    name: Initialize
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Initialize_Gasimo_CineBlend_VirtualCamera_
+  - name: (
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.ICameraModule.Initialize(Gasimo.CineBlend.VirtualCamera)
+    name: Initialize
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Initialize_Gasimo_CineBlend_VirtualCamera_
+  - name: (
+  - uid: Gasimo.CineBlend.VirtualCamera
+    name: VirtualCamera
+    href: Gasimo.CineBlend.VirtualCamera.html
+  - name: )
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule.PostProcessProperties*
+  commentId: Overload:Gasimo.CineBlend.Modules.CineAutoFrameModule.PostProcessProperties
+  href: Gasimo.CineBlend.Modules.CineAutoFrameModule.html#Gasimo_CineBlend_Modules_CineAutoFrameModule_PostProcessProperties_Gasimo_CineBlend_CameraProperties__
+  name: PostProcessProperties
+  nameWithType: CineAutoFrameModule.PostProcessProperties
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule.PostProcessProperties
+- uid: Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  commentId: M:Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+  parent: Gasimo.CineBlend.ICameraModule
+  href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_PostProcessProperties_Gasimo_CineBlend_CameraProperties__
+  name: PostProcessProperties(ref CameraProperties)
+  nameWithType: ICameraModule.PostProcessProperties(ref CameraProperties)
+  fullName: Gasimo.CineBlend.ICameraModule.PostProcessProperties(ref Gasimo.CineBlend.CameraProperties)
+  nameWithType.vb: ICameraModule.PostProcessProperties(CameraProperties)
+  fullName.vb: Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties)
+  name.vb: PostProcessProperties(CameraProperties)
+  spec.csharp:
+  - uid: Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+    name: PostProcessProperties
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_PostProcessProperties_Gasimo_CineBlend_CameraProperties__
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: Gasimo.CineBlend.CameraProperties
+    name: CameraProperties
+    href: Gasimo.CineBlend.CameraProperties.html
+  - name: )
+  spec.vb:
+  - uid: Gasimo.CineBlend.ICameraModule.PostProcessProperties(Gasimo.CineBlend.CameraProperties@)
+    name: PostProcessProperties
+    href: Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_PostProcessProperties_Gasimo_CineBlend_CameraProperties__
+  - name: (
+  - uid: Gasimo.CineBlend.CameraProperties
+    name: CameraProperties
+    href: Gasimo.CineBlend.CameraProperties.html
+  - name: )
+- uid: Gasimo.CineBlend.CameraProperties
+  commentId: T:Gasimo.CineBlend.CameraProperties
+  parent: Gasimo.CineBlend
+  href: Gasimo.CineBlend.CameraProperties.html
+  name: CameraProperties
+  nameWithType: CameraProperties
+  fullName: Gasimo.CineBlend.CameraProperties

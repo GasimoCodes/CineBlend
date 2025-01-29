@@ -14,10 +14,9 @@ using FlaxEditor.Utilities;
 using FlaxEditor.Windows;
 using FlaxEngine;
 using FlaxEngine.GUI;
-using Game;
 using FlaxEditor.GUI.Timeline.Tracks;
 
-namespace Cineblend.Timeline;
+namespace Gasimo.CineBlend.Timeline;
 
 /// <summary>
 /// CineTrack class.

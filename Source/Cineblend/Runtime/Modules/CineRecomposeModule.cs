@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
-using Game;
 
-namespace Cineblend;
+namespace Gasimo.CineBlend.Modules;
 
 /// <summary>
-/// CineLookAtModule Script.
+/// Allows you to offset the position and rotation of the camera.
 /// </summary>
 [RequireActor(typeof(VirtualCamera))]
 [Category("Cineblend")]

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.Samples
+  commentId: N:Gasimo.CineBlend.Samples
+  id: Gasimo.CineBlend.Samples
+  children:
+  - Gasimo.CineBlend.Samples.Shaker
+  langs:
+  - csharp
+  - vb
+  name: Gasimo.CineBlend.Samples
+  nameWithType: Gasimo.CineBlend.Samples
+  fullName: Gasimo.CineBlend.Samples
+  type: Namespace
+  assemblies:
+  - Cineblend.CSharp
+references:
+- uid: Gasimo.CineBlend.Samples.Shaker
+  commentId: T:Gasimo.CineBlend.Samples.Shaker
+  href: Gasimo.CineBlend.Samples.Shaker.html
+  name: Shaker
+  nameWithType: Shaker
+  fullName: Gasimo.CineBlend.Samples.Shaker

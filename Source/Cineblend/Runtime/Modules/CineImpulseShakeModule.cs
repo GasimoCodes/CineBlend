@@ -1,12 +1,11 @@
 ﻿using System;
 using FlaxEngine;
 using FlaxEngine.Utilities;
-using Game;
 
-namespace Cineblend
+namespace Gasimo.CineBlend.Modules
 {
     /// <summary>
-    /// CineImpulseShakeModule Script.
+    /// Shakes this camera when an impulse is received.
     /// </summary>
     [RequireActor(typeof(VirtualCamera))]
     [Category("Cineblend")]

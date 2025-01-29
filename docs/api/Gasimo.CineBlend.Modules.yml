@@ -1,0 +1,89 @@
+### YamlMime:ManagedReference
+items:
+- uid: Gasimo.CineBlend.Modules
+  commentId: N:Gasimo.CineBlend.Modules
+  id: Gasimo.CineBlend.Modules
+  children:
+  - Gasimo.CineBlend.Modules.CineAutoFrameModule
+  - Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  - Gasimo.CineBlend.Modules.CineLookAtModule
+  - Gasimo.CineBlend.Modules.CineRecomposeModule
+  - Gasimo.CineBlend.Modules.CineShakeModule
+  - Gasimo.CineBlend.Modules.CineTransformModule
+  langs:
+  - csharp
+  - vb
+  name: Gasimo.CineBlend.Modules
+  nameWithType: Gasimo.CineBlend.Modules
+  fullName: Gasimo.CineBlend.Modules
+  type: Namespace
+  assemblies:
+  - Cineblend.CSharp
+references:
+- uid: Gasimo.CineBlend.Modules.CineAutoFrameModule
+  commentId: T:Gasimo.CineBlend.Modules.CineAutoFrameModule
+  href: Gasimo.CineBlend.Modules.CineAutoFrameModule.html
+  name: CineAutoFrameModule
+  nameWithType: CineAutoFrameModule
+  fullName: Gasimo.CineBlend.Modules.CineAutoFrameModule
+- uid: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  commentId: T:Gasimo.CineBlend.Modules.CineImpulseShakeModule
+  parent: Gasimo.CineBlend.Modules
+  href: Gasimo.CineBlend.Modules.CineImpulseShakeModule.html
+  name: CineImpulseShakeModule
+  nameWithType: CineImpulseShakeModule
+  fullName: Gasimo.CineBlend.Modules.CineImpulseShakeModule
+- uid: Gasimo.CineBlend.Modules.CineLookAtModule
+  commentId: T:Gasimo.CineBlend.Modules.CineLookAtModule
+  href: Gasimo.CineBlend.Modules.CineLookAtModule.html
+  name: CineLookAtModule
+  nameWithType: CineLookAtModule
+  fullName: Gasimo.CineBlend.Modules.CineLookAtModule
+- uid: Gasimo.CineBlend.Modules.CineRecomposeModule
+  commentId: T:Gasimo.CineBlend.Modules.CineRecomposeModule
+  href: Gasimo.CineBlend.Modules.CineRecomposeModule.html
+  name: CineRecomposeModule
+  nameWithType: CineRecomposeModule
+  fullName: Gasimo.CineBlend.Modules.CineRecomposeModule
+- uid: Gasimo.CineBlend.Modules.CineShakeModule
+  commentId: T:Gasimo.CineBlend.Modules.CineShakeModule
+  href: Gasimo.CineBlend.Modules.CineShakeModule.html
+  name: CineShakeModule
+  nameWithType: CineShakeModule
+  fullName: Gasimo.CineBlend.Modules.CineShakeModule
+- uid: Gasimo.CineBlend.Modules.CineTransformModule
+  commentId: T:Gasimo.CineBlend.Modules.CineTransformModule
+  href: Gasimo.CineBlend.Modules.CineTransformModule.html
+  name: CineTransformModule
+  nameWithType: CineTransformModule
+  fullName: Gasimo.CineBlend.Modules.CineTransformModule
+- uid: Gasimo.CineBlend.Modules
+  commentId: N:Gasimo.CineBlend.Modules
+  href: Gasimo.html
+  name: Gasimo.CineBlend.Modules
+  nameWithType: Gasimo.CineBlend.Modules
+  fullName: Gasimo.CineBlend.Modules
+  spec.csharp:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Modules
+    name: Modules
+    href: Gasimo.CineBlend.Modules.html
+  spec.vb:
+  - uid: Gasimo
+    name: Gasimo
+    href: Gasimo.html
+  - name: .
+  - uid: Gasimo.CineBlend
+    name: CineBlend
+    href: Gasimo.CineBlend.html
+  - name: .
+  - uid: Gasimo.CineBlend.Modules
+    name: Modules
+    href: Gasimo.CineBlend.Modules.html

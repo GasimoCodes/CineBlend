@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using FlaxEngine;
 
-namespace Game
+namespace Gasimo.CineBlend
 {
+    /// <summary>
+    /// Camera Controller. Manages camera transitions and blending and applies them to the Main Camera this script is attached to.
+    /// </summary>
     [RequireActor(typeof(Camera))]
     [ExecuteInEditMode]
     [Category("Cineblend")]
     public class CineblendMaster : Script, ICineCamera
     {
+        #region singleton
         private static CineblendMaster instance;
         public static CineblendMaster Instance
         {
@@ -23,13 +27,24 @@ namespace Game
             }
         }
 
+        #endregion
+
 
         private Camera camera;
+
+        /// <summary>
+        /// Default blend time for camera transitions
+        /// </summary>
+        [Tooltip("Default blend time for camera transitions")]
         public float DefaultBlendTime { get; set; } = 1.0f;
 
 
         // Transition vars
         private ICineCamera lastVirtualCamera;
+        
+        /// <summary>
+        /// Current active Virtual Camera
+        /// </summary>
         public ICineCamera currentVirtualCamera { get; private set; }
         private ICineCamera soloCamera;
         private SortedDictionary<int, List<ICineCamera>> virtualCamerasByPriority = new(Comparer<int>.Create((a, b) => b.CompareTo(a)));
@@ -49,8 +64,14 @@ namespace Game
 
 
 
-        // Current camera setup        
+        
+        /// <summary>
+        /// This Camera's Properties.
+        /// </summary>
         public CameraProperties Properties { get; private set; }
+        /// <summary>
+        /// This Camera's active modules.
+        /// </summary>
         public Dictionary<Type, ICameraModule> Modules { get; private set; } = new();
         public int Priority => int.MinValue;
         public string Name => this.Actor.Name;
@@ -108,7 +129,7 @@ namespace Game
             {
                 // Copy values from camera
                 CameraProperties finalProp = currentVirtualCamera.FinalProperties;
-                finalProp.Apply(camera);
+                finalProp.ApplyToCamera(camera);
                 return;
             }
 
@@ -122,8 +143,8 @@ namespace Game
             float t = blend.NormalizedTime;
 
             // Perform the blend
-            Properties.Lerp(fromProperties, toProperties, t);
-            Properties.Apply(camera);
+            Properties.LerpAndSet(fromProperties, toProperties, t);
+            Properties.ApplyToCamera(camera);
 
             // Check if blend is complete
             if (!blend.IsActive)
