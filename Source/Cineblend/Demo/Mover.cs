@@ -10,6 +10,7 @@ namespace Cineblend;
 public class Mover : Script
 {
     Vector3 orbitcenter;
+    public Vector3 RotateBy = new Vector3(0, 0.1f, 0);
 
     /// <inheritdoc/>
     public override void OnStart()
@@ -43,7 +44,7 @@ public class Mover : Script
 
         // Rotate the object
 
-        Actor.Orientation = Quaternion.RotationYawPitchRoll(time * speed, time * speed, time * speed);
+        Actor.Orientation = Quaternion.RotationYawPitchRoll(time * speed * RotateBy.X, time * speed * RotateBy.Y, time * speed * RotateBy.Z);
 
     }
 }
