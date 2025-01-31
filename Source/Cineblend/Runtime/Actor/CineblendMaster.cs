@@ -85,10 +85,12 @@ namespace Gasimo.CineBlend
         }
 
 
-        public override void OnUpdate()
-        {
-            base.OnUpdate();
 
+        public override void OnFixedUpdate()
+        {
+
+            base.OnFixedUpdate();
+        
             UpdateActiveCamera();
             UpdateCameraBlending();
         }
