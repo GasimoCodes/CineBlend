@@ -32,4 +32,15 @@ public interface ICineCamera
     /// </summary>
     public string Name { get; }
 
+    public CameraUpdateMode CameraUpdateMode { get; }
+
+}
+
+public enum CameraUpdateMode
+{
+    Update,
+    FixedUpdate,
+    LateUpdate,
+    Auto,
+    Manual
 }

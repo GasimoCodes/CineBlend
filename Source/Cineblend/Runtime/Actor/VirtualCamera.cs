@@ -21,6 +21,58 @@ namespace Gasimo.CineBlend
         [EditorOrder(0)]
         private bool isActive => (CineblendMaster.Instance?.currentVirtualCamera == (ICineCamera)this);
 
+        [ReadOnly, ShowInEditor, NoSerialize]
+        [EditorDisplay("Virtual Camera Status")]
+        public string UpdateMode
+        {
+            get
+            {
+                if (CineblendMaster.Instance == null || CineblendMaster.Instance.UpdateModeOverride == CameraUpdateMode.Auto)
+                {
+                    return this.CameraUpdateMode.ToString();
+                }
+
+                return CineblendMaster.Instance.UpdateModeOverride.ToString() + " (From CineblendMaster)";
+            }
+        }
+
+        [ReadOnly, HideInEditor, NoSerialize]
+        public CameraUpdateMode CameraUpdateMode
+        {
+            get
+            {
+                if (UpdateModeOverride != CameraUpdateMode.Auto)
+                {
+                    return UpdateModeOverride;
+                }
+
+                Actor ParentObj = Parent;
+
+                // Check if this Camera is a child of any Rigidbody
+                while (true)
+                {
+                    if (ParentObj is RigidBody)
+                    {
+                        return CameraUpdateMode.FixedUpdate;
+                    }
+                    if (ParentObj is Actor)
+                    {
+                        ParentObj = (ParentObj as Actor).Parent;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                return CameraUpdateMode.Update;
+            }
+        }
+
+        [EditorDisplay("Virtual Camera Status")]
+        public CameraUpdateMode UpdateModeOverride = CameraUpdateMode.Auto;
+
+
         /// <summary>
         /// Modules on the camera. Init with CineTransform module.
         /// </summary>
@@ -100,6 +152,9 @@ namespace Gasimo.CineBlend
             get => properties.FarPlane.CurrentValue;
             set => properties.FarPlane.CurrentValue = value;
         }
+
+
+
 
 
 

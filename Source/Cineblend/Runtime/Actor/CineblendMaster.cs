@@ -39,9 +39,20 @@ namespace Gasimo.CineBlend
         public float DefaultBlendTime { get; set; } = 1.0f;
 
 
+
+        /// <summary>
+        /// Update mode of Cineblend. If set to Auto, cameras can override their update mode.
+        /// </summary>
+        public CameraUpdateMode UpdateModeOverride = CameraUpdateMode.Auto;
+
+        private CameraUpdateMode currentUpdateMode;
+        public CameraUpdateMode CameraUpdateMode => currentUpdateMode;
+
+
+
         // Transition vars
         private ICineCamera lastVirtualCamera;
-        
+
         /// <summary>
         /// Current active Virtual Camera
         /// </summary>
@@ -64,7 +75,7 @@ namespace Gasimo.CineBlend
 
 
 
-        
+
         /// <summary>
         /// This Camera's Properties.
         /// </summary>
@@ -78,6 +89,8 @@ namespace Gasimo.CineBlend
 
         public CameraProperties FinalProperties => Properties;
 
+
+
         public override void OnStart()
         {
             camera = Actor as Camera;
@@ -85,15 +98,41 @@ namespace Gasimo.CineBlend
         }
 
 
+        #region Update Methods
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+            UpdateActiveCamera();
+
+            if (currentUpdateMode == CameraUpdateMode.Update)
+            {
+                UpdateCameraBlending();
+            }
+        }
+
+        public override void OnLateFixedUpdate()
+        {
+            base.OnLateFixedUpdate();
+
+            if (currentUpdateMode == CameraUpdateMode.LateUpdate)
+            {
+                UpdateCameraBlending();
+            }
+        }
 
         public override void OnFixedUpdate()
         {
 
             base.OnFixedUpdate();
-        
-            UpdateActiveCamera();
-            UpdateCameraBlending();
+
+            if (currentUpdateMode == CameraUpdateMode.FixedUpdate)
+            {
+                UpdateCameraBlending();
+            }
         }
+
+        #endregion
 
         private void PullDefaultProperties()
         {
@@ -106,6 +145,7 @@ namespace Gasimo.CineBlend
             Properties.Rotation.CurrentValue = camera.Transform.Orientation;
 
             currentVirtualCamera = this;
+            currentUpdateMode = UpdateModeOverride;
 
             RegisterVirtualCamera(this);
         }
@@ -120,12 +160,18 @@ namespace Gasimo.CineBlend
                 lastVirtualCamera = currentVirtualCamera;
                 currentVirtualCamera = highestPriorityCamera;
 
+                // Update mode
+                if (UpdateModeOverride == CameraUpdateMode.Auto)
+                {
+                    currentUpdateMode = highestPriorityCamera.CameraUpdateMode;
+                }
+
                 Transition(lastVirtualCamera, currentVirtualCamera, DefaultBlendTime);
             }
         }
 
 
-        private void UpdateCameraBlending()
+        public void UpdateCameraBlending()
         {
             if (activeBlend == null)
             {
@@ -165,7 +211,7 @@ namespace Gasimo.CineBlend
                 virtualCamerasByPriority[virtualCamera.Priority] = new List<ICineCamera>();
             }
             virtualCamerasByPriority[virtualCamera.Priority].Add(virtualCamera);
-            
+
             // Debug.Log("Registered camera " + virtualCamera.Name + " " + virtualCamera.Priority);
         }
 
