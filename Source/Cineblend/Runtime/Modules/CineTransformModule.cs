@@ -23,6 +23,10 @@ public class CineTransformModule : ICameraModule
 
     public void PostProcessProperties(ref CameraProperties state)
     {
+        if (cam == null)
+        {
+            return;
+        }
         // string offset =  (cam == null) + " / " + ((cam == null) ? "NULL" : cam?.Name);
 
         state.Position.CurrentValue = cam.Position;
