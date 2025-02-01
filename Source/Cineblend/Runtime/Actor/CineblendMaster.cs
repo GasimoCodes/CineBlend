@@ -111,11 +111,21 @@ namespace Gasimo.CineBlend
             }
         }
 
+        public override void OnLateUpdate()
+        {
+            base.OnLateUpdate();
+
+            if (currentUpdateMode == CameraUpdateMode.LateUpdate)
+            {
+                UpdateCameraBlending();
+            }
+        }
+
         public override void OnLateFixedUpdate()
         {
             base.OnLateFixedUpdate();
 
-            if (currentUpdateMode == CameraUpdateMode.LateUpdate)
+            if (currentUpdateMode == CameraUpdateMode.LateFixedUpdate)
             {
                 UpdateCameraBlending();
             }

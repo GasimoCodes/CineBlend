@@ -41,6 +41,7 @@ public enum CameraUpdateMode
     Update,
     FixedUpdate,
     LateUpdate,
+    LateFixedUpdate,
     Auto,
     Manual
 }
