@@ -1,6 +1,11 @@
 ﻿using System;
 using FlaxEngine;
 using FlaxEngine.Utilities;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 namespace Gasimo.CineBlend.Modules
 {
@@ -20,7 +25,7 @@ namespace Gasimo.CineBlend.Modules
         private Vector3 direction;
         private float deviation;
 
-        public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+        public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, Real t)
         {
         }
 

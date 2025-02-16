@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using FlaxEngine;
 using Gasimo.CineBlend.Modules;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 namespace Gasimo.CineBlend
 {
@@ -133,21 +138,21 @@ namespace Gasimo.CineBlend
         // Expose properties via the blendable system
 
         [EditorDisplay("Virtual Camera Properties")]
-        public float FieldOfView
+        public Real FieldOfView
         {
             get => properties.FieldOfView.CurrentValue;
             set => properties.FieldOfView.CurrentValue = value;
         }
 
         [EditorDisplay("Virtual Camera Properties")]
-        public float NearPlane
+        public Real NearPlane
         {
             get => properties.NearPlane.CurrentValue;
             set => properties.NearPlane.CurrentValue = value;
         }
 
         [EditorDisplay("Virtual Camera Properties")]
-        public float FarPlane
+        public Real FarPlane
         {
             get => properties.FarPlane.CurrentValue;
             set => properties.FarPlane.CurrentValue = value;

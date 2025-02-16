@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 namespace Gasimo.CineBlend.Modules;
 
@@ -11,9 +16,9 @@ public class CineAutoFrameModule : Script, ICameraModule
 {
     public Actor[] Target;
 
-    public float Smoothing = 0;
+    public Real Smoothing = 0;
     private Quaternion _currentRotation = Quaternion.Identity;
-    private float _currentFOV = 60;
+    private Real _currentFOV = 60;
 
 
     [Range(0, 179)]
@@ -21,7 +26,7 @@ public class CineAutoFrameModule : Script, ICameraModule
 
     private BoundingFrustum targetFrustum;
 
-    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, Real t)
     {
     }
 
@@ -38,14 +43,14 @@ public class CineAutoFrameModule : Script, ICameraModule
 
         
         // Smoothing
-        float deltaTime = Time.UnscaledDeltaTime;
-        float t = deltaTime / Mathf.Max(Smoothing, 0.0001f);
+        Real deltaTime = Time.UnscaledDeltaTime;
+        Real t = deltaTime / Mathf.Max(Smoothing, 0.0001f);
 
 
         // Calculations
         Vector3 cameraPos = state.Position.CurrentValue;
-        float nearDistance = float.MaxValue;
-        float farDistance = float.MinValue;
+        Real nearDistance = Real.MaxValue;
+        Real farDistance = Real.MinValue;
         Vector3 center = Vector3.Zero;
         int pointCount = 0;
 
@@ -60,7 +65,7 @@ public class CineAutoFrameModule : Script, ICameraModule
 
             foreach (var corner in corners)
             {
-                float dist = Vector3.Distance(corner, cameraPos);
+                Real dist = Vector3.Distance(corner, cameraPos);
                 nearDistance = Math.Min(nearDistance, dist);
                 farDistance = Math.Max(farDistance, dist);
                 center += corner;
@@ -83,7 +88,7 @@ public class CineAutoFrameModule : Script, ICameraModule
         }
         else
         {
-            _currentRotation = Quaternion.Slerp(_currentRotation, finalRot, t);
+            _currentRotation = Quaternion.Slerp(_currentRotation, finalRot, (float)t);
         }
         state.Rotation.CurrentValue = _currentRotation;
 
@@ -91,8 +96,8 @@ public class CineAutoFrameModule : Script, ICameraModule
         // Find maximum angles relative to view direction
         Vector3 cameraRight = Vector3.Cross(dirToCenter, Vector3.Up).Normalized;
         Vector3 cameraUp = Vector3.Cross(cameraRight, dirToCenter).Normalized;
-        float maxHorizontalAngle = 0;
-        float maxVerticalAngle = 0;
+        Real maxHorizontalAngle = 0;
+        Real maxVerticalAngle = 0;
 
         // Second pass: find maximum angles
         foreach (var target in Target)
@@ -102,8 +107,8 @@ public class CineAutoFrameModule : Script, ICameraModule
             foreach (var corner in GetBoxCorners(target.Box))
             {
                 Vector3 dirToCorner = (corner - cameraPos).Normalized;
-                float horizontalAngle = Math.Abs(Mathf.Asin(Vector3.Dot(dirToCorner, cameraRight)));
-                float verticalAngle = Math.Abs(Mathf.Asin(Vector3.Dot(dirToCorner, cameraUp)));
+                Real horizontalAngle = Math.Abs(Real.Asin(Vector3.Dot(dirToCorner, cameraRight)));
+                Real verticalAngle = Math.Abs(Real.Asin(Vector3.Dot(dirToCorner, cameraUp)));
 
                 maxHorizontalAngle = Math.Max(maxHorizontalAngle, horizontalAngle);
                 maxVerticalAngle = Math.Max(maxVerticalAngle, verticalAngle);
@@ -111,12 +116,12 @@ public class CineAutoFrameModule : Script, ICameraModule
         }
 
         // Calculate and set FOV
-        float aspectRatio = Screen.Size.X / (float)Screen.Size.Y;
-        float requiredHorizontalFOV = Mathf.RadiansToDegrees * maxHorizontalAngle * 2.1f / aspectRatio;
-        float requiredVerticalFOV = Mathf.RadiansToDegrees * maxVerticalAngle * 2.1f;
-        float requiredFOV = Math.Max(requiredHorizontalFOV, requiredVerticalFOV);
+        Real aspectRatio = Screen.Size.X / (Real)Screen.Size.Y;
+        Real requiredHorizontalFOV = Mathf.RadiansToDegrees * maxHorizontalAngle * 2.1f / aspectRatio;
+        Real requiredVerticalFOV = Mathf.RadiansToDegrees * maxVerticalAngle * 2.1f;
+        Real requiredFOV = Math.Max(requiredHorizontalFOV, requiredVerticalFOV);
         
-        float clampedFov = Mathf.Clamp(requiredFOV, state.FieldOfView.CurrentValue, FOVRange.Y);
+        Real clampedFov = Mathf.Clamp(requiredFOV, state.FieldOfView.CurrentValue, FOVRange.Y);
 
         if (Smoothing <= 0)
         {
@@ -134,10 +139,10 @@ public class CineAutoFrameModule : Script, ICameraModule
         targetFrustum = new BoundingFrustum(
             Matrix.LookAt(cameraPos, cameraPos + dirToCenter, Vector3.Up) *
             Matrix.PerspectiveFov(
-                state.FieldOfView.CurrentValue * Mathf.DegreesToRadians,
-                aspectRatio,
-                nearDistance,
-                farDistance
+                (float)state.FieldOfView.CurrentValue * Mathf.DegreesToRadians,
+                (float)aspectRatio,
+                (float)nearDistance,
+                (float)farDistance
             )
         );
     }
@@ -199,7 +204,7 @@ public class CineAutoFrameModule : Script, ICameraModule
         //DebugDraw.DrawWireSphere(new BoundingSphere(averagePos, 10), Color.Yellow);
 
         Vector3 viewDir = Vector3.Normalize(averagePos - state.Position.CurrentValue);
-        float averageDistance = Vector3.Distance(state.Position.CurrentValue, averagePos);
+        Real averageDistance = Vector3.Distance(state.Position.CurrentValue, averagePos);
 
         // Create basis vectors for the plane
         Vector3 up = Vector3.Up;
@@ -207,21 +212,21 @@ public class CineAutoFrameModule : Script, ICameraModule
         up = Vector3.Cross(viewDir, right); // Recalculate up to ensure orthogonality
 
         // Project all points and find min/max bounds on the plane
-        float minX = float.MaxValue, maxX = float.MinValue;
-        float minY = float.MaxValue, maxY = float.MinValue;
+        Real minX = Real.MaxValue, maxX = Real.MinValue;
+        Real minY = Real.MaxValue, maxY = Real.MinValue;
         Vector3 planePoint = state.Position.CurrentValue + viewDir * averageDistance;
 
         foreach (var pos in centers)
         {
             // Project each point onto the plane
             Vector3 toPoint = pos - state.Position.CurrentValue;
-            float dot = Vector3.Dot(toPoint, viewDir);
+            Real dot = Vector3.Dot(toPoint, viewDir);
             Vector3 projected = state.Position.CurrentValue  + toPoint * (averageDistance / dot);
             Vector3 projectedLocal = projected - planePoint;
 
             // Get coordinates in plane space
-            float x = Vector3.Dot(projectedLocal, right);
-            float y = Vector3.Dot(projectedLocal, up);
+            Real x = Vector3.Dot(projectedLocal, right);
+            Real y = Vector3.Dot(projectedLocal, up);
 
             minX = Math.Min(minX, x);
             maxX = Math.Max(maxX, x);
@@ -232,8 +237,8 @@ public class CineAutoFrameModule : Script, ICameraModule
         }
 
         // Get center point using min/max bounds
-        float centerX = (minX + maxX) / 2;
-        float centerY = (minY + maxY) / 2;
+        Real centerX = (minX + maxX) / 2;
+        Real centerY = (minY + maxY) / 2;
 
         Vector3 worldSpaceCenterPoint = planePoint + right * centerX + up * centerY;
 

@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 namespace Gasimo.CineBlend;
 
@@ -17,7 +22,7 @@ public interface ICameraModule
     /// <summary>
     /// Blends between two module states
     /// </summary>
-    void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t);
+    void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, Real t);
 
     /// <summary>
     /// Modifies the final camera properties before they are applied

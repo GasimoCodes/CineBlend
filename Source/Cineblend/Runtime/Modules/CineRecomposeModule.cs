@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 namespace Gasimo.CineBlend.Modules;
 
@@ -16,7 +21,7 @@ public class CineRecomposeModule : Script, ICameraModule
     public Quaternion RotationOffset;
 
 
-    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, Real t)
     {
 
     }

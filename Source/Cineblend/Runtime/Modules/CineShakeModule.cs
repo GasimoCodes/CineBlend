@@ -1,6 +1,12 @@
 ﻿using System;
 using FlaxEngine;
 using FlaxEngine.Utilities;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
+
 
 namespace Gasimo.CineBlend.Modules
 {
@@ -19,7 +25,7 @@ namespace Gasimo.CineBlend.Modules
         public Vector3 PositionFrequency = new Vector3(1.0f, 1.0f, 1.0f); // Frequency for position noise
         public Vector3 RotationFrequency = new Vector3(1.0f, 1.0f, 1.0f); // Frequency for rotation noise
 
-        public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+        public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, Real t)
         {
             // Not implemented for this example
 
@@ -36,7 +42,7 @@ namespace Gasimo.CineBlend.Modules
             if (!this.Enabled)
                 return;
 
-            float time = Time.UnscaledGameTime;
+            Real time = Time.UnscaledGameTime;
 
             // Generate Perlin noise for position
             Vector3 positionNoise = CalculatePerlinNoise(PositionFrequency, PositionAmplitude, time);
@@ -52,14 +58,14 @@ namespace Gasimo.CineBlend.Modules
             state.Rotation.CurrentValue = state.Rotation.CurrentValue * rotationOffset;
         }
 
-        private Vector3 CalculatePerlinNoise(Vector3 frequencies, Vector3 amplitude, float time)
+        private Vector3 CalculatePerlinNoise(Vector3 frequencies, Vector3 amplitude, Real time)
         {
-            Float2 TileFactor = new Float2(200.0f, 200.0f);
+            Double2 TileFactor = new Double2(200.0f, 200.0f);
 
             return new Vector3(
-                amplitude.X * (Noise.PerlinNoise(new Float2(time * frequencies.X, 0), TileFactor) -0.5f),
-                amplitude.Y * (Noise.PerlinNoise(new Float2(100, time * frequencies.Y), TileFactor) - 0.5f),
-                amplitude.Z * (Noise.PerlinNoise(new Float2(time * frequencies.Z, 100), TileFactor) - 0.5f)
+                amplitude.X * (Noise.PerlinNoise(new Double2(time * frequencies.X, 0), TileFactor) -0.5f),
+                amplitude.Y * (Noise.PerlinNoise(new Double2(100, time * frequencies.Y), TileFactor) - 0.5f),
+                amplitude.Z * (Noise.PerlinNoise(new Double2(time * frequencies.Z, 100), TileFactor) - 0.5f)
             );
         }
     }
