@@ -1,4 +1,9 @@
 ﻿using FlaxEngine;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 namespace Gasimo.CineBlend.Modules;
 
@@ -10,10 +15,10 @@ public class CineTransformModule : ICameraModule
 {
     private VirtualCamera cam;
 
-    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, Real t)
     {
-        cam.Properties.Position.CurrentValue = Vector3.Lerp(fromSnapshot.Properties.Position.CurrentValue, toSnapshot.Properties.Position.CurrentValue, t);
-        cam.Properties.Rotation.CurrentValue = Quaternion.Slerp(fromSnapshot.Properties.Rotation.CurrentValue, toSnapshot.Properties.Rotation.CurrentValue, t);
+        cam.Properties.Position.CurrentValue = Vector3.Lerp(fromSnapshot.Properties.Position.CurrentValue, toSnapshot.Properties.Position.CurrentValue, (float)t);
+        cam.Properties.Rotation.CurrentValue = Quaternion.Slerp(fromSnapshot.Properties.Rotation.CurrentValue, toSnapshot.Properties.Rotation.CurrentValue, (float)t);
     }
 
     public void Initialize(VirtualCamera camera)

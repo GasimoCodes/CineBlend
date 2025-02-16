@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 namespace Cineblend;
 
@@ -35,16 +40,16 @@ public class Mover : Script
     public override void OnUpdate()
     {
         // Make this object orbit around itself
-        float time = Time.GameTime;
-        float speed = 0.5f;
+        Real time = Time.GameTime;
+        Real speed = 0.5f;
 
-        float x = Mathf.Sin(time * speed) * 100;
+        Real x = Real.Sin(time * speed) * 100;
 
         Actor.Position = orbitcenter + new Vector3(x, 0, 0);
 
         // Rotate the object
 
-        Actor.Orientation = Quaternion.RotationYawPitchRoll(time * speed * RotateBy.X, time * speed * RotateBy.Y, time * speed * RotateBy.Z);
+        Actor.Orientation = Quaternion.RotationYawPitchRoll((float)(time * speed * RotateBy.X), (float)(time * speed * RotateBy.Y), (float)(time * speed * RotateBy.Z));
 
     }
 }

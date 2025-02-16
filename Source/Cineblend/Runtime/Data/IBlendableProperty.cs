@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 namespace Gasimo.CineBlend;
 
@@ -21,6 +26,6 @@ public interface IBlendableProperty<T>
     /// <param name="end"></param>
     /// <param name="t"></param>
     /// <returns>Interpolated value</returns>
-    static abstract T Lerp(T start, T end, float t);
+    static abstract T Lerp(T start, T end, Real t);
 }
 

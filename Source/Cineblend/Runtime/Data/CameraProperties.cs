@@ -1,5 +1,10 @@
 ﻿using System;
 using FlaxEngine;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 namespace Gasimo.CineBlend;
 
@@ -43,7 +48,7 @@ public struct CameraProperties : ICloneable
     /// <param name="start">Starting properties</param>
     /// <param name="end">Ending Properties</param>
     /// <param name="t">Lerp value</param>
-    public void LerpAndSet(CameraProperties start, CameraProperties end, float t)
+    public void LerpAndSet(CameraProperties start, CameraProperties end, Real t)
     {
         Position.CurrentValue = BlendableVector3.Lerp(start.Position.CurrentValue, end.Position.CurrentValue, t);
         Rotation.CurrentValue = BlendableQuaternion.Lerp(start.Rotation.CurrentValue, end.Rotation.CurrentValue, t);
@@ -62,9 +67,9 @@ public struct CameraProperties : ICloneable
         camera.Position = Position.CurrentValue;
         camera.Orientation = Rotation.CurrentValue;
 
-        camera.FieldOfView = FieldOfView.CurrentValue;
-        camera.NearPlane = NearPlane.CurrentValue;
-        camera.FarPlane = FarPlane.CurrentValue;
+        camera.FieldOfView = (float)FieldOfView.CurrentValue;
+        camera.NearPlane = (float)NearPlane.CurrentValue;
+        camera.FarPlane = (float)FarPlane.CurrentValue;
     }
 
     /// <summary>
@@ -82,7 +87,7 @@ public struct CameraProperties : ICloneable
     /// <returns></returns>
     public Matrix GetProjectionMatrix()
     {
-        return Matrix.PerspectiveFov(FieldOfView.CurrentValue * Mathf.DegreesToRadians, (Screen.Size.X / Screen.Size.Y), NearPlane.CurrentValue, FarPlane.CurrentValue);
+        return Matrix.PerspectiveFov((float)FieldOfView.CurrentValue * Mathf.DegreesToRadians, (Screen.Size.X / Screen.Size.Y), (float)NearPlane.CurrentValue, (float)FarPlane.CurrentValue);
 
     }
 
@@ -100,19 +105,19 @@ public struct CameraProperties : ICloneable
 }
 
 /// <summary>
-/// Float Lerp utility class
+/// Real Lerp utility class
 /// </summary>
-public class BlendableFloat : IBlendableProperty<float>
+public class BlendableFloat : IBlendableProperty<Real>
 {
-    public float CurrentValue { get; set; }
-    public static float Lerp(float start, float end, float t) => Mathf.Lerp(start, end, t);
+    public Real CurrentValue { get; set; }
+    public static Real Lerp(Real start, Real end, Real t) => Mathf.Lerp(start, end, t);
 
 
     public BlendableFloat()
     {
     }
 
-    public BlendableFloat(float value)
+    public BlendableFloat(Real value)
     {
         CurrentValue = value;
     }
@@ -126,7 +131,7 @@ public class BlendableFloat : IBlendableProperty<float>
 public class BlendableVector3 : IBlendableProperty<Vector3>
 {
     public Vector3 CurrentValue { get; set; }
-    public static Vector3 Lerp(Vector3 start, Vector3 end, float t) => Vector3.Lerp(start, end, t);
+    public static Vector3 Lerp(Vector3 start, Vector3 end, Real t) => Vector3.Lerp(start, end, (float)t);
 
     public BlendableVector3()
     {
@@ -146,7 +151,7 @@ public class BlendableVector3 : IBlendableProperty<Vector3>
 public class BlendableQuaternion : IBlendableProperty<Quaternion>
 {
     public Quaternion CurrentValue { get; set; }
-    public static Quaternion Lerp(Quaternion start, Quaternion end, float t) => Quaternion.Slerp(start, end, t);
+    public static Quaternion Lerp(Quaternion start, Quaternion end, Real t) => Quaternion.Slerp(start, end, (float)t);
 
     public BlendableQuaternion()
     {

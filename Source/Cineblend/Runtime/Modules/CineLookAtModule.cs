@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using FlaxEngine;
 namespace Gasimo.CineBlend.Modules;
+#if USE_LARGE_WORLDS
+using Real = System.Double;
+#else
+using Real = System.Single;
+#endif
 
 /// <summary>
 /// CineLookAtModule Script with smooth follow functionality.
@@ -15,7 +20,7 @@ public class CineLookAtModule : Script, ICameraModule
 
     private Quaternion _currentRotation = Quaternion.Identity;
 
-    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, Real t)
     {
     }
 
