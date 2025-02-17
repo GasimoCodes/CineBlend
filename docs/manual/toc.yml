@@ -16,14 +16,14 @@ items:
     href: Modules/index.md
   - name: Auto Frame Module
     href: Modules/Auto Frame.md
-  - name: Auto Frame Module
-    href: Modules/Shake.md
   - name: Impulse Shake Module
     href: Modules/Impulse Shake.md
   - name: Look At Module
     href: Modules/Look At.md
   - name: Recompose
     href: Modules/Recompose.md
+  - name: Shake Module 
+    href: Modules/Shake.md
 - name: Virtual Cameras
   href: Virtual Cameras/index.md
   items:

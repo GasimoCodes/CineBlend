@@ -1,4 +1,4 @@
-# Auto Frame Module
+# Shake Module 
 CineShakeModule introduces procedural multi-frequency camera shake effects. It enhances realism by applying Perlin noise-based motion to both the camera’s position and rotation, simulating a handheld camera type.
 
 > This module is additive and does not override any values.
