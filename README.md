@@ -15,7 +15,7 @@ Brings high-level virtual cameras workflow to the FlaxEngine.
 - Recompose (additive Reframe)
 - Look At (Camera faces a world transform, with smoothing options)
 - Auto-Framing (Zooms and Rotates the camera to ensure a list of Actors remains on-screen)
-
+- Large World Support using Reals
 
 
 
@@ -40,4 +40,4 @@ https://github.com/user-attachments/assets/0bdb62a8-e1b0-4d9b-8f91-e05fa6ec7278
 - To Transition between Virtual Cameras, use API / Override priorities / Solo an camera / Disable Virtual Camera Actor.
 
 ### Known Bugs
-- Perlin Noise function for Camera Shake is clamped. This is a FlaxEngine bug. 
+
