@@ -12,12 +12,12 @@ namespace Gasimo.CineBlend.Modules
     public class CineShakeModule : Script, ICameraModule
     {
         // Customizable noise properties
-        public Vector3 PositionAmplitude = new Vector3(0.1f, 0.1f, 0.1f); // Amplitude of position noise
-        public Vector3 RotationAmplitude = new Vector3(1.0f, 1.0f, 1.0f); // Amplitude of rotation noise (in degrees)
+        public Float3 PositionAmplitude = new Float3(0.1f, 0.1f, 0.1f); // Amplitude of position noise
+        public Float3 RotationAmplitude = new Float3(1.0f, 1.0f, 1.0f); // Amplitude of rotation noise (in degrees)
 
         // Frequency layers for noise
-        public Vector3 PositionFrequency = new Vector3(1.0f, 1.0f, 1.0f); // Frequency for position noise
-        public Vector3 RotationFrequency = new Vector3(1.0f, 1.0f, 1.0f); // Frequency for rotation noise
+        public Float3 PositionFrequency = new Float3(1.0f, 1.0f, 1.0f); // Frequency for position noise
+        public Float3 RotationFrequency = new Float3(1.0f, 1.0f, 1.0f); // Frequency for rotation noise
 
         public void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
         {
@@ -52,7 +52,7 @@ namespace Gasimo.CineBlend.Modules
             state.Rotation.CurrentValue = state.Rotation.CurrentValue * rotationOffset;
         }
 
-        private Vector3 CalculatePerlinNoise(Vector3 frequencies, Vector3 amplitude, float time)
+        private Vector3 CalculatePerlinNoise(Float3 frequencies, Float3 amplitude, float time)
         {
             Float2 TileFactor = new Float2(200.0f, 200.0f);
 

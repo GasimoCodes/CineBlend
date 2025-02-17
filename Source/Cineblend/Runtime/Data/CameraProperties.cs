@@ -21,17 +21,17 @@ public struct CameraProperties : ICloneable
     /// <summary>
     /// FOV Of the Camera
     /// </summary>
-    public BlendableReal FieldOfView = new(60);
+    public BlendableFloat FieldOfView = new(60);
     
     /// <summary>
     /// Near Plane of the Camera
     /// </summary>
-    public BlendableReal NearPlane = new(10);
+    public BlendableFloat NearPlane = new(10);
     
     /// <summary>
     /// Far Plane of the Camera
     /// </summary>
-    public BlendableReal FarPlane = new(10000);
+    public BlendableFloat FarPlane = new(10000);
 
     public CameraProperties()
     {
@@ -48,9 +48,9 @@ public struct CameraProperties : ICloneable
         Position.CurrentValue = BlendableVector3.Lerp(start.Position.CurrentValue, end.Position.CurrentValue, t);
         Rotation.CurrentValue = BlendableQuaternion.Lerp(start.Rotation.CurrentValue, end.Rotation.CurrentValue, t);
 
-        FieldOfView.CurrentValue = BlendableReal.Lerp(start.FieldOfView.CurrentValue, end.FieldOfView.CurrentValue, t);
-        NearPlane.CurrentValue = BlendableReal.Lerp(start.NearPlane.CurrentValue, end.NearPlane.CurrentValue, t);
-        FarPlane.CurrentValue = BlendableReal.Lerp(start.FarPlane.CurrentValue, end.FarPlane.CurrentValue, t);
+        FieldOfView.CurrentValue = BlendableFloat.Lerp(start.FieldOfView.CurrentValue, end.FieldOfView.CurrentValue, t);
+        NearPlane.CurrentValue = BlendableFloat.Lerp(start.NearPlane.CurrentValue, end.NearPlane.CurrentValue, t);
+        FarPlane.CurrentValue = BlendableFloat.Lerp(start.FarPlane.CurrentValue, end.FarPlane.CurrentValue, t);
     }
 
     /// <summary>
@@ -92,9 +92,9 @@ public struct CameraProperties : ICloneable
         {
             Position = new BlendableVector3(Position.CurrentValue),
             Rotation = new BlendableQuaternion(Rotation.CurrentValue),
-            FieldOfView = new BlendableReal(FieldOfView.CurrentValue),
-            NearPlane = new BlendableReal(NearPlane.CurrentValue),
-            FarPlane = new BlendableReal(FarPlane.CurrentValue)
+            FieldOfView = new BlendableFloat(FieldOfView.CurrentValue),
+            NearPlane = new BlendableFloat(NearPlane.CurrentValue),
+            FarPlane = new BlendableFloat(FarPlane.CurrentValue)
         };
     }
 }
@@ -102,7 +102,7 @@ public struct CameraProperties : ICloneable
 /// <summary>
 /// Float Lerp utility class
 /// </summary>
-public class BlendableReal : IBlendableProperty<float>
+public class BlendableReal : IBlendableProperty<Real>
 {
     public Real CurrentValue { get; set; }
     public static Real Lerp(Real start, Real end, float t) => Real.Lerp(start, end, t);
@@ -112,12 +112,29 @@ public class BlendableReal : IBlendableProperty<float>
     {
     }
 
-    public BlendableReal(float value)
+    public BlendableReal(Real value)
     {
         CurrentValue = value;
     }
+}
+
+/// <summary>
+/// Float Lerp utility class
+/// </summary>
+public class BlendableFloat : IBlendableProperty<float>
+{
+    public float CurrentValue { get; set; }
+    public static float Lerp(float start, float end, float t) => float.Lerp(start, end, t);
 
 
+    public BlendableFloat()
+    {
+    }
+
+    public BlendableFloat(float value)
+    {
+        CurrentValue = value;
+    }
 }
 
 /// <summary>

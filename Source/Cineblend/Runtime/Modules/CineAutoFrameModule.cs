@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting;
 using FlaxEngine;
 
 namespace Gasimo.CineBlend.Modules;
@@ -19,7 +20,7 @@ public class CineAutoFrameModule : Script, ICameraModule
 
 
     [Range(0, 179)]
-    public Vector2 FOVRange = new(60, 170);
+    public Float2 FOVRange = new(60, 170);
 
     private BoundingFrustum targetFrustum;
 
@@ -46,8 +47,8 @@ public class CineAutoFrameModule : Script, ICameraModule
 
         // Calculations
         Vector3 cameraPos = state.Position.CurrentValue;
-        Real nearDistance = Real.MaxValue;
-        Real farDistance = Real.MinValue;
+        float nearDistance = float.MaxValue;
+        float farDistance = float.MinValue;
         Vector3 center = Vector3.Zero;
         int pointCount = 0;
 
@@ -62,9 +63,9 @@ public class CineAutoFrameModule : Script, ICameraModule
 
             foreach (var corner in corners)
             {
-                Real dist = Vector3.Distance(corner, cameraPos);
-                nearDistance = Real.Min(nearDistance, dist);
-                farDistance = Real.Max(farDistance, dist);
+                float dist = (float)Vector3.Distance(corner, cameraPos);
+                nearDistance = float.Min(nearDistance, dist);
+                farDistance = float.Max(farDistance, dist);
                 center += corner;
                 pointCount++;
             }
@@ -104,12 +105,13 @@ public class CineAutoFrameModule : Script, ICameraModule
             foreach (var corner in GetBoxCorners(target.Box))
             {
                 Vector3 dirToCorner = (corner - cameraPos).Normalized;
-                float horizontalAngle = Math.Abs(Mathf.Asin(Vector3.Dot(dirToCorner, cameraRight)));
-                float verticalAngle = Math.Abs(Mathf.Asin(Vector3.Dot(dirToCorner, cameraUp)));
+                
+                float horizontalAngle = float.Abs(float.Asin((float)Vector3.Dot(dirToCorner, cameraRight)));
+                float verticalAngle = float.Abs(float.Asin((float)Vector3.Dot(dirToCorner, cameraUp)));
 
                 maxHorizontalAngle = Math.Max(maxHorizontalAngle, horizontalAngle);
                 maxVerticalAngle = Math.Max(maxVerticalAngle, verticalAngle);
-            }
+            } 
         }
 
         // Calculate and set FOV
@@ -118,7 +120,7 @@ public class CineAutoFrameModule : Script, ICameraModule
         float requiredVerticalFOV = Mathf.RadiansToDegrees * maxVerticalAngle * 2.1f;
         float requiredFOV = Math.Max(requiredHorizontalFOV, requiredVerticalFOV);
         
-        float clampedFov = Mathf.Clamp(requiredFOV, state.FieldOfView.CurrentValue, FOVRange.Y);
+        float clampedFov = float.Clamp(requiredFOV, state.FieldOfView.CurrentValue, FOVRange.Y);
 
         if (Smoothing <= 0)
         {

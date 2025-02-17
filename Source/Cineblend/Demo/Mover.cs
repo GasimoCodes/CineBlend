@@ -38,13 +38,13 @@ public class Mover : Script
         float time = Time.GameTime;
         float speed = 0.5f;
 
-        float x = Real.Sin(time * speed) * 100;
+        float x = float.Sin(time * speed) * 100;
 
         Actor.Position = orbitcenter + new Vector3(x, 0, 0);
 
         // Rotate the object
 
-        Actor.Orientation = Quaternion.RotationYawPitchRoll(time * speed * RotateBy.X, time * speed * RotateBy.Y, time * speed * RotateBy.Z);
+        Actor.Orientation = Quaternion.RotationYawPitchRoll(time * speed * (float)RotateBy.X, time * speed * (float)RotateBy.Y, time * speed * (float)RotateBy.Z);
 
     }
 }
