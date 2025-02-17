@@ -23,13 +23,13 @@ public class CineAutoFrameModule : Script, ICameraModule
 
     private BoundingFrustum targetFrustum;
 
-    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    public void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
     {
     }
 
-    public void Initialize(VirtualCamera camera)
+    public void Initialize(ICineCamera camera)
     {
-        _currentRotation = camera.Transform.Orientation;
+        _currentRotation = camera.Actor.Transform.Orientation;
         _currentFOV = camera.Properties.FieldOfView.CurrentValue;
     }
 

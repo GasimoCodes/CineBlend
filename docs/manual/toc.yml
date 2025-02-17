@@ -33,6 +33,13 @@ items:
     href: Virtual Cameras/Clear Shot Camera.md
   - name: Virtual Camera
     href: Virtual Cameras/Virtual Camera.md
+- name: Advanced
+  href: Advanced/Making Custom Virtual Cameras.md
+  items:
+  - name: Creating Custom Virtual Cameras in CineBlend
+    href: Advanced/Making Custom Virtual Cameras.md
+  - name: Custom Camera Modules
+    href: Advanced/Making Custom Modules.md
 - name: Timeline
   href: Timeline/index.md
   items:

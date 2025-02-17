@@ -19,13 +19,13 @@ namespace Gasimo.CineBlend.Modules
         public Vector3 PositionFrequency = new Vector3(1.0f, 1.0f, 1.0f); // Frequency for position noise
         public Vector3 RotationFrequency = new Vector3(1.0f, 1.0f, 1.0f); // Frequency for rotation noise
 
-        public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+        public void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
         {
             // Not implemented for this example
 
         }
 
-        public void Initialize(VirtualCamera camera)
+        public void Initialize(ICineCamera camera)
         {
             // Not implemented for this example
 

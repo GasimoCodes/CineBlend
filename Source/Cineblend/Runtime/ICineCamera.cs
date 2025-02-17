@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlaxEngine;
+using System;
 using System.Collections.Generic;
 
 namespace Gasimo.CineBlend;
@@ -33,6 +34,11 @@ public interface ICineCamera
     public string Name { get; }
 
     public CameraUpdateMode CameraUpdateMode { get; }
+
+    /// <summary>
+    /// Reference to the world instance of the Virtual Camera. Used by modules to hook into custom logic.
+    /// </summary>
+    public Actor Actor { get; }
 
 }
 

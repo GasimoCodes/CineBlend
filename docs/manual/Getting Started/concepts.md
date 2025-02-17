@@ -20,3 +20,5 @@ Camera Shake: Adds subtle movement to the camera, simulating being handheld or m
 Auto-Framing: Ensures multiple objects stay within the camera view by automatically rotating/zooming the camera.
 
 These behaviors are applied sequentially and additively, allowing fine-tuned control over camera movement and composition.
+
+![Modules](../../images/Modules.png)

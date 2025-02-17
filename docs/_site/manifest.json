@@ -245,10 +245,20 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/FaceToons.png",
+      "source_relative_path": "images/Modules.png",
       "output": {
         "resource": {
-          "relative_path": "images/FaceToons.png"
+          "relative_path": "images/Modules.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Vcam.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "images/Vcam.PNG"
         }
       },
       "version": ""
@@ -279,6 +289,26 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Advanced/Making Custom Modules.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Advanced/Making Custom Modules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Advanced/Making Custom Virtual Cameras.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Advanced/Making Custom Virtual Cameras.html"
         }
       },
       "version": ""

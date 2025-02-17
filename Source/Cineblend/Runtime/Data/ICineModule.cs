@@ -12,12 +12,12 @@ public interface ICameraModule
     /// <summary>
     /// Called when the module is initialized
     /// </summary>
-    void Initialize(VirtualCamera camera);
+    void Initialize(ICineCamera camera);
 
     /// <summary>
     /// Blends between two module states
     /// </summary>
-    void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t);
+    void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t);
 
     /// <summary>
     /// Modifies the final camera properties before they are applied

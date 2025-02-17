@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Principles and Overview | Cineblend </title>
+      <title>Custom Camera Modules | Cineblend </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Principles and Overview | Cineblend ">
+      <meta name="title" content="Custom Camera Modules | Cineblend ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -85,22 +85,66 @@
         </div>
 
         <article data-uid="">
-<h1 id="principles-and-overview">Principles and Overview</h1>
+<h1 id="custom-camera-modules">Custom Camera Modules</h1>
 
-<h2 id="introduction">Introduction</h2>
-<p>Modular Virtual Camera systems, such as Cineblend or Unity's Cinemachine, provide an easy and flexible way to control cameras in games, movies, and interactive applications. Instead of manually animating cameras, switching between them, or writing complex logic, these systems let you define multiple Virtual Cameras with modular behaviours (like auto-framing, look-at, camera shake, offsets...) and smoothly transition between them.</p>
-<h2 id="core-principles">Core Principles</h2>
-<h3 id="1-virtual-cameras">1. Virtual Cameras</h3>
-<p>Virtual Cameras exist in the scene but act as proxies for the physical camera. Each Virtual Camera stores its own settings, including position, rotation, field of view, and modular behaviors. However, they do not directly render the scene. Instead, they pass their settings to the active physical camera, which then applies them. Virtual Cameras are switched based on priority or controlled via API commands.</p>
-<h3 id="2-camera-blending">2. Camera Blending</h3>
-<p>Instead of abruptly switching between cameras, modular systems allow smooth transitions using blending. This enables seamless transitions between different views, such as third-person, first-person, top-down, or multiple cinematic shots, without needing to create or reposition cameras manually.</p>
-<h3 id="3-behaviours-modules">3. Behaviours (Modules)</h3>
-<p>Cineblend and similar systems let you stack modular behaviors onto Virtual Cameras to create complex effects. These for instance include:</p>
-<p>Look-At Tracking: Automatically rotates the camera to keep a target in focus.
-Camera Shake: Adds subtle movement to the camera, simulating being handheld or moved.
-Auto-Framing: Ensures multiple objects stay within the camera view by automatically rotating/zooming the camera.</p>
-<p>These behaviors are applied sequentially and additively, allowing fine-tuned control over camera movement and composition.</p>
-<p><img src="../../images/Modules.png" alt="Modules"></p>
+<h2 id="overview">Overview</h2>
+<p>All Cineblend Modules must implement the <a href="/api/Gasimo.CineBlend.ICameraModule.html"><code>ICameraModule</code></a> interface. For best integration with the editor, your modules should inherit from Flax's <code>Script</code> type, allowing them to be assigned to Virtual Cameras through the editor interface.</p>
+<h2 id="core-interface-methods">Core Interface Methods</h2>
+<p>The <code>ICameraModule</code> interface lets you integrate with the Cineblend pipeline through three main methods:</p>
+<h3 id="1-initialize">1. Initialize</h3>
+<pre><code class="lang-csharp">void Initialize(ICineCamera camera)
+</code></pre>
+<p>Called when a Virtual Camera is created and registered with the system. Use this method to cache any required references for your module.</p>
+<h3 id="2-postprocessproperties">2. PostProcessProperties</h3>
+<pre><code class="lang-csharp">void PostProcessProperties(ref CameraProperties state)
+</code></pre>
+<p>This is the primary method for modifying camera behavior. It's called each frame when the camera is:</p>
+<ul>
+<li>Active (Soloed/Highest Priority)</li>
+<li>In preview mode</li>
+<li>Blending with another camera</li>
+<li>Otherwise needed</li>
+</ul>
+<p>The method receives a reference to the current <a href="/api/Gasimo.CineBlend.CameraProperties.html">camera state</a>, which you can modify as needed. Important notes:</p>
+<ul>
+<li>The state has already been processed by any previous modules on the camera</li>
+<li>Changes you make will be passed to subsequent modules</li>
+<li>Always include an early exit check for the <code>Enabled</code> property to support user control via the editor</li>
+</ul>
+<h3 id="3-blend">3. Blend</h3>
+<pre><code class="lang-csharp">void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
+</code></pre>
+<p>Used for implementing custom logic when blending between cameras. Only implement this if you need to blend properties not available in the standard <a href="/api/Gasimo.CineBlend.CameraProperties.html">CameraProperties</a> struct. Note that this method is only called during active camera blends.</p>
+<h2 id="example-implementation">Example Implementation</h2>
+<p>Here's a complete example of a camera module that adds position and rotation offsets to reframe the camera:</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Allows you to offset the position and rotation of the camera.
+/// &lt;/summary&gt;
+[RequireActor(typeof(VirtualCamera))]
+[Category(&quot;Cineblend&quot;)]
+public class CineRecomposeModule : Script, ICameraModule
+{
+    public Vector3 PositionOffset;
+    public Quaternion RotationOffset;
+
+    public void Initialize(ICineCamera camera)
+    {
+    }
+
+    public void PostProcessProperties(ref CameraProperties state)
+    {
+        if(!this.Enabled)
+            return;
+            
+        state.Rotation.CurrentValue = state.Rotation.CurrentValue * RotationOffset;
+        state.Position.CurrentValue += PositionOffset;
+    }
+
+    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    {
+    }
+}
+</code></pre>
 
 </article>
 

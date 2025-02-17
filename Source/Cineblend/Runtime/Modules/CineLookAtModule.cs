@@ -15,14 +15,14 @@ public class CineLookAtModule : Script, ICameraModule
 
     private Quaternion _currentRotation = Quaternion.Identity;
 
-    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    public void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
     {
     }
 
-    public void Initialize(VirtualCamera camera)
+    public void Initialize(ICineCamera camera)
     {
         // Initialize the current rotation to match the camera's initial rotation
-        _currentRotation = camera.Transform.Orientation;
+        _currentRotation = camera.Actor.Transform.Orientation;
     }
 
     public void PostProcessProperties(ref CameraProperties state)

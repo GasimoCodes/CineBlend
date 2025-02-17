@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Creating Custom Virtual Cameras in CineBlend | Cineblend </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Creating Custom Virtual Cameras in CineBlend | Cineblend ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="creating-custom-virtual-cameras-in-cineblend">Creating Custom Virtual Cameras in CineBlend</h1>
+
+<h2 id="overview">Overview</h2>
+<p>CineBlend provides two ways to create custom Virtual Cameras:</p>
+<ol>
+<li>Inheriting from the <code>VirtualCamera</code> base class (recommended)</li>
+<li>Implementing the <code>ICineCamera</code> interface from scratch</li>
+</ol>
+<p>This guide covers both approaches, with a focus on the interface implementation for advanced customization needs.</p>
+<h2 id="the-icinecamera-interface">The ICineCamera Interface</h2>
+<p>The <code>ICineCamera</code> interface defines the core functionality required for any Virtual Camera in the CineBlend system:</p>
+<pre><code class="lang-csharp">public interface ICineCamera
+{
+    CameraProperties Properties { get; }
+    CameraProperties FinalProperties { get; }
+    Dictionary&lt;Type, ICameraModule&gt; Modules { get; }
+    int Priority { get; }
+    string Name { get; }
+    CameraUpdateMode CameraUpdateMode { get; }
+    public Actor Actor { get; }
+}
+</code></pre>
+<h3 id="key-properties">Key Properties</h3>
+<h4 id="properties-and-finalproperties">Properties and FinalProperties</h4>
+<ul>
+<li><code>Properties</code>: Holds the camera's initial, unprocessed state</li>
+<li><code>FinalProperties</code>: Returns the final camera state after all modules have processed it
+<ul>
+<li>Should apply all modules sequentially to the initial properties</li>
+<li>Requested by CineblendMaster during blends or when this camera is active/previewed.</li>
+</ul>
+</li>
+</ul>
+<h4 id="modules">Modules</h4>
+<ul>
+<li>Dictionary of camera modules indexed by their Type</li>
+<li>Modules are processed in the order they were added (in the order they appear in the Editor scripts tab, top to bottom)</li>
+<li>Should include at least the <code>CineTransformModule</code> at 0th index to set the initial state. This module is to be added into the dictionary by scripting.</li>
+<li>Modules are to be initialized sequentially by calling <a href="/api/Gasimo.CineBlend.ICameraModule.html#Gasimo_CineBlend_ICameraModule_Initialize_Gasimo_CineBlend_VirtualCamera_">Initialize</a></li>
+</ul>
+<h4 id="priority">Priority</h4>
+<ul>
+<li>Determines camera precedence in the CineBlend system</li>
+<li>Higher priority cameras override lower priority ones</li>
+<li>Should trigger a priority update in CineblendMaster when changed</li>
+</ul>
+<h4 id="cameraupdatemode">CameraUpdateMode</h4>
+<p>Controls when the camera updates its state:</p>
+<pre><code class="lang-csharp">public enum CameraUpdateMode
+{
+    Update,            // Standard update
+    FixedUpdate,       // Physics-based update
+    LateUpdate,        // After standard updates
+    LateFixedUpdate,   // After physics updates
+    Auto,              // Determined by camera context
+    Manual             // Explicit update calls required
+}
+</code></pre>
+<h4 id="actor">Actor</h4>
+<p>Reference to the world instance of the Virtual Camera. Used by modules to hook into custom logic.</p>
+<h2 id="implementation-guide">Implementation Guide</h2>
+<h3 id="1-basic-implementation">1. Basic Implementation</h3>
+<p>Here's a minimal implementation of <code>ICineCamera</code>:</p>
+<pre><code class="lang-csharp">public class CustomVirtualCamera : ICineCamera
+{
+    private CameraProperties properties = new();
+    private Dictionary&lt;Type, ICameraModule&gt; modules;
+    private int priority;
+    
+    public CustomVirtualCamera()
+    {
+        modules = new Dictionary&lt;Type, ICameraModule&gt;()
+        {
+            { typeof(CineTransformModule), new CineTransformModule() }
+        };
+    }
+
+    public CameraProperties Properties =&gt; properties;
+    
+    public CameraProperties FinalProperties
+    {
+        get
+        {
+            var finalState = (CameraProperties)properties.Clone();
+            foreach (var module in Modules.Values)
+            {
+                module.PostProcessProperties(ref finalState);
+            }
+            return finalState;
+        }
+    }
+
+    public Dictionary&lt;Type, ICameraModule&gt; Modules =&gt; modules;
+    public int Priority =&gt; priority;
+    public string Name { get; set; }
+    public CameraUpdateMode CameraUpdateMode =&gt; CameraUpdateMode.Update;
+    public Actor Actor =&gt; this;
+}
+</code></pre>
+<h3 id="2-required-implementation-details">2. Required Implementation Details</h3>
+<h4 id="module-management">Module Management</h4>
+<p>Implement methods for module handling:</p>
+<pre><code class="lang-csharp">public void AddModule&lt;T&gt;(T module) where T : ICameraModule
+{
+    module.Initialize(this);
+    Modules[typeof(T)] = module;
+}
+
+public T GetModule&lt;T&gt;() where T : class, ICameraModule
+{
+    Modules.TryGetValue(typeof(T), out var module);
+    return module as T;
+}
+
+public void RemoveModule&lt;T&gt;() where T : ICameraModule
+{
+    Modules.Remove(typeof(T));
+}
+</code></pre>
+<h4 id="cineblendmaster-integration">CineblendMaster Integration</h4>
+<p>Handle registration with the CineBlend system:</p>
+<pre><code class="lang-csharp">public void OnEnable()
+{
+    CineblendMaster.Instance?.RegisterVirtualCamera(this);
+}
+
+public void OnDisable()
+{
+    CineblendMaster.Instance?.UnregisterVirtualCamera(this);
+}
+
+private void OnPriorityChanged(int oldPriority, int newPriority)
+{
+    CineblendMaster.Instance?.UpdateVirtualCameraPriority(this, oldPriority, newPriority);
+}
+</code></pre>
+<h2 id="editor-integration">Editor Integration</h2>
+<p>For better editor support, implement these attributes:</p>
+<pre><code class="lang-csharp">[ActorContextMenu(&quot;New/CineBlend/Custom Virtual Camera&quot;)]
+[ActorToolbox(&quot;Visuals&quot;)]
+public class CustomVirtualCamera : ICineCamera
+{
+    [ShowInEditor, ReadOnly]
+    [EditorDisplay(&quot;Virtual Camera Status&quot;)]
+    public bool IsActive =&gt; (CineblendMaster.Instance?.currentVirtualCamera == this);
+    
+    // ... rest of implementation
+}
+</code></pre>
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

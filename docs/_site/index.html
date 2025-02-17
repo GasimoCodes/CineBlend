@@ -74,14 +74,40 @@
 <div style="display: flex; gap: 40px;">
     <div>
     <h1>Welcome to <b>Cineblend</b> docs!</h1>
-    <p style="font-size: 18px;">Description
+    <p style="font-size: 18px;">Brings high-level virtual cameras workflow to the FlaxEngine. 
 </p>
     <a href="manual/Getting%20Started/index.html">Manual</a> | <a href="api/Gasimo.CineBlend.CineblendMaster.html">API</a> 
     </div>
     <!-- <img src="./images/FaceToons.png" alt="FaceToons Image" style="width: 1200px; margin-right: 20px;"> -->
 </div>
-<h1 id="key-features">Key Features</h1>
-<h3 id="virtual-camera">Virtual Camera</h3>
+<blockquote>
+<p>This project is in early stages and its API is likely to change throughout development. This plugin was made for our own game production and will not receive priority support. PRs are welcome! If you wish this system to be included in the Flax ecosystem, make sure to share this repo!</p>
+</blockquote>
+<h2 id="features">Features</h2>
+<ul>
+<li>Priority based blending (Virtual Camera with highest priority will be active)</li>
+<li>Overriding priority by soloing Virtual Cameras.</li>
+<li>Camera blending previews work outside of Play Mode.</li>
+<li>Transition of all exposed Flax Camera values, including Far/Near plane, Orientation or Position.</li>
+<li>VirtualCamera Property PostProcessing, which allows you to non-destructively stack effects (such as CameraShake). These effects are not applied directly to the Virtual Camera transform, but are used while applying transform to the &quot;real&quot; Camera. See ICameraModule.</li>
+<li>Modular: All CineBlend cameras and effects work through interfaces to allow for easy implementation or extensions.</li>
+</ul>
+<h3 id="modules-camera-effects">Modules (Camera Effects)</h3>
+<ul>
+<li>Camera Shake</li>
+<li>Recompose (additive Reframe)</li>
+<li>Look At (Camera faces a world transform, with smoothing options)</li>
+<li>Auto-Framing (Zooms and Rotates the camera to ensure a list of Actors remains on-screen)</li>
+<li>Large World Support using Reals</li>
+</ul>
+<h3 id="to-do">To-Do</h3>
+<ul>
+<li>PostProcessing Volume blending</li>
+<li>More Gizmos</li>
+<li>&quot;Timeline/Sequencer&quot; Integration</li>
+</ul>
+<h3 id="known-bugs">Known Bugs</h3>
+<p>TBA</p>
 
 </article>
 

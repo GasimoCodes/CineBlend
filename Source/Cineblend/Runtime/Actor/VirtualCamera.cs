@@ -153,6 +153,8 @@ namespace Gasimo.CineBlend
             set => properties.FarPlane.CurrentValue = value;
         }
 
+        public Actor Actor => this;
+
 
 
 

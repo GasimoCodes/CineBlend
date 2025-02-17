@@ -8,15 +8,15 @@ namespace Gasimo.CineBlend.Modules;
 /// </summary>
 public class CineTransformModule : ICameraModule
 {
-    private VirtualCamera cam;
+    private ICineCamera cam;
 
-    public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+    public void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
     {
         cam.Properties.Position.CurrentValue = Vector3.Lerp(fromSnapshot.Properties.Position.CurrentValue, toSnapshot.Properties.Position.CurrentValue, t);
         cam.Properties.Rotation.CurrentValue = Quaternion.Slerp(fromSnapshot.Properties.Rotation.CurrentValue, toSnapshot.Properties.Rotation.CurrentValue, t);
     }
 
-    public void Initialize(VirtualCamera camera)
+    public void Initialize(ICineCamera camera)
     {
         cam = camera;
     }
@@ -29,8 +29,8 @@ public class CineTransformModule : ICameraModule
         }
         // string offset =  (cam == null) + " / " + ((cam == null) ? "NULL" : cam?.Name);
 
-        state.Position.CurrentValue = cam.Position;
-        state.Rotation.CurrentValue = cam.Orientation;
+        state.Position.CurrentValue = cam.Actor.Position;
+        state.Rotation.CurrentValue = cam.Actor.Orientation;
 
         // Debug.Log(state.Position.CurrentValue);
     }

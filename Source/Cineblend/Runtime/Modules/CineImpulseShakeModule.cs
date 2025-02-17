@@ -20,11 +20,11 @@ namespace Gasimo.CineBlend.Modules
         private Vector3 direction;
         private float deviation;
 
-        public void Blend(VirtualCamera fromSnapshot, VirtualCamera toSnapshot, float t)
+        public void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
         {
         }
 
-        public void Initialize(VirtualCamera camera)
+        public void Initialize(ICineCamera camera)
         {
         }
 
