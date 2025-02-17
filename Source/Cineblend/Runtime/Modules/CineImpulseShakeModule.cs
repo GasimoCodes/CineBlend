@@ -86,8 +86,6 @@ namespace Gasimo.CineBlend.Modules
             this.magnitude = magnitude;
             this.deviation = deviation;
             this.frequency = frequency;
-
-            Debug.Log("Shake");
         }
     }
 }

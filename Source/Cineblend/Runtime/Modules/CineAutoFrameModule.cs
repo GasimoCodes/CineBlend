@@ -7,6 +7,8 @@ namespace Gasimo.CineBlend.Modules;
 /// <summary>
 /// CineAutoFrameModule Script that automatically frames target actors.
 /// </summary>
+[RequireActor(typeof(VirtualCamera))]
+[Category("Cineblend")]
 public class CineAutoFrameModule : Script, ICameraModule
 {
     public Actor[] Target;
@@ -44,8 +46,8 @@ public class CineAutoFrameModule : Script, ICameraModule
 
         // Calculations
         Vector3 cameraPos = state.Position.CurrentValue;
-        float nearDistance = float.MaxValue;
-        float farDistance = float.MinValue;
+        Real nearDistance = Real.MaxValue;
+        Real farDistance = Real.MinValue;
         Vector3 center = Vector3.Zero;
         int pointCount = 0;
 
@@ -60,9 +62,9 @@ public class CineAutoFrameModule : Script, ICameraModule
 
             foreach (var corner in corners)
             {
-                float dist = Vector3.Distance(corner, cameraPos);
-                nearDistance = Math.Min(nearDistance, dist);
-                farDistance = Math.Max(farDistance, dist);
+                Real dist = Vector3.Distance(corner, cameraPos);
+                nearDistance = Real.Min(nearDistance, dist);
+                farDistance = Real.Max(farDistance, dist);
                 center += corner;
                 pointCount++;
             }
@@ -199,7 +201,7 @@ public class CineAutoFrameModule : Script, ICameraModule
         //DebugDraw.DrawWireSphere(new BoundingSphere(averagePos, 10), Color.Yellow);
 
         Vector3 viewDir = Vector3.Normalize(averagePos - state.Position.CurrentValue);
-        float averageDistance = Vector3.Distance(state.Position.CurrentValue, averagePos);
+        Real averageDistance = Vector3.Distance(state.Position.CurrentValue, averagePos);
 
         // Create basis vectors for the plane
         Vector3 up = Vector3.Up;
@@ -207,33 +209,33 @@ public class CineAutoFrameModule : Script, ICameraModule
         up = Vector3.Cross(viewDir, right); // Recalculate up to ensure orthogonality
 
         // Project all points and find min/max bounds on the plane
-        float minX = float.MaxValue, maxX = float.MinValue;
-        float minY = float.MaxValue, maxY = float.MinValue;
+        Real minX = float.MaxValue, maxX = float.MinValue;
+        Real minY = float.MaxValue, maxY = float.MinValue;
         Vector3 planePoint = state.Position.CurrentValue + viewDir * averageDistance;
 
         foreach (var pos in centers)
         {
             // Project each point onto the plane
             Vector3 toPoint = pos - state.Position.CurrentValue;
-            float dot = Vector3.Dot(toPoint, viewDir);
+            Real dot = Vector3.Dot(toPoint, viewDir);
             Vector3 projected = state.Position.CurrentValue  + toPoint * (averageDistance / dot);
             Vector3 projectedLocal = projected - planePoint;
 
             // Get coordinates in plane space
-            float x = Vector3.Dot(projectedLocal, right);
-            float y = Vector3.Dot(projectedLocal, up);
+            Real x = Vector3.Dot(projectedLocal, right);
+            Real y = Vector3.Dot(projectedLocal, up);
 
-            minX = Math.Min(minX, x);
-            maxX = Math.Max(maxX, x);
-            minY = Math.Min(minY, y);
-            maxY = Math.Max(maxY, y);
+            minX = Real.Min(minX, x);
+            maxX = Real.Max(maxX, x);
+            minY = Real.Min(minY, y);
+            maxY = Real.Max(maxY, y);
 
             
         }
 
         // Get center point using min/max bounds
-        float centerX = (minX + maxX) / 2;
-        float centerY = (minY + maxY) / 2;
+        Real centerX = (minX + maxX) / 2;
+        Real centerY = (minY + maxY) / 2;
 
         Vector3 worldSpaceCenterPoint = planePoint + right * centerX + up * centerY;
 

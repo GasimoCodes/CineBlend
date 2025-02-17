@@ -1,3 +1,10 @@
+#if USE_LARGE_WORLDS
+global using Real = System.Double;
+#else
+global using Real = System.Single;
+#endif
+
+
 using System;
 using FlaxEngine;
 

@@ -38,7 +38,7 @@ public class Mover : Script
         float time = Time.GameTime;
         float speed = 0.5f;
 
-        float x = Mathf.Sin(time * speed) * 100;
+        float x = Real.Sin(time * speed) * 100;
 
         Actor.Position = orbitcenter + new Vector3(x, 0, 0);
 
