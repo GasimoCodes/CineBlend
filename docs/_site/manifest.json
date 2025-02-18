@@ -255,6 +255,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/Modules/Collider.mp4",
+      "output": {
+        "resource": {
+          "relative_path": "images/Modules/Collider.mp4"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/Vcam.PNG",
       "output": {
         "resource": {
@@ -349,6 +359,16 @@
       "output": {
         ".html": {
           "relative_path": "manual/Modules/Auto Frame.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Modules/Collider Offset.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Modules/Collider Offset.html"
         }
       },
       "version": ""

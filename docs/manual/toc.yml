@@ -16,6 +16,8 @@ items:
     href: Modules/index.md
   - name: Auto Frame Module
     href: Modules/Auto Frame.md
+  - name: Collider Offset Module
+    href: Modules/Collider Offset.md
   - name: Impulse Shake Module
     href: Modules/Impulse Shake.md
   - name: Look At Module

@@ -144,6 +144,11 @@
     "title": "Auto Frame Module | Cineblend",
     "keywords": "Auto Frame Module The CineAutoFrameModule automatically adjusts the camera to ensure that all target actor(s) remain within the frame. It dynamically calculates the optimal camera orientation and field of view (FOV) to keep selected objects visible while maintaining a smooth and cinematic look. This module overrides the Rotation and FOV of the camera set by any previous modules. Use Cases Cutscenes & Cinematics: Keep multiple characters in view during conversations or dramatic sequences. Gameplay Cameras: Automatically adjust to player and NPC positions without manual camera control. For best results keep the camera at a reasonable distance from the Actors being tracked."
   },
+  "manual/Modules/Collider Offset.html": {
+    "href": "manual/Modules/Collider Offset.html",
+    "title": "Collider Offset Module | Cineblend",
+    "keywords": "Collider Offset Module CineColliderModule postprocesses camera position to retain line-of-sight with the target. This is accompished by moving the camera position in front of the obstacle (with an offset) when the line of sight is broken. This module overwrites the Camera Position. Use Cases Third-person or orbit-style camera controlls where obstacles between camera and player are common. Top-down or side-scrolling cameras in 3D setting which could collide with geometry."
+  },
   "manual/Modules/Impulse Shake.html": {
     "href": "manual/Modules/Impulse Shake.html",
     "title": "Impulse Shake Module | Cineblend",

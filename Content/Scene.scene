@@ -94,17 +94,18 @@
 			"Name": "Camera",
 			"Transform": {
 				"Translation": {
-					"X": -1910.0,
-					"Y": 0.0,
-					"Z": 540.0
+					"X": 1291.5527830207562,
+					"Y": 404.12043454505996,
+					"Z": 533.0110759899782
 				},
 				"Orientation": {
-					"X": 0.00017792721337173134,
-					"Y": -0.9996955990791321,
-					"Z": 0.02348289079964161,
-					"W": 0.007574581541121006
+					"X": 0.10038959980010987,
+					"Y": -0.8703436851501465,
+					"Z": 0.1989695280790329,
+					"W": 0.43912985920906069
 				}
 			},
+			"FOV": 40.0,
 			"Far": 10000.0,
 			"OrthoScale": 2.3701000213623049
 		},
@@ -401,6 +402,187 @@
 		"Z": 2.0
 	}
 }
+		},
+		{
+			"ID": "cf4a5b644f6696166fd9cd845924b964",
+			"TypeName": "Gasimo.CineBlend.VirtualCamera",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"V": {
+	"Properties": {
+		"Position": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0
+			}
+		},
+		"Rotation": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0,
+				"W": 0.0
+			}
+		},
+		"FieldOfView": {
+			"CurrentValue": 40.0
+		},
+		"NearPlane": {
+			"CurrentValue": 10.0
+		},
+		"FarPlane": {
+			"CurrentValue": 10000.0
+		}
+	},
+	"Priority": 14,
+	"FieldOfView": 40.0
+},
+			"Name": "VirtualCamera 2 Collider",
+			"Transform": {
+				"Translation": {
+					"X": 1291.5527830207562,
+					"Y": 404.12043454505996,
+					"Z": 533.0110759899782
+				}
+			}
+		},
+		{
+			"ID": "6ef0f0c34af81035d5f79fbf28d1a57f",
+			"TypeName": "Gasimo.CineBlend.Modules.CineLookAtModule",
+			"ParentID": "cf4a5b644f6696166fd9cd845924b964",
+			"V": {
+	"Target": "308573c94b5f819e7a64fab9f73fdd16",
+	"Smoothing": 0.5
+}
+		},
+		{
+			"ID": "8bd9d9fe41ffaa1abedfdab0f4f33d42",
+			"TypeName": "Gasimo.CineBlend.Modules.CineShakeModule",
+			"ParentID": "cf4a5b644f6696166fd9cd845924b964",
+			"V": {
+	"RotationAmplitude": {
+		"X": 2.0,
+		"Y": 2.0,
+		"Z": 2.0
+	},
+	"PositionFrequency": {
+		"X": 2.0,
+		"Y": 2.0,
+		"Z": 2.0
+	},
+	"RotationFrequency": {
+		"X": 2.0,
+		"Y": 2.0,
+		"Z": 2.0
+	}
+},
+			"Enabled": false
+		},
+		{
+			"ID": "e8f505144135f25140d7b284f25843ed",
+			"TypeName": "Gasimo.CineBlend.Modules.CineColliderModule",
+			"ParentID": "cf4a5b644f6696166fd9cd845924b964",
+			"V": {
+	"Target": "308573c94b5f819e7a64fab9f73fdd16",
+	"sphereRadius": 80.0,
+	"offsetFromObstacle": 0.0
+}
+		},
+		{
+			"ID": "308573c94b5f819e7a64fab9f73fdd16",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Floor 0",
+			"Transform": {
+				"Translation": {
+					"X": 568.6588134765625,
+					"Y": -29.464874267578126,
+					"Z": 0.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "0028f16448e7e65d4237be866e56280b",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Obstacle",
+			"Transform": {
+				"Translation": {
+					"X": 1058.6588134765626,
+					"Y": -9.464874267578125,
+					"Z": 550.0
+				},
+				"Scale": {
+					"X": 4.0,
+					"Y": 0.5,
+					"Z": 4.0
+				}
+			},
+			"StaticFlags": 0,
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "a0ff14a446aa3e57ada853b4ad3ba5c1",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "0028f16448e7e65d4237be866e56280b",
+			"Name": "BoxCollider",
+			"StaticFlags": 0
+		},
+		{
+			"ID": "c5c463f8432441ea56a47ca612f595b0",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Sphere",
+			"Transform": {
+				"Translation": {
+					"X": 901.79150390625,
+					"Y": 65.53511810302735,
+					"Z": 474.4593200683594
+				},
+				"Scale": {
+					"X": 3.0,
+					"Y": 3.0,
+					"Z": 3.0
+				}
+			},
+			"Model": "dd86c4724bf734c4959d23b3c74faa05",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "ef649d0e44f239b61b8f10a75a7cee6e",
+			"TypeName": "FlaxEngine.SphereCollider",
+			"ParentID": "c5c463f8432441ea56a47ca612f595b0",
+			"Name": "SphereCollider"
 		}
 	]
 }
