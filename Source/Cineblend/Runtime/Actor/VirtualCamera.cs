@@ -104,11 +104,17 @@ namespace Gasimo.CineBlend
                     module.Value.PostProcessProperties(ref state);
                 }
 
-                // Debug.Log(state.Rotation.CurrentValue);
+                LastProperties = state;
 
                 return state;
             }
         }
+
+        /// <summary>
+        /// Cached properties from the last time this camera was used as active. Use when you need to read the final properties for this camera while active to prevent 
+        /// re-calculating or use Camera.Main instead.
+        /// </summary>
+        public CameraProperties LastProperties { get; private set; }
 
         /// <summary>
         /// Camera priority. Higher priority cameras will override lower priority cameras.
