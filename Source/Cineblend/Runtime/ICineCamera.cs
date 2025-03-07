@@ -52,14 +52,6 @@ public enum CameraUpdateMode
     Manual
 }
 
-public enum Easing
-{
-    Linear,
-    EaseIn,
-    EaseOut,
-    EaseInOut
-}
-
 /// <summary>
 /// Helper class holding static camera properties, used for creating a fake camera state mid-transition.
 /// </summary>

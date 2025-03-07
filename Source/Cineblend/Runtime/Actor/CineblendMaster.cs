@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cineblend;
 using FlaxEngine;
 
 namespace Gasimo.CineBlend
@@ -200,7 +201,7 @@ namespace Gasimo.CineBlend
             float t = blend.NormalizedTime;
 
             // Apply easing
-            float easedT = ApplyEasing(t, blend.TransitionEasing);
+            float easedT = CineEasing.ApplyEasing(t, blend.TransitionEasing);
 
             // Perform the blend with the eased time value
             Properties.LerpAndSet(fromProperties, toProperties, easedT);
@@ -375,30 +376,5 @@ namespace Gasimo.CineBlend
         {
             soloCamera = null;
         }
-
-
-        // Helper method to apply easing to normalized time value
-        private float ApplyEasing(float t, Easing easingType)
-        {
-
-            switch (easingType)
-            {
-                case Easing.Linear:
-                    return t;
-
-                case Easing.EaseIn:
-                    return t * t; // Quadratic ease in
-
-                case Easing.EaseOut:
-                    return t * (2 - t); // Quadratic ease out
-
-                case Easing.EaseInOut:
-                    return t < 0.5f ? 2 * t * t : -1 + (4 - 2 * t) * t; // Quadratic ease in-out
-
-                default:
-                    return t;
-            }
-        }
-
     }
 }
