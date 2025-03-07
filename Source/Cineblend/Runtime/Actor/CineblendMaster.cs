@@ -38,6 +38,8 @@ namespace Gasimo.CineBlend
         [Tooltip("Default blend time for camera transitions")]
         public float DefaultBlendTime { get; set; } = 1.0f;
 
+        [Tooltip("Default easing type for camera transitions")]
+        public Easing DefaultEasingType = Easing.EaseInOut;
 
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace Gasimo.CineBlend
         {
             public ICineCamera FromCamera;
             public ICineCamera ToCamera;
+            public Easing TransitionEasing;
             public float BlendTime;
             public float CurrentTime;
             public bool IsActive => CurrentTime < BlendTime;
@@ -176,7 +179,7 @@ namespace Gasimo.CineBlend
                     currentUpdateMode = highestPriorityCamera.CameraUpdateMode;
                 }
 
-                Transition(lastVirtualCamera, currentVirtualCamera, DefaultBlendTime);
+                Transition(lastVirtualCamera, currentVirtualCamera, DefaultBlendTime, DefaultEasingType);
             }
         }
 
@@ -192,16 +195,18 @@ namespace Gasimo.CineBlend
             }
 
             // Lerp between the two cameras
-
             CameraProperties toProperties = currentVirtualCamera.FinalProperties;
             CameraProperties fromProperties = lastVirtualCamera?.FinalProperties ?? Properties;
-
+            
             var blend = activeBlend;
             blend.CurrentTime += Time.UnscaledDeltaTime;
             float t = blend.NormalizedTime;
 
-            // Perform the blend
-            Properties.LerpAndSet(fromProperties, toProperties, t);
+            // Apply easing
+            float easedT = ApplyEasing(t, blend.TransitionEasing);
+
+            // Perform the blend with the eased time value
+            Properties.LerpAndSet(fromProperties, toProperties, easedT);
             Properties.ApplyToCamera(camera);
 
             // Check if blend is complete
@@ -294,14 +299,35 @@ namespace Gasimo.CineBlend
         }
 
 
+
+
+        /// <summary>
+        /// Transitions to the selected camera using global values
+        /// </summary>
+        /// <param name="toCamera"></param>
+        public void Transition(ICineCamera toCamera)
+        {
+            Transition(currentVirtualCamera, toCamera, DefaultBlendTime, DefaultEasingType);
+        }
+
         /// <summary>
         /// Transitions to the selected camera
         /// </summary>
         /// <param name="toCamera"></param>
-        public void Transition(ICineCamera toCamera, float blendTime = 1)
+        public void Transition(ICineCamera toCamera, float blendTime)
         {
-            Transition(currentVirtualCamera, toCamera, blendTime);
+            Transition(currentVirtualCamera, toCamera, blendTime, DefaultEasingType);
         }
+
+        /// <summary>
+        /// Transitions to the selected camera
+        /// </summary>
+        /// <param name="toCamera"></param>
+        public void Transition(ICineCamera toCamera, float blendTime, Easing easing)
+        {
+            Transition(currentVirtualCamera, toCamera, blendTime, easing);
+        }
+
 
         /// <summary>
         /// Transitions from one camera to another
@@ -309,7 +335,8 @@ namespace Gasimo.CineBlend
         /// <param name="fromCamera"></param>
         /// <param name="toCamera"></param>
         /// <param name="blendTime"></param>
-        public void Transition(ICineCamera fromCamera, ICineCamera toCamera, float blendTime = 1)
+        /// <param name="easing"></param>
+        public void Transition(ICineCamera fromCamera, ICineCamera toCamera, float blendTime = 1, Easing easing = Easing.Linear)
         {
 
             // Validate parameters
@@ -322,7 +349,8 @@ namespace Gasimo.CineBlend
                 FromCamera = fromCamera,
                 ToCamera = toCamera,
                 BlendTime = blendTime,
-                CurrentTime = 0
+                CurrentTime = 0,
+                TransitionEasing = easing
             };
 
             // Update current camera immediately
@@ -338,6 +366,30 @@ namespace Gasimo.CineBlend
         public void ClearSolo()
         {
             soloCamera = null;
+        }
+
+
+        // Helper method to apply easing to normalized time value
+        private float ApplyEasing(float t, Easing easingType)
+        {
+
+            switch (easingType)
+            {
+                case Easing.Linear:
+                    return t;
+
+                case Easing.EaseIn:
+                    return t * t; // Quadratic ease in
+
+                case Easing.EaseOut:
+                    return t * (2 - t); // Quadratic ease out
+
+                case Easing.EaseInOut:
+                    return t < 0.5f ? 2 * t * t : -1 + (4 - 2 * t) * t; // Quadratic ease in-out
+
+                default:
+                    return t;
+            }
         }
 
     }

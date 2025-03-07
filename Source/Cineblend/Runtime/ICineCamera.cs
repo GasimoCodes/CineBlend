@@ -51,3 +51,11 @@ public enum CameraUpdateMode
     Auto,
     Manual
 }
+
+public enum Easing
+{
+    Linear,
+    EaseIn,
+    EaseOut,
+    EaseInOut
+}
