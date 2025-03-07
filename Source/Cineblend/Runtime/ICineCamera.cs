@@ -59,3 +59,24 @@ public enum Easing
     EaseOut,
     EaseInOut
 }
+
+/// <summary>
+/// Helper class holding static camera properties, used for creating a fake camera state mid-transition.
+/// </summary>
+public class StaticCameraProperties : ICineCamera
+{
+    public CameraProperties Properties { get; }
+    public string Name { get; }
+    public int Priority => 0;
+    public CameraUpdateMode CameraUpdateMode => CameraUpdateMode.Auto;
+    public Dictionary<Type, ICameraModule> Modules => new Dictionary<Type, ICameraModule>();
+    public CameraProperties FinalProperties => Properties;
+
+    public Actor Actor => throw new NotImplementedException();
+
+    public StaticCameraProperties(CameraProperties properties, string name = "StaticCamera")
+    {
+        Properties = properties;
+        Name = name;
+    }
+}

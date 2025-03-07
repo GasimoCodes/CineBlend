@@ -170,16 +170,13 @@ namespace Gasimo.CineBlend
 
             if (currentVirtualCamera != highestPriorityCamera)
             {
-                lastVirtualCamera = currentVirtualCamera;
-                currentVirtualCamera = highestPriorityCamera;
-
                 // Update mode
                 if (UpdateModeOverride == CameraUpdateMode.Auto)
                 {
                     currentUpdateMode = highestPriorityCamera.CameraUpdateMode;
                 }
 
-                Transition(lastVirtualCamera, currentVirtualCamera, DefaultBlendTime, DefaultEasingType);
+                Transition(highestPriorityCamera, DefaultBlendTime, DefaultEasingType);
             }
         }
 
@@ -307,7 +304,7 @@ namespace Gasimo.CineBlend
         /// <param name="toCamera"></param>
         public void Transition(ICineCamera toCamera)
         {
-            Transition(currentVirtualCamera, toCamera, DefaultBlendTime, DefaultEasingType);
+            Transition(toCamera, DefaultBlendTime);
         }
 
         /// <summary>
@@ -316,16 +313,26 @@ namespace Gasimo.CineBlend
         /// <param name="toCamera"></param>
         public void Transition(ICineCamera toCamera, float blendTime)
         {
-            Transition(currentVirtualCamera, toCamera, blendTime, DefaultEasingType);
+            Transition(toCamera, blendTime, DefaultEasingType);
         }
 
         /// <summary>
         /// Transitions to the selected camera
         /// </summary>
-        /// <param name="toCamera"></param>
-        public void Transition(ICineCamera toCamera, float blendTime, Easing easing)
+        /// <param name="toCamera">Camera to transition to</param>
+        /// <param name="blendTime">Time to complete the transition</param>
+        /// <param name="easing">Easing/Smoothing which should be applied to the transition progress</param>
+        /// <param name="forceSnapshotCreation">When enabled, Cineblend will interpolate from a static snapshot of the last Virtual Camera, rather than from a live value.</param>
+        public void Transition(ICineCamera toCamera, float blendTime, Easing easing, bool forceSnapshotCreation = false)
         {
-            Transition(currentVirtualCamera, toCamera, blendTime, easing);
+            ICineCamera fromCamera = currentVirtualCamera;
+
+            if (activeBlend != null && activeBlend.IsActive || (forceSnapshotCreation && lastVirtualCamera != null))
+            {
+                fromCamera = new StaticCameraProperties(Properties, "MidTransition Cam for " + lastVirtualCamera.Name);
+            }
+
+            Transition(fromCamera, toCamera, blendTime, easing);
         }
 
 
@@ -342,6 +349,7 @@ namespace Gasimo.CineBlend
             // Validate parameters
             if (blendTime < 0)
                 blendTime = 0;
+
 
             // Setup new blend
             activeBlend = new BlendState
