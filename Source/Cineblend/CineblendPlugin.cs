@@ -28,9 +28,9 @@ namespace Gasimo.CineBlend
                 HomepageUrl = null,
                 RepositoryUrl = "https://github.com/GasimoCodes/CineBlend",
                 Description = "Flax plugin which introduces virtual cameras and compositor effects to the engine.",
-                Version = new Version(0,1),
-                IsAlpha = true,
-                IsBeta = false,
+                Version = new Version(0,1,0),
+                IsAlpha = false,
+                IsBeta = true,
             };
         }
 
