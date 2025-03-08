@@ -143,3 +143,18 @@ article img {
     border-radius: 20px;
   }
 }
+
+.bg-custom-dark { background-color: #1C1C1C !important; }
+            .bg-custom-artists { background-color: #170925 !important; }
+            .text-yellow { color: #F1C32A !important; }
+            .hero-section {
+                background-image: url('/api/placeholder/1920/600');
+                background-size: cover;
+                background-position: center;
+                min-height: 600px;
+            }
+            .programmers-section {
+                background-image: url('/api/placeholder/1920/600');
+                background-size: cover;
+            }
+            .btn-price::after { content: " - 40€"; }

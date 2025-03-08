@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Welcome to Cineblend docs! | Cineblend </title>
+      <title> | Cineblend </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Welcome to Cineblend docs! | Cineblend ">
+      <meta name="title" content=" | Cineblend ">
       
       
       <link rel="icon" href="favicon.ico">
@@ -32,10 +32,18 @@
 
       <script type="module" src="./public/docfx.min.js"></script>
 
+
       <script>
-        const theme = localStorage.getItem('theme') || 'auto'
-        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+        document.documentElement.setAttribute('data-bs-theme', 'dark')
+  
+        // Find form class "icons" and remove it with its inner html
+        const icons = document.querySelector('#icons')
+        if (icons) {
+          icons.remove()
+        }
+  
       </script>
+
 
   </head>
 
@@ -52,77 +60,76 @@
           </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
-              </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
 
-    <main class="container-xxl">
 
-      <div class="content">
-        <div class="actionbar">
-
+        <section class="hero-section text-dark bg-light py-5 bg" style="background-image: url('./images/bg.png'" );>
+    <div class="container-xxl">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h1 class="display-4 mb-4">Welcome to <span class="fw-bold" style="color: #1F44FF !important;">CineBlend</span></h1>
+                <p class="fs-6">High-level virtual cameras plugin for the FlaxEngine.</p>
+                
+                <div class="mt-4">
+                    <a href="https://github.com/GasimoCodes/CineBlend" target="_blank" class="btn btn-dark rounded-pill">Github</a>
+                    <a href="./manual/Getting Started/" class="ms-2 btn rounded-pill btn-outline-dark">Documentation</a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center">
+            <br>
+            <br>
+                <iframe style="margin-right: 20px;" width="600" height="320" src="https://www.youtube-nocookie.com/embed/bhDjrhjGJCI?si=DXTGDW2lAYoNV-jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
-
-        <article data-uid="">
-
-<div style="display: flex; gap: 40px;">
-    <div>
-    <h1>Welcome to <b>Cineblend</b> docs!</h1>
-    <p style="font-size: 18px;">Brings high-level virtual cameras workflow to the FlaxEngine. 
-</p>
-    <a href="manual/Getting%20Started/index.html">Manual</a> | <a href="api/Gasimo.CineBlend.CineblendMaster.html">API</a> 
     </div>
-    <!-- <img src="./images/FaceToons.png" alt="FaceToons Image" style="width: 1200px; margin-right: 20px;"> -->
-</div>
-<blockquote>
-<p>This project is in early stages and its API is likely to change throughout development. This plugin was made for our own game production and will not receive priority support. PRs are welcome! If you wish this system to be included in the Flax ecosystem, make sure to share this repo!</p>
-</blockquote>
-<h2 id="features">Features</h2>
-<ul>
-<li>Priority based blending (Virtual Camera with highest priority will be active)</li>
-<li>Overriding priority by soloing Virtual Cameras.</li>
-<li>Camera blending previews work outside of Play Mode.</li>
-<li>Transition of all exposed Flax Camera values, including Far/Near plane, Orientation or Position.</li>
-<li>VirtualCamera Property PostProcessing, which allows you to non-destructively stack effects (such as CameraShake). These effects are not applied directly to the Virtual Camera transform, but are used while applying transform to the &quot;real&quot; Camera. See ICameraModule.</li>
-<li>Modular: All CineBlend cameras and effects work through interfaces to allow for easy implementation or extensions.</li>
-</ul>
-<h3 id="modules-camera-effects">Modules (Camera Effects)</h3>
-<ul>
-<li>Camera Shake</li>
-<li>Recompose (additive Reframe)</li>
-<li>Look At (Camera faces a world transform, with smoothing options)</li>
-<li>Auto-Framing (Zooms and Rotates the camera to ensure a list of Actors remains on-screen)</li>
-<li>Large World Support using Reals</li>
-</ul>
-<h3 id="to-do">To-Do</h3>
-<ul>
-<li>PostProcessing Volume blending</li>
-<li>More Gizmos</li>
-<li>&quot;Timeline/Sequencer&quot; Integration</li>
-</ul>
-<h3 id="known-bugs">Known Bugs</h3>
-<p>TBA</p>
+</section>
 
-</article>
-
-
-
-      </div>
-
-    </main>
+<section class="bg-custom-dark text-white py-5">
+                <div class="container-xxl">
+            <h2 class="mb-5 fs-2 fw-bold text-center">Camera <span style="color:rgb(96, 146, 255) !important;">Features</span>:</h2>
+            
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="mb-4">
+                        <h3 class="h4 fw-bold">Virtual Cameras</h3>
+                        <p class="fs-6">CineBlend introduces a priority-based virtual camera system that seamlessly integrates with FlaxEngine. Cameras with higher priority automatically become active, while the soloing function lets you temporarily override this for testing specific shots. The system works directly in the editor, allowing you to preview camera blends without entering Play Mode.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-4">
+                        <h3 class="h4 fw-bold">Transitions</h3>
+                        <p class="fs-6">Create cinematic camera movements with smooth transitions between every camera property. CineBlend handles position, rotation, field of view, and even near/far planes with customizable easing and duration settings. Transitions can be triggered automatically or through our extensive API.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-4">
+                        <h3 class="h4 fw-bold">Camera Modules</h3>
+                        <p class="fs-6">Enhance your cameras with non-destructive, stackable effects through our module system. Add natural camera shake, automatic target tracking with Look At, intelligent Auto-Framing to keep subjects on screen, and collision prevention with the Collider module... Effects can be stacked to create complex camera behaviors with ease.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-4">
+                        <h3 class="h4 fw-bold">For Developers</h3>
+                        <p class="fs-6">CineBlend is built with extensibility in mind, using a clean interface-driven architecture that makes it easy to add your own camera modules or even whole virtual cameras. Cineblend comes with Large World Support, meaning it can support FlaxEngine's 64bit mode.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+</section>
 
     <div class="container-xxl search-results" id="search-results"></div>
+
+
 
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+          <span>Docs generated with <a href="https://dotnet.github.io/docfx">docfx</a></span>
         </div>
       </div>
     </footer>

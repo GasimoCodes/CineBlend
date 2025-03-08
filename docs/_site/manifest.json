@@ -275,6 +275,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/bg.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/bg.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/logo.png",
       "output": {
         "resource": {

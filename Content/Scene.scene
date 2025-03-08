@@ -94,15 +94,15 @@
 			"Name": "Camera",
 			"Transform": {
 				"Translation": {
-					"X": 1291.5527830207562,
-					"Y": 404.12043454505996,
-					"Z": 533.0110759899782
+					"X": 1291.552734375,
+					"Y": 404.12042236328127,
+					"Z": 533.0110473632813
 				},
 				"Orientation": {
 					"X": 0.10038959980010987,
 					"Y": -0.8703436851501465,
-					"Z": 0.1989695280790329,
-					"W": 0.43912985920906069
+					"Z": 0.1989695131778717,
+					"W": 0.4391298294067383
 				}
 			},
 			"FOV": 40.0,
@@ -113,7 +113,9 @@
 			"ID": "801f256a4f530d9dcec9adab8bd04ea1",
 			"TypeName": "Gasimo.CineBlend.CineblendMaster",
 			"ParentID": "590366dc49ec2b3756d2679669b21adb",
-			"V": {}
+			"V": {
+	"DefaultEasingType": 21
+}
 		},
 		{
 			"ID": "402777d541e09880c158c89523d7957a",
@@ -298,7 +300,7 @@
 			}
 		},
 		"FieldOfView": {
-			"CurrentValue": 60.0
+			"CurrentValue": 20.0
 		},
 		"NearPlane": {
 			"CurrentValue": 10.0
@@ -306,7 +308,8 @@
 		"FarPlane": {
 			"CurrentValue": 10000.0
 		}
-	}
+	},
+	"FieldOfView": 20.0
 },
 			"Name": "VirtualCamera",
 			"Transform": {
@@ -315,7 +318,8 @@
 					"Y": 0.0,
 					"Z": 540.0
 				}
-			}
+			},
+			"StaticFlags": 0
 		},
 		{
 			"ID": "c509acad47619a4981ac4894084ee60a",
@@ -370,7 +374,8 @@
 					"Y": 0.0,
 					"Z": -1300.0
 				}
-			}
+			},
+			"StaticFlags": 0
 		},
 		{
 			"ID": "1a2f85dc4b1ac8a6c893ffa601b3e821",
@@ -440,11 +445,12 @@
 			"Name": "VirtualCamera 2 Collider",
 			"Transform": {
 				"Translation": {
-					"X": 1291.5527830207562,
-					"Y": 404.12043454505996,
-					"Z": 533.0110759899782
+					"X": 1291.552734375,
+					"Y": 404.12042236328127,
+					"Z": 533.0110473632813
 				}
-			}
+			},
+			"StaticFlags": 0
 		},
 		{
 			"ID": "6ef0f0c34af81035d5f79fbf28d1a57f",
@@ -583,6 +589,88 @@
 			"TypeName": "FlaxEngine.SphereCollider",
 			"ParentID": "c5c463f8432441ea56a47ca612f595b0",
 			"Name": "SphereCollider"
+		},
+		{
+			"ID": "4f75edf94ab2a92c3513d388543bfa29",
+			"TypeName": "Gasimo.CineBlend.VirtualCamera",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"V": {
+	"Properties": {
+		"Position": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0
+			}
+		},
+		"Rotation": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0,
+				"W": 0.0
+			}
+		},
+		"FieldOfView": {
+			"CurrentValue": 8.0
+		},
+		"NearPlane": {
+			"CurrentValue": 10.0
+		},
+		"FarPlane": {
+			"CurrentValue": 10000.0
+		}
+	},
+	"FieldOfView": 8.0
+},
+			"Name": "VirtualCamera 1",
+			"Transform": {
+				"Translation": {
+					"X": 1700.0,
+					"Y": 0.0,
+					"Z": 242.5053560227451
+				},
+				"Orientation": {
+					"X": 0.0,
+					"Y": -0.7888915538787842,
+					"Z": 0.0,
+					"W": 0.6145324110984802
+				}
+			},
+			"StaticFlags": 0
+		},
+		{
+			"ID": "3c11a806497d705389e5f8aca2e73b48",
+			"TypeName": "Gasimo.CineBlend.Modules.CineLookAtModule",
+			"ParentID": "4f75edf94ab2a92c3513d388543bfa29",
+			"V": {
+	"Target": "a640c5ac423d1dc2d2ec3f910e2763ed",
+	"Smoothing": 0.5
+},
+			"Enabled": false
+		},
+		{
+			"ID": "58baa3ca4788b6db089b6583aee32671",
+			"TypeName": "Gasimo.CineBlend.Modules.CineShakeModule",
+			"ParentID": "4f75edf94ab2a92c3513d388543bfa29",
+			"V": {
+	"RotationAmplitude": {
+		"X": 2.0,
+		"Y": 2.0,
+		"Z": 2.0
+	},
+	"PositionFrequency": {
+		"X": 2.0,
+		"Y": 2.0,
+		"Z": 2.0
+	},
+	"RotationFrequency": {
+		"X": 2.0,
+		"Y": 2.0,
+		"Z": 2.0
+	}
+},
+			"Enabled": false
 		}
 	]
 }
