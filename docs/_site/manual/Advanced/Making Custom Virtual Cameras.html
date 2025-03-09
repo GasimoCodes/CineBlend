@@ -109,13 +109,16 @@
     string Name { get; }
     CameraUpdateMode CameraUpdateMode { get; }
     public Actor Actor { get; }
+
+    public void ProcessProperties(float deltaTime);
 }
 </code></pre>
 <h3 id="key-properties">Key Properties</h3>
 <h4 id="properties-and-finalproperties">Properties and FinalProperties</h4>
 <ul>
 <li><code>Properties</code>: Holds the camera's initial, unprocessed state</li>
-<li><code>FinalProperties</code>: Returns the final camera state after all modules have processed it
+<li><code>FinalProperties</code>: Returns the processed camera state</li>
+<li><code>ProcessProperties</code>: Processes this camera properties and copies them to the <code>FinalProperties</code>
 <ul>
 <li>Should apply all modules sequentially to the initial properties</li>
 <li>Requested by CineblendMaster during blends or when this camera is active/previewed.</li>
@@ -168,24 +171,25 @@
 
     public CameraProperties Properties =&gt; properties;
     
-    public CameraProperties FinalProperties
-    {
-        get
-        {
-            var finalState = (CameraProperties)properties.Clone();
-            foreach (var module in Modules.Values)
-            {
-                module.PostProcessProperties(ref finalState);
-            }
-            return finalState;
-        }
-    }
+    public CameraProperties FinalProperties { get; private set; }
 
     public Dictionary&lt;Type, ICameraModule&gt; Modules =&gt; modules;
     public int Priority =&gt; priority;
     public string Name { get; set; }
     public CameraUpdateMode CameraUpdateMode =&gt; CameraUpdateMode.Update;
     public Actor Actor =&gt; this;
+
+    public void ProcessProperties(float deltaTime)
+    {
+            CameraProperties state = (CameraProperties)properties.Clone();
+
+            foreach (var module in Modules)
+            {
+                module.Value.PostProcessProperties(ref state, deltaTime);
+            }
+
+            FinalProperties = state;
+    }
 }
 </code></pre>
 <h3 id="2-required-implementation-details">2. Required Implementation Details</h3>

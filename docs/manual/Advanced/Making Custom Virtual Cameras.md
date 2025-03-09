@@ -20,6 +20,8 @@ public interface ICineCamera
     string Name { get; }
     CameraUpdateMode CameraUpdateMode { get; }
     public Actor Actor { get; }
+
+    public void ProcessProperties(float deltaTime);
 }
 ```
 
@@ -27,9 +29,11 @@ public interface ICineCamera
 
 #### Properties and FinalProperties
 - `Properties`: Holds the camera's initial, unprocessed state
-- `FinalProperties`: Returns the final camera state after all modules have processed it
+- `FinalProperties`: Returns the processed camera state
+- `ProcessProperties`: Processes this camera properties and copies them to the `FinalProperties`
   - Should apply all modules sequentially to the initial properties
   - Requested by CineblendMaster during blends or when this camera is active/previewed.
+
 
 #### Modules
 - Dictionary of camera modules indexed by their Type
@@ -81,24 +85,25 @@ public class CustomVirtualCamera : ICineCamera
 
     public CameraProperties Properties => properties;
     
-    public CameraProperties FinalProperties
-    {
-        get
-        {
-            var finalState = (CameraProperties)properties.Clone();
-            foreach (var module in Modules.Values)
-            {
-                module.PostProcessProperties(ref finalState);
-            }
-            return finalState;
-        }
-    }
+    public CameraProperties FinalProperties { get; private set; }
 
     public Dictionary<Type, ICameraModule> Modules => modules;
     public int Priority => priority;
     public string Name { get; set; }
     public CameraUpdateMode CameraUpdateMode => CameraUpdateMode.Update;
     public Actor Actor => this;
+
+    public void ProcessProperties(float deltaTime)
+    {
+            CameraProperties state = (CameraProperties)properties.Clone();
+
+            foreach (var module in Modules)
+            {
+                module.Value.PostProcessProperties(ref state, deltaTime);
+            }
+
+            FinalProperties = state;
+    }
 }
 ```
 

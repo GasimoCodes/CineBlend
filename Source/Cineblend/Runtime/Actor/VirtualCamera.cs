@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using FlaxEngine;
 using Gasimo.CineBlend.Modules;
-using FlaxEditor.Viewport.Cameras;
-
 
 #if FLAX_EDITOR
 using FlaxEditor;

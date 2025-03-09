@@ -78,6 +78,19 @@
 <h1 id="changelog">Changelog</h1>
 
 <p>All notable changes to this package will be documented in this file.</p>
+<h2 id="011---09032025">[0.1.1] - 09/03/2025</h2>
+<ul>
+<li><p>Added an icon for the virtual camera actor</p>
+</li>
+<li><p>Modules deltaTime is now compensated when their camera becomes active to allow skipping damping on first frame.</p>
+</li>
+<li><p>Breaking: Cached Virtual Camera properties are now accessible through 'FinalProperties' property instead of 'LastProperties'.</p>
+</li>
+<li><p>Breaking: VirtualCameras now need to implement a ProcessProperties(float DeltaTime) method. The method should copy Properties, post process them and save the output to FinalProperties. Its essentially what calling FinalProperties did until now.</p>
+</li>
+<li><p>Breaking: ICameraModule.PostProcessProperties now features a deltaTime argument. This is done to allow the Virtual Camera to compensate for the time a plugin has not been updated.</p>
+</li>
+</ul>
 <h2 id="010---07032025">[0.1.0] - 07/03/2025</h2>
 <ul>
 <li>Added Transition easing options (Linear, SineInOut, ExpOut...), full list is in 'CineEasing.Easing' enum</li>

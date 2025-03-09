@@ -100,7 +100,7 @@
 </code></pre>
 <p>Called when a Virtual Camera is created and registered with the system. Use this method to cache any required references for your module.</p>
 <h3 id="2-postprocessproperties">2. PostProcessProperties</h3>
-<pre><code class="lang-csharp">void PostProcessProperties(ref CameraProperties state)
+<pre><code class="lang-csharp">void PostProcessProperties(ref CameraProperties state, float deltaTime)
 </code></pre>
 <p>This is the primary method for modifying camera behavior. It's called each frame when the camera is:</p>
 <ul>
@@ -114,6 +114,7 @@
 <li>The state has already been processed by any previous modules on the camera</li>
 <li>Changes you make will be passed to subsequent modules</li>
 <li>Always include an early exit check for the <code>Enabled</code> property to support user control via the editor</li>
+<li>deltaTime may be large as it is compensated by cineblend for the time the camera has been offline.</li>
 </ul>
 <h3 id="3-blend">3. Blend</h3>
 <pre><code class="lang-csharp">void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
@@ -135,7 +136,7 @@ public class CineRecomposeModule : Script, ICameraModule
     {
     }
 
-    public void PostProcessProperties(ref CameraProperties state)
+    public void PostProcessProperties(ref CameraProperties state, float deltaTime)
     {
         if(!this.Enabled)
             return;

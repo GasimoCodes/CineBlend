@@ -14,7 +14,7 @@ Called when a Virtual Camera is created and registered with the system. Use this
 
 ### 2. PostProcessProperties
 ```csharp
-void PostProcessProperties(ref CameraProperties state)
+void PostProcessProperties(ref CameraProperties state, float deltaTime)
 ```
 This is the primary method for modifying camera behavior. It's called each frame when the camera is:
 - Active (Soloed/Highest Priority)
@@ -26,6 +26,7 @@ The method receives a reference to the current [camera state](/api/Gasimo.CineBl
 - The state has already been processed by any previous modules on the camera
 - Changes you make will be passed to subsequent modules
 - Always include an early exit check for the `Enabled` property to support user control via the editor
+- deltaTime may be large as it is compensated by cineblend for the time the camera has been offline.
 
 ### 3. Blend
 ```csharp
@@ -51,7 +52,7 @@ public class CineRecomposeModule : Script, ICameraModule
     {
     }
 
-    public void PostProcessProperties(ref CameraProperties state)
+    public void PostProcessProperties(ref CameraProperties state, float deltaTime)
     {
         if(!this.Enabled)
             return;
