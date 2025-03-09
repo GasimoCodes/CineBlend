@@ -21,7 +21,7 @@ public class CineTransformModule : ICameraModule
         cam = camera;
     }
 
-    public void PostProcessProperties(ref CameraProperties state)
+    public void PostProcessProperties(ref CameraProperties state, float deltaTime)
     {
         if (cam == null)
         {

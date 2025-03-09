@@ -22,6 +22,8 @@ public interface ICameraModule
     /// <summary>
     /// Modifies the final camera properties before they are applied
     /// </summary>
-    void PostProcessProperties(ref CameraProperties state);
+    /// <param name="state">Camera State Data Reference.</param>
+    /// <param name="deltaTime">Delta time for the effect to use. Compensation is added for inactive cameras which just became active.</param>
+    void PostProcessProperties(ref CameraProperties state, float deltaTime);
 
 }

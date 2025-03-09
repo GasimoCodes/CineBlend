@@ -28,13 +28,13 @@ namespace Gasimo.CineBlend.Modules
         {
         }
 
-        public void PostProcessProperties(ref CameraProperties state)
+        public void PostProcessProperties(ref CameraProperties state, float deltaTime)
         {
             if (!this.Enabled || currentTime >= targetTime)
                 return;
 
             // Progress time
-            currentTime += Time.DeltaTime;
+            currentTime += deltaTime;
             float normalizedTime = currentTime / targetTime;
 
             // Calculate shake intensity with a smooth fade-out

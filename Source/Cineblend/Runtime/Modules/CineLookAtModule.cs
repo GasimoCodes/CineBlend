@@ -25,7 +25,7 @@ public class CineLookAtModule : Script, ICameraModule
         _currentRotation = camera.Actor.Transform.Orientation;
     }
 
-    public void PostProcessProperties(ref CameraProperties state)
+    public void PostProcessProperties(ref CameraProperties state, float deltaTime)
     {
         if (!this.Enabled || Target == null)
             return;
@@ -47,9 +47,8 @@ public class CineLookAtModule : Script, ICameraModule
         {
             // Calculate smooth rotation using Slerp
 
-            float deltaTime = Time.UnscaledDeltaTime;
             float t = deltaTime / Mathf.Max(Smoothing, 0.0001f);
-            _currentRotation = Quaternion.Slerp(_currentRotation, targetRotation, t);
+            _currentRotation = Quaternion.Slerp(_currentRotation, targetRotation, Mathf.Clamp(t,0,1));
         }
 
         // Apply the rotation

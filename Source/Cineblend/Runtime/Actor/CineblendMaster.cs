@@ -79,7 +79,6 @@ namespace Gasimo.CineBlend
 
 
 
-
         /// <summary>
         /// This Camera's Properties.
         /// </summary>
@@ -91,8 +90,12 @@ namespace Gasimo.CineBlend
         public int Priority => int.MinValue;
         public string Name => this.Actor.Name;
 
-        public CameraProperties FinalProperties => Properties;
+        public CameraProperties FinalProperties => throw new NotImplementedException();
 
+        public void ProcessProperties(float deltaTime)
+        {
+            throw new NotImplementedException();
+        }
 
 
         public override void OnStart()
@@ -158,8 +161,11 @@ namespace Gasimo.CineBlend
             Properties.Position.CurrentValue = camera.Transform.Translation;
             Properties.Rotation.CurrentValue = camera.Transform.Orientation;
 
-            currentVirtualCamera = this;
+            currentVirtualCamera = null;
+            activeBlend = null;
             currentUpdateMode = UpdateModeOverride;
+
+            
 
             RegisterVirtualCamera(this);
         }
@@ -177,7 +183,17 @@ namespace Gasimo.CineBlend
                     currentUpdateMode = highestPriorityCamera.CameraUpdateMode;
                 }
 
-                Transition(highestPriorityCamera, DefaultBlendTime, DefaultEasingType);
+                if (currentVirtualCamera == null)
+                {
+                    // Dont perform transition when this is the first camera.
+                    Transition(highestPriorityCamera, 0);
+                } 
+                else
+                {
+                    // Perform default settings transition
+                    Transition(highestPriorityCamera, DefaultBlendTime, DefaultEasingType);
+                }
+                
             }
         }
 
@@ -187,19 +203,24 @@ namespace Gasimo.CineBlend
             if (activeBlend == null)
             {
                 // Copy values from camera
+                currentVirtualCamera.ProcessProperties(Time.UnscaledDeltaTime);
                 CameraProperties finalProp = currentVirtualCamera.FinalProperties;
                 finalProp.ApplyToCamera(camera);
                 return;
             }
 
-            // Lerp between the two cameras
-            CameraProperties toProperties = currentVirtualCamera.FinalProperties;
-            CameraProperties fromProperties = lastVirtualCamera?.FinalProperties ?? Properties;
-            
             var blend = activeBlend;
             blend.CurrentTime += Time.UnscaledDeltaTime;
             float t = blend.NormalizedTime;
 
+            blend.FromCamera.ProcessProperties(Time.UnscaledDeltaTime);
+            blend.ToCamera.ProcessProperties(Time.UnscaledDeltaTime);
+
+            // Lerp between the two cameras
+            CameraProperties toProperties = currentVirtualCamera.FinalProperties;
+            CameraProperties fromProperties = lastVirtualCamera?.FinalProperties ?? Properties;
+            
+            
             // Apply easing
             float easedT = CineEasing.ApplyEasing(t, blend.TransitionEasing);
 
@@ -352,6 +373,11 @@ namespace Gasimo.CineBlend
                 blendTime = 0;
 
 
+            if (fromCamera == null)
+            {
+                fromCamera = this;
+            }
+
             // Setup new blend
             activeBlend = new BlendState
             {
@@ -361,6 +387,15 @@ namespace Gasimo.CineBlend
                 CurrentTime = 0,
                 TransitionEasing = easing
             };
+
+            // Cut transition
+            if(blendTime == 0)
+            {
+                activeBlend = null;
+            }
+
+            // Preprocess toCamera to ensure effects appear like they were active the whole time. For now this is 10 seconds.
+            toCamera.ProcessProperties(10);
 
             // Update current camera immediately
             currentVirtualCamera = toCamera;
@@ -376,5 +411,7 @@ namespace Gasimo.CineBlend
         {
             soloCamera = null;
         }
+
+
     }
 }

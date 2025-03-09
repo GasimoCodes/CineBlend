@@ -34,14 +34,13 @@ public class CineAutoFrameModule : Script, ICameraModule
         _currentFOV = camera.Properties.FieldOfView.CurrentValue;
     }
 
-    public void PostProcessProperties(ref CameraProperties state)
+    public void PostProcessProperties(ref CameraProperties state, float deltaTime)
     {
         if (Target == null || Target.Length == 0 || Target[0] == null)
             return;
 
         
         // Smoothing
-        float deltaTime = Time.UnscaledDeltaTime;
         float t = deltaTime / Mathf.Max(Smoothing, 0.0001f);
 
 

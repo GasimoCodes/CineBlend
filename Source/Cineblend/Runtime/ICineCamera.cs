@@ -18,6 +18,13 @@ public interface ICineCamera
     /// This Cameras processed final properties.
     /// </summary>
     public CameraProperties FinalProperties { get; }
+
+    /// <summary>
+    /// Processes this cameras properties.
+    /// </summary>
+    /// <param name="deltaTime"></param>
+    public void ProcessProperties(float deltaTime);
+
     /// <summary>
     /// CineModules which can be added to the camera. They are initialized by the virtual camera and then applied sequentially to the properties.
     /// </summary>
@@ -70,5 +77,9 @@ public class StaticCameraProperties : ICineCamera
     {
         Properties = properties;
         Name = name;
+    }
+
+    public void ProcessProperties(float deltaTime)
+    {
     }
 }

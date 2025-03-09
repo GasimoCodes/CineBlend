@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using FlaxEngine;
 using Gasimo.CineBlend.Modules;
+using FlaxEditor.Viewport.Cameras;
+
+
+#if FLAX_EDITOR
+using FlaxEditor;
+using FlaxEditor.SceneGraph;
+#endif
 
 namespace Gasimo.CineBlend
 {
@@ -90,31 +97,24 @@ namespace Gasimo.CineBlend
             set => properties = value;
         }
 
-        /// <summary>
-        /// Gets postprocessed properties
-        /// </summary>
-        public CameraProperties FinalProperties
+
+        public void ProcessProperties(float deltaTime)
         {
-            get
+            CameraProperties state = (CameraProperties)properties.Clone();
+
+            foreach (var module in Modules)
             {
-                CameraProperties state = (CameraProperties)properties.Clone();
-
-                foreach (var module in Modules)
-                {
-                    module.Value.PostProcessProperties(ref state);
-                }
-
-                LastProperties = state;
-
-                return state;
+                module.Value.PostProcessProperties(ref state, deltaTime);
             }
+
+            FinalProperties = state;
         }
 
         /// <summary>
         /// Cached properties from the last time this camera was used as active. Use when you need to read the final properties for this camera while active to prevent 
         /// re-calculating or use Camera.Main instead.
         /// </summary>
-        public CameraProperties LastProperties { get; private set; }
+        public CameraProperties FinalProperties { get; private set; }
 
         /// <summary>
         /// Camera priority. Higher priority cameras will override lower priority cameras.
@@ -161,8 +161,7 @@ namespace Gasimo.CineBlend
 
         public Actor Actor => this;
 
-
-
+       
 
 
 
@@ -184,6 +183,11 @@ namespace Gasimo.CineBlend
             base.OnEnable();
             RefreshModules();
             CineblendMaster.Instance?.RegisterVirtualCamera(this);
+
+#if FLAX_EDITOR
+            ViewportIconsRenderer.AddActor(this);
+#endif
+
         }
 
         /// <summary>
@@ -193,6 +197,10 @@ namespace Gasimo.CineBlend
         {
             CineblendMaster.Instance?.UnregisterVirtualCamera(this);
             base.OnDisable();
+
+#if FLAX_EDITOR
+            ViewportIconsRenderer.RemoveActor(this);
+#endif
         }
 
         private void OnPriorityChanged(int oldPriority, int newPriority)
@@ -275,14 +283,44 @@ namespace Gasimo.CineBlend
         {
             base.OnDebugDrawSelected();
 
+            // Process properties for preview if not active
+            if (!isActive)
+                ProcessProperties(Time.UnscaledDeltaTime);
+
             var color = isActive ? FlaxEngine.Color.Green : FlaxEngine.Color.Orange;
             // Draw frustrum the same way Camera does
             BoundingFrustum frustrum = new BoundingFrustum((FinalProperties.GetViewMatrix()) * FinalProperties.GetProjectionMatrix());
             DebugDraw.DrawWireFrustum(frustrum, color);
 
         }
+
+
+
+        static VirtualCamera()
+        {
+            ViewportIconsRenderer.AddCustomIcon(typeof(VirtualCamera), Content.LoadAsync<Texture>(System.IO.Path.Combine(Globals.ProjectFolder, "Plugins/CineBlend/Content/Gizmos/VCam.flax")));
+            SceneGraphFactory.CustomNodesTypes.Add(typeof(VirtualCamera), typeof(VirtualCameraNode));
+        }
+
 #endif
 
 
     }
+
+#if FLAX_EDITOR
+    /// <summary>Custom actor node for Editor.</summary>
+    [HideInEditor]
+    public sealed class VirtualCameraNode : ActorNodeWithIcon
+    {
+
+        /// <inheritdoc />
+        public VirtualCameraNode(Actor actor)
+            : base(actor)
+        {
+        }
+    }
+#endif
+
+
+
 }

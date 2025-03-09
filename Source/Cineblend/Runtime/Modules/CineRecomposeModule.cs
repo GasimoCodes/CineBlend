@@ -26,7 +26,7 @@ public class CineRecomposeModule : Script, ICameraModule
 
     }
 
-    public void PostProcessProperties(ref CameraProperties state)
+    public void PostProcessProperties(ref CameraProperties state, float deltaTime)
     {
         if(!this.Enabled)
             return;

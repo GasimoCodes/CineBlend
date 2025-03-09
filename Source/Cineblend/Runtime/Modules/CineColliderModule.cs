@@ -33,7 +33,7 @@ public class CineColliderModule : Script, ICameraModule
 
     }
 
-    public void PostProcessProperties(ref CameraProperties state)
+    public void PostProcessProperties(ref CameraProperties state, float deltaTime)
     {
         if(!this.Enabled || Target == null)
             return;
