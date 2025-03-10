@@ -22,6 +22,8 @@ items:
     href: Modules/Impulse Shake.md
   - name: Look At Module
     href: Modules/Look At.md
+  - name: Look At Module
+    href: Modules/PostFX.md
   - name: Recompose
     href: Modules/Recompose.md
   - name: Shake Module 

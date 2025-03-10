@@ -213,13 +213,19 @@ namespace Gasimo.CineBlend
             blend.CurrentTime += Time.UnscaledDeltaTime;
             float t = blend.NormalizedTime;
 
+
+            // Let modules know we are transitioning
+            blend.FromCamera.OnBlend(blend.FromCamera, blend.ToCamera, t);
+            blend.ToCamera.OnBlend(blend.FromCamera, blend.ToCamera, t);
+
+
+
             blend.FromCamera.ProcessProperties(Time.UnscaledDeltaTime);
             blend.ToCamera.ProcessProperties(Time.UnscaledDeltaTime);
 
             // Lerp between the two cameras
             CameraProperties toProperties = currentVirtualCamera.FinalProperties;
-            CameraProperties fromProperties = lastVirtualCamera?.FinalProperties ?? Properties;
-            
+            CameraProperties fromProperties = lastVirtualCamera?.FinalProperties ?? Properties;            
             
             // Apply easing
             float easedT = CineEasing.ApplyEasing(t, blend.TransitionEasing);
@@ -227,6 +233,7 @@ namespace Gasimo.CineBlend
             // Perform the blend with the eased time value
             Properties.LerpAndSet(fromProperties, toProperties, easedT);
             Properties.ApplyToCamera(camera);
+
 
             // Check if blend is complete
             if (!blend.IsActive)
@@ -351,10 +358,11 @@ namespace Gasimo.CineBlend
 
             if (activeBlend != null && activeBlend.IsActive || (forceSnapshotCreation && lastVirtualCamera != null))
             {
-                fromCamera = new StaticCameraProperties(Properties, "MidTransition Cam for " + lastVirtualCamera.Name);
+                fromCamera = new StaticCameraProperties(Properties, lastVirtualCamera, currentVirtualCamera, lastVirtualCamera.Name + "[Transition Proxy]");
             }
 
             Transition(fromCamera, toCamera, blendTime, easing);
+
         }
 
 

@@ -26,6 +26,20 @@ public interface ICineCamera
     public void ProcessProperties(float deltaTime);
 
     /// <summary>
+    /// Notifies the camera that it is being blended from one snapshot to another.
+    /// </summary>
+    /// <param name="fromSnapshot">Camera we're blending from</param>
+    /// <param name="toSnapshot">Camera we're blending to</param>
+    /// <param name="t">progress of blend (eased)</param>
+    public void OnBlend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
+    {
+        foreach (var item in Modules)
+        {
+            item.Value.Blend(fromSnapshot, toSnapshot, t);
+        }
+    }
+
+    /// <summary>
     /// CineModules which can be added to the camera. They are initialized by the virtual camera and then applied sequentially to the properties.
     /// </summary>
     public Dictionary<Type, ICameraModule> Modules { get; }
@@ -68,15 +82,33 @@ public class StaticCameraProperties : ICineCamera
     public string Name { get; }
     public int Priority => 0;
     public CameraUpdateMode CameraUpdateMode => CameraUpdateMode.Auto;
-    public Dictionary<Type, ICameraModule> Modules => new Dictionary<Type, ICameraModule>();
-    public CameraProperties FinalProperties => Properties;
 
+    ICineCamera Camfrom;
+    ICineCamera Camto;
+
+    public Dictionary<Type, ICameraModule> Modules => new();
+    public CameraProperties FinalProperties => Properties;
     public Actor Actor => throw new NotImplementedException();
 
-    public StaticCameraProperties(CameraProperties properties, string name = "StaticCamera")
+    public void OnBlend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
+    {
+        foreach (var item in Camfrom.Modules)
+        {
+            item.Value.Blend(fromSnapshot, toSnapshot, t);
+        }
+
+        foreach (var item in Camto.Modules)
+        {
+            item.Value.Blend(fromSnapshot, toSnapshot, t);
+        }
+    }
+
+    public StaticCameraProperties(CameraProperties properties, ICineCamera CamFrom, ICineCamera CamTo, string name = "StaticCamera")
     {
         Properties = properties;
         Name = name;
+        this.Camfrom = CamFrom;
+        this.Camto = CamTo;
     }
 
     public void ProcessProperties(float deltaTime)

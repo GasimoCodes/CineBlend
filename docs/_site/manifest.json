@@ -405,6 +405,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "manual/Modules/PostFX.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Modules/PostFX.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "manual/Modules/Recompose.md",
       "output": {
         ".html": {

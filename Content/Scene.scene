@@ -94,20 +94,20 @@
 			"Name": "Camera",
 			"Transform": {
 				"Translation": {
-					"X": 1291.552734375,
-					"Y": 404.12042236328127,
-					"Z": 533.0110473632813
+					"X": 1699.9993934243685,
+					"Y": -0.000490275037009269,
+					"Z": -1300.000531822443
 				},
 				"Orientation": {
-					"X": 0.10038959980010987,
-					"Y": -0.8703436851501465,
-					"Z": 0.1989695131778717,
-					"W": 0.4391298294067383
+					"X": -0.016845889389514923,
+					"Y": -0.7099858522415161,
+					"Z": -0.017119720578193665,
+					"W": 0.7038062214851379
 				}
 			},
-			"FOV": 40.0,
+			"FOV": 8.0,
 			"Far": 10000.0,
-			"OrthoScale": 2.3701000213623049
+			"OrthoScale": 2.3701000213623047
 		},
 		{
 			"ID": "801f256a4f530d9dcec9adab8bd04ea1",
@@ -181,7 +181,7 @@
 			"Transform": {
 				"Translation": {
 					"X": -932.58251953125,
-					"Y": -246.45616149902345,
+					"Y": -246.45616149902344,
 					"Z": -978.924560546875
 				}
 			},
@@ -206,12 +206,12 @@
 			"Transform": {
 				"Translation": {
 					"X": -244.05322265625,
-					"Y": -230.39466857910157,
+					"Y": -230.39466857910156,
 					"Z": 684.67431640625
 				},
 				"Orientation": {
 					"X": 0.3639028072357178,
-					"Y": -0.018713435158133508,
+					"Y": -0.018713435158133507,
 					"Z": -0.4060167372226715,
 					"W": -0.8380782008171082
 				},
@@ -335,6 +335,48 @@
 }
 		},
 		{
+			"ID": "3296f64a4318a0b1dcb38f9207ca979c",
+			"TypeName": "Gasimo.CineBlend.Modules.CinePostFXVolumeModule",
+			"ParentID": "7000b4714745b5dd9df86f8a213c33da",
+			"V": {
+	"PostFxVolume": "fb7b88d24c4fabd57c7b5a9d350f464b"
+}
+		},
+		{
+			"ID": "fb7b88d24c4fabd57c7b5a9d350f464b",
+			"TypeName": "FlaxEngine.PostFxVolume",
+			"ParentID": "7000b4714745b5dd9df86f8a213c33da",
+			"Name": "PostFxVolume",
+			"Transform": {
+				"Translation": {
+					"X": 1910.0,
+					"Y": 0.0,
+					"Z": -540.0
+				}
+			},
+			"BlendRadius": 0.0,
+			"BlendWeight": 0.0,
+			"IsBounded": false,
+			"Settings": {
+				"AO": {},
+				"GI": {},
+				"Bloom": {},
+				"ToneMapping": {},
+				"ColorGrading": {},
+				"EyeAdaptation": {},
+				"CameraArtifacts": {},
+				"LensFlares": {},
+				"DepthOfField": {
+					"OverrideFlags": 3,
+					"Enabled": true
+				},
+				"MotionBlur": {},
+				"SSR": {},
+				"AA": {},
+				"PostFxMaterials": {}
+			}
+		},
+		{
 			"ID": "77ba80484b1b38d42a33b8a2933782d1",
 			"TypeName": "Gasimo.CineBlend.VirtualCamera",
 			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
@@ -409,6 +451,41 @@
 }
 		},
 		{
+			"ID": "7cebc23144eda415ed133ca15eea32cd",
+			"TypeName": "Gasimo.CineBlend.Modules.CinePostFXVolumeModule",
+			"ParentID": "77ba80484b1b38d42a33b8a2933782d1",
+			"V": {
+	"PostFxVolume": "445f1f71470d4395c0487fbe53f7888b"
+}
+		},
+		{
+			"ID": "445f1f71470d4395c0487fbe53f7888b",
+			"TypeName": "FlaxEngine.PostFxVolume",
+			"ParentID": "77ba80484b1b38d42a33b8a2933782d1",
+			"Name": "PostFxVolume",
+			"BlendRadius": 0.0,
+			"BlendWeight": 0.0,
+			"IsBounded": false,
+			"Settings": {
+				"AO": {},
+				"GI": {},
+				"Bloom": {},
+				"ToneMapping": {},
+				"ColorGrading": {},
+				"EyeAdaptation": {
+					"OverrideFlags": 16,
+					"PostExposure": -2.6500000953674316
+				},
+				"CameraArtifacts": {},
+				"LensFlares": {},
+				"DepthOfField": {},
+				"MotionBlur": {},
+				"SSR": {},
+				"AA": {},
+				"PostFxMaterials": {}
+			}
+		},
+		{
 			"ID": "cf4a5b644f6696166fd9cd845924b964",
 			"TypeName": "Gasimo.CineBlend.VirtualCamera",
 			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
@@ -446,7 +523,7 @@
 			"Transform": {
 				"Translation": {
 					"X": 1291.552734375,
-					"Y": 404.12042236328127,
+					"Y": 404.12042236328125,
 					"Z": 533.0110473632813
 				}
 			},
@@ -502,7 +579,7 @@
 			"Transform": {
 				"Translation": {
 					"X": 568.6588134765625,
-					"Y": -29.464874267578126,
+					"Y": -29.464874267578125,
 					"Z": 0.0
 				}
 			},
@@ -525,7 +602,7 @@
 			"Name": "Obstacle",
 			"Transform": {
 				"Translation": {
-					"X": 1058.6588134765626,
+					"X": 1058.6588134765625,
 					"Y": -9.464874267578125,
 					"Z": 550.0
 				},
@@ -563,7 +640,7 @@
 			"Transform": {
 				"Translation": {
 					"X": 901.79150390625,
-					"Y": 65.53511810302735,
+					"Y": 65.53511810302734,
 					"Z": 474.4593200683594
 				},
 				"Scale": {
@@ -628,7 +705,7 @@
 				"Translation": {
 					"X": 1700.0,
 					"Y": 0.0,
-					"Z": 242.5053560227451
+					"Z": 242.50535583496094
 				},
 				"Orientation": {
 					"X": 0.0,
