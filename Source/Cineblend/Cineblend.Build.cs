@@ -13,5 +13,7 @@ public class Cineblend : GameModule
         // To add C++ define use: options.PublicDefinitions.Add("COMPILE_WITH_FLAX");
         // To learn more see scripting documentation.
         BuildNativeCode = false;
+        options.ScriptingAPI.IgnoreMissingDocumentationWarnings = true;
+
     }
 }
