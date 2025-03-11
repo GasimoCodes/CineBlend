@@ -1,3 +1,4 @@
-[submodule "templates/gasimo"]
-	path = templates/gasimo
+
+[submodule "docs/templates/gasimo"]
+	path = docs/templates/gasimo
 	url = https://github.com/GasimoCodes/docfx-temp
