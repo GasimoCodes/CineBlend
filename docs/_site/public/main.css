@@ -8,6 +8,11 @@
   max-width: 1400px;
 }
 
+.navbar-nav .nav-link.active {
+  background-color:rgba(143, 143, 143, 0.15); /* Darker background */
+  border-radius: 5px; /* Optional: adds rounded corners */
+}
+
 /* TOC sidebar styling */
 .toc-offcanvas {
   background-color: #8f8f8f0d;
@@ -32,6 +37,20 @@ main {
   margin-top: 1.0rem !important;
   height: calc(100vh);
   overflow-y: auto;
+}
+
+.border-left
+{
+  border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+.border-right
+{
+  border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+body > header {
+  min-height: 80px !important;
 }
 
 /* Headings */
@@ -137,6 +156,15 @@ article img {
 @media (max-width: 767px) {
   .navbar-collapse {
     text-align: center !important;
+  }
+
+  .toc-offcanvas
+  {
+    /* Transparent bg */
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none !important;
+    border-color: transparent;
+    border-radius: 0;
   }
   
   .navbar-collapse li .active {

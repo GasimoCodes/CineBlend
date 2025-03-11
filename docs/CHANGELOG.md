@@ -2,7 +2,7 @@
 All notable changes to this package will be documented in this file.
 
 ## [0.1.1] - 09/03/2025
-- Added an icon for the virtual camera actor
+- Added an icon for the virtual camera actor.
 - Modules deltaTime is now compensated when their camera becomes active to allow skipping damping on first frame.
 
 - Breaking: Cached Virtual Camera properties are now accessible through 'FinalProperties' property instead of 'LastProperties'.
