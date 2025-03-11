@@ -10,12 +10,6 @@ public class CineTransformModule : ICameraModule
 {
     private ICineCamera cam;
 
-    public void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t)
-    {
-        cam.Properties.Position.CurrentValue = Vector3.Lerp(fromSnapshot.Properties.Position.CurrentValue, toSnapshot.Properties.Position.CurrentValue, t);
-        cam.Properties.Rotation.CurrentValue = Quaternion.Slerp(fromSnapshot.Properties.Rotation.CurrentValue, toSnapshot.Properties.Rotation.CurrentValue, t);
-    }
-
     public void Initialize(ICineCamera camera)
     {
         cam = camera;

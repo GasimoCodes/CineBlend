@@ -17,7 +17,7 @@ public interface ICameraModule
     /// <summary>
     /// Blends between two module states
     /// </summary>
-    void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t);
+    void Blend(ICineCamera fromSnapshot, ICineCamera toSnapshot, float t) { }
 
     /// <summary>
     /// Modifies the final camera properties before they are applied

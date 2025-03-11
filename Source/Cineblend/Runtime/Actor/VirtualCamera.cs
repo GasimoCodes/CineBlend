@@ -160,10 +160,6 @@ namespace Gasimo.CineBlend
         public Actor Actor => this;
 
        
-
-
-
-
         /// <summary>
         /// Initialize the virtual camera
         /// </summary>
@@ -195,10 +191,6 @@ namespace Gasimo.CineBlend
         {
             CineblendMaster.Instance?.UnregisterVirtualCamera(this);
             base.OnDisable();
-
-#if FLAX_EDITOR
-            ViewportIconsRenderer.RemoveActor(this);
-#endif
         }
 
         private void OnPriorityChanged(int oldPriority, int newPriority)
@@ -293,14 +285,21 @@ namespace Gasimo.CineBlend
         }
 
 
-
         static VirtualCamera()
         {
             ViewportIconsRenderer.AddCustomIcon(typeof(VirtualCamera), Content.LoadAsync<Texture>(System.IO.Path.Combine(Globals.ProjectFolder, "Plugins/CineBlend/Content/Gizmos/VCam.flax")));
             SceneGraphFactory.CustomNodesTypes.Add(typeof(VirtualCamera), typeof(VirtualCameraNode));
         }
-
 #endif
+
+        ~VirtualCamera()
+        {
+#if FLAX_EDITOR
+            ViewportIconsRenderer.RemoveActor(this);
+#endif
+
+            CineblendMaster.Instance?.UnregisterVirtualCamera(this);
+        }
 
 
     }
