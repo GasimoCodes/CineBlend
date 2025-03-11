@@ -8,8 +8,6 @@ using FlaxEditor.GUI.Timeline;
 using FlaxEditor.GUI.Timeline.Tracks;
 using FlaxEngine;
 using FlaxEngine.GUI;
-using System.IO;
-using System.Linq;
 using FlaxEditor.Utilities;
 using FlaxEditor.Windows;
 using FlaxEngine;
