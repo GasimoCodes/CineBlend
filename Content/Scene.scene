@@ -99,10 +99,10 @@
 					"Z": 533.0110473632813
 				},
 				"Orientation": {
-					"X": 0.10038959980010986,
+					"X": 0.10038961470127106,
 					"Y": -0.8703436255455017,
-					"Z": 0.19896958768367767,
-					"W": 0.4391297996044159
+					"Z": 0.1989694982767105,
+					"W": 0.43912985920906067
 				}
 			},
 			"FOV": 40.0,
@@ -118,10 +118,47 @@
 }
 		},
 		{
+			"ID": "118df12d489f812b7c32569131ea65d5",
+			"TypeName": "Cineblend.Mover",
+			"ParentID": "590366dc49ec2b3756d2679669b21adb",
+			"V": {
+	"RotateBy": {
+		"X": 9.0,
+		"Y": 1.100000001490116,
+		"Z": 0.0
+	}
+},
+			"Enabled": false
+		},
+		{
 			"ID": "402777d541e09880c158c89523d7957a",
 			"TypeName": "FlaxEngine.AudioListener",
 			"ParentID": "590366dc49ec2b3756d2679669b21adb",
 			"Name": "Audio Listener"
+		},
+		{
+			"ID": "2b0e962540e3d063f7c09d9b2e2f9701",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "590366dc49ec2b3756d2679669b21adb",
+			"Name": "Cube 0",
+			"Transform": {
+				"Translation": {
+					"X": -62.209285736083984,
+					"Y": -135.34136962890625,
+					"Z": 1839.338623046875
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
 		},
 		{
 			"ID": "f396d406481519c2b246f29eba46da85",
@@ -713,7 +750,9 @@
 			"PrefabID": "a0d9ffb447f505856d2801a9221c7603",
 			"PrefabObjectID": "4320f03d4ba1338fcbdce6a9ec3b411e",
 			"ParentID": "4f75edf94ab2a92c3513d388543bfa29",
-			"V": {}
+			"V": {
+	"Target": "a640c5ac423d1dc2d2ec3f910e2763ed"
+}
 		},
 		{
 			"ID": "58baa3ca4788b6db089b6583aee32671",
@@ -721,6 +760,121 @@
 			"PrefabObjectID": "77469f5e46d9f5300da2189e7140d054",
 			"ParentID": "4f75edf94ab2a92c3513d388543bfa29",
 			"V": {}
+		},
+		{
+			"ID": "0e23458447e3faa9acf63e9a5e899585",
+			"TypeName": "Gasimo.CineBlend.VirtualCamera",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"V": {
+	"Properties": {
+		"Position": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0
+			}
+		},
+		"Rotation": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0,
+				"W": 0.0
+			}
+		},
+		"FieldOfView": {
+			"CurrentValue": 20.0
+		},
+		"NearPlane": {
+			"CurrentValue": 10.0
+		},
+		"FarPlane": {
+			"CurrentValue": 10000.0
+		}
+	},
+	"FieldOfView": 20.0
+},
+			"Name": "VirtualCamera 2",
+			"Transform": {
+				"Translation": {
+					"X": 2684.430908203125,
+					"Y": 0.0,
+					"Z": 1276.8905029296875
+				}
+			},
+			"StaticFlags": 0
+		},
+		{
+			"ID": "ca51888b441e2cb1968f778722cbe1a7",
+			"TypeName": "Gasimo.CineBlend.Modules.CinePostFXVolumeModule",
+			"ParentID": "0e23458447e3faa9acf63e9a5e899585",
+			"V": {
+	"PostFxVolume": "835ebe3d411e37e33e09d8ac3bec4d4e"
+}
+		},
+		{
+			"ID": "401b593a4396eae2a30f8fb1ca9f568b",
+			"TypeName": "Cineblend.Mover",
+			"ParentID": "0e23458447e3faa9acf63e9a5e899585",
+			"V": {
+	"RotateBy": {
+		"X": 9.0,
+		"Y": 1.100000001490116,
+		"Z": 0.0
+	}
+},
+			"Enabled": false
+		},
+		{
+			"ID": "fb961ad14cc7f11dc522f38a0c8eabc5",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "0e23458447e3faa9acf63e9a5e899585",
+			"Name": "Cube",
+			"Transform": {
+				"Translation": {
+					"X": -246.03134155273438,
+					"Y": -135.34136962890625,
+					"Z": 1839.338623046875
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "835ebe3d411e37e33e09d8ac3bec4d4e",
+			"TypeName": "FlaxEngine.PostFxVolume",
+			"ParentID": "0e23458447e3faa9acf63e9a5e899585",
+			"Name": "PostFxVolume",
+			"BlendRadius": 0.0,
+			"BlendWeight": 0.0,
+			"IsBounded": false,
+			"Settings": {
+				"AO": {},
+				"GI": {},
+				"Bloom": {},
+				"ToneMapping": {},
+				"ColorGrading": {},
+				"EyeAdaptation": {},
+				"CameraArtifacts": {},
+				"LensFlares": {},
+				"DepthOfField": {},
+				"MotionBlur": {
+					"OverrideFlags": 1,
+					"Enabled": false
+				},
+				"SSR": {},
+				"AA": {},
+				"PostFxMaterials": {}
+			}
 		}
 	]
 }

@@ -400,6 +400,7 @@ namespace Gasimo.CineBlend
             if(blendTime == 0)
             {
                 activeBlend = null;
+                toCamera.OnBlend(fromCamera, toCamera, 1);
             }
 
             // Preprocess toCamera to ensure effects appear like they were active the whole time. For now this is 10 seconds.

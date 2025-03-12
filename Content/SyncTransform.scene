@@ -1,0 +1,284 @@
+{
+	"ID": "c2b5736b47615c674a9dbd8dbac5ae91",
+	"TypeName": "FlaxEngine.SceneAsset",
+	"EngineBuild": 6606,
+	"Data": [
+		{
+			"ID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"TypeName": "FlaxEngine.Scene",
+			"LightmapSettings": {
+				"IndirectLightingIntensity": 1.0,
+				"GlobalObjectsScale": 1.0,
+				"ChartsPadding": 3,
+				"AtlasSize": 1024,
+				"BounceCount": 1,
+				"CompressLightmaps": true,
+				"UseGeometryWithNoMaterials": true,
+				"Quality": 10
+			}
+		},
+		{
+			"ID": "9e65f9f5401699d50a7fe8a5e79d28db",
+			"TypeName": "FlaxEngine.DirectionalLight",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Sun",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 160.0,
+					"Z": 0.0
+				},
+				"Orientation": {
+					"X": 0.3826834559440613,
+					"Y": 0.0,
+					"Z": 0.0,
+					"W": 0.9238795042037964
+				}
+			}
+		},
+		{
+			"ID": "01867cf249345c18673c20a2db36cabb",
+			"TypeName": "FlaxEngine.Sky",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Sky",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 150.0,
+					"Z": 0.0
+				}
+			},
+			"Sun": "9e65f9f5401699d50a7fe8a5e79d28db"
+		},
+		{
+			"ID": "e3d4923442abacfd8b852f8efeb3bab1",
+			"TypeName": "FlaxEngine.SkyLight",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "SkyLight",
+			"Brightness": 2.5,
+			"CustomTexture": "c54410104ff39427bc11e5bc761d66b0"
+		},
+		{
+			"ID": "d5f0f8d946c213855da0369d4bee4826",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Floor",
+			"Transform": {
+				"Scale": {
+					"X": 4.0,
+					"Y": 0.5,
+					"Z": 4.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "efaa87ea4b9b628c946633aec06113f5",
+			"TypeName": "Gasimo.CineBlend.VirtualCamera",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"V": {
+	"UpdateModeOverride": 1,
+	"Properties": {
+		"Position": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0
+			}
+		},
+		"Rotation": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0,
+				"W": 0.0
+			}
+		},
+		"FieldOfView": {
+			"CurrentValue": 20.0
+		},
+		"NearPlane": {
+			"CurrentValue": 10.0
+		},
+		"FarPlane": {
+			"CurrentValue": 10000.0
+		}
+	},
+	"FieldOfView": 20.0
+},
+			"Name": "VirtualCamera 2",
+			"Transform": {
+				"Translation": {
+					"X": 2684.430908203125,
+					"Y": 0.0,
+					"Z": 1276.8905029296875
+				}
+			},
+			"StaticFlags": 0
+		},
+		{
+			"ID": "2f41b98047f4b018ca5e3890e63fc440",
+			"TypeName": "Cineblend.Mover",
+			"ParentID": "efaa87ea4b9b628c946633aec06113f5",
+			"V": {
+	"RotateBy": {
+		"X": 9.0,
+		"Y": 1.100000001490116,
+		"Z": 0.0
+	}
+}
+		},
+		{
+			"ID": "259a0df0428914e4f885c1b4c9f9ca72",
+			"TypeName": "Gasimo.CineBlend.Modules.CinePostFXVolumeModule",
+			"ParentID": "efaa87ea4b9b628c946633aec06113f5",
+			"V": {
+	"PostFxVolume": "cae928824d76044c60a374ba8cb72a26"
+}
+		},
+		{
+			"ID": "12b7015741cb0c345d2b3c902dab5f25",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "efaa87ea4b9b628c946633aec06113f5",
+			"Name": "Cube",
+			"Transform": {
+				"Translation": {
+					"X": -246.03134155273438,
+					"Y": -135.34136962890625,
+					"Z": 1839.338623046875
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "cae928824d76044c60a374ba8cb72a26",
+			"TypeName": "FlaxEngine.PostFxVolume",
+			"ParentID": "efaa87ea4b9b628c946633aec06113f5",
+			"Name": "PostFxVolume",
+			"Priority": 408,
+			"BlendRadius": 0.0,
+			"IsBounded": false,
+			"Settings": {
+				"AO": {},
+				"GI": {},
+				"Bloom": {},
+				"ToneMapping": {},
+				"ColorGrading": {},
+				"EyeAdaptation": {},
+				"CameraArtifacts": {},
+				"LensFlares": {},
+				"DepthOfField": {},
+				"MotionBlur": {
+					"OverrideFlags": 1,
+					"Enabled": false
+				},
+				"SSR": {},
+				"AA": {},
+				"PostFxMaterials": {}
+			}
+		},
+		{
+			"ID": "44c1eb4e4db43a0aaf07ea87e9734739",
+			"TypeName": "FlaxEngine.Camera",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Camera 0",
+			"Transform": {
+				"Translation": {
+					"X": 2684.430908203125,
+					"Y": 0.0,
+					"Z": 1276.8905029296875
+				}
+			},
+			"FOV": 20.0,
+			"Far": 10000.0,
+			"OrthoScale": 2.3701000213623047
+		},
+		{
+			"ID": "8dd6157f4324a6c65ad119b297e0562b",
+			"TypeName": "Gasimo.CineBlend.CineblendMaster",
+			"ParentID": "44c1eb4e4db43a0aaf07ea87e9734739",
+			"V": {
+	"DefaultEasingType": 21
+}
+		},
+		{
+			"ID": "e32d3204495eb88aa658b6b8036eab50",
+			"TypeName": "FlaxEngine.AudioListener",
+			"ParentID": "44c1eb4e4db43a0aaf07ea87e9734739",
+			"Name": "Audio Listener"
+		},
+		{
+			"ID": "c8a43d3b49989358b9353e9e679cab9b",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "44c1eb4e4db43a0aaf07ea87e9734739",
+			"Name": "Cube 0",
+			"Transform": {
+				"Translation": {
+					"X": -62.209285736083984,
+					"Y": -135.34136962890625,
+					"Z": 1839.338623046875
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "4d8c1ed940d4ae121df30aaa82f7ba3b",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Floor 0",
+			"Transform": {
+				"Translation": {
+					"X": 568.6588134765625,
+					"Y": -149.46487426757813,
+					"Z": 0.0
+				},
+				"Scale": {
+					"X": 4.0,
+					"Y": 0.5,
+					"Z": 4.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		}
+	]
+}

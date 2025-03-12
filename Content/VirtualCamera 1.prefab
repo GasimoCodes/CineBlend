@@ -53,6 +53,11 @@
 		"TypeName": "Gasimo.CineBlend.Modules.CineShakeModule",
 		"ParentID": "9ca2ff6748f59d77e3501d8e8ba98568",
 		"V": {
+	"PositionAmplitude": {
+		"X": 0.1,
+		"Y": 4.1,
+		"Z": 0.1
+	},
 	"RotationAmplitude": {
 		"X": 2.0,
 		"Y": 2.0,

@@ -16,7 +16,7 @@ public class Mover : Script
     public override void OnStart()
     {
         // Here you can add code that needs to be called when script is created, just before the first game update
-        orbitcenter = Actor.Position;
+        // orbitcenter = Actor.Position;
     }
     
     /// <inheritdoc/>
@@ -32,7 +32,7 @@ public class Mover : Script
     }
 
     /// <inheritdoc/>
-    public override void OnUpdate()
+    public override void OnFixedUpdate()
     {
         // Make this object orbit around itself
         float time = Time.GameTime;
@@ -40,7 +40,7 @@ public class Mover : Script
 
         float x = float.Sin(time * speed) * 100;
 
-        Actor.Position = orbitcenter + new Vector3(x, 0, 0);
+        // Actor.Position = orbitcenter + new Vector3(x, 0, 0);
 
         // Rotate the object
 
