@@ -179,7 +179,7 @@ namespace Gasimo.CineBlend
             CineblendMaster.Instance?.RegisterVirtualCamera(this);
 
 #if FLAX_EDITOR
-            // ViewportIconsRenderer.AddActor(this);
+            ViewportIconsRenderer.AddActor(this);
 #endif
 
         }
@@ -285,18 +285,16 @@ namespace Gasimo.CineBlend
         }
 
 
+
         // Constructor
         static VirtualCamera()
         {
-
+            ViewportIconsRenderer.AddCustomIcon(typeof(VirtualCamera), Content.LoadAsync<Texture>(System.IO.Path.Combine(Globals.ProjectFolder, "Plugins/CineBlend/Content/Gizmos/VCam.flax")));
+            SceneGraphFactory.CustomNodesTypes.Add(typeof(VirtualCamera), typeof(VirtualCameraNode));
         }
 
 
 #endif
-
-        ~VirtualCamera()
-        {
-        }
 
 
 

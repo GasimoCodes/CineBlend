@@ -94,18 +94,18 @@
 			"Name": "Camera",
 			"Transform": {
 				"Translation": {
-					"X": 1699.9993934243685,
-					"Y": -0.000490275037009269,
-					"Z": -1300.000531822443
+					"X": 1291.552734375,
+					"Y": 404.12042236328125,
+					"Z": 533.0110473632813
 				},
 				"Orientation": {
-					"X": -0.016845889389514923,
-					"Y": -0.7099858522415161,
-					"Z": -0.017119720578193665,
-					"W": 0.7038062214851379
+					"X": 0.10038959980010986,
+					"Y": -0.8703436255455017,
+					"Z": 0.19896958768367767,
+					"W": 0.4391297996044159
 				}
 			},
-			"FOV": 8.0,
+			"FOV": 40.0,
 			"Far": 10000.0,
 			"OrthoScale": 2.3701000213623047
 		},
@@ -233,12 +233,6 @@
 					}
 				]
 			}
-		},
-		{
-			"ID": "badeb3e14ca84741ae0a019032aca140",
-			"TypeName": "Arctic.Mover",
-			"ParentID": "2428288e4aac4df42491bd8f56820a85",
-			"V": {}
 		},
 		{
 			"ID": "3a2e6e7e4bf4f24b8e27aebcdb459f3d",
@@ -669,7 +663,8 @@
 		},
 		{
 			"ID": "4f75edf94ab2a92c3513d388543bfa29",
-			"TypeName": "Gasimo.CineBlend.VirtualCamera",
+			"PrefabID": "a0d9ffb447f505856d2801a9221c7603",
+			"PrefabObjectID": "9ca2ff6748f59d77e3501d8e8ba98568",
 			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
 			"V": {
 	"Properties": {
@@ -697,13 +692,11 @@
 		"FarPlane": {
 			"CurrentValue": 10000.0
 		}
-	},
-	"FieldOfView": 8.0
+	}
 },
-			"Name": "VirtualCamera 1",
 			"Transform": {
 				"Translation": {
-					"X": 1700.0,
+					"X": 1705.0,
 					"Y": 0.0,
 					"Z": 242.50535583496094
 				},
@@ -713,41 +706,21 @@
 					"Z": 0.0,
 					"W": 0.6145324110984802
 				}
-			},
-			"StaticFlags": 0
+			}
 		},
 		{
 			"ID": "3c11a806497d705389e5f8aca2e73b48",
-			"TypeName": "Gasimo.CineBlend.Modules.CineLookAtModule",
+			"PrefabID": "a0d9ffb447f505856d2801a9221c7603",
+			"PrefabObjectID": "4320f03d4ba1338fcbdce6a9ec3b411e",
 			"ParentID": "4f75edf94ab2a92c3513d388543bfa29",
-			"V": {
-	"Target": "a640c5ac423d1dc2d2ec3f910e2763ed",
-	"Smoothing": 0.5
-},
-			"Enabled": false
+			"V": {}
 		},
 		{
 			"ID": "58baa3ca4788b6db089b6583aee32671",
-			"TypeName": "Gasimo.CineBlend.Modules.CineShakeModule",
+			"PrefabID": "a0d9ffb447f505856d2801a9221c7603",
+			"PrefabObjectID": "77469f5e46d9f5300da2189e7140d054",
 			"ParentID": "4f75edf94ab2a92c3513d388543bfa29",
-			"V": {
-	"RotationAmplitude": {
-		"X": 2.0,
-		"Y": 2.0,
-		"Z": 2.0
-	},
-	"PositionFrequency": {
-		"X": 2.0,
-		"Y": 2.0,
-		"Z": 2.0
-	},
-	"RotationFrequency": {
-		"X": 2.0,
-		"Y": 2.0,
-		"Z": 2.0
-	}
-},
-			"Enabled": false
+			"V": {}
 		}
 	]
 }

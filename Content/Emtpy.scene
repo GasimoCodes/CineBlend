@@ -1,0 +1,105 @@
+{
+	"ID": "c2b5736b47615c674a9dbd8dbac5ae91",
+	"TypeName": "FlaxEngine.SceneAsset",
+	"EngineBuild": 6606,
+	"Data": [
+		{
+			"ID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"TypeName": "FlaxEngine.Scene",
+			"LightmapSettings": {
+				"IndirectLightingIntensity": 1.0,
+				"GlobalObjectsScale": 1.0,
+				"ChartsPadding": 3,
+				"AtlasSize": 1024,
+				"BounceCount": 1,
+				"CompressLightmaps": true,
+				"UseGeometryWithNoMaterials": true,
+				"Quality": 10
+			}
+		},
+		{
+			"ID": "9e65f9f5401699d50a7fe8a5e79d28db",
+			"TypeName": "FlaxEngine.DirectionalLight",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Sun",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 160.0,
+					"Z": 0.0
+				},
+				"Orientation": {
+					"X": 0.3826834559440613,
+					"Y": 0.0,
+					"Z": 0.0,
+					"W": 0.9238795042037964
+				}
+			}
+		},
+		{
+			"ID": "01867cf249345c18673c20a2db36cabb",
+			"TypeName": "FlaxEngine.Sky",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Sky",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 150.0,
+					"Z": 0.0
+				}
+			},
+			"Sun": "9e65f9f5401699d50a7fe8a5e79d28db"
+		},
+		{
+			"ID": "e3d4923442abacfd8b852f8efeb3bab1",
+			"TypeName": "FlaxEngine.SkyLight",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "SkyLight",
+			"Brightness": 2.5,
+			"CustomTexture": "c54410104ff39427bc11e5bc761d66b0"
+		},
+		{
+			"ID": "d5f0f8d946c213855da0369d4bee4826",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Floor",
+			"Transform": {
+				"Scale": {
+					"X": 4.0,
+					"Y": 0.5,
+					"Z": 4.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "7809f769465e5b2bb8e2b18c0fedbefa",
+			"TypeName": "FlaxEngine.Camera",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Camera",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 150.0,
+					"Z": -300.0
+				}
+			}
+		},
+		{
+			"ID": "839be5294b0272ad2bece5a9329f4d8d",
+			"TypeName": "FlaxEngine.AudioListener",
+			"ParentID": "7809f769465e5b2bb8e2b18c0fedbefa",
+			"Name": "Audio Listener"
+		}
+	]
+}
