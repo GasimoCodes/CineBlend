@@ -1,0 +1,75 @@
+{
+	"ID": "a0d9ffb447f505856d2801a9221c7603",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6606,
+	"Data": [
+	{
+		"ID": "9ca2ff6748f59d77e3501d8e8ba98568",
+		"TypeName": "Gasimo.CineBlend.VirtualCamera",
+		"V": {
+	"Properties": {
+		"Position": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0
+			}
+		},
+		"Rotation": {
+			"CurrentValue": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.0,
+				"W": 0.0
+			}
+		},
+		"FieldOfView": {
+			"CurrentValue": 8.0
+		},
+		"NearPlane": {
+			"CurrentValue": 10.0
+		},
+		"FarPlane": {
+			"CurrentValue": 10000.0
+		}
+	},
+	"FieldOfView": 8.0
+},
+		"Name": "VirtualCamera 1",
+		"StaticFlags": 0
+	},
+	{
+		"ID": "4320f03d4ba1338fcbdce6a9ec3b411e",
+		"TypeName": "Gasimo.CineBlend.Modules.CineLookAtModule",
+		"ParentID": "9ca2ff6748f59d77e3501d8e8ba98568",
+		"V": {
+	"Target": "a640c5ac423d1dc2d2ec3f910e2763ed",
+	"Smoothing": 5.5
+},
+		"Enabled": false
+	},
+	{
+		"ID": "77469f5e46d9f5300da2189e7140d054",
+		"TypeName": "Gasimo.CineBlend.Modules.CineShakeModule",
+		"ParentID": "9ca2ff6748f59d77e3501d8e8ba98568",
+		"V": {
+	"RotationAmplitude": {
+		"X": 2.0,
+		"Y": 2.0,
+		"Z": 2.0
+	},
+	"PositionFrequency": {
+		"X": 2.0,
+		"Y": 2.0,
+		"Z": 2.0
+	},
+	"RotationFrequency": {
+		"X": 2.0,
+		"Y": 2.0,
+		"Z": 2.0
+	}
+},
+		"Enabled": false
+	}
+]
+}
