@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [0.1.2] - 12/03/2025
+- Added OnRender event so CineBlend updates only before the camera renders after all the scripts.
+
+- Fix prefab reload causing cameras not to deregister when GC Collected
+- CineAuto frame now gets skipped when its disabled
+- Fixed editor freezing when a camera has been deinitialized thru Finalizer (For instance on Script Reload)
+- Fixed PostFX not being applied to cameras with no transitions (& Cuts)
+- Minor Demo scene changes
+
 ## [0.1.1] - 09/03/2025
 - Added an icon for the virtual camera actor.
 - Modules deltaTime is now compensated when their camera becomes active to allow skipping damping on first frame.
