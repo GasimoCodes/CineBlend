@@ -8,7 +8,7 @@ export default {
     {
       icon: 'house-door',
       href: 'https://gasimo.dev/',
-      title: 'Home {{_appTitle}}'
+      title: 'Home'
     }
   ]
 }

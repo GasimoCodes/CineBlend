@@ -8,7 +8,7 @@
       
       
       
-      <link rel="icon" href="favicon.ico">
+      <link rel="icon" href="images/logo.svg">
       <link rel="stylesheet" href="public/docfx.min.css">
       <link rel="stylesheet" href="public/main.css">
       <meta name="docfx:navrel" content="toc.html">
@@ -17,7 +17,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/GasimoCodes/CineBlend/blob/main/docs/CHANGELOG.md/#L1">
+      
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -87,6 +87,21 @@
 <h1 id="changelog">Changelog</h1>
 
 <p>All notable changes to this package will be documented in this file.</p>
+<h2 id="012---12032025">[0.1.2] - 12/03/2025</h2>
+<ul>
+<li><p>Added OnRender event so CineBlend updates only before the camera renders after all the scripts.</p>
+</li>
+<li><p>Fix prefab reload causing cameras not to deregister when GC Collected</p>
+</li>
+<li><p>CineAuto frame now gets skipped when its disabled</p>
+</li>
+<li><p>Fixed editor freezing when a camera has been deinitialized thru Finalizer (For instance on Script Reload)</p>
+</li>
+<li><p>Fixed PostFX not being applied to cameras with no transitions (&amp; Cuts)</p>
+</li>
+<li><p>Minor Demo scene changes</p>
+</li>
+</ul>
 <h2 id="011---09032025">[0.1.1] - 09/03/2025</h2>
 <ul>
 <li><p>Added an icon for the virtual camera actor.</p>

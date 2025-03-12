@@ -1,5 +1,5 @@
 {
-  "source_base_path": "E:/Projects/CineBlend/docs",
+  "source_base_path": "E:/Projects/antartica-project/Plugins/CineBlend/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -299,6 +299,16 @@
       "output": {
         "resource": {
           "relative_path": "images/logo.png~"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.svg"
         }
       },
       "version": ""
