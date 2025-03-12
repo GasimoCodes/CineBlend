@@ -294,10 +294,6 @@ namespace Gasimo.CineBlend
 
         ~VirtualCamera()
         {
-#if FLAX_EDITOR
-            ViewportIconsRenderer.RemoveActor(this);
-#endif
-
             CineblendMaster.Instance?.UnregisterVirtualCamera(this);
         }
 

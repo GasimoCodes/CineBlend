@@ -36,7 +36,7 @@ public class CineAutoFrameModule : Script, ICameraModule
 
     public void PostProcessProperties(ref CameraProperties state, float deltaTime)
     {
-        if (Target == null || Target.Length == 0 || Target[0] == null)
+        if (this.Enabled == false || Target == null || Target.Length == 0 || Target[0] == null)
             return;
 
         
