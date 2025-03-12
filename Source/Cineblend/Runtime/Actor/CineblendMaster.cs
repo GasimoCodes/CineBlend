@@ -93,9 +93,7 @@ namespace Gasimo.CineBlend
         public CameraProperties FinalProperties => throw new NotImplementedException();
 
         public void ProcessProperties(float deltaTime)
-        {
-            throw new NotImplementedException();
-        }
+        { }
 
 
         public override void OnStart()
@@ -104,6 +102,17 @@ namespace Gasimo.CineBlend
             PullDefaultProperties();
         }
 
+        public override void OnEnable()
+        {
+            base.OnEnable();
+            MainRenderTask.Instance.PreRender += OnRender;
+        }
+
+        public override void OnDisable()
+        {
+            base.OnDisable();
+            MainRenderTask.Instance.PreRender -= OnRender;
+        }
 
         #region Update Methods
 
@@ -149,6 +158,14 @@ namespace Gasimo.CineBlend
             }
         }
 
+        private void OnRender(GPUContext arg0, ref RenderContext arg1)
+        {
+            if (currentUpdateMode == CameraUpdateMode.OnRender)
+            {
+                UpdateCameraBlending();
+            }
+        }
+
         #endregion
 
         private void PullDefaultProperties()
@@ -165,7 +182,7 @@ namespace Gasimo.CineBlend
             activeBlend = null;
             currentUpdateMode = UpdateModeOverride;
 
-            
+
 
             RegisterVirtualCamera(this);
         }
@@ -187,13 +204,13 @@ namespace Gasimo.CineBlend
                 {
                     // Dont perform transition when this is the first camera.
                     Transition(highestPriorityCamera, 0);
-                } 
+                }
                 else
                 {
                     // Perform default settings transition
                     Transition(highestPriorityCamera, DefaultBlendTime, DefaultEasingType);
                 }
-                
+
             }
         }
 
@@ -225,8 +242,8 @@ namespace Gasimo.CineBlend
 
             // Lerp between the two cameras
             CameraProperties toProperties = currentVirtualCamera.FinalProperties;
-            CameraProperties fromProperties = lastVirtualCamera?.FinalProperties ?? Properties;            
-            
+            CameraProperties fromProperties = lastVirtualCamera?.FinalProperties ?? Properties;
+
             // Apply easing
             float easedT = CineEasing.ApplyEasing(t, blend.TransitionEasing);
 
@@ -397,7 +414,7 @@ namespace Gasimo.CineBlend
             };
 
             // Cut transition
-            if(blendTime == 0)
+            if (blendTime == 0)
             {
                 activeBlend = null;
                 toCamera.OnBlend(fromCamera, toCamera, 1);

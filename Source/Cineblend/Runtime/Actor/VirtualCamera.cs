@@ -70,7 +70,7 @@ namespace Gasimo.CineBlend
                     }
                 }
 
-                return CameraUpdateMode.Update;
+                return CameraUpdateMode.LateUpdate;
             }
         }
 

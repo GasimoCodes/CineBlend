@@ -32,7 +32,7 @@ public class Mover : Script
     }
 
     /// <inheritdoc/>
-    public override void OnFixedUpdate()
+    public override void OnUpdate()
     {
         // Make this object orbit around itself
         float time = Time.GameTime;
