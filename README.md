@@ -1,9 +1,13 @@
 ## Cineblend for FlaxEngine
 Brings high-level virtual cameras workflow to the FlaxEngine. 
-[Documentation](https://gasimo.dev/CineBlend/manual/Getting%20Started/index.html)
+[Documentation](https://gasimo.dev/CineBlend/)
 > This project is in early stages and its API is likely to change throughout development. This plugin was made for our own game production and will not receive priority support. PRs are welcome! If you wish this system to be included in the Flax ecosystem, make sure to share this repo!
 
-https://github.com/user-attachments/assets/3589ccb7-18c5-42c2-9635-68d0cda2a198
+
+
+https://github.com/user-attachments/assets/404e046d-217c-4ccc-a410-2f2ca095e6d7
+
+
 
 ### Features
 - Priority based blending (Virtual Camera with highest priority will be active)
