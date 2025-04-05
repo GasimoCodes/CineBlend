@@ -111,7 +111,10 @@ namespace Gasimo.CineBlend
         public override void OnDisable()
         {
             base.OnDisable();
-            MainRenderTask.Instance.PreRender -= OnRender;
+            
+            // Check null in case engine is shutting down and renderer may not exist anymore.
+            if (MainRenderTask.Instance != null)
+                MainRenderTask.Instance.PreRender -= OnRender;
         }
 
         #region Update Methods
