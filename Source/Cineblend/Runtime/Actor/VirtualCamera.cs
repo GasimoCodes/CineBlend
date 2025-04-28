@@ -159,6 +159,10 @@ namespace Gasimo.CineBlend
 
         public Actor Actor => this;
 
+        public VirtualCamera() : base()
+        {
+            RefreshModules();
+        }
 
         /// <summary>
         /// Initialize the virtual camera
@@ -274,12 +278,21 @@ namespace Gasimo.CineBlend
             base.OnDebugDrawSelected();
 
             // Process properties for preview if not active
+            /*
             if (!isActive)
                 ProcessProperties(Time.UnscaledDeltaTime);
+            */
+
 
             var color = isActive ? FlaxEngine.Color.Green : FlaxEngine.Color.Orange;
+
             // Draw frustrum the same way Camera does
-            BoundingFrustum frustrum = new BoundingFrustum((FinalProperties.GetViewMatrix()) * FinalProperties.GetProjectionMatrix());
+            ProcessProperties(Time.UnscaledDeltaTime);
+
+            // Debug.Log("Properties: " + properties.Position.CurrentValue + " " + properties.Rotation.CurrentValue + " " + properties.FarPlane.CurrentValue);
+
+            var prop = FinalProperties;
+            BoundingFrustum frustrum = new BoundingFrustum((prop.GetViewMatrix()) * prop.GetProjectionMatrix());
             DebugDraw.DrawWireFrustum(frustrum, color);
 
         }

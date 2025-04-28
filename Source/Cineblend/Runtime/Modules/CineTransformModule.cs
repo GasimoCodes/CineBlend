@@ -21,6 +21,7 @@ public class CineTransformModule : ICameraModule
         {
             return;
         }
+
         // string offset =  (cam == null) + " / " + ((cam == null) ? "NULL" : cam?.Name);
 
         state.Position.CurrentValue = cam.Actor.Position;

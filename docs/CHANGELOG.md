@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
+## [0.1.3] - 28/04/2025
+- Fixed incorrect gizmo previews in Prefab mode
+
 ## [0.1.2] - 12/03/2025
 - Added OnRender event so CineBlend updates only before the camera renders after all the scripts.
 
