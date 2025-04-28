@@ -35,26 +35,30 @@ public class CineColliderModule : Script, ICameraModule
 
     public void PostProcessProperties(ref CameraProperties state, float deltaTime)
     {
-        if(!this.Enabled || Target == null)
+        if (!this.Enabled || Target == null)
             return;
 
         // spherecast from this to target position
-
         Vector3 from = Target.Position;
         Vector3 to = state.Position.CurrentValue;
-
         Vector3 direction = to - from;
-
         Real distance = direction.Length;
         Vector3 normalizedDirection = direction / distance;
 
-        if (Physics.SphereCast(from, sphereRadius, normalizedDirection, out var hitInfo, (float)distance, Colliders))
+        // Offset the from position by the sphere radius toward the to position
+        Vector3 offsetFrom = from + (normalizedDirection * sphereRadius);
+
+        // Adjust the distance to account for the offset starting position
+        Real adjustedDistance = distance - sphereRadius;
+
+        if (Physics.SphereCast(offsetFrom, sphereRadius, normalizedDirection, out var hitInfo, (float)adjustedDistance, Colliders))
         {
             // Calculate how far along the ray we've traveled to the hit point
             float hitDistance = hitInfo.Distance;
 
             // Calculate the sphere center position along the original ray
-            Vector3 sphereCenter = from + (normalizedDirection * hitDistance);
+            // (accounting for our offset starting position)
+            Vector3 sphereCenter = offsetFrom + (normalizedDirection * hitDistance);
 
             //BoundingSphere sphere = new BoundingSphere(sphereCenter, sphereRadius);
             //DebugDraw.DrawWireSphere(sphere, Color.Red, 0.1f);
@@ -62,6 +66,5 @@ public class CineColliderModule : Script, ICameraModule
             // Position the camera along the original direction, offset from sphere center
             state.Position.CurrentValue = sphereCenter + (normalizedDirection * offsetFromObstacle);
         }
-
     }
 }

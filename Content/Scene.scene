@@ -1,7 +1,7 @@
 {
 	"ID": "6692e1f14f9eccf0f437568e18948b81",
 	"TypeName": "FlaxEngine.SceneAsset",
-	"EngineBuild": 6606,
+	"EngineBuild": 6705,
 	"Data": [
 		{
 			"ID": "6692e1f14f9eccf0f437568e18948b81",
@@ -94,15 +94,15 @@
 			"Name": "Camera",
 			"Transform": {
 				"Translation": {
-					"X": 1291.552734375,
-					"Y": 404.12042236328125,
-					"Z": 533.0110473632813
+					"X": 766.7098510193033,
+					"Y": 88.55121474689827,
+					"Z": 289.7346258666429
 				},
 				"Orientation": {
-					"X": 0.10038961470127106,
-					"Y": -0.8703436255455017,
-					"Z": 0.1989694982767105,
-					"W": 0.43912985920906067
+					"X": 0.056917235255241394,
+					"Y": -0.9351081252098083,
+					"Z": 0.17613564431667328,
+					"W": 0.3021748661994934
 				}
 			},
 			"FOV": 40.0,
@@ -553,9 +553,9 @@
 			"Name": "VirtualCamera 2 Collider",
 			"Transform": {
 				"Translation": {
-					"X": 1291.552734375,
-					"Y": 404.12042236328125,
-					"Z": 533.0110473632813
+					"X": 1032.0234108721354,
+					"Y": 265.632190875544,
+					"Z": 656.888422198287
 				}
 			},
 			"StaticFlags": 0
@@ -609,9 +609,9 @@
 			"Name": "Floor 0",
 			"Transform": {
 				"Translation": {
-					"X": 568.6588134765625,
-					"Y": -29.464874267578125,
-					"Z": 0.0
+					"X": 498.819348215217,
+					"Y": -90.24971709561697,
+					"Z": -80.98526934064066
 				}
 			},
 			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
@@ -750,9 +750,7 @@
 			"PrefabID": "a0d9ffb447f505856d2801a9221c7603",
 			"PrefabObjectID": "4320f03d4ba1338fcbdce6a9ec3b411e",
 			"ParentID": "4f75edf94ab2a92c3513d388543bfa29",
-			"V": {
-	"Target": "a640c5ac423d1dc2d2ec3f910e2763ed"
-}
+			"V": {}
 		},
 		{
 			"ID": "58baa3ca4788b6db089b6583aee32671",
@@ -875,6 +873,47 @@
 				"AA": {},
 				"PostFxMaterials": {}
 			}
+		},
+		{
+			"ID": "3779d89245e9ecb4838bd8b2015459b7",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "6692e1f14f9eccf0f437568e18948b81",
+			"Name": "Floor 1",
+			"Transform": {
+				"Translation": {
+					"X": 431.1999816894531,
+					"Y": -149.46487426757813,
+					"Z": -133.13392639160156
+				},
+				"Orientation": {
+					"X": -0.5009575486183167,
+					"Y": -0.6907542943954468,
+					"Z": -0.5212599039077759,
+					"W": 0.013718904927372932
+				},
+				"Scale": {
+					"X": 4.0,
+					"Y": 0.5,
+					"Z": 4.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "ef4cdd1d4a325450483f09ab77ad9369",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "3779d89245e9ecb4838bd8b2015459b7",
+			"Name": "BoxCollider"
 		}
 	]
 }

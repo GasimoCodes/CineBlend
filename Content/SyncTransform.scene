@@ -83,94 +83,11 @@
 			}
 		},
 		{
-			"ID": "44c1eb4e4db43a0aaf07ea87e9734739",
-			"TypeName": "FlaxEngine.Camera",
-			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
-			"Name": "Camera 0",
-			"Transform": {
-				"Translation": {
-					"X": 2478.430908203125,
-					"Y": 33.0,
-					"Z": 1276.8905029296875
-				}
-			},
-			"FOV": 20.0,
-			"Far": 10000.0,
-			"OrthoScale": 2.3701000213623047
-		},
-		{
-			"ID": "8dd6157f4324a6c65ad119b297e0562b",
-			"TypeName": "Gasimo.CineBlend.CineblendMaster",
-			"ParentID": "44c1eb4e4db43a0aaf07ea87e9734739",
-			"V": {
-	"DefaultEasingType": 21
-}
-		},
-		{
-			"ID": "e32d3204495eb88aa658b6b8036eab50",
-			"TypeName": "FlaxEngine.AudioListener",
-			"ParentID": "44c1eb4e4db43a0aaf07ea87e9734739",
-			"Name": "Audio Listener"
-		},
-		{
-			"ID": "c8a43d3b49989358b9353e9e679cab9b",
-			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "44c1eb4e4db43a0aaf07ea87e9734739",
-			"Name": "Cube 0",
-			"Transform": {
-				"Translation": {
-					"X": -62.209285736083984,
-					"Y": -135.34136962890625,
-					"Z": 1839.338623046875
-				}
-			},
-			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "00000000000000000000000000000000",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
-		},
-		{
-			"ID": "4d8c1ed940d4ae121df30aaa82f7ba3b",
-			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
-			"Name": "Floor 0",
-			"Transform": {
-				"Translation": {
-					"X": 568.6588134765625,
-					"Y": -149.46487426757813,
-					"Z": 0.0
-				},
-				"Scale": {
-					"X": 4.0,
-					"Y": 0.5,
-					"Z": 4.0
-				}
-			},
-			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "1771b53343d461faacdf2c8581b1fdbb",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
-		},
-		{
 			"ID": "efaa87ea4b9b628c946633aec06113f5",
 			"TypeName": "Gasimo.CineBlend.VirtualCamera",
 			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
 			"V": {
-	"UpdateModeOverride": 3,
+	"UpdateModeOverride": 0,
 	"Properties": {
 		"Position": {
 			"CurrentValue": {
@@ -202,8 +119,8 @@
 			"Name": "VirtualCamera 2",
 			"Transform": {
 				"Translation": {
-					"X": 2478.430908203125,
-					"Y": 33.0,
+					"X": 2684.430908203125,
+					"Y": 0.0,
 					"Z": 1276.8905029296875
 				}
 			},
@@ -216,7 +133,7 @@
 			"V": {
 	"RotateBy": {
 		"X": 9.0,
-		"Y": 5.100000001490116,
+		"Y": 1.100000001490116,
 		"Z": 0.0
 	}
 }
@@ -281,16 +198,87 @@
 			}
 		},
 		{
-			"ID": "497428d648ed582b7144d2b9f31ca6c9",
-			"TypeName": "FlaxEngine.EmptyActor",
+			"ID": "44c1eb4e4db43a0aaf07ea87e9734739",
+			"TypeName": "FlaxEngine.Camera",
 			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
-			"Name": "EmptyActor",
+			"Name": "Camera 0",
 			"Transform": {
 				"Translation": {
-					"X": 2478.430908203125,
-					"Y": 33.0,
+					"X": 2684.430908203125,
+					"Y": 0.0,
 					"Z": 1276.8905029296875
 				}
+			},
+			"FOV": 20.0,
+			"Far": 10000.0,
+			"OrthoScale": 2.3701000213623047
+		},
+		{
+			"ID": "8dd6157f4324a6c65ad119b297e0562b",
+			"TypeName": "Gasimo.CineBlend.CineblendMaster",
+			"ParentID": "44c1eb4e4db43a0aaf07ea87e9734739",
+			"V": {
+	"DefaultEasingType": 21,
+	"UpdateModeOverride": 5
+}
+		},
+		{
+			"ID": "e32d3204495eb88aa658b6b8036eab50",
+			"TypeName": "FlaxEngine.AudioListener",
+			"ParentID": "44c1eb4e4db43a0aaf07ea87e9734739",
+			"Name": "Audio Listener"
+		},
+		{
+			"ID": "c8a43d3b49989358b9353e9e679cab9b",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "44c1eb4e4db43a0aaf07ea87e9734739",
+			"Name": "Cube 0",
+			"Transform": {
+				"Translation": {
+					"X": -62.209285736083984,
+					"Y": -135.34136962890625,
+					"Z": 1839.338623046875
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "4d8c1ed940d4ae121df30aaa82f7ba3b",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "c2b5736b47615c674a9dbd8dbac5ae91",
+			"Name": "Floor 0",
+			"Transform": {
+				"Translation": {
+					"X": 568.6588134765625,
+					"Y": -149.46487426757813,
+					"Z": 0.0
+				},
+				"Scale": {
+					"X": 4.0,
+					"Y": 0.5,
+					"Z": 4.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1771b53343d461faacdf2c8581b1fdbb",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
 			}
 		}
 	]
