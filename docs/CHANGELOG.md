@@ -3,6 +3,7 @@ All notable changes to this package will be documented in this file.
 
 ## [0.1.3] - 28/04/2025
 - Fixed incorrect gizmo previews in Prefab mode
+- Fixed Collider Offset wrongly getting occluding by items behind the target (by offsetting the spherecast start pos by its radius in the dir of camera) 
 
 ## [0.1.2] - 12/03/2025
 - Added OnRender event so CineBlend updates only before the camera renders after all the scripts.
