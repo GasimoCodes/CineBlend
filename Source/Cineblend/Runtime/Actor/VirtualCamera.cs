@@ -102,7 +102,10 @@ namespace Gasimo.CineBlend
 
             foreach (var module in Modules)
             {
-                module.Value.PostProcessProperties(ref state, deltaTime);
+                if (module.Value != null)
+                {
+                    module.Value.PostProcessProperties(ref state, deltaTime);
+                }
             }
 
             FinalProperties = state;
