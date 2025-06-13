@@ -222,9 +222,9 @@ namespace Gasimo.CineBlend
         {
             if (activeBlend == null)
             {
-                // Copy values from camera
                 if (currentVirtualCamera != null)
                 {
+                    // Copy values from camera
                     currentVirtualCamera.ProcessProperties(Time.UnscaledDeltaTime);
                     CameraProperties finalProp = currentVirtualCamera.FinalProperties;
                     finalProp.ApplyToCamera(camera);
