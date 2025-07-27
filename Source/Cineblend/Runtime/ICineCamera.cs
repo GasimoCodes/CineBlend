@@ -71,7 +71,8 @@ public enum CameraUpdateMode
     LateFixedUpdate,
     Auto,
     Manual,
-    OnRender
+    OnRender,
+    OnDraw
 }
 
 /// <summary>

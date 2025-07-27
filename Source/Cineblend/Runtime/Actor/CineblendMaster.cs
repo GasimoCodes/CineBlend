@@ -106,6 +106,7 @@ namespace Gasimo.CineBlend
         {
             base.OnEnable();
             MainRenderTask.Instance.PreRender += OnRender;
+            Scripting.Draw += OnDraw;
         }
 
         public override void OnDisable()
@@ -115,6 +116,8 @@ namespace Gasimo.CineBlend
             // Check null in case engine is shutting down and renderer may not exist anymore.
             if (MainRenderTask.Instance != null)
                 MainRenderTask.Instance.PreRender -= OnRender;
+
+            Scripting.Draw -= OnDraw;
         }
 
         #region Update Methods
@@ -168,6 +171,15 @@ namespace Gasimo.CineBlend
                 UpdateCameraBlending();
             }
         }
+
+        private void OnDraw()
+        {
+            if (currentUpdateMode == CameraUpdateMode.OnDraw)
+            {
+                UpdateCameraBlending();
+            }
+        }
+        
 
         #endregion
 
