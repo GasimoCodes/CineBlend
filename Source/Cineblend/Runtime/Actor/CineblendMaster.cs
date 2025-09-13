@@ -63,7 +63,7 @@ namespace Gasimo.CineBlend
         private ICineCamera soloCamera;
         private SortedDictionary<int, List<ICineCamera>> virtualCamerasByPriority = new(Comparer<int>.Create((a, b) => b.CompareTo(a)));
 
-        private class BlendState
+        public class BlendState
         {
             public ICineCamera FromCamera;
             public ICineCamera ToCamera;
@@ -76,8 +76,7 @@ namespace Gasimo.CineBlend
         }
 
         private BlendState activeBlend = null;
-
-
+        public BlendState ActiveBlend => activeBlend;
 
         /// <summary>
         /// This Camera's Properties.
@@ -455,7 +454,5 @@ namespace Gasimo.CineBlend
         {
             soloCamera = null;
         }
-
-
     }
 }
