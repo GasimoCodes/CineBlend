@@ -63,7 +63,7 @@ namespace Gasimo.CineBlend
         private ICineCamera soloCamera;
         private SortedDictionary<int, List<ICineCamera>> virtualCamerasByPriority = new(Comparer<int>.Create((a, b) => b.CompareTo(a)));
 
-        private class BlendState
+        public class BlendState
         {
             public ICineCamera FromCamera;
             public ICineCamera ToCamera;
@@ -76,6 +76,25 @@ namespace Gasimo.CineBlend
         }
 
         private BlendState activeBlend = null;
+        
+        /// <summary>
+        /// The state of the current active blend between 2 cameras. 
+        /// Read-only.
+        /// </summary>
+        public BlendState ActiveBlend => activeBlend;
+
+
+        /// <summary>
+        /// Event called when a camera blend has started. (After creating BlendState) 
+        /// (fromCamera, toCamera)
+        /// </summary>
+        public Action<ICineCamera, ICineCamera> OnCameraBlendStart;
+
+        /// <summary>
+        /// Event called when a camera blend has ended before BlendState is reset. In case of cut transitions this this done immediately.
+        /// (fromCamera, toCamera)
+        /// </summary>
+        public Action<ICineCamera, ICineCamera> OnCameraBlendEnd;
 
 
 
@@ -273,9 +292,12 @@ namespace Gasimo.CineBlend
             // Check if blend is complete
             if (!blend.IsActive)
             {
+                OnCameraBlendEnd?.Invoke(blend.FromCamera, blend.ToCamera);
+
                 activeBlend = null;
                 currentVirtualCamera = blend.ToCamera;
                 lastVirtualCamera = blend.FromCamera;
+
             }
         }
 
@@ -431,11 +453,14 @@ namespace Gasimo.CineBlend
                 TransitionEasing = easing
             };
 
+            OnCameraBlendStart?.Invoke(fromCamera, toCamera);
+
             // Cut transition
             if (blendTime == 0)
             {
                 activeBlend = null;
                 toCamera.OnBlend(fromCamera, toCamera, 1);
+                OnCameraBlendEnd?.Invoke(fromCamera, toCamera);
             }
 
             // Preprocess toCamera to ensure effects appear like they were active the whole time. For now this is 10 seconds.
